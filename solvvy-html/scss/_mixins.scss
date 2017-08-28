@@ -17,6 +17,13 @@
 	transition: all 250ms ease-in-out;
 }
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 @mixin absolute {
 	position: absolute;
 	top: 0;
@@ -37,4 +44,12 @@
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+}
+
+@mixin gradient {
+	background: $brand-secondary;
+	background: -webkit-linear-gradient(left, #21135f, #3f2689, #5d0e8b);
+	background: -o-linear-gradient(right, #21135f, #3f2689, #5d0e8b);
+	background: -moz-linear-gradient(right, #21135f, #3f2689, #5d0e8b);
+	background: linear-gradient(to right, #21135f, #3f2689, #5d0e8b);
 }

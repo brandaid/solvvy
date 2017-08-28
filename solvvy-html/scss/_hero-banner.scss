@@ -1,16 +1,63 @@
 .hero-banner {
 	background: url(images/hero-image.jpg) no-repeat center center; 
 	background-size: cover;
+	text-align: center;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 200px;
+	
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		padding-top: 200px;
+		padding-bottom: 360px;
+	}
+	
+	&:before {
+		content: "";
+		@include absolute;
+		@include gradient;
+		opacity: .78;
+		z-index: 9;
+
+	}
+	.container {
+		position: relative;
+		z-index: 999;
+		max-width: 700px;
+	}
+
+	h1 {
+		color: white;
+		@extend .underlined;
+		font-size: 42px;
+
+		// 992px
+		@media all and (min-width: $screen-landscape) {
+			font-size: 54px;
+		}
+	}
+	h3 {
+		color: #bdb2f2; 
+		font-size: 24px;
+		margin-bottom: 55px;
+	}
 }
 
-// 768px
-@media all and (min-width: $screen-portrait) {
-}
+.waves {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 202px;
+	width: 100%;
+	background: url(images/waves.png) no-repeat left bottom; 
+	background-size: cover;
+	z-index: 9;
 
-// 992px
-@media all and (min-width: $screen-landscape) {
-}
-
-// 1200px
-@media all and (min-width: $screen-desktop) {
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		.waves {
+			background: url(images/waves.png) no-repeat center center;
+			background-size: cover; 
+		}
+	}
 }

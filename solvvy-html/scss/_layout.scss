@@ -14,6 +14,23 @@ a, a:hover, a:active, a:focus {
 	padding-left: 15px;
 	padding-right: 15px;
 	@include border-box;
+	
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		@include center;
+		max-width: 750px;
+	}
+
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+			max-width: 970px;
+	}
+
+	// 1200px
+	@media all and (min-width: $screen-desktop) {
+		max-width: 1170px;
+	}
+
 }
 
 .cf:before,
@@ -25,24 +42,21 @@ a, a:hover, a:active, a:focus {
 .cf:after {
     clear: both;
 }
-// 768px
-@media all and (min-width: $screen-portrait) {
-	.container {
+
+.underlined {
+	&:after {
+		content: "";
+		height: 5px;
+		display: block;
 		@include center;
-		max-width: 750px;
-	}
-}
+		width: 54px;
+		background: $brand-primary;
+		margin-top: 25px;
+		margin-bottom: 25px;
 
-// 992px
-@media all and (min-width: $screen-landscape) {
-	.container {
-		max-width: 970px;
-	}
-}
-
-// 1200px
-@media all and (min-width: $screen-desktop) {
-	.container {
-		max-width: 1170px;
+		@media all and (min-width: $screen-landscape) {
+			margin-top: 39px;
+			margin-bottom: 39px;
+		}
 	}
 }

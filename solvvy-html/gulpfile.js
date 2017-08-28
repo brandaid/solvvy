@@ -7,13 +7,13 @@ var browserSync = require('browser-sync').create();
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        server: "./",
+        server: "./solvvy",
         port: 9000,
         browser: "google chrome"
     });
 
     gulp.watch("scss/**/*.scss", ['sass']);
-    gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./solvvy/*.html").on('change', browserSync.reload);
 
 });
 
@@ -31,7 +31,7 @@ gulp.task('sass', function() {
         browsers: ['last 10 versions'],
         cascade: false
     }))
-	.pipe(gulp.dest('./'))
+	.pipe(gulp.dest('./solvvy'))
 	.pipe(browserSync.stream());
 });
 

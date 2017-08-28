@@ -9,11 +9,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, ul, ol, li {
 	-moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: $secondary-font;
+	color: $brand-secondary;
 }
 p {
 	font-size: 1em;
 	line-height: 1.25;
+	color: $font-color;
 	margin-bottom: 20px;
 }
 
