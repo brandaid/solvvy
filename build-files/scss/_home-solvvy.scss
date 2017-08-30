@@ -1,0 +1,96 @@
+.whats-solvvy {
+	text-align: center;
+	background: url(images/orbit.png) no-repeat bottom right;
+	position: relative;
+	padding: 130px 30px 0 30px;
+	@include border-box;
+	&:before {
+		content: url(images/pink-ball.png);
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		left: 0;
+		top: -100px;
+		z-index: 999;
+	}
+	h2 {
+		@extend .underlined;
+		font-family: $font-semibold;
+		font-size: 36px;
+	}
+	p {
+		font-size: 20px;
+		line-height: 1.6em;
+		margin-bottom: 56px;
+	}
+	.col-right {
+		padding-top: 80px;
+		line-height: 0;
+	}
+
+	
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		display: table;
+		width: 100%;
+		h2 {
+			&:after {
+				margin-left: 0;
+			}
+		}
+		.col-left,
+		.col-right {
+			display: table-cell;
+			width: 40%;
+			vertical-align: bottom;
+		}
+		.col-left {
+			text-align: left;
+			p {
+				padding-right: 20px;
+			}
+			.button {
+				margin-bottom: 40px;
+			}
+		}
+		.col-right {
+			padding-top: 0;
+			width: 60%;
+		}
+		// 1200px
+		@media all and (min-width: $screen-desktop-big) {
+			padding-top: 170px;
+			.col-left,
+			.col-right {
+				width: 50%;
+				vertical-align: top;
+			}
+			.col-left {
+				padding-left: 15%;
+				p {
+					max-width: 460px;
+					padding: 0;
+				}
+				.button {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+
+}
+.screen {
+	width: 100%;
+	height: auto;
+	max-width: 780px;
+}
+
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

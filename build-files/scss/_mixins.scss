@@ -1,0 +1,76 @@
+@mixin center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin border-box {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin transition {
+	-webkit-transition: all 250ms ease-in-out;
+	-moz-transition: all 250ms ease-in-out;
+	-ms-transition: all 250ms ease-in-out;
+	-o-transition: all 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin absolute {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+@mixin formated-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+@mixin fontawesome {
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin gradient {
+	background: $brand-secondary;
+	background: -webkit-linear-gradient(left, #21135f, #3f2689, #5d0e8b);
+	background: -o-linear-gradient(right, #21135f, #3f2689, #5d0e8b);
+	background: -moz-linear-gradient(right, #21135f, #3f2689, #5d0e8b);
+	background: linear-gradient(to right, #21135f, #3f2689, #5d0e8b);
+}
+
+@mixin font-solvvy {
+	font-family: "solvvy";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	margin-left: .2em;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+}

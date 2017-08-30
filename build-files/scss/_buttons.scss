@@ -1,0 +1,46 @@
+.button {
+	background: $brand-primary;
+	color: white;
+	display: inline-block;
+	border: 1px solid $brand-primary;
+	padding: 20px 45px;
+	font-family: $font-semibold;
+	@include border-radius(4px);
+	@include border-box;
+	text-align: center;
+	width: 100%;
+
+
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		font-size: 20px;
+		width: auto;
+	}
+	&:hover {
+		background: white;
+		color: $brand-primary;
+	}
+}
+
+.button-brand {
+	border: 1px solid lighten($brand-tertiary, 40%);
+	background: #f6fafd;
+	display: block;
+	@include border-radius(4px);
+	padding: 20px;
+	@include border-box;
+	&:hover {
+		-moz-transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+.icon-play {
+	font-size: 24px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 4px;
+}

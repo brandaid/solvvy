@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+@import "font-face";
+@import "reset";
+@import "layout";
+@import "buttons";
+@import "header";
+@import "footer";
+@import "navbar";
+@import "typography";
+@import "images";
+@import "loginWP";
+@import "preloader";
+@import "lightgallery";
+
+// HOME
+@import "home-hero-banner";
+@import "home-solvvy";
+@import "home-industry-news";
+@import "home-driving-companies";
+@import "home-slider-brands";
