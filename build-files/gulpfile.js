@@ -1,40 +1,38 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer'); 
-var browserSync = require('browser-sync').create();
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('sass', function(){
+    return gulp.src('scss/**/*.scss')
+               .pipe(sass().on('error', sass.logError))
+               .pipe(sass())
+               .pipe(autoprefixer({
+                    browsers: ['last 10 versions'],
+                    cascade: false
+               }))
+               .pipe(gulp.dest('../wordpress/wp-content/themes/solvvy/'))
+               .pipe(reload({stream:true}));
+});
 
-    browserSync.init({
-        proxy: "http://localhost:8888/",
-        browser: "google chrome"
+gulp.task('browser-sync', function(){
+    var files = [
+        './*.css',
+        '../wordpress/**/*.js',
+        '../wordpress/**/*.php'
+    ];
+
+    browserSync.init(files, {
+        proxy: 'localhost:8888',
+        browser: 'google chrome',
+        notify: true
     });
-
-    gulp.watch("scss/**/*.scss", ['sass']);
-    gulp.watch("../wordpress/wp-content/themes/solvvy/**/*.php").on('change', browserSync.reload);
-    gulp.watch("../wordpress/wp-content/themes/solvvy/**/*.js").on('change', browserSync.reload);
-
-
-});
-
-gulp.task('autoprefixer', () =>
-    gulp.src('scss/**/*.scss')
-        .pipe(gulp.dest('scss/'))
-);
-
-
-gulp.task('sass', function() {
-	return gulp.src('scss/**/*.scss')
-	.pipe(sass().on('error', sass.logError))
-	.pipe(sass())
-	.pipe(autoprefixer({
-        browsers: ['last 10 versions'],
-        cascade: false
-    }))
-	.pipe(gulp.dest('../wordpress/wp-content/themes/solvvy/'))
-	.pipe(browserSync.stream());
 });
 
 
-
+gulp.task('default', ['sass', 'browser-sync'], function(){
+    console.log('Run server');
+    gulp.watch('scss/**/*.scss', ['sass']);
+});
