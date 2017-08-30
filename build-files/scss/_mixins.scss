@@ -74,3 +74,16 @@
 	-moz-osx-font-smoothing: grayscale;
 
 }
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $left $top $blur $color;
+		-moz-box-shadow:inset $left $top $blur $color;
+		box-shadow:inset $left $top $blur $color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $color;
+		-moz-box-shadow: $left $top $blur $color;
+		box-shadow: $left $top $blur $color;
+	}
+}
