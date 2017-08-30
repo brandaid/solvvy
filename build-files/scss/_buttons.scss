@@ -10,10 +10,9 @@
 	text-align: center;
 	width: 100%;
 
-
 	// 768px
 	@media all and (min-width: $screen-portrait) {
-		font-size: 20px;
+		font-size: 21px;
 		width: auto;
 	}
 	&:hover {
