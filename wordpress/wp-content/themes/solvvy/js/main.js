@@ -36,30 +36,29 @@ $(document).ready(function() {
 
 	$('select').niceSelect();
 
- //    if ($(this).data("value") === 'role') {
- //    	alert('hola quien sos vos');
-	// } else if ($(this).data("value") === 'business') {
-	//     alert('hola');
-	// } else if ($(this).data("value") === 'industry') {
-	//     alert('hola');
-	// }
-
 
 	$('ul.list li').click(function() {
 	    if($(this).data("value") === "role"){
-	        alert("You clicked me.");
+	        $("#panel-role").show();
+	        $("#panel-business").hide();
+	        $("#panel-industry").hide();
 	    };
+
 	});
 
 	$('ul.list li').click(function() {
 	    if($(this).data("value") === "business"){
-	        alert("fuck");
+	        $("#panel-role").hide();
+	        $("#panel-business").show();
+	        $("#panel-industry").hide();
 	    };
 	});
 
 	$('ul.list li').click(function() {
 	    if($(this).data("value") === "industry"){
-	        alert("dalee");
+	        $("#panel-role").hide();
+	        $("#panel-business").hide();
+	        $("#panel-industry").show();
 	    };
 	});
 });
