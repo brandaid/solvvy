@@ -21,28 +21,6 @@
 	}
 }
 
-.button-brand {
-	border: 1px solid lighten($brand-tertiary, 40%);
-	background: #f6fafd;
-	display: block;
-	@include border-radius(4px);
-	padding: 20px;
-	@include border-box;
-	img {
-		width: 100%;
-		max-height: 400px;
-	}
-	&:hover {
-		background: white;
-		-moz-transform: scale(1.05);
-		-webkit-transform: scale(1.05);
-		-o-transform: scale(1.05);
-		-ms-transform: scale(1.05);
-		transform: scale(1.05);
-		@include box-shadow(0px, 0px, 10px, rgba(0,0,0,.2));
-	}
-}
-
 .icon-play {
 	font-size: 24px;
 	display: inline-block;

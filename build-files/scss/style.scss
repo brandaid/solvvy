@@ -2,20 +2,25 @@
 @import "mixins";
 @import "font-face";
 @import "reset";
+@import "preloader";
 @import "layout";
 @import "buttons";
+@import "typography";
+
 @import "header";
 @import "footer";
 @import "navbar";
-@import "typography";
+
 @import "images";
 @import "loginWP";
-@import "preloader";
+
 @import "lightgallery";
 
-// HOME
+// HOME PAGE
 @import "home-hero-banner";
 @import "home-solvvy";
 @import "home-industry-news";
 @import "home-driving-companies";
 @import "home-slider-brands";
+@import "home-metrics";
+@import "home-solution-for-industry";

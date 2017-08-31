@@ -9,6 +9,16 @@
 }
 
 @font-face {
+    font-family: 'SanFranciscoDisplayMedium';
+    src: url('fonts/SanFranciscoDisplayMedium.eot');
+    src: url('fonts/SanFranciscoDisplayMedium.eot') format('embedded-opentype'),
+         url('fonts/SanFranciscoDisplayMedium.woff2') format('woff2'),
+         url('fonts/SanFranciscoDisplayMedium.woff') format('woff'),
+         url('fonts/SanFranciscoDisplayMedium.ttf') format('truetype'),
+         url('fonts/SanFranciscoDisplayMedium.svg#SanFranciscoDisplayMedium') format('svg');
+}
+
+@font-face {
     font-family: 'SanFranciscoDisplayThin';
     src: url('fonts/SanFranciscoDisplayThin.eot');
     src: url('fonts/SanFranciscoDisplayThin.eot') format('embedded-opentype'),
