@@ -9,12 +9,18 @@
 			.owl-stage-outer {
 				padding-top: 6px;
 				padding-bottom: 6px;
+				.item {
+					padding: 0 5px;
+					@media all and (min-width: $screen-desktop-big) {
+						padding: 0 8px;
+					}
+				}
 			}
 			.owl-nav {
 				height: 0;
 				position: absolute;
 				width: 100%;
-				top: 20%;
+				top: 30%;
 				display: block;
 				.owl-prev,
 				.owl-next {
@@ -85,7 +91,36 @@
 		}
 	}	
 }
-
+.button-brand {
+	border: 1px solid lighten($brand-tertiary, 40%);
+	background: #f6fafd;
+	display: block;
+	@include border-radius(4px);
+	padding: 20px;
+	text-align: center;
+	@include border-box;
+	img {
+		width: auto!important;
+		@include center;
+		height: 24px;
+	}
+	&:hover {
+		background: white;
+		-moz-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		transform: scale(1.05);
+		@include box-shadow(0px, 0px, 10px, rgba(0,0,0,.2));
+	}
+	// 1200px
+	@media all and (min-width: $screen-desktop) {
+	padding: 30px 20px;
+		img {
+			height: 32px;
+		}
+	}
+}
 .owl-brands {
 	.owl-dots {
 		text-align: center;
@@ -129,9 +164,9 @@
 	&:after {
 		content: "";
 		background: url(images/waves-slider.png) no-repeat center center;
-		background-size: cover;
+		background-size: contain;
 		position: absolute;
-		height: 200px;
+		height: 134px;
 		display: block;
 		width: 100%;
 		z-index: 99;
@@ -142,21 +177,14 @@
 	@media all and (min-width: $screen-landscape) {
 		display: block;
 	}
-}
-
-.cool-sep {
-	border-top: 2px solid lighten($brand-tertiary, 40%);
-	background: #f8fbfd;
-    background: -webkit-linear-gradient(#f8fbfd, white);
-    background: -o-linear-gradient(#f8fbfd, white);
-    background: -moz-linear-gradient(#f8fbfd, white);
-    background: linear-gradient(#f8fbfd, white);
-	height: 47px;
-	width: 100%;
-	// 992px
-	@media all and (min-width: $screen-landscape) {
-		&.top {
-			display: none;
+	@media all and (min-width: $screen-desktop) {
+		&:after {
+			height: 143px;
+		}
+	}
+	@media all and (min-width: $screen-desktop-big) {
+		&:after {
+			height: 160px;
 		}
 	}
 }

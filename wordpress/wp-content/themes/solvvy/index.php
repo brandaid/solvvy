@@ -172,5 +172,74 @@
 				</div>
 			</div>
 		</section>
+		<div class="cool-sep"></div>
+		<section class="metrics">
+			<div class="container">
+				<div class="col-left">
+					<h3 class="text-underlined">The only <span>search platform</span> designed for the modern enterprise</h3>
+					<a href="" class="button">Request Demo</a>
+				</div>
+				<div class="col-right">
+					<ul>
+						<li>
+							<div class="box-metric">
+								<small>
+									<i class="icon-monitor"></i>
+									LOREM IPSUM
+								</small>
+								<h3>
+									9.7
+								</h3>
+								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
+							</div>
+						</li>
+						<li>
+							<div class="box-metric red">
+								<small>
+									<i class="icon-search"></i>
+									LOREM IPSUM
+								</small>
+								<h3>
+									23%
+								</h3>
+								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
+							</div>
+						</li>
+						<li>
+							<div class="box-metric lighten">
+								<small>
+									<i class="icon-headphones"></i>
+									LOREM IPSUM
+								</small>
+								<h3>
+									85%
+								</h3>
+								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
+							</div>
+						</li>
+						<li>
+							<div class="box-metric lighten2">
+								<small>
+									<i class="icon-window"></i>
+									LOREM IPSUM
+								</small>
+								<h3>
+									500
+								</h3>
+								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<div class="cool-sep"></div>
+
+		<section class="solution-for-industry">
+			<div class="container">
+				<h2>The Right Solution for your Industry</h2>
+			</div>
+		</section>
 <?php get_footer(); ?>
 

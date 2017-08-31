@@ -1,6 +1,8 @@
-#loader {
-    background: white;
-    @include absolute;
+.solution-for-industry {
+	text-align: center;
+	h2 {
+		@extend .underlined;
+	}
 }
 
 // 768px
