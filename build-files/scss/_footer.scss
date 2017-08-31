@@ -1,6 +1,106 @@
+/*//////// FOOTER ////////*/
+
 .footer {
+	*{
+		box-sizing: border-box;
+	}
+	font-size: 16px;
+	color: #9baaba;
+
+	.col-brand{
+		padding-bottom: 35px;
+		img{
+			max-height: 30px;
+		}	
+	}
+
+	.links{
+		background: white;
+	}
+	.sub-footer{
+		background: fuchsia;
+	}
+
+	a{
+		color: #9baaba;
+		&:hover{
+			color: darken(#6b7d92, 10%);
+		}
+	}
+	h4{
+		font-family: $font-bold;
+		color: #6b7d92;
+		font-size: 18px;
+		text-transform: uppercase;
+		margin: 0 0 8px;
+		a{
+			color: #6b7d92;
+			&:hover{
+				color: darken(#6b7d92, 10%);
+			}
+		}
+	}
+
+	ul, li{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		font-size: 16px;
+	}
+	ul{
+		margin-top: 25px;
+		li{
+			margin-bottom: 8px;
+		}
+	}
 	.container {
-		background: red;
+		display: flex;
+		flex-flow: row wrap;
+		.col{
+			flex: 0 0 auto;
+
+			&.col-1{
+				width: 17%;
+			}
+			&.col-2{
+				width: 13.5%;
+			}
+			&.col-3{
+				width: 12.5%;
+			}
+			&.col-4{
+				width: 16%;
+			}
+			&.col-5{
+				width: 19%;
+
+				.button{
+					font-size: 15px;
+					color: white;
+					max-width: 100px;
+					padding: 10px;
+					margin-bottom: 25px;
+					display:block;
+					&:hover{
+						color: $brand-primary;
+					}
+
+					&.white{
+						background: white;
+						color: $brand-primary;
+						border: none;
+						@include box-shadow(0px, 0px, 8px, #ddd);
+						&:hover{
+							background: $brand-primary;
+							color: white;
+						}
+					}
+				}
+			}
+			&.col-6{
+				width: 22%;
+			}
+		}
 	}
 }
 
@@ -15,3 +115,4 @@
 // 1200px
 @media all and (min-width: $screen-desktop) {
 }
+/*//////// END FOOTER ////////*/
