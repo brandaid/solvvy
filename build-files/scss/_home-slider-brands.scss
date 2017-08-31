@@ -189,23 +189,6 @@
 	}
 }
 
-.cool-sep {
-	border-top: 2px solid lighten($brand-tertiary, 40%);
-	background: #f8fbfd;
-    background: -webkit-linear-gradient(#f8fbfd, white);
-    background: -o-linear-gradient(#f8fbfd, white);
-    background: -moz-linear-gradient(#f8fbfd, white);
-    background: linear-gradient(#f8fbfd, white);
-	height: 47px;
-	width: 100%;
-	// 992px
-	@media all and (min-width: $screen-landscape) {
-		&.top {
-			display: none;
-		}
-	}
-}
-
 article.brands {
 	.col-left {
 		text-align: center;
