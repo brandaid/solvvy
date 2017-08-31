@@ -6,6 +6,13 @@
 	}
 }
 
+.panel-solution {
+	display: none;
+	&.the-first {
+		display: block;
+	}
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 }
