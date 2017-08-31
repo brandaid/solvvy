@@ -239,6 +239,16 @@
 		<section class="solution-for-industry">
 			<div class="container">
 				<h2>The Right Solution for your Industry</h2>
+				<select id="solutions">
+					<option value="role">For Your Role</option>
+					<option value="business">For Your Business Type</option>
+					<option value="industry">For Your Industry</option>
+				</select>
+
+				<div>for your role</div>
+				<div>for you business</div>
+				<div>for your industry</div>
+				
 			</div>
 		</section>
 <?php get_footer(); ?>
