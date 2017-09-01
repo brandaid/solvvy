@@ -79,6 +79,9 @@ a, a:hover, a:active, a:focus {
 	margin-left: 15px;
 	margin-right: 15px;
 	@include center;
+	&.top {
+		width: 100% !important;
+	}
 	// 992px
 	@media all and (min-width: $screen-landscape) {
 		&.top {

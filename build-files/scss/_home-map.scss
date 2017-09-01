@@ -1,5 +1,5 @@
 .box-map {
-	padding: 60px 0 160px 0;
+	padding: 60px 0 230px 0;
 	text-align: center;
 	position: relative;
 	.container {
@@ -14,7 +14,7 @@
 		height: 5px;
 		width: 100%;
 		left: 0;
-		bottom: 100px;
+		bottom: 260px;
 		z-index: 999;
 	}
 	h2 {
@@ -63,7 +63,7 @@
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	.box-map {
-		padding: 120px 0;
+		padding: 120px 0 340px 0;
 		.container {
 			padding-top: 190px;
 			padding-bottom: 190px;
@@ -77,6 +77,9 @@
 		}
 		a.button {
 			margin: 0px 25px;
+		}
+		&:before {
+			bottom: 290px;
 		}
 	}
 }
