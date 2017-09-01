@@ -167,3 +167,10 @@
         }
     }
 }
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+    .nice-select {
+        margin-top: 0;
+    }
+}
