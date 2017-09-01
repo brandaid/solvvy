@@ -24,19 +24,19 @@
 		font-size: 16px;
 		font-family: $font-semibold;
 		position: relative;
-		&:before {
-			content: '\e804';
-			@include font-solvvy;
+		text-transform: uppercase;
+		i {
 			position: absolute;
-			left: -40px;
-			font-size: 20px;
+			left: -60px;
+			top: -5px;
+			font-size: 30px;
 		}
 		&:after {
 			content: "\f054";
 			@include fontawesome;
 			font-size: 18px;
 			position: relative;
-			top: -2px;
+			vertical-align: middle;
 			opacity: .5;
 			margin-left: 20px;
 		}
@@ -47,7 +47,7 @@
 		line-height: 1.5em;
 		font-family: $font-light;
 	}
-	&.panel-rol {
+	&.panel-role {
 		display: block;
 	}
 	&.panel-business {
@@ -66,6 +66,9 @@
 .tab-link {
 	display: none;
 }
+.columns-solutions {
+	margin-top: 80px;
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
 
@@ -79,11 +82,38 @@
 	.tab-link {
 		display: block;
 		text-align: left;
+		@include border-box;
+		padding: 30px 40px 10px 68px;
+		cursor: pointer;
+		@include transition;
+		h4 {
+			text-transform: uppercase;
+			font-family: $font-semibold;
+			font-size: 18px;
+			position: relative;
+			color: $brand-primary;
+			i {
+				position: absolute;
+				left: -50px;
+				top: -8px;
+				font-size: 30px;
+			}
+		}
 		&:hover {
-			@include linear-gradient(to right, hotpink, tomato);
+			@include linear-gradient(to right, #f9fbfd, transparent);
 		}
 		&.active {
-			@include linear-gradient(to right, hotpink, tomato);
+			@include linear-gradient(to right, #f9fbfd, transparent);
+		}
+		&.tab-business {
+			h4 {
+				color: $brand-secondary;
+			}
+		}
+		&.tab-industry {
+			h4 {
+				color: $brand-tertiary;
+			}
 		}
 	}
 	.columns-solutions {
@@ -100,9 +130,36 @@
 		max-width: 512px;
 		padding: 70px 70px 140px 97px;
 		margin-top: 0;
+		position: relative;
+		&:before {
+			content: "\f0d9";
+			@include fontawesome;
+			color: white;
+			font-size: 30px;
+			// color: red;
+			text-shadow: -4px 0px 5px rgba(0,0,0,.1);
+			display: block;
+			left: -10px;
+			top: 14%;
+			position: absolute;
+
+		}
+		&.panel-business {
+			&:before {
+				top: 43%;
+			}
+		}
+		&.panel-industry {
+			&:before {
+				top: 73%;
+			}
+		}
 	}
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
+	.tab-link {
+		padding: 48px 57px 28px 118px;
+	}
 }
