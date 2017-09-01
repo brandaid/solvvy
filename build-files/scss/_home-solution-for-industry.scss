@@ -27,9 +27,9 @@
 		text-transform: uppercase;
 		i {
 			position: absolute;
-			left: -60px;
-			top: -5px;
-			font-size: 30px;
+			left: -40px;
+			top: -2px;
+			font-size: 20px;
 		}
 		&:after {
 			content: "\f054";
@@ -131,6 +131,13 @@
 		padding: 70px 70px 140px 97px;
 		margin-top: 0;
 		position: relative;
+		h4 {
+			i {
+				left: -60px;
+				top: -5px;
+				font-size: 30px;
+			}
+		}
 		&:before {
 			content: "\f0d9";
 			@include fontawesome;
@@ -157,7 +164,7 @@
 	}
 	.solution-for-industry {
 		background-image: url(images/backer1.png), url(images/backer2.png);
-	    background-position: right bottom, left top;
+	    background-position: right 90%, left 10%;
 	    background-repeat: no-repeat, no-repeat;
 	}
 }
