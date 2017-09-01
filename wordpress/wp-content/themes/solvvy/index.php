@@ -245,9 +245,9 @@
 					<option value="industry">For Your Industry</option>
 				</select>
 
-				<div>for your role</div>
-				<div>for you business</div>
-				<div>for your industry</div>
+				<div class="panel-solution panel-rol the-first" id="panel-role">for your role</div>
+				<div class="panel-solution panel-business"  id="panel-business">for you business</div>
+				<div class="panel-solution panel-industry" id="panel-industry">for your industry</div>
 				
 			</div>
 		</section>
