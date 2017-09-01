@@ -250,34 +250,34 @@
 							<option value="industry">For Your Industry</option>
 						</select>
 
-						<a href="" class="tab-link active" data-value="role">
-							<h4>FOR YOUR ROLE</h4>
+						<div class="tab-link tab-role" data-value="role">
+							<h4><i class="icon-whatsapp"></i>FOR YOUR ROLE</h4>
 							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</a>
-						<a href="" class="tab-link" data-value="business">
-							<h4>For Your Business Type</h4>
+						</div>
+						<div class="tab-link tab-business" data-value="business">
+							<h4><i class="icon-barcode-scan"></i>For Your Business Type</h4>
 							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</a>
-						<a href="" class="tab-link" data-value="industry">
-							<h4>For Your Industry</h4>
+						</div>
+						<div class="tab-link tab-industry" data-value="industry">
+							<h4><i class="icon-bowl"></i>For Your Industry</h4>
 							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</a>
+						</div>
 
 					</div>
 
 					<div class="col-right">
-						<div class="panel-solution panel-rol" id="panel-role">
+						<div class="panel-solution panel-role" id="panel-role">
 							<ul>
 								<li>
-									<h4>SUPPORT</h4>
+									<h4><i class="icon-headphones"></i>SUPPORT</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 								<li>
-									<h4>Customer Experience</h4>
+									<h4><i class="icon-smiley"></i>Customer Experience</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 								<li>
-									<h4>Finance</h4>
+									<h4><i class="icon-atm"></i>Finance</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 							</ul>
@@ -285,15 +285,15 @@
 						<div class="panel-solution panel-business"  id="panel-business">
 							<ul>
 								<li>
-									<h4>SUPPORT</h4>
+									<h4><i class="icon-headphones"></i>SUPPORT</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 								<li>
-									<h4>Customer Experience</h4>
+									<h4><i class="icon-smiley"></i>Customer Experience</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 								<li>
-									<h4>Finance</h4>
+									<h4><i class="icon-atm"></i>Finance</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 							</ul>
@@ -301,15 +301,15 @@
 						<div class="panel-solution panel-industry" id="panel-industry">
 							<ul>
 								<li>
-									<h4>SUPPORT</h4>
+									<h4><i class="icon-headphones"></i>SUPPORT</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 								<li>
-									<h4>Customer Experience</h4>
+									<h4><i class="icon-smiley"></i>Customer Experience</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 								<li>
-									<h4>Finance</h4>
+									<h4><i class="icon-atm"></i>Finance</h4>
 									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
 								</li>
 							</ul>
