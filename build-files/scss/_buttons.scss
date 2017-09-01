@@ -19,6 +19,10 @@
 		background: white;
 		color: $brand-primary;
 	}
+	&.button-secondary {
+		background: $brand-secondary;
+		border-color: $brand-secondary;
+	}
 }
 
 .icon-play {
