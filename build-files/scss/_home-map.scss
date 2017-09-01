@@ -1,11 +1,21 @@
 .box-map {
-	padding: 60px 0;
+	padding: 60px 0 160px 0;
 	text-align: center;
+	position: relative;
 	.container {
 		background: url(images/map.png) top center no-repeat;
 		background-size: contain;
 		padding-top: 50px;
 		padding-bottom: 50px;
+	}
+	&:before {
+		content: url(images/blue-ball.png);
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		left: 0;
+		bottom: 100px;
+		z-index: 999;
 	}
 	h2 {
 		@extend .underlined;
