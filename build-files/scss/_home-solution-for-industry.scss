@@ -8,17 +8,99 @@
 
 .panel-solution {
 	display: none;
-	&.the-first {
+	background: white url(images/waves-pink.png) no-repeat bottom;
+	margin-top: 34px;
+	padding: 50px 26px 130px 67px;
+	@include box-shadow(0px, 0px, 10px, rgba(0,0,0,.2));
+	text-align: left;
+	max-width: 350px;
+	@include center;
+	@include border-box;
+	ul {
+		@include formated-list;
+	}
+	h4 {
+		color: $brand-primary;
+		font-size: 16px;
+		font-family: $font-semibold;
+		position: relative;
+		&:before {
+			content: '\e804';
+			@include font-solvvy;
+			position: absolute;
+			left: -40px;
+			font-size: 20px;
+		}
+		&:after {
+			content: "\f054";
+			@include fontawesome;
+			font-size: 18px;
+			position: relative;
+			top: -2px;
+			opacity: .5;
+			margin-left: 20px;
+		}
+
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.5em;
+		font-family: $font-light;
+	}
+	&.panel-rol {
 		display: block;
 	}
+	&.panel-business {
+		background: white url(images/waves-blue.png) no-repeat bottom;
+		h4 {
+			color: $brand-secondary;
+		}
+	}
+	&.panel-industry {
+		background: white url(images/waves-gray.png) no-repeat bottom;
+		h4 {
+			color: $brand-tertiary;
+		}
+	}
 }
-
+.tab-link {
+	display: none;
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
+
 }
 
 // 992px
 @media all and (min-width: $screen-landscape) {
+	.solutions {
+		display: none;
+	}
+	.tab-link {
+		display: block;
+		text-align: left;
+		&:hover {
+			@include linear-gradient(to right, hotpink, tomato);
+		}
+		&.active {
+			@include linear-gradient(to right, hotpink, tomato);
+		}
+	}
+	.columns-solutions {
+		display: table;
+		width: 100%;
+		.col-left,
+		.col-right {
+			display: table-cell;
+			width: 50%;
+			vertical-align: top;
+		}
+	}
+	.panel-solution {
+		max-width: 512px;
+		padding: 70px 70px 140px 97px;
+		margin-top: 0;
+	}
 }
 
 // 1200px

@@ -54,6 +54,12 @@
 	background: linear-gradient(to right, #21135f, #3f2689, #5d0e8b);
 }
 
+@mixin linear-gradient($direction, $color-stops...) {
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	background: linear-gradient($direction, $color-stops);
+}
+
 @mixin font-solvvy {
 	font-family: "solvvy";
 	font-style: normal;
@@ -74,7 +80,6 @@
 	-moz-osx-font-smoothing: grayscale;
 
 }
-
 
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
 	@if $inset {
