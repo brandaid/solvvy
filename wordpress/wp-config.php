@@ -29,8 +29,6 @@ if (isset($_SERVER['DB_NAME'])) {
 	/** MySQL database password */
 	define('DB_PASSWORD', $_SERVER['DB_PASS']);
 
-	/** MySQL hostname */
-	define('DB_HOST', $_SERVER['DB_HOST']);
 } else {
 	/** The name of the database for WordPress */
 	define('DB_NAME', 'solvvy');
@@ -41,9 +39,10 @@ if (isset($_SERVER['DB_NAME'])) {
 	/** MySQL database password */
 	define('DB_PASSWORD', 'root');
 
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost');
 }
+
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
