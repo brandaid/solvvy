@@ -16,7 +16,7 @@
 			<div class="container">
 				<h1>Unlock the power of you enterprise knowledge</h1>
 				<h3>Solvvy is behind some of the world's most advanced machine learning, artificial intelligence and natural language science.</h3>
-				<a href="" class="button">WATCH <i class="icon-play"></i></a>
+				<a href="#" class="button" id="myBtn">WATCH <i class="icon-play"></i></a>
 			</div>
 			<div class="waves"></div>
 			<div class="circles"></div>
@@ -326,11 +326,26 @@
 
 		<section class="box-map">
 			<div class="container">
-				<h2>Join the Thousands of Companies Using Solvvy</h2>
+				<h2>Join The Thousands of Companies Using Solvvy</h2>
 				<p>Signing up is fast, free and easy. Call us today at (650) 246-9685.</p>
 				<a href="" class="button">Button</a>
 				<a href="" class="button button-secondary">Button</a>
 			</div>
 		</section>
+
+		<!-- Trigger/Open The Modal -->
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <div class="videoWrapper">
+		    	<iframe src="https://player.vimeo.com/video/217907071" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+		  </div>
+
+		</div>
 <?php get_footer(); ?>
 
