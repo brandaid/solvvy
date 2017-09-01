@@ -140,6 +140,10 @@
 			li {
 				display: inline-block;
 				width: 50%;
+				&:nth-child(odd) {
+					padding-right: 30px;
+					@include border-box;
+				}
 				&:nth-child(even) {
 					text-align: right;
 				}

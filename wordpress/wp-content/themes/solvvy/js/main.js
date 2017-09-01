@@ -51,29 +51,32 @@ $(document).ready(function() {
 
 	$('select').niceSelect();
 
+	$('.tab-role').addClass('active');
 
-	$('ul.list li').click(function() {
+	$('ul.list li, .tab-link').click(function() {
 	    if($(this).data("value") === "role"){
-	        $("#panel-role").show();
-	        $("#panel-business").hide();
-	        $("#panel-industry").hide();
+	        $("#panel-role").delay("500").fadeIn();
+	        $("#panel-business").delay("100").fadeOut();
+	        $("#panel-industry").delay("100").fadeOut();
+	        $(this).addClass('active');
+	        $(".tab-industry, .tab-business").removeClass('active');
 	    };
-
-	});
-
-	$('ul.list li').click(function() {
 	    if($(this).data("value") === "business"){
-	        $("#panel-role").hide();
-	        $("#panel-business").show();
-	        $("#panel-industry").hide();
+	        $("#panel-role").delay("100").fadeOut();
+	        $("#panel-business").delay("500").fadeIn();
+	        $("#panel-industry").delay("100").fadeOut();
+
+	        $(this).addClass('active');
+	        $(".tab-industry, .tab-role").removeClass('active');
+	    };
+	    if($(this).data("value") === "industry"){
+	        $("#panel-role").delay("100").fadeOut();
+	        $("#panel-business").delay("100").fadeOut();
+	        $("#panel-industry").delay("500").fadeIn();
+
+	        $(this).addClass('active');
+	        $(".tab-business, .tab-role").removeClass('active');
 	    };
 	});
 
-	$('ul.list li').click(function() {
-	    if($(this).data("value") === "industry"){
-	        $("#panel-role").hide();
-	        $("#panel-business").hide();
-	        $("#panel-industry").show();
-	    };
-	});
 });
