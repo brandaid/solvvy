@@ -19,15 +19,15 @@
  */
 
 
-if (isset($_SERVER['DB_NAME'])) {
+if (isset($_ENV['DB_NAME'])) {
 	/** The name of the database for WordPress */
-	define('DB_NAME', $_SERVER['DB_NAME']);
+	define('DB_NAME', $_ENV['DB_NAME']);
 
 	/** MySQL database username */
-	define('DB_USER', $_SERVER['DB_USER']);
+	define('DB_USER', $_ENV['DB_USER']);
 
 	/** MySQL database password */
-	define('DB_PASSWORD', $_SERVER['DB_PASS']);
+	define('DB_PASSWORD', $_ENV['DB_PASS']);
 
 } else {
 	/** The name of the database for WordPress */
