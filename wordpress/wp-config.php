@@ -18,9 +18,15 @@
  * @package WordPress
  */
 
-$WP_ENV_INI = parse_ini_file("wp_env.ini");
+$has_init_file = file_exists("wp_env.ini");
 
-if (isset($WP_ENV_INI['DB_NAME'])) {
+if($has_init_file){
+	$WP_ENV_INI = parse_ini_file("wp_env.ini");
+}
+
+
+
+if ($has_init_file) {
 	/** The name of the database for WordPress */
 	define('DB_NAME', $WP_ENV_INI['DB_NAME']);
 
