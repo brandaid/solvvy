@@ -18,16 +18,17 @@
  * @package WordPress
  */
 
+$wp_env = parse_ini_file("wp_env.ini");
 
-if (isset($_SERVER('DB_NAME'))) {
+if (isset($wp_env('DB_NAME'))) {
 	/** The name of the database for WordPress */
-	define('DB_NAME', $_SERVER('DB_NAME'));
+	define('DB_NAME', $wp_env('DB_NAME'));
 
 	/** MySQL database username */
-	define('DB_USER', $_SERVER('DB_USER'));
+	define('DB_USER', $wp_env('DB_USER'));
 
 	/** MySQL database password */
-	define('DB_PASSWORD', $_SERVER('DB_PASS'));
+	define('DB_PASSWORD', $wp_env('DB_PASS'));
 
 } else {
 	/** The name of the database for WordPress */
