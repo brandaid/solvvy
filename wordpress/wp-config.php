@@ -18,16 +18,23 @@
  * @package WordPress
  */
 
+$has_init_file = file_exists("wp_env.ini");
 
-if (isset($_SERVER['DB_NAME'])) {
+if($has_init_file){
+	$WP_ENV_INI = parse_ini_file("wp_env.ini");
+}
+
+
+
+if ($has_init_file) {
 	/** The name of the database for WordPress */
-	define('DB_NAME', $_SERVER['DB_NAME']);
+	define('DB_NAME', $WP_ENV_INI['DB_NAME']);
 
 	/** MySQL database username */
-	define('DB_USER', $_SERVER['DB_USER']);
+	define('DB_USER', $WP_ENV_INI['DB_USER']);
 
 	/** MySQL database password */
-	define('DB_PASSWORD', $_SERVER['DB_PASS']);
+	define('DB_PASSWORD', $WP_ENV_INI['DB_PASSWORD']);
 
 } else {
 	/** The name of the database for WordPress */
