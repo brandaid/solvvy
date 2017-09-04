@@ -1,0 +1,45 @@
+.value-tags {
+	background: url(images/bigger.png) no-repeat center center;
+	padding: 165px 0;
+
+	h3 {
+		color: white;
+		@extend .underlined;
+		font-size: 36px;
+		&:after {
+			margin-left: 0;
+		}
+	}
+	p {
+		color: #bdb2f2;
+		margin-bottom: 55px;
+		line-height: 1.5em;
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.value-tags {
+		.container {
+			display: table;
+			width: 100%;
+			.col-info,
+			.col-slider {
+				display: table-cell;
+				width: 60%;
+				background: red;
+			}
+			.col-slider {
+				background: olive
+			}
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}
