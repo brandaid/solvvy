@@ -1,6 +1,13 @@
 .driving-companies {
 	padding: 60px 0px;
 	text-align: center;
+	&.driving-interior {
+		padding: 30px 0 20px 0;
+		h3 {
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+	}
 	// 768px
 	@media all and (min-width: $screen-portrait) {
 		padding: 180px 0 85px 0;

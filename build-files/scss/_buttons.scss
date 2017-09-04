@@ -29,6 +29,12 @@
 	}
 }
 
+.button-tn {
+	@extend .button;
+	padding: 10px 18px;
+	font-size: 15px;
+}
+
 .icon-play {
 	font-size: 24px;
 	display: inline-block;

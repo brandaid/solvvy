@@ -37,7 +37,7 @@
 
 		<!-- INDUSTRY NEWS -->
 		
-		<section class="industry-news">
+		<section class="box-gray industry-news">
 			<div class="container">
 				<h3>INDUSTRY NEWS</h3>
 				<hr>
@@ -173,6 +173,9 @@
 			</div>
 		</section>
 		<div class="cool-sep"></div>
+
+		<!-- SECTION METRICS -->
+		
 		<section class="metrics">
 			<div class="container">
 				<div class="col-left">
@@ -235,6 +238,8 @@
 		</section>
 
 		<div class="cool-sep"></div>
+
+		<!-- SECTION INDUSTRY -->
 
 		<section class="solution-for-industry">
 			<div class="container">
@@ -323,6 +328,8 @@
 		</section>
 
 		<div class="cool-sep"></div>
+
+		<!-- SECTION BOX MAP -->
 
 		<section class="box-map">
 			<div class="container">
