@@ -36,7 +36,18 @@
 			</div>
 		</section>
 
-		<div class="cool-sep"></div>
+		<section class="value-tags">
+			<div class="container">
+				<div class="col-info">
+					<h3>Lorem Ipsum Healine</h3>
+					<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork </p>
+					<a href="#" class="button">Button</a>
+				</div>
+				<div class="col-slider">
+					asdasd
+				</div>
+			</div>
+		</section>
 		
 
 		<!-- PANELS -->
