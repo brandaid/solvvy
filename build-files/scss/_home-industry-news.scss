@@ -1,9 +1,15 @@
-.industry-news {
-	background: lighten($brand-tertiary, 45%);
+.box-gray {
+	background: $gray_lighter;
 	padding: 38px 30px;
-	border-top: 2px solid lighten($brand-tertiary, 35%);
-	border-bottom: 2px solid lighten($brand-tertiary, 35%);
+	border-top: 1px solid #e9edf1;
+	border-bottom: 1px solid #e9edf1;
 	text-align: center;
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		padding: 25px 0;
+	}
+}
+.industry-news {
 	h3 {
 		color: $brand-tertiary;
 		font-family: $font-bold;
@@ -31,7 +37,7 @@
 	}
 	// 992px
 	@media all and (min-width: $screen-landscape) {
-		padding: 25px 0;
+		
 		h3, hr, p, a {
 			display: inline-block;
 			vertical-align: middle;

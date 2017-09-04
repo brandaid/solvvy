@@ -1,0 +1,45 @@
+.box-text-top {
+	text-align: center;
+	background: url(images/bkg-box-text-top.png) no-repeat bottom right;
+	position: relative;
+	padding: 130px 30px 100px 30px;
+	@include border-box;
+	&:before {
+		content: url(images/pink-ball.png);
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		left: 0;
+		top: -100px;
+		z-index: 999;
+	}
+	h2 {
+		@extend .underlined;
+		&:after {
+			margin-left: auto;
+		}
+		font-family: $font-semibold;
+		font-size: 36px;
+	}
+	p {
+		font-size: 20px;
+		line-height: 1.6em;
+		margin-bottom: 56px;
+		text-align: left;
+	}
+	.container {
+		max-width: 850px;
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

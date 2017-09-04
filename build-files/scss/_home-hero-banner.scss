@@ -10,6 +10,11 @@
 	@media all and (min-width: $screen-landscape) {
 		padding-top: 200px;
 		padding-bottom: 360px;
+
+		&.hero-banner-interior {
+			padding-top: 130px;
+			padding-bottom: 240px;
+		}
 	}
 	
 	&:before {
