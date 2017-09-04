@@ -113,3 +113,44 @@ $(document).ready(function() {
 	    }
 	}
 });
+
+
+
+
+
+
+
+
+
+// SmartMenus init
+$(function() {
+  $('#main-menu').smartmenus({
+    subMenusSubOffsetX: 1,
+    subMenusSubOffsetY: -8,
+    subMenusMinWidth:	'10em',
+	subMenusMaxWidth:	'20em',
+	subIndicators: 		false
+  });
+});
+
+// SmartMenus mobile menu toggle button
+$(function() {
+  var $mainMenuState = $('#main-menu-state');
+  if ($mainMenuState.length) {
+    // animate mobile menu
+    $mainMenuState.change(function(e) {
+      var $menu = $('#main-menu');
+      if (this.checked) {
+        $menu.hide().slideDown(50, function() { $menu.css('display', ''); });
+      } else {
+        $menu.show().slideUp(50, function() { $menu.css('display', ''); });
+      }
+    });
+    // hide mobile menu beforeunload
+    $(window).bind('beforeunload unload', function() {
+      if ($mainMenuState[0].checked) {
+        $mainMenuState[0].click();
+      }
+    });
+  }
+});
