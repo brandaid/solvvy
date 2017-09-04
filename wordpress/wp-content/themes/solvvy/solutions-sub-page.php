@@ -3,7 +3,7 @@
  * @package WordPress
  * @subpackage Solvvy
 
- Template Name: Template Solutions Lander
+ Template Name: Template Solutions Subpage
 
 */
 ?>
@@ -16,7 +16,7 @@
 
 		<section class="hero-banner hero-banner-interior">
 			<div class="container">
-				<h1>Solvvy for your Role</h1>
+				<h1>Solvvy for Customer Experience</h1>
 				<h3>Bacon ipsum dolor amet bacon leberkas alcatra doner drumstick. Brisket meatloaf boudin.</h3>
 			</div>
 			<div class="waves"></div>
@@ -27,11 +27,12 @@
 		<!-- BOX TEXT -->
 		
 
-		<section class="box-text-top">
+		<section class="box-text-top box-text-and-image-top">
 			<div class="container">
+				<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive gif-animate">
 				<h2>Lorem Ipsum Headline</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-				<a href="" class="button">Learn Morel</a>
+				<a href="" class="button">Button</a>
 			</div>
 		</section>
 
@@ -141,6 +142,28 @@
 		</section>
 
 
+		<!-- STORY BOX -->
+
+		<section class="interior-story">
+			<div class="container">
+				<article class="brands">
+					<div class="col-left">
+						<img src="<?php bloginfo('template_url'); ?>/images/br-evite.png" alt="">
+						<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
+						<a href="" class="button">Read Their Story</a>
+					</div>
+					<div class="col-right">
+						<figure class="image-slider">
+							<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
+						</figure>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<div class="cool-sep"></div>
+
+
 		<!-- SECTION METRICS -->
 		
 
@@ -207,24 +230,24 @@
 
 
 		<!-- BOX BLUE FPO -->
-
-
-		<section class="box-gray">
+		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
+		<div class="blue-box-waves">
 			<div class="container">
-				<div class="blue-box">
-					<div class="image">
-						<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
-					</div>
-					<div class="info">
-						<h2>Lorem Ipsum Asset Name</h2>
-						<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-						<a href="" class="button-tn">READ NOW</a>
-					</div>
+				<div class="image">
+					<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
+				</div>
+				<div class="info">
+					<h2>Lorem Ipsum Asset Name</h2>
+					<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
+					<a href="" class="button-tn">READ NOW</a>
 				</div>
 			</div>
-		</section>
+		</div>
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
+
 
 		<!-- BOX MAP -->
+
 
 		<section class="box-map">
 			<div class="container">
@@ -235,5 +258,5 @@
 			</div>
 		</section>
 
-<?php get_footer(); ?>
 
+<?php get_footer(); ?>

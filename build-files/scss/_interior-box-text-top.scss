@@ -32,6 +32,23 @@
 	}
 }
 
+
+.box-text-and-image-top {
+	@extend .box-text-top;
+	background: url(images/bkg-orbits.png);
+	.container {
+		max-width: 1300px;
+
+		img.gif-animate {
+			margin-bottom: 180px;
+		}
+
+		p {
+			text-align: center;
+		}
+	}
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 }
