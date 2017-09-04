@@ -18,19 +18,19 @@
  * @package WordPress
  */
 
-// $wp_env = parse_ini_file("wp_env.ini");
+$WP_ENV_INI = parse_ini_file("wp_env.ini");
 
-// if (isset($wp_env('DB_NAME'))) {
+if (isset($WP_ENV_INI['DB_NAME'])) {
 	/** The name of the database for WordPress */
-	// define('DB_NAME', $wp_env('DB_NAME'));
+	define('DB_NAME', $WP_ENV_INI['DB_NAME']);
 
 	/** MySQL database username */
-	// define('DB_USER', $wp_env('DB_USER'));
+	define('DB_USER', $WP_ENV_INI['DB_USER']);
 
 	/** MySQL database password */
-	// define('DB_PASSWORD', $wp_env('DB_PASS'));
+	define('DB_PASSWORD', $WP_ENV_INI['DB_PASSWORD']);
 
-// } else {
+} else {
 	/** The name of the database for WordPress */
 	define('DB_NAME', 'solvvy');
 
@@ -40,7 +40,7 @@
 	/** MySQL database password */
 	define('DB_PASSWORD', 'root');
 
-// }
+}
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
