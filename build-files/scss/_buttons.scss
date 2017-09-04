@@ -19,6 +19,14 @@
 		background: white;
 		color: $brand-primary;
 	}
+	&.button-secondary {
+		background: $brand-secondary;
+		border-color: $brand-secondary;
+		&:hover {
+			color: 	$brand-secondary;
+			background: white;
+		}
+	}
 }
 
 .icon-play {

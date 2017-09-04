@@ -18,24 +18,38 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'solvvy');
 
-/** MySQL database username */
-define('DB_USER', 'root');
+if (isset($_SERVER['DB_NAME'])) {
+	/** The name of the database for WordPress */
+	define('DB_NAME', $_SERVER['DB_NAME']);
 
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
+	/** MySQL database username */
+	define('DB_USER', $_SERVER['DB_USER']);
+
+	/** MySQL database password */
+	define('DB_PASSWORD', $_SERVER['DB_PASS']);
+
+} else {
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'solvvy');
+
+	/** MySQL database username */
+	define('DB_USER', 'root');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'root');
+
+}
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -63,6 +77,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
+
 $table_prefix  = 'D8eZ9xYwa_';
 
 /**

@@ -51,29 +51,65 @@ $(document).ready(function() {
 
 	$('select').niceSelect();
 
+	$('.tab-role').addClass('active');
 
-	$('ul.list li').click(function() {
+	$('ul.list li, .tab-link').click(function() {
 	    if($(this).data("value") === "role"){
-	        $("#panel-role").show();
-	        $("#panel-business").hide();
-	        $("#panel-industry").hide();
+	        $("#panel-role").delay("500").fadeIn();
+	        $("#panel-business").delay("100").fadeOut();
+	        $("#panel-industry").delay("100").fadeOut();
+	        $(this).addClass('active');
+	        $(".tab-industry, .tab-business").removeClass('active');
 	    };
-
-	});
-
-	$('ul.list li').click(function() {
 	    if($(this).data("value") === "business"){
-	        $("#panel-role").hide();
-	        $("#panel-business").show();
-	        $("#panel-industry").hide();
+	        $("#panel-role").delay("100").fadeOut();
+	        $("#panel-business").delay("500").fadeIn();
+	        $("#panel-industry").delay("100").fadeOut();
+
+	        $(this).addClass('active');
+	        $(".tab-industry, .tab-role").removeClass('active');
+	    };
+	    if($(this).data("value") === "industry"){
+	        $("#panel-role").delay("100").fadeOut();
+	        $("#panel-business").delay("100").fadeOut();
+	        $("#panel-industry").delay("500").fadeIn();
+
+	        $(this).addClass('active');
+	        $(".tab-business, .tab-role").removeClass('active');
 	    };
 	});
 
-	$('ul.list li').click(function() {
-	    if($(this).data("value") === "industry"){
-	        $("#panel-role").hide();
-	        $("#panel-business").hide();
-	        $("#panel-industry").show();
-	    };
-	});
+	// MODAL
+
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the modal
+	var video = document.getElementById('video');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+
+	// When the user clicks on the button, open the modal 
+	btn.onclick = function() {
+	    modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	    modal.style.display = "none";
+	    video.src = document.getElementById('video').src;
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+	        modal.style.display = "none";
+	        video.src = document.getElementById('video').src;
+	    }
+	}
 });

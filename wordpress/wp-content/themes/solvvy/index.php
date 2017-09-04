@@ -16,7 +16,7 @@
 			<div class="container">
 				<h1>Unlock the power of you enterprise knowledge</h1>
 				<h3>Solvvy is behind some of the world's most advanced machine learning, artificial intelligence and natural language science.</h3>
-				<a href="" class="button">WATCH <i class="icon-play"></i></a>
+				<a href="#" class="button" id="myBtn">WATCH <i class="icon-play"></i></a>
 			</div>
 			<div class="waves"></div>
 			<div class="circles"></div>
@@ -239,17 +239,113 @@
 		<section class="solution-for-industry">
 			<div class="container">
 				<h2>The Right Solution for your Industry</h2>
-				<select id="solutions">
-					<option value="role">For Your Role</option>
-					<option value="business">For Your Business Type</option>
-					<option value="industry">For Your Industry</option>
-				</select>
+				
+				<div class="columns-solutions">
+					
+					<div class="col-left">
+				
+						<select class="solutions" id="solutions">
+							<option value="role">For Your Role</option>
+							<option value="business">For Your Business Type</option>
+							<option value="industry">For Your Industry</option>
+						</select>
 
-				<div class="panel-solution panel-rol the-first" id="panel-role">for your role</div>
-				<div class="panel-solution panel-business"  id="panel-business">for you business</div>
-				<div class="panel-solution panel-industry" id="panel-industry">for your industry</div>
+						<div class="tab-link tab-role" data-value="role">
+							<h4><i class="icon-whatsapp"></i>FOR YOUR ROLE</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link tab-business" data-value="business">
+							<h4><i class="icon-barcode-scan"></i>For Your Business Type</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link tab-industry" data-value="industry">
+							<h4><i class="icon-bowl"></i>For Your Industry</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+
+					</div>
+
+					<div class="col-right">
+						<div class="panel-solution panel-role" id="panel-role">
+							<ul>
+								<li>
+									<h4><i class="icon-headphones"></i>SUPPORT</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+								<li>
+									<h4><i class="icon-smiley"></i>Customer Experience</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+								<li>
+									<h4><i class="icon-atm"></i>Finance</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="panel-solution panel-business"  id="panel-business">
+							<ul>
+								<li>
+									<h4><i class="icon-headphones"></i>SUPPORT</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+								<li>
+									<h4><i class="icon-smiley"></i>Customer Experience</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+								<li>
+									<h4><i class="icon-atm"></i>Finance</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+							</ul>
+						</div>
+						<div class="panel-solution panel-industry" id="panel-industry">
+							<ul>
+								<li>
+									<h4><i class="icon-headphones"></i>SUPPORT</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+								<li>
+									<h4><i class="icon-smiley"></i>Customer Experience</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+								<li>
+									<h4><i class="icon-atm"></i>Finance</h4>
+									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
 				
 			</div>
 		</section>
+
+		<div class="cool-sep"></div>
+
+		<section class="box-map">
+			<div class="container">
+				<h2>Join The Thousands of Companies Using Solvvy</h2>
+				<p>Signing up is fast, free and easy. Call us today at (650) 246-9685.</p>
+				<a href="" class="button">Button</a>
+				<a href="" class="button button-secondary">Button</a>
+			</div>
+		</section>
+
+		<!-- Trigger/Open The Modal -->
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <div class="videoWrapper">
+		    	<iframe src="https://player.vimeo.com/video/217907071" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+		  </div>
+
+		</div>
 <?php get_footer(); ?>
 

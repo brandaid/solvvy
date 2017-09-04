@@ -74,11 +74,14 @@ a, a:hover, a:active, a:focus {
     background: -moz-linear-gradient(#f8fbfd, white);
     background: linear-gradient(#f8fbfd, white);
 	height: 47px;
-	width: 100%;
+	width: calc(100% - 60px);
 	max-width: 1300px; 
 	margin-left: 15px;
 	margin-right: 15px;
 	@include center;
+	&.top {
+		width: 100% !important;
+	}
 	// 992px
 	@media all and (min-width: $screen-landscape) {
 		&.top {
