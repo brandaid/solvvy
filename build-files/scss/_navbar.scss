@@ -1,3 +1,197 @@
+.main-nav {
+	@include border-radius(5px);
+	height: 85px;
+	padding-top: 20px;
+
+	&:after {
+		clear: both;
+		content: "\00a0";
+		display: block;
+		height: 0;
+		font: 0px/0 serif;
+		overflow: hidden;
+	}
+
+	.nav-brand {
+		margin: 5px 0 0;
+		display: block;
+		float: left;
+
+		a {
+			display: block;
+			img{
+				height: 35px;
+			}
+		}
+	}
+
+	#main-menu {
+		float: right;
+		display: block;
+
+		& > li{
+			margin: 0 15px;
+			line-height: 38px;
+			a{
+				color: $brand-secondary;
+				font-family: $font-semibold;
+				font-size: 17px;
+			}
+			&.search a{
+				color: #9baaba;
+				font-size: 40px;
+				font-family: FontAwesome;
+
+			}
+			.button{
+				color: #fff;
+				text-transform: uppercase;
+				padding: 3px 35px;
+			}
+		}
+		a.has-submenu{
+			&::after{
+				font-family: FontAwesome;
+				content: '\f078';
+				font-size: 13px;
+				padding-left: 5px;
+				color: #9baaba;
+			}
+		}
+	}
+
+}
+
+@media (min-width: 768px) {
+  #main-menu {
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  #main-menu {
+    float: right;
+    clear: none;
+  }
+}
+
+
+/* Mobile menu toggle button */
+
+.main-menu-btn {
+  float: right;
+  margin: 6px 10px;
+  position: relative;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  text-indent: 29px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+/* hamburger icon */
+
+.main-menu-btn-icon,
+.main-menu-btn-icon:before,
+.main-menu-btn-icon:after {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  height: 2px;
+  width: 24px;
+  background: #555;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.main-menu-btn-icon:before {
+  content: '';
+  top: -7px;
+  left: 0;
+}
+
+.main-menu-btn-icon:after {
+  content: '';
+  top: 7px;
+  left: 0;
+}
+
+
+/* x icon */
+
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+  height: 0;
+  background: transparent;
+}
+
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* hide menu state checkbox (keep it visible to screen readers) */
+
+#main-menu-state {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+/* hide the menu in mobile view */
+
+#main-menu-state:not(:checked) ~ #main-menu {
+  display: none;
+}
+
+#main-menu-state:checked ~ #main-menu {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  /* hide the button in desktop view */
+  .main-menu-btn {
+    position: absolute;
+    top: -99999px;
+  }
+  /* always show the menu in desktop view */
+  #main-menu-state:not(:checked) ~ #main-menu {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 // 768px
