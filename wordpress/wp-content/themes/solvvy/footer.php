@@ -1,3 +1,5 @@
+		<div class="cool-sep"></div>
+
 		<!-- BOX MAP -->
 
 		<section class="box-map">
