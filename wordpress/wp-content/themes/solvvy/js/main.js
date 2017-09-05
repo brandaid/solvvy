@@ -125,11 +125,12 @@ $(document).ready(function() {
 // SmartMenus init
 $(function() {
   $('#main-menu').smartmenus({
-    subMenusSubOffsetX: 1,
-    subMenusSubOffsetY: -8,
-    subMenusMinWidth:	'10em',
-	subMenusMaxWidth:	'20em',
-	subIndicators: 		false
+  	subIndicators: 		false
+	/*mainMenuSubOffsetX:	0,
+	mainMenuSubOffsetY:	10,
+    subMenusMinWidth:	'700px',
+	subMenusMaxWidth:	'700px',
+	subIndicators: 		false*/
   });
 });
 
@@ -153,4 +154,7 @@ $(function() {
       }
     });
   }
+
+	var $menuTop = $('.header-top ul li').clone();
+	$('.menu-top-clone').html($menuTop);
 });
