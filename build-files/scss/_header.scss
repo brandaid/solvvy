@@ -1,5 +1,52 @@
+
 .header {
-	display: none;
+	*{
+		box-sizing: border-box;
+	}
+	ul, li, h4{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+
+	.header-top{
+		background-color: #f0f3f6;
+		text-transform: uppercase;
+		color: $brand-tertiary;
+		padding: 7px 0;
+		font-family: $font-medium;
+
+		a{
+			color: $brand-tertiary;
+			font-size: 13px;
+			&:hover{
+				color: $brand-secondary;
+			}
+		}
+		ul{
+			display: flex;
+			justify-content: flex-end;
+			li{
+				flex-flow: row wrap;
+				margin-left: 30px;
+				.login{
+					&::before{
+						font-family: FontAwesome;
+						content: '\f007';
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	.header-bottom{
+		background: #fff;
+	}
+
+
+
 }
 
 
