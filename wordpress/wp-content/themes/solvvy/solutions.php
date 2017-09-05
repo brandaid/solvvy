@@ -27,7 +27,7 @@
 		<!-- BOX TEXT -->
 		
 
-		<section class="box-text-top">
+		<section class="box-text-top pink-ball">
 			<div class="container">
 				<h2>Lorem Ipsum Headline</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>

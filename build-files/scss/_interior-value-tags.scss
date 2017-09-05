@@ -1,7 +1,8 @@
 .value-tags {
 	background: url(images/bigger.png) no-repeat center center;
+	background-size: cover;
 	padding: 165px 0;
-
+	@include border-box;
 	h3 {
 		color: white;
 		@extend .underlined;
@@ -31,15 +32,23 @@
 			.col-slider {
 				display: table-cell;
 				width: 60%;
-				background: red;
 			}
 			.col-slider {
-				background: olive
+				width: 40%;
 			}
 		}
 	}
 }
 
-// 1200px
-@media all and (min-width: $screen-desktop) {
+// 1400px
+@media all and (min-width: $screen-desktop-big) {
+	.value-tags {
+		background-size: contain;
+		padding: 220px 0;
+	}
+}
+
+// 1600px
+@media all and (min-width: 1600px) {
+
 }
