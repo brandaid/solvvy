@@ -40,6 +40,90 @@
 			</section>
 
 
+			<section class="header-bottom">
+				<div class="container">
+
+					<nav class="main-nav" role="navigation">
+						<!-- Mobile menu toggle button (hamburger/x icon) -->
+						<input id="main-menu-state" type="checkbox" />
+						<label class="main-menu-btn" for="main-menu-state">
+							<span class="main-menu-btn-icon"></span>
+							Toggle main menu visibility
+						</label>
+
+						<div class="nav-brand">
+							<a href=""><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
+						</div>
+
+						<!-- Sample menu definition -->
+						<ul id="main-menu" class="sm sm-clean">
+							<li><a href="#">Solutions</a>
+								<ul>
+									<li>
+										<a href="#">FOR YOUR ROLE</a>
+										<ul>
+											<li><a href="#">Support</a></li>
+											<li><a href="#">Customer Experience</a></li>
+											<li><a href="#">Finance</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">FOR YOUR ROLE</a>
+										<ul>
+											<li><a href="#">Support</a></li>
+											<li><a href="#">Customer Experience</a></li>
+											<li><a href="#">Finance</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">FOR YOUR ROLE</a>
+										<ul>
+											<li><a href="#">Support</a></li>
+											<li><a href="#">Customer Experience</a></li>
+											<li><a href="#">Finance</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="">Software</a></li>
+							<li><a href="">Customers</a></li>
+							<li><a href="">Resources</a></li>
+							<li><a href="">Company</a>
+								<ul>
+									<li><a href="">Premium support</a></li>
+								</ul>
+							</li>
+							<li class="demo"><a href="#">DEMO</a></li>
+							<li class="search"><a href="">P</a></li>
+							<li class="top-menu">
+								<div class="menu-top-clone"></div>
+							</li>
+						</ul>
+					</nav>
+
+				</div>
+			</section>
+
+				
+			
+
+
+
+
+			<?php/*
+			<section class="header-top">
+				<div class="container">
+					<ul>
+						<li><a href="">Contact Us</a></li>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Support</a></li>
+						<li><a href="">Pricing</a></li>
+						<li><a href="" class="login">Login</a></li>
+					</ul>
+				</div>
+			</section>
+
+
 
 
 			<section  class="header-bottom">
@@ -110,7 +194,7 @@
 						    <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
 						  </ul>
 						</li>
-				    <li><a href="" class="button">Demo</a></li>
+				    <li class="demo"><a href="" class="button">Demo</a></li>
 				    <li class="search"><a href="" class="fa fa-search"></a></li>
 				  </ul>
 				</nav>
@@ -118,6 +202,7 @@
 
 				</div>
 			</section>
+			*/?>
 
 
 	
