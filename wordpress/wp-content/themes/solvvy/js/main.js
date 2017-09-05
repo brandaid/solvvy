@@ -112,20 +112,6 @@ $(document).ready(function() {
 	        video.src = document.getElementById('video').src;
 	    }
 	}
-
-
-	$('.center').slick({
-    centerMode: true,
-    centerPadding: '10px',
-    slidesToShow: 3,
-    speed: 1000,
-    autoplay: true,
-		autoplaySpeed: 4000,
-    vertical: true,
-    arrows: false
-  });
-
-
 });
 
 
@@ -169,8 +155,6 @@ $(function() {
     });
   }
 
-  var $menuTop = $('.header-top ul li').clone();
+	var $menuTop = $('.header-top ul li').clone();
 	$('.menu-top-clone').html($menuTop);
 });
-
-
