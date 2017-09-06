@@ -1,18 +1,207 @@
-.interior-heads-metrics {
-	img {
-		width: 100%;
-		height: auto;
+.heads-metrics {
+	position: relative;
+	padding-top: 100px;
+}
+
+.globe-metric {
+	position: absolute;
+	left: 15px;
+	top: -80px;
+	width: 110px;
+	text-align: center;
+	h4, p {
+		margin: 0;
+		color: $brand-secondary;
+	}
+	h4 {
+		font-size: 30px;
+		font-weight: $font-thin;
+	}
+	p {
+		font-family: $font-semibold;
+	}
+	span {
+		display: block;
+		width: 20px;
+		height: 20px;
+		background: $brand-primary;
+		border-radius: 50%;
+		@include box-shadow(0,0,10px,$brand-primary);
+		@include center;
+		margin-top: 10px;
+		position: relative;
+		&:after {
+			content: "";
+			width: 100px;
+			display: block;
+			transform: rotate(100deg);
+			height: 3px;
+			background: $brand-primary;
+			position: absolute;
+			bottom: -40px;
+    		left: -48px;
+		}
+	}
+	&.two,
+	&.three {
+		left: 32%;
+		top: -120px;
+		span {
+			&:after {
+				transform: rotate(80deg);
+				bottom: -40px;
+	    		left: -30px;
+			}
+		}
+	}
+	&.three {
+		left: 70%;
+		span {
+			&:after {
+				transform: rotate(93deg);
+				left: -42px;
+			}
+		}
 	}
 }
 
 // 768px
 @media all and (min-width: $screen-portrait) {
+	.globe-metric {
+		h4 {
+			font-size: 55px;
+		}
+		&.two {
+			span {
+				top: -60px;
+				right: -80px;
+			}
+		}
+		&.three {
+			left: 80%;
+		}
+	}
 }
 
 // 992px
 @media all and (min-width: $screen-landscape) {
+	.globe-metric {
+		span {
+			&:after {
+				width: 150px;
+				bottom: -63px;
+	    		left: -78px;
+			}
+		}
+		&.two,
+		&.three {
+			span {
+				&:after {
+					bottom: -60px;
+		    		left: -52px;
+				}
+			}
+		}
+		&.three {
+			span {
+				&:after {
+					left: -67px;
+				}
+			}
+		}
+	}
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
+	.heads-metrics {
+		padding-top: 170px;
+	}
+	.globe-metric {
+		width: 200px;
+		h4 {
+			font-size: 70px;
+		}
+		p {
+			font-size: 27px;
+		}
+		span {
+			&:after {
+				width: 180px;
+				bottom: -76px;
+	    		left: -95px;
+			}
+		}
+		&.two {
+			span {
+				right: -100px;
+				top: -90px;
+			}
+		}
+		&.two,
+		&.three {
+			span {
+				&:after {
+					bottom: -80px;
+		    		left: -62px;
+				}
+			}
+		}
+		&.three {
+			span {
+				&:after {
+					left: -85px;
+				}
+			}
+		}
+	}
+}
+
+// 1400px
+@media all and (min-width: $screen-desktop-big) {
+	.heads-metrics {
+		padding-top: 250px;
+	}
+	.globe-metric {
+		width: 300px;
+		h4 {
+			font-size: 100px;
+		}
+		p {
+			font-size: 37px;
+		}
+		span {
+			&:after {
+				width: 250px;
+				bottom: -110px;
+	    		left: -135px;
+			}
+		}
+		&.two {
+			left: 30%;
+			span {
+				right: -170px;
+				top: -120px;
+			}
+		}
+		&.two,
+		&.three {
+			span {
+				&:after {
+					bottom: -120px;
+		    		left: -92px;
+				}
+			}
+		}
+		&.three {
+			left: 75%;
+			span {
+				&:after {
+					width: 220px;
+					left: -105px;
+					bottom: -100px;
+				}
+			}
+		}
+	}
 }

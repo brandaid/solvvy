@@ -27,13 +27,16 @@
 		<!-- BOX TEXT -->
 		
 
-		<section class="box-text-top pink-ball align-center">
+		<section class="box-text-top pink-ball align-center bkg-none">
 			<div class="container">
 				<h2>Industry Metrics</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
 			</div>
 		</section>
 		<div class="heads-metrics">
+			<div class="globe-metric one"><h4>55%</h4> <p>Bacon Ipsum</p><span></span></div>
+			<div class="globe-metric two"><h4>85%</h4> <p>Bacon Ipsum</p><span></span></div>
+			<div class="globe-metric three"><h4>9.7</h4> <p>Hours Per User</p><span></span></div>
 			<figure>
 				<img src="<?php bloginfo('template_url'); ?>/images/heads.png" class="responsive" alt="">
 			</figure>
@@ -113,16 +116,114 @@
 
 		<div class="cool-sep"></div>
 
-				<div class="table-layout table-fixed">
-				  <!-- left / fluid column-->
-				  <div class="table-cell">
-				    <h1>fluid column</h1>
-				  </div>
-				  <!-- right / fixed column-->
-				  <div class="table-cell fixed-width">
-				    <h1>fixed column: 200px</h1>
-				  </div>
+		<div class="container">
+			<div class="wrapperTable">
+				<div class="contTr contTrHeader">
+					<div class="contTdOne contTdOneHeader"></div>
+					<div class="contTdTwo contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></div>
+					<div class="contTdThree contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-zendesk.png" alt=""></div>
+					<div class="contTdFour contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-upwork.png" alt=""></div>
+					<div class="contTdFive contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-mailchimp.png" alt=""></div>
+					<div class="contTdSix contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-task.png" alt=""></div>
+					<div class="contTdSeven contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-double.png" alt=""></div>
+					<div class="contTdEight contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-woo.png" alt=""></div>
 				</div>
+			</div>
+			<div class="wrapperTable tableShadow">	
+
+				<h3 class="title-head">Machine Learning</h3>			
+				
+				<div class="contTr">
+					<div class="contTdOne">Machine Learning</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"></div>
+					<div class="contTdFour"></div>
+					<div class="contTdFive"><i class="fa fa-check"></i></div>
+					<div class="contTdSix"><i class="fa fa-check"></i></div>
+					<div class="contTdSeven"></div>
+					<div class="contTdEight"></div>
+				</div>
+				
+				<h3 class="title-head">Artificial Intelligence</h3>
+			
+				<div class="contTr">
+					<div class="contTdOne">Artificial Intelligence</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"></div>
+					<div class="contTdFour"><i class="fa fa-check"></i></div>
+					<div class="contTdFive"></div>
+					<div class="contTdSix"><i class="fa fa-check"></i></div>
+					<div class="contTdSeven"></div>
+					<div class="contTdEight"><i class="fa fa-check"></i></div>
+				</div>
+				
+				<h3 class="title-head">Transparent Metrics</h3>
+			
+				<div class="contTr">
+					<div class="contTdOne">Transparent Metrics</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"><i class="fa fa-check"></i></div>
+					<div class="contTdFour"></div>
+					<div class="contTdFive"></div>
+					<div class="contTdSix"></div>
+					<div class="contTdSeven"><i class="fa fa-check"></i></div>
+					<div class="contTdEight"><i class="fa fa-check"></i></div>
+				</div>
+
+				<h3 class="title-head">Advanced Science</h3>
+
+				<div class="contTr">
+					<div class="contTdOne">Advanced Science</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"><i class="fa fa-check"></i></div>
+					<div class="contTdFour"></div>
+					<div class="contTdFive"><i class="fa fa-check"></i></div>
+					<div class="contTdSix"></div>
+					<div class="contTdSeven"></div>
+					<div class="contTdEight"></div>
+				</div>
+
+				<h3 class="title-head">Machine Learning</h3>
+
+				<div class="contTr">
+					<div class="contTdOne">Machine Learning</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"></div>	
+					<div class="contTdFour"><i class="fa fa-check"></i></div>
+					<div class="contTdFive"></div>
+					<div class="contTdSix"><i class="fa fa-check"></i></div>
+					<div class="contTdSeven"></div>
+					<div class="contTdEight"><i class="fa fa-check"></i></div>
+				</div>
+				
+				<h3 class="title-head">Artificial Intelligence</h3>
+
+				<div class="contTr">
+					<div class="contTdOne">Artificial Intelligence</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"><i class="fa fa-check"></i></div>
+					<div class="contTdFour"></div>
+					<div class="contTdFive"><i class="fa fa-check"></i></div>
+					<div class="contTdSix"></div>
+					<div class="contTdSeven"><i class="fa fa-check"></i></div>
+					<div class="contTdEight"></div>
+				</div>
+
+				<h3 class="title-head">Transparent Metrics</h3>
+
+				<div class="contTr">
+					<div class="contTdOne">Transparent Metrics</div>
+					<div class="contTdTwo"><i class="fa fa-check"></i></div>
+					<div class="contTdThree"></div>
+					<div class="contTdFour"><i class="fa fa-check"></i></div>
+					<div class="contTdFive"></div>
+					<div class="contTdSix"><i class="fa fa-check"></i></div>
+					<div class="contTdSeven"><i class="fa fa-check"></i></div>
+					<div class="contTdEight"></div>
+				</div>
+				
+			</div>
+		</div>
 
 <?php get_footer(); ?>
 
