@@ -1,9 +1,6 @@
 .wrapperTable {
     max-width: 100%;
-    border-radius: 5px;
-    .contTr:nth-child(2n) {
-        background: #f6f9fc;
-    }
+    border-radius: 10px;
     &.tableShadow {
         margin: 30px 0 100px 0; 
         box-shadow: 0 0 100px 0 rgba(93,14,139,.3);
@@ -70,6 +67,12 @@
     margin: 0;
 }
 
+div.wrapperTable.tableShadow > div:nth-child(2),
+div.wrapperTable.tableShadow > div:nth-child(6),
+div.wrapperTable.tableShadow > div:nth-child(10),
+div.wrapperTable.tableShadow > div:nth-child(14) {
+    background: #eff4f8;
+}
 
 // 768px
 @media all and (min-width: $screen-portrait) {
@@ -107,7 +110,7 @@
 // 1200px
 @media all and (min-width: $screen-desktop) {
     .wrapperTable {
-        margin-top: 80px;
+        margin-top: 120px;
         &.tableShadow {
             margin-top: 60px; 
         }
