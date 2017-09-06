@@ -1,0 +1,29 @@
+/* la tabla padre, contenedora */
+.table-layout {
+  display: table;
+  width: 100%;
+}
+    .table-layout.table-fixed {
+      table-layout: fixed;
+    }
+    /* cada celda lateral */
+    .table-layout .table-cell {
+      display: table-cell;
+      width: 100%;
+      vertical-align: top; /* necesario para Safari y Firefox */
+    }
+    .table-layout .fixed-width {
+      width: 200px; /* el ancho fijo que estimes necesario */
+    }
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}
