@@ -113,5 +113,16 @@
 
 		<div class="cool-sep"></div>
 
+				<div class="table-layout table-fixed">
+				  <!-- left / fluid column-->
+				  <div class="table-cell">
+				    <h1>fluid column</h1>
+				  </div>
+				  <!-- right / fixed column-->
+				  <div class="table-cell fixed-width">
+				    <h1>fixed column: 200px</h1>
+				  </div>
+				</div>
+
 <?php get_footer(); ?>
 
