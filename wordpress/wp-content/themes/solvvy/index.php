@@ -327,6 +327,8 @@
 			</div>
 		</section>
 
+		<div class="cool-sep"></div>
+
 
 		<!-- Trigger/Open The Modal -->
 

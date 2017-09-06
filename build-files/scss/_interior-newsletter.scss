@@ -1,0 +1,38 @@
+.post {
+	@extend .asset-cards;
+	margin-bottom: 60px;
+	h2 {
+		&:after {
+			display: none;
+		}
+		margin-bottom: 25px;
+	}
+	small {
+		margin-bottom: 20px;
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.post {
+		.content {
+			padding: 25px;
+		}
+	}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+	.post {
+		.content {
+			padding: 40px;
+		}
+		small {
+			margin-bottom: 40px;
+		}
+	}
+}

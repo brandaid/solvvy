@@ -140,6 +140,104 @@
 }
 
 
+// ASSETS CARDS
+
+.section-assets-cards {
+	background: #fefeff;
+	padding: 75px 30px;
+}
+.asset-cards {
+	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+	margin-bottom: 60px;
+	.content {
+		background: white;
+		padding: 40px;
+	}
+	small {
+		color: $brand-tertiary;
+		font-size: 18px;
+		font-family: $font-semibold;
+		display: block;
+		line-height: 18px;
+		margin-bottom: 10px;
+	}
+	h2, h3 {
+		font-family: $primary-font;
+		font-size: 26px;
+	}
+	p {
+		font-size: 18px;
+		color: $brand-tertiary;
+	}
+	a {
+		font-size: 15px;
+	}
+}
+
+
+//MARKETO SECTION
+
+.marketo-newsletter {
+	padding: 40px 0;
+	ul {
+		@extend .formated-list;
+	}
+	p {
+		font-size: 18px;
+		color: $brand-tertiary;
+		margin: 20px 0;
+	}
+	form {
+		display: table;
+		width: 100%;
+		max-width: 510px;
+		@include center;
+		input,
+		button {
+			display: table-cell;
+			width: 70%;
+			vertical-align: middle;
+			height: 50px;
+			font-size: 16px;
+			padding: 20px;
+			@include border-box;
+			border: 1px solid transparent;
+			outline: none;
+		}
+		input{
+			border-radius: 4px 0 0 4px;
+			border: 1px solid #d6dde4;
+		}
+		button {
+			border: 0;
+			background: $brand-primary;
+			color: white;
+			font-family: $font-semibold;
+			width: 30%;
+			padding: 0 10px;
+			line-height: 50px;
+			cursor: pointer;
+			border-radius: 0 4px 4px 0;
+			@include transition;
+			&:hover {
+				background: darken($brand-primary, 5%);
+			}
+		}
+		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  color: #c5ced7;
+		}
+		::-moz-placeholder { /* Firefox 19+ */
+		  color: #c5ced7;
+		}
+		:-ms-input-placeholder { /* IE 10+ */
+		  color: #c5ced7;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+		  color: #c5ced7;
+		}
+	}
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.page-template-resources {
@@ -157,6 +255,31 @@
 			font-size: 15px;
 		}
 	}
+
+	.asset-cards {
+		margin-bottom: 0px;
+		.content {
+			padding: 10px;
+		}
+		small {
+			font-size: 15px;
+			line-height: 15px;
+			margin: 10px 0;
+		}
+		h2, h3 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 15px;
+		}
+		a {
+			font-size: 15px;
+			white-space: nowrap;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
 }
 
 // 992px
@@ -169,6 +292,41 @@
 				vertical-align: middle;
 				padding: 0 10px;
 			}
+		}
+	}
+
+	.asset-cards {
+		margin-bottom: 0px;
+		.content {
+			padding: 40px;
+		}
+		small {
+			font-size: 18px;
+			line-height: 18px;
+		}
+		h2, h3 {
+			font-size: 26px;
+		}
+		p {
+			font-size: 18px;
+		}
+		a {
+			font-size: 15px;
+		}
+	}
+	
+	.marketo-newsletter {
+		ul {
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0 10px;
+				@include border-box;
+			}
+		}
+		p {
+			margin: 0;
+			font-size: 15px;
 		}
 	}
 }
@@ -188,6 +346,16 @@
 			li {
 				padding: 0 20px;
 			}
+		}
+	}
+	.marketo-newsletter {
+		ul {
+			li {
+				padding: 0 10px;
+			}
+		}
+		p {
+			font-size: 18px;
 		}
 	}
 }

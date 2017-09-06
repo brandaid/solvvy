@@ -41,3 +41,14 @@
 	vertical-align: middle;
 	margin-left: 4px;
 }
+
+.button-white {
+	@extend .button;
+	background: white;
+	border: 1px solid $brand-primary;
+	color: $brand-primary;
+	&:hover {
+		color: white;
+		background: $brand-primary;
+	}
+}
