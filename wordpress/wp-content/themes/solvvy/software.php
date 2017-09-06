@@ -3,7 +3,7 @@
  * @package WordPress
  * @subpackage Solvvy
 
- Template Name: Template Vision
+ Template Name: Template Software
 
 */
 ?>
@@ -16,8 +16,8 @@
 
 		<section class="hero-banner hero-banner-interior">
 			<div class="container">
-				<h1>The Solvvy Vision</h1>
-				<h3>Bacon ipsum dolor amet pork tongue bresaola meatball, t-bone meatloaf sausage cow flank. Flank prosciutto kevin salami fatback sausage porchetta venison.</h3>
+				<h1>Solvvy Software</h1>
+				<h3>Advanced machine learning, artificial intelligence and natural language science. Unique and unparalleled insights about what your customers.</h3>
 			</div>
 			<div class="waves"></div>
 			<div class="circles"></div>
@@ -27,94 +27,32 @@
 		<!-- BOX TEXT -->
 		
 
-		<section class="box-text-top pink-ball align-center bkg-none">
-			<div class="container">
-				<h2>Industry Metrics</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-			</div>
-		</section>
-		<div class="heads-metrics">
-			<div class="globe-metric one"><h4>55%</h4> <p>Bacon Ipsum</p><span></span></div>
-			<div class="globe-metric two"><h4>85%</h4> <p>Bacon Ipsum</p><span></span></div>
-			<div class="globe-metric three"><h4>9.7</h4> <p>Hours Per User</p><span></span></div>
-			<figure>
-				<img src="<?php bloginfo('template_url'); ?>/images/heads.png" class="responsive" alt="">
-			</figure>
-		</div>
-
-		<!-- BOX TEXT -->
-		
-
-		<section class="box-text-top bkg-none align-center">
+		<section class="box-text-top pink-ball align-center">
 			<div class="container">
 				<h2>Lorem Ipsum Headline</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-				<a href="" class="button">Blog</a>
+				<img src="<?php bloginfo('template_url'); ?>/images/infographic.png" class="responsive" alt="">
 			</div>
 		</section>
-		
-		<div class="cool-sep"></div>
 
-		<section class="box-text-top bkg-none container-normal">
+
+		<!-- BOX BLUE FPO -->
+
+		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
+		<div class="blue-box-waves">
 			<div class="container">
-				<h2 class="margin-bottom-90">Customer Experience Journey Then and Now</h2>
-				<img src="<?php bloginfo('template_url'); ?>/images/svg/fpo.svg" class="responsive" alt="Solvvy FPO">
+				<div class="image">
+					<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
+				</div>
+				<div class="info">
+					<h2>Lorem Ipsum Asset Name</h2>
+					<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
+					<a href="" class="button-tn">READ NOW</a>
+				</div>
 			</div>
-		</section>
+		</div>
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
 
-		<div class="cool-sep"></div>
-
-		<section class="box-text-top bkg-none container-normal">
-			<div class="container">
-				<h2 class="margin-bottom-90">Key Differentiators</h2>
-				<ul class="list-boxes-three">
-					<li>
-						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
-							<h3>LABEL NAME</h3>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-					<li>
-						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
-							<h3>LABEL NAME</h3>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-					<li>
-						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
-							<h3>LABEL NAME</h3>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-					<li>
-						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
-							<h3>LABEL NAME</h3>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-					<li>
-						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
-							<h3>LABEL NAME</h3>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-					<li>
-						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
-							<h3>LABEL NAME</h3>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</section>
-
-		<div class="cool-sep"></div>
 
 		<section class="box-text-top container-normal align-center">
 			<div class="container">
@@ -228,4 +166,57 @@
 				</div>
 			</div>
 		</section>
+
+		<div class="cool-sep"></div>
+
+		<section class="box-text-top bkg-none align-center">
+			<div class="container">
+				<h2>Lorem Ipsum Features Headline</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipis cing elit, sed diam nonummy nibh euismod tinci dunt ut laoreet dolore magna.</p>
+			</div>
+		</section>
+
+		<!-- WHATS IS SOLVVY -->
+
+		<section class="whats-solvvy bkg-none">
+			<div class="col-left">
+
+				<select class="solutions" id="solutions">
+					<option value="tab1">SUPPORT</option>
+					<option value="tab2">CUSTOMER SUPPORT</option>
+					<option value="tab3">FINANCE</option>
+				</select>
+
+				<div class="tab-link-without-icon" data-value="tab1">
+					<h4>Feature Name</h4>
+					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+				</div>
+				<div class="tab-link-without-icon" data-value="tab2">
+					<h4>Feature Name</h4>
+					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+				</div>
+				<div class="tab-link-without-icon" data-value="tab3">
+					<h4>Feature Name</h4>
+					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+				</div>
+
+			</div>
+			<div class="col-right">
+
+				<div class="" id="tab1">
+					<img src="<?php bloginfo('template_url'); ?>/images/tab1.png" class="screen" alt="">
+				</div>
+				<div class="" id="tab2">
+					<img src="<?php bloginfo('template_url'); ?>/images/tab2.png" class="screen" alt="">
+				</div>
+				<div class="" id="tab3">
+					<img src="<?php bloginfo('template_url'); ?>/images/tab3.png" class="screen" alt="">
+				</div>
+
+			</div>
+
+
+		</section>
+
+		
 <?php get_footer(); ?>
