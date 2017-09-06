@@ -191,3 +191,12 @@ $(function() {
 	$('.menu-post-clone').html($postTop);
 });
 
+
+$("#filters").hide();
+
+
+$('.open-div').click(function() {
+	$("#filters").slideToggle();
+	$(this).toggleClass('active');
+});
+

@@ -178,7 +178,7 @@
 
 		<!-- WHATS IS SOLVVY -->
 
-		<section class="whats-solvvy bkg-none">
+		<section class="whats-solvvy bkg-none vertical-align-middle">
 			<div class="col-left">
 
 				<select class="solutions" id="solutions">
@@ -189,28 +189,28 @@
 
 				<div class="tab-link-without-icon" data-value="tab1">
 					<h4>Feature Name</h4>
-					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha.</p>
 				</div>
 				<div class="tab-link-without-icon" data-value="tab2">
 					<h4>Feature Name</h4>
-					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha.</p>
 				</div>
 				<div class="tab-link-without-icon" data-value="tab3">
 					<h4>Feature Name</h4>
-					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha.</p>
 				</div>
 
 			</div>
 			<div class="col-right">
 
 				<div class="" id="tab1">
-					<img src="<?php bloginfo('template_url'); ?>/images/tab1.png" class="screen" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/images/tab1.png" class="responsive" alt="">
 				</div>
 				<div class="" id="tab2">
-					<img src="<?php bloginfo('template_url'); ?>/images/tab2.png" class="screen" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/images/tab2.png" class="responsive" alt="">
 				</div>
 				<div class="" id="tab3">
-					<img src="<?php bloginfo('template_url'); ?>/images/tab3.png" class="screen" alt="">
+					<img src="<?php bloginfo('template_url'); ?>/images/tab3.png" class="responsive" alt="">
 				</div>
 
 			</div>
