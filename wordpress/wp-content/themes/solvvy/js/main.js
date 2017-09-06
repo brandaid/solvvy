@@ -126,11 +126,6 @@ $(document).ready(function() {
 $(function() {
   $('#main-menu').smartmenus({
   	subIndicators: 		false
-	/*mainMenuSubOffsetX:	0,
-	mainMenuSubOffsetY:	10,
-    subMenusMinWidth:	'700px',
-	subMenusMaxWidth:	'700px',
-	subIndicators: 		false*/
   });
 });
 
@@ -155,6 +150,9 @@ $(function() {
     });
   }
 
-	var $menuTop = $('.header-top ul li').clone();
+  	var $menuTop = $('.header-top ul li').clone();
 	$('.menu-top-clone').html($menuTop);
+
+	var $postTop = $('.menu-post').clone();
+	$('.menu-post-clone').html($postTop);
 });

@@ -59,7 +59,6 @@
 .sm-clean ul ul a:hover,
 .sm-clean ul ul a:focus,
 .sm-clean ul ul a:active {
-  border-left: 16px solid transparent;
 }
 .sm-clean ul ul ul a,
 .sm-clean ul ul ul a:hover,
@@ -118,34 +117,16 @@
 
   /* ...end */
   .sm-clean {
-    padding: 0 10px;
-    background: #eeeeee;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -ms-border-radius: 100px;
-    -o-border-radius: 100px;
-    border-radius: 100px;
   }
   .sm-clean a, .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {
-    padding: 12px 12px;
-    color: #555555;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -ms-border-radius: 0 !important;
-    -o-border-radius: 0 !important;
-    border-radius: 0 !important;
   }
   .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {
-    color: #d23600;
   }
   .sm-clean a.current {
-    color: #d23600;
   }
   .sm-clean a.disabled {
-    color: #bbbbbb;
   }
   .sm-clean a.has-submenu {
-    padding-right: 24px;
   }
   .sm-clean a span.sub-arrow {
     top: 50%;
