@@ -1,23 +1,103 @@
-/* la tabla padre, contenedora */
-.table-layout {
-  display: table;
-  width: 100%;
+.wrapperTable {
+    max-width: 100%;
+    border-radius: 5px;
+    .contTr:nth-child(2n) {
+        background: #f6f9fc;
+    }
+    &.tableShadow {
+        margin: 30px 0 100px 0; 
+        box-shadow: 0 0 100px 0 rgba(93,14,139,.3);
+    }
 }
-    .table-layout.table-fixed {
-      table-layout: fixed;
+.contTrHeader {
+    padding: 0;  
+}
+.contTdOne {
+    border: 0;
+    color: #6b7d92;
+    font-size: 16px;
+    padding-left: 30px;
+}
+.contTdTwoHeaders {
+    position: relative;
+    img {
+        position: absolute;
+        max-width: 50px;
+        left: 5px;
+        bottom: 0;
+        transform: rotate(-45deg);
     }
-    /* cada celda lateral */
-    .table-layout .table-cell {
-      display: table-cell;
-      width: 100%;
-      vertical-align: top; /* necesario para Safari y Firefox */
+}
+.contTr {
+    display: table;
+    width: 100%;
+    .fa-check {
+        color: #fa3777;
     }
-    .table-layout .fixed-width {
-      width: 200px; /* el ancho fijo que estimes necesario */
+}
+
+.contTdOne,
+.contTdTwo, 
+.contTdThree, 
+.contTdFour, 
+.contTdFive,
+.contTdSix,
+.contTdSeven,
+.contTdEight {
+    display: table-cell;
+    vertical-align: middle;
+    width: 14.2857%;
+    border-left: 1px solid darken($gray_lighter, 5%);
+    padding: $margen ($margen / 2);
+    text-align: center;
+    @include border-box;
+    padding: 25px 0px;
+    &.contTdTwoHeaders {
+        border: 0;
     }
+}
+.contTdOne {
+    display: none;
+}
+
+.title-head {
+    background: $brand-secondary;
+    padding: 10px;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 15px;
+    color: white;
+    margin: 0;
+}
+
 
 // 768px
 @media all and (min-width: $screen-portrait) {
+    .title-head {
+        display: none;
+    }
+    .contTdOne {
+        text-align: left;
+        border: 0;
+        display: table-cell;
+        width: 30%;
+        padding-left: 30px;
+    }
+    .contTdTwo, 
+    .contTdThree, 
+    .contTdFour, 
+    .contTdFive,
+    .contTdSix,
+    .contTdSeven,
+    .contTdEight {
+        width: 10%;
+    }
+
+    .wrapperTable {
+        .contTr:nth-child(2n) {
+            background: #f6f9fc;
+        }
+    }
 }
 
 // 992px
@@ -26,4 +106,29 @@
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
+    .wrapperTable {
+        margin-top: 80px;
+        &.tableShadow {
+            margin-top: 60px; 
+        }
+    }
+    .contTdTwoHeaders {
+        img {
+            max-width: 100px;
+            bottom: 20px;
+        }
+    }
+}
+// 1400px
+@media all and (min-width: $screen-desktop-big) {
+    .contTr {
+        .fa-check {
+            font-size: 30px;
+        }
+    }
+    .contTdTwoHeaders {
+        img {
+            max-width: 130px;
+        }
+    }
 }
