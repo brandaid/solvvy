@@ -89,3 +89,34 @@ a, a:hover, a:active, a:focus {
 		}
 	}
 }
+
+.margin-bottom-90 {
+	margin-bottom: 90px;
+}
+
+.formated-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.list-boxes-three {
+	@extend .formated-list;
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		font-size: 0;
+		li {
+			width: 50%;
+			@include border-box;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 20px;
+		}
+	}
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		li {
+			width: 33.33333%;
+		}
+	}
+}

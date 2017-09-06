@@ -1,0 +1,30 @@
+.keys-box {
+	text-align: center;
+	img {
+		max-width: 74px;
+		margin-bottom: 50px;
+	}
+	h3 {
+		font-family: $font-semibold;
+		color: $brand-secondary;
+		font-size: 20px;
+		margin-bottom: 35px;
+	}
+	p {
+		font-size: 20px;
+		line-height: 1.5em;
+		text-align: center;
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

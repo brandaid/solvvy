@@ -2,17 +2,9 @@
 	text-align: center;
 	background: url(images/bkg-box-text-top.png) no-repeat bottom right;
 	position: relative;
-	padding: 130px 30px 100px 30px;
+	padding: 100px 0;
 	@include border-box;
-	&:before {
-		content: url(images/pink-ball.png);
-		position: absolute;
-		height: 5px;
-		width: 100%;
-		left: 0;
-		top: -100px;
-		z-index: 999;
-	}
+	
 	h2 {
 		@extend .underlined;
 		&:after {
@@ -32,10 +24,33 @@
 	}
 }
 
+.container-normal {
+	.container {
+		max-width: 1330px;
+	}
+}
 
+.pink-ball {
+	&:before {
+		content: url(images/pink-ball.png);
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		left: 0;
+		top: -100px;
+		z-index: 999;
+	}
+}
+
+.align-center {
+	p {
+		text-align: center;
+	}
+}
 .box-text-and-image-top {
 	@extend .box-text-top;
-	background: url(images/bkg-orbits.png);
+	background: url(images/bkg-orbits.png) no-repeat top center;
+	background-size: cover;
 	.container {
 		max-width: 1300px;
 
@@ -47,6 +62,10 @@
 			text-align: center;
 		}
 	}
+}
+
+.bkg-none {
+	background: white;
 }
 
 // 768px

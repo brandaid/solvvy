@@ -27,7 +27,7 @@
 		<!-- BOX TEXT -->
 		
 
-		<section class="box-text-top box-text-and-image-top">
+		<section class="box-text-top pink-ball box-text-and-image-top">
 			<div class="container">
 				<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive gif-animate">
 				<h2>Lorem Ipsum Headline</h2>
@@ -35,6 +35,10 @@
 				<a href="" class="button">Button</a>
 			</div>
 		</section>
+
+
+		<!-- VALUE TAGS -->
+
 
 		<section class="value-tags">
 			<div class="container">
@@ -44,7 +48,37 @@
 					<a href="#" class="button">Button</a>
 				</div>
 				<div class="col-slider">
-					asdasd
+					
+					<section class="center slider">
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+						<div>
+							<h2>Value Driver Label</h2>
+						</div>
+				  </section>
+
 				</div>
 			</div>
 		</section>
@@ -256,18 +290,6 @@
 		</div>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
 
-
-		<!-- BOX MAP -->
-
-
-		<section class="box-map">
-			<div class="container">
-				<h2>Join The Thousands of Companies Using Solvvy</h2>
-				<p>Signing up is fast, free and easy. Call us today at (650) 246-9685.</p>
-				<a href="" class="button">Button</a>
-				<a href="" class="button button-secondary">Button</a>
-			</div>
-		</section>
 
 
 <?php get_footer(); ?>
