@@ -191,3 +191,11 @@ $(function() {
 	var $menuTop = $('.header-top ul li').clone();
 	$('.menu-top-clone').html($menuTop);
 });
+
+$("#filters").hide();
+
+
+$('.open-div').click(function() {
+	$("#filters").slideToggle();
+	$(this).toggleClass('active');
+});
