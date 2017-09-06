@@ -218,5 +218,7 @@
 
 		</section>
 
+		<div class="cool-sep"></div>
+
 		
 <?php get_footer(); ?>

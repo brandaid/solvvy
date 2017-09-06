@@ -150,16 +150,11 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
 // SmartMenus init
 $(function() {
-  $('#main-menu').smartmenus({
-  	subIndicators: 		false
-  });
+	$('#main-menu').smartmenus({
+		subIndicators: 		false
+	});
 });
 
 // SmartMenus mobile menu toggle button
@@ -192,11 +187,20 @@ $(function() {
 });
 
 
-$("#filters").hide();
-
+$("#show-all-none, .section-assets-cards").hide();
 
 $('.open-div').click(function() {
-	$("#filters").slideToggle();
+	$("#show-all-none").slideToggle();
 	$(this).toggleClass('active');
+	
+});
+
+
+$("#styled-checkbox-1, #styled-checkbox-2, #styled-checkbox-4").click(function() {
+    if($(this).is(":checked")) {
+        $(".section-assets-cards").slideDown(300);
+    } else {
+        $(".section-assets-cards").slideUp(200);
+    }
 });
 
