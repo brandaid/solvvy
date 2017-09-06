@@ -79,6 +79,39 @@ $(document).ready(function() {
 	    };
 	});
 
+	// TABS ON SOFTWARE PAGE
+	
+	$("#tab2, #tab3").hide();
+
+	$('ul.list li, .tab-link-without-icon').click(function() {
+	    if($(this).data("value") === "tab1"){
+	        $("#tab1").delay("500").fadeIn();
+	        $("#tab2").delay("100").fadeOut();
+	        $("#tab3").delay("100").fadeOut();
+
+	        $(this).addClass('active');
+	        $("#tab2, #tab3").removeClass('active');
+	    };
+	    if($(this).data("value") === "tab2"){
+	        $("#tab1").delay("100").fadeOut();
+	        $("#tab2").delay("500").fadeIn();
+	        $("#tab3").delay("100").fadeOut();
+
+	        $(this).addClass('active');
+	        $("#tab1, #tab3").removeClass('active');
+	    };
+	    if($(this).data("value") === "tab3"){
+	        $("#tab1").delay("100").fadeOut();
+	        $("#tab2").delay("100").fadeOut();
+	        $("#tab3").delay("500").fadeIn();
+
+	        $(this).addClass('active');
+	        $("#tab2, #tab1").removeClass('active');
+	    };
+	});
+
+
+
 	// MODAL
 
 	// Get the modal

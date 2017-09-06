@@ -4,15 +4,6 @@
 	position: relative;
 	padding: 130px 30px 0 30px;
 	@include border-box;
-	&:before {
-		content: url(images/pink-ball.png);
-		position: absolute;
-		height: 5px;
-		width: 100%;
-		left: 0;
-		top: -100px;
-		z-index: 999;
-	}
 	h2 {
 		@extend .underlined;
 		font-family: $font-semibold;

@@ -71,7 +71,7 @@ div.wrapperTable.tableShadow > div:nth-child(2),
 div.wrapperTable.tableShadow > div:nth-child(6),
 div.wrapperTable.tableShadow > div:nth-child(10),
 div.wrapperTable.tableShadow > div:nth-child(14) {
-    background: #eff4f8;
+    background: #f6f9fc;
 }
 
 // 768px
@@ -94,12 +94,6 @@ div.wrapperTable.tableShadow > div:nth-child(14) {
     .contTdSeven,
     .contTdEight {
         width: 10%;
-    }
-
-    .wrapperTable {
-        .contTr:nth-child(2n) {
-            background: #f6f9fc;
-        }
     }
 }
 
