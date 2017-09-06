@@ -68,7 +68,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="#">FOR YOUR ROLE</a>
+										<a href="#">FOR YOUR BUSINNES TYPE</a>
 										<ul>
 											<li><a href="#">Support</a></li>
 											<li><a href="#">Customer Experience</a></li>
@@ -76,25 +76,36 @@
 										</ul>
 									</li>
 									<li>
-										<a href="#">FOR YOUR ROLE</a>
+										<a href="#">FOR YOUR INDUSTRY</a>
 										<ul>
 											<li><a href="#">Support</a></li>
 											<li><a href="#">Customer Experience</a></li>
 											<li><a href="#">Finance</a></li>
 										</ul>
 									</li>
+									<li class="menu-post">
+										<div>
+											<a href=""><h4>LATEST REPORT</h4></a>
+											<p>Bacon ipsum dolor amet salami shankie bacon beef ioin doner.</p>
+											<a href=""><img src="<?php bloginfo('template_url'); ?>/images/hero-image.jpg" alt="" ></a>
+											<div><a class="button" href="#">Read Now</a></div>
+										</div>
+									</li>
 								</ul>
 							</li>
 							<li><a href="">Software</a></li>
 							<li><a href="">Customers</a></li>
 							<li><a href="">Resources</a></li>
-							<li><a href="">Company</a>
+							<li><a href="#">Company</a>
 								<ul>
 									<li><a href="">Premium support</a></li>
 								</ul>
 							</li>
-							<li class="demo"><a href="#">DEMO</a></li>
-							<li class="search"><a href="">P</a></li>
+							<li class="post">
+								<div class="menu-post-clone"></div>
+							</li>
+							<li class="demo"><a class="button" href="#">DEMO</a></li>
+							<li class="search"><a href=""><i class="icon-search-2"></i></a></li>
 							<li class="top-menu">
 								<div class="menu-top-clone"></div>
 							</li>
