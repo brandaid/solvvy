@@ -31,30 +31,42 @@
 			<div class="container">
 				<h2>Featured Resources</h2>
 
-				<ul class="list-boxes-three three-ipad">
+				<ul class="list-boxes-two align-left">
 					<li>
-						<div class="fpo-resources">
-							<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
-							<h3>Lorem Ipsum Name</h3>
-							<p>Bacon ipsum dolor amet fatback jerky brisket cupim boudin ham hock hamburger. </p>
-							<a href="" class="button">Download Now</a>
-						</div>
+						<article class="box box-case">
+							<figure>
+								<img src="<?php bloginfo('template_url'); ?>/images/case.jpg" alt="" class="responsive">
+							</figure>
+							<div class="content">
+								<h3><a href="">Rover Succeds with Solvvy</a></h3>
+								<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef</p>
+								<a href="" class="button-tn">Read Case Study</a>
+							</div>
+						</article>
 					</li>
 					<li>
-						<div class="fpo-resources">
-							<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
-							<h3>Lorem Ipsum Name</h3>
-							<p>Bacon ipsum dolor amet fatback jerky brisket cupim boudin ham hock hamburger. </p>
-							<a href="" class="button">Download Now</a>
-						</div>
+						<article class="box box-case">
+							<figure>
+								<img src="<?php bloginfo('template_url'); ?>/images/case.jpg" alt="" class="responsive">
+							</figure>
+							<div class="content">
+								<h3><a href="">Rover Succeds with Solvvy</a></h3>
+								<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef</p>
+								<a href="" class="button-tn">Read Case Study</a>
+							</div>
+						</article>
 					</li>
 					<li>
-						<div class="fpo-resources">
-							<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
-							<h3>Lorem Ipsum Name</h3>
-							<p>Bacon ipsum dolor amet fatback jerky brisket cupim boudin ham hock hamburger. </p>
-							<a href="" class="button">Download Now</a>
-						</div>
+						<article class="box box-case">
+							<figure>
+								<img src="<?php bloginfo('template_url'); ?>/images/case.jpg" alt="" class="responsive">
+							</figure>
+							<div class="content">
+								<h3><a href="">Rover Succeds with Solvvy</a></h3>
+								<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef. </p>
+								<a href="" class="button-tn">Read Case Study</a>
+							</div>
+						</article>
 					</li>
 				</ul>
 
