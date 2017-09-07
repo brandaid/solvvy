@@ -1,11 +1,88 @@
 .box-case {
 	max-width: 320px;
 	@include center;
+	figure {
+		position: relative;
+	}
 }
 
+.wave-study,
+.brand-absolute {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+	&.backend {
+		z-index: 9; 
+	}
+}
+
+.brand-absolute {
+	width: 100%;
+	text-align: center;
+	height: 85px;
+	z-index: 100;
+	img {
+		max-width: 130px;
+	}
+}
+
+.box-customers {
+	padding: 100px 0 20px 0;
+	background: white url(images/orbit-cut.png) no-repeat center right;
+}
+.customers-box {
+	text-align: center;
+	margin-bottom: 80px;
+	p, h4, small {
+		font-size: 15px;
+		color: $brand-tertiary;
+	}
+	p {
+		max-width: 350px;
+		@include center;
+	}
+	img {
+		max-width: 200px;
+		margin: 30px 0;
+	}
+	h4 {
+		text-transform: uppercase;
+		font-size: 20px;
+		margin-bottom: 20px;
+		font-family: $font-semibold;
+	}
+	small {
+		font-size: 16px;
+		font-weight: $font-light;
+	}
+}
+
+.brands-customers {
+	@extend .formated-list;
+	li {
+		text-align: center;
+		img {
+			max-width: 190px;
+		}
+	}
+	.center-element {
+		height: 120px;
+	}
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
-
+	.brands-customers {
+		font-size: 0;
+		li {
+			display: inline-block;
+			vertical-align: top;
+			width: 33.3333%;
+			img {
+				max-width: 190px;
+			}
+		}
+	}
 }
 
 // 992px
@@ -32,6 +109,15 @@
 			}
 		}
 	}
+
+	.customers-box {
+		margin-bottom: 150px;
+		p {
+			font-size: 20px;
+			line-height: 1.6em;
+		}
+	}
+
 }
 
 // 1200px
@@ -45,6 +131,17 @@
 			p {
 				margin-bottom: 40px;
 			}
+		}
+	}
+	.brands-customers {
+		li {
+			width: 20%;
+			img {
+				max-width: 160px;
+			}
+		}
+		.center-element {
+			height: 100px;
 		}
 	}
 }
