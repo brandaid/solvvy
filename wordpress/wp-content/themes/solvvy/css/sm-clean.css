@@ -161,7 +161,7 @@
     overflow: hidden;
     border-width: 9px;
     border-style: dashed dashed solid dashed;
-    border-color: transparent transparent #bbbbbb transparent;
+    border-color: transparent transparent #fff transparent;
   }
   .sm-clean > li > ul:after {
     top: -16px;
@@ -170,17 +170,6 @@
     border-color: transparent transparent white transparent;
   }
   .sm-clean ul {
-    border: 1px solid #bbbbbb;
-    padding: 5px 0;
-    background: white;
-    -webkit-border-radius: 5px !important;
-    -moz-border-radius: 5px !important;
-    -ms-border-radius: 5px !important;
-    -o-border-radius: 5px !important;
-    border-radius: 5px !important;
-    -webkit-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
   }
   .sm-clean ul a, .sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted {
     border: 0 !important;
