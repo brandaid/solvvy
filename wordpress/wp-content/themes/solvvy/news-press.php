@@ -3,7 +3,7 @@
  * @package WordPress
  * @subpackage Solvvy
 
- Template Name: Template Resources
+ Template Name: Template News and Press
 
 */
 ?>
@@ -16,7 +16,7 @@
 
 		<section class="hero-banner hero-banner-interior">
 			<div class="container">
-				<h1>Solvvy Resources</h1>
+				<h1>News & Press Releases</h1>
 				<h3>Bacon ipsum dolor amet bacon tenderloin landjaeger, turkey short loin.</h3>
 			</div>
 			<div class="waves"></div>
@@ -27,33 +27,51 @@
 		<!-- BOX TEXT -->
 		
 
-		<section class="box-text-top container-normal pink-ball">
+		<section class="box-text-top container-normal pink-ball title-to-left">
 			<div class="container">
-				<h2>Featured Resources</h2>
+				<h2>Featured Stories</h2>
 
 				<ul class="list-boxes-three three-ipad">
 					<li>
-						<div class="fpo-resources">
-							<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
-							<h3>Lorem Ipsum Name</h3>
-							<p>Bacon ipsum dolor amet fatback jerky brisket cupim boudin ham hock hamburger. </p>
-							<a href="" class="button">Download Now</a>
+						<div class="box-stories">
+							<div class="content-brand">
+								<div class="content-img">
+									<img src="<?php bloginfo('template_url'); ?>/images/brand-wsj.png" alt="" class="responsive">
+								</div>
+							</div>
+							<div class="content">
+								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
+								<p>News Source Name <span>Month 15, 2017</span></p>
+								<a href="" class="button">Read More</a>
+							</div>
 						</div>
 					</li>
 					<li>
-						<div class="fpo-resources">
-							<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
-							<h3>Lorem Ipsum Name</h3>
-							<p>Bacon ipsum dolor amet fatback jerky brisket cupim boudin ham hock hamburger. </p>
-							<a href="" class="button">Download Now</a>
+						<div class="box-stories">
+							<div class="content-brand">
+								<div class="content-img">
+									<img src="<?php bloginfo('template_url'); ?>/images/brand-cnbc.png" alt="" class="responsive">
+								</div>
+							</div>
+							<div class="content">
+								<h3><a href="">5 Ways to Rock Your Profile Shot Like a Boss</a></h3>
+								<p>News Source Name <span>Month 15, 2017</span></p>
+								<a href="" class="button">Read More</a>
+							</div>
 						</div>
 					</li>
 					<li>
-						<div class="fpo-resources">
-							<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
-							<h3>Lorem Ipsum Name</h3>
-							<p>Bacon ipsum dolor amet fatback jerky brisket cupim boudin ham hock hamburger. </p>
-							<a href="" class="button">Download Now</a>
+						<div class="box-stories">
+							<div class="content-brand">
+								<div class="content-img">
+									<img src="<?php bloginfo('template_url'); ?>/images/brand-techcrunch.png" alt="" class="responsive">
+								</div>
+							</div>
+							<div class="content">
+								<h3><a href="">Hottest Stars of Startups Flying Under the Radar</a></h3>
+								<p>News Source Name <span>Month 15, 2017</span></p>
+								<a href="" class="button">Read More</a>
+							</div>
 						</div>
 					</li>
 				</ul>

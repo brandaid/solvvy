@@ -66,6 +66,19 @@ a, a:hover, a:active, a:focus {
 	}
 }
 
+.title-to-left {
+	h2 {
+		text-align: left;
+		margin-bottom: 50px;
+		// 768px
+		@media all and (min-width: $screen-portrait) {
+		margin-left: 20px;
+		}
+		&:after {
+			margin-left: 0!important;
+		}
+	}
+}
 .cool-sep {
 	border-top: 2px solid lighten($brand-tertiary, 40%);
 	background: #f8fbfd;
@@ -114,6 +127,12 @@ a, a:hover, a:active, a:focus {
 			display: inline-block;
 			vertical-align: top;
 			padding: 0 20px;
+		}
+		&.three-ipad {
+			li {
+				width: 33.33333%;
+			}
+			
 		}
 	}
 	// 992px
