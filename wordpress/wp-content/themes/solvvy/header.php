@@ -105,7 +105,7 @@
 								<div class="menu-post-clone"></div>
 							</li>
 							<li class="demo"><a class="button" href="#">DEMO</a></li>
-							<li class="search"><a href=""><i class="icon-search-2"></i></a></li>
+							<li class="search"><a href="" class="icon-search-2"></a></li>
 							<li class="top-menu">
 								<div class="menu-top-clone"></div>
 							</li>

@@ -153,7 +153,9 @@ $(document).ready(function() {
 // SmartMenus init
 $(function() {
 	$('#main-menu').smartmenus({
-		subIndicators: 		false
+		subIndicators: 		false,
+		mainMenuSubOffsetX:	0,
+		mainMenuSubOffsetY:	10
 	});
 });
 
