@@ -79,6 +79,39 @@ $(document).ready(function() {
 	    };
 	});
 
+	// TABS ON SOFTWARE PAGE
+	
+	$("#tab2, #tab3").hide();
+
+	$('ul.list li, .tab-link-without-icon').click(function() {
+	    if($(this).data("value") === "tab1"){
+	        $("#tab1").delay("500").fadeIn();
+	        $("#tab2").delay("100").fadeOut();
+	        $("#tab3").delay("100").fadeOut();
+
+	        $(this).addClass('active');
+	        $("#tab2, #tab3").removeClass('active');
+	    };
+	    if($(this).data("value") === "tab2"){
+	        $("#tab1").delay("100").fadeOut();
+	        $("#tab2").delay("500").fadeIn();
+	        $("#tab3").delay("100").fadeOut();
+
+	        $(this).addClass('active');
+	        $("#tab1, #tab3").removeClass('active');
+	    };
+	    if($(this).data("value") === "tab3"){
+	        $("#tab1").delay("100").fadeOut();
+	        $("#tab2").delay("100").fadeOut();
+	        $("#tab3").delay("500").fadeIn();
+
+	        $(this).addClass('active');
+	        $("#tab2, #tab1").removeClass('active');
+	    };
+	});
+
+
+
 	// MODAL
 
 	// Get the modal
@@ -117,16 +150,11 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
 // SmartMenus init
 $(function() {
-  $('#main-menu').smartmenus({
-  	subIndicators: 		false
-  });
+	$('#main-menu').smartmenus({
+		subIndicators: 		false
+	});
 });
 
 // SmartMenus mobile menu toggle button
@@ -153,6 +181,26 @@ $(function() {
   	var $menuTop = $('.header-top ul li').clone();
 	$('.menu-top-clone').html($menuTop);
 
+
 	var $postTop = $('.menu-post').clone();
 	$('.menu-post-clone').html($postTop);
 });
+
+
+$("#show-all-none, .section-assets-cards").hide();
+
+$('.open-div').click(function() {
+	$("#show-all-none").slideToggle();
+	$(this).toggleClass('active');
+	
+});
+
+
+$("#styled-checkbox-1, #styled-checkbox-2, #styled-checkbox-4").click(function() {
+    if($(this).is(":checked")) {
+        $(".section-assets-cards").slideDown(300);
+    } else {
+        $(".section-assets-cards").slideUp(200);
+    }
+});
+

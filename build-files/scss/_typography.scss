@@ -79,6 +79,10 @@ ol ol, ul ol {
    margin-left: 15px;
 }
 
+b, strong {
+	font-family: $font-bold;
+}
+
 
 // 768px
 @media all and (min-width: $screen-portrait) {

@@ -1,4 +1,3 @@
-		<div class="cool-sep"></div>
 
 		<!-- BOX MAP -->
 
