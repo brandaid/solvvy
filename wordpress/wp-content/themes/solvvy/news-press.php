@@ -41,7 +41,7 @@
 							</div>
 							<div class="content">
 								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p>News Source Name <span>Month 15, 2017</span></p>
+								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
 								<a href="" class="button">Read More</a>
 							</div>
 						</div>
@@ -55,7 +55,7 @@
 							</div>
 							<div class="content">
 								<h3><a href="">5 Ways to Rock Your Profile Shot Like a Boss</a></h3>
-								<p>News Source Name <span>Month 15, 2017</span></p>
+								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
 								<a href="" class="button">Read More</a>
 							</div>
 						</div>
@@ -69,7 +69,7 @@
 							</div>
 							<div class="content">
 								<h3><a href="">Hottest Stars of Startups Flying Under the Radar</a></h3>
-								<p>News Source Name <span>Month 15, 2017</span></p>
+								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
 								<a href="" class="button">Read More</a>
 							</div>
 						</div>
@@ -78,101 +78,100 @@
 
 			</div>
 		</section>
-
-		<div class="cool-sep"></div>
 		
-		<div class="content-button">
-			<a href="javascript:void(0);" class="open-div">Filter Resources</a>
-		</div>
-		<div id="show-all-none">
-			<section class="box-filters" id="filters">
-				<div class="container">
-					<ul class="formated-list">
-						<li>
-						    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-						    <label for="styled-checkbox-1">White Papers</label>
-						</li>
-						<li>
-						    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-						    <label for="styled-checkbox-2">Videos</label>
-						</li>
-						<li>
-						    <input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
-						    <label for="styled-checkbox-4">Webinar Replays</label>
-						</li>
-						<li>
-						    <input class="styled-checkbox" id="styled-checkbox-5" type="checkbox" value="value5">
-						    <label for="styled-checkbox-5">Ebooks</label>
-						</li>
-						<li>
-						    <input class="styled-checkbox" id="styled-checkbox-6" type="checkbox" value="value6">
-						    <label for="styled-checkbox-6">Data Sheets</label>
-						</li>
-						<li>
-						    <input class="styled-checkbox" id="styled-checkbox-7" type="checkbox" value="value7">
-						    <label for="styled-checkbox-7">Case Studies</label>
-						</li>
-					</ul>
-				</div>
-			</section>
-
-			<section class="section-assets-cards">
-				<div class="container">
-					<ul class="list-boxes-three">
-						<li>
-							<div class="asset-cards">
-								<img src="<?php bloginfo('template_url'); ?>/images/asset-cards.jpg" alt="" class="responsive">
-								<div class="content">
-									<small>Webinar</small>
-									<h3><a href="">Delivering Intelligent, Omnichannel Self-Service</a></h3>
-									<p>Mauris commodo quam augue, nec tristique ligula faucibus at. Ut porttitor venenatis lorem, quis.</p>
-									<a href="" class="button">Watch Now</a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="asset-cards">
-								<img src="<?php bloginfo('template_url'); ?>/images/asset-cards.jpg" alt="" class="responsive">
-								<div class="content">
-									<small>Webinar</small>
-									<h3><a href="">Delivering Intelligent, Omnichannel Self-Service</a></h3>
-									<p>Mauris commodo quam augue, nec tristique ligula faucibus at. Ut porttitor venenatis lorem, quis.</p>
-									<a href="" class="button">Watch Now</a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="asset-cards">
-								<img src="<?php bloginfo('template_url'); ?>/images/asset-cards.jpg" alt="" class="responsive">
-								<div class="content">
-									<small>Webinar</small>
-									<h3><a href="">Delivering Intelligent, Omnichannel Self-Service</a></h3>
-									<p>Mauris commodo quam augue, nec tristique ligula faucibus at. Ut porttitor venenatis lorem, quis.</p>
-									<a href="" class="button">Watch Now</a>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</section>
-
-		</div>
-
-		<section class="box-gray marketo-newsletter">
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-gray-top.png" class="responsive block" alt="">
+		<section class="box-gray-waves">
 			<div class="container">
-				<ul>
-					<li><p>Get <b>FREE</b> tools and best practices from Solvvy</p></li>
-					<li>
-						<form action="">
-							<input type="text" placeholder="you@email.com">
-							<button>Send Me Updates!</button>
-						</form>
-					</li>
-					<li><p>We respect your privacy.</p></li>
-				</ul>
+				<h4 class="media-contact">Media Contact: <span>Person Name -</span> <a href="">yourname@solvvy.com</a></h4>
+				<div class="box-two-columns">
+					<div class="left-col">
+						<h2>News</h2>
+						<ul class="list-boxes-two">
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+						</ul>
+						<a href="" class="button-pink">Read More</a>
+					</div>
+					<div class="right-col">
+						<h2>Press</h2>
+						<ul class="formated-list">
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+							<li>
+								<article>
+									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
+									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+								</article>
+							</li>
+						</ul>
+						<a href="" class="button-pink">View More</a>
+					</div>
+				</div>
 			</div>
 		</section>
-
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-gray-bottom.png" class="responsive" alt="">
 
 		
 <?php get_footer(); ?>

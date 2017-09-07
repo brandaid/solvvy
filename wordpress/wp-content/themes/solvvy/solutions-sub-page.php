@@ -275,7 +275,7 @@
 
 
 		<!-- BOX BLUE FPO -->
-		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive block">
 		<div class="blue-box-waves">
 			<div class="container">
 				<div class="image">

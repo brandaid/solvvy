@@ -147,12 +147,7 @@
 	padding: 75px 30px;
 }
 .asset-cards {
-	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
-	margin-bottom: 60px;
-	.content {
-		background: white;
-		padding: 40px;
-	}
+	@extend .box;
 	small {
 		color: $brand-tertiary;
 		font-size: 18px;
@@ -171,13 +166,6 @@
 				color: $brand-primary;
 			}
 		}
-	}
-	p {
-		font-size: 18px;
-		color: $brand-tertiary;
-	}
-	a.button {
-		font-size: 15px;
 	}
 }
 
@@ -261,10 +249,6 @@
 	}
 
 	.asset-cards {
-		margin-bottom: 0px;
-		.content {
-			padding: 10px;
-		}
 		small {
 			font-size: 15px;
 			line-height: 15px;
@@ -272,15 +256,6 @@
 		}
 		h2, h3 {
 			font-size: 20px;
-		}
-		p {
-			font-size: 15px;
-		}
-		a.button {
-			font-size: 15px;
-			white-space: nowrap;
-			padding-left: 20px;
-			padding-right: 20px;
 		}
 	}
 
@@ -300,19 +275,12 @@
 	}
 
 	.asset-cards {
-		margin-bottom: 0px;
-		.content {
-			padding: 40px;
-		}
 		small {
 			font-size: 18px;
 			line-height: 18px;
 		}
 		h2, h3 {
 			font-size: 26px;
-		}
-		p {
-			font-size: 18px;
 		}
 	}
 	
