@@ -1,0 +1,21 @@
+.box-events {
+	@extend .box;
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.box-events {
+		.content {
+			padding: 40px;
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

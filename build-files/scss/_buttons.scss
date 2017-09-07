@@ -31,7 +31,7 @@
 
 .button-tn {
 	@extend .button;
-	padding: 10px 18px;
+	padding: 17px 30px;
 	font-size: 15px;
 }
 
@@ -50,5 +50,21 @@
 	&:hover {
 		color: white;
 		background: $brand-primary;
+	}
+}
+
+.button-pink {
+	color: $brand-primary;
+	text-decoration: underline;
+	font-family: $font-semibold;
+	font-size: 18px;
+	&:hover {
+		color: $brand-secondary;
+	}
+	&:after {
+		content: "\00bb";
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 10px;
 	}
 }
