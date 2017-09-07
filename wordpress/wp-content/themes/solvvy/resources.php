@@ -106,7 +106,7 @@
 								<img src="<?php bloginfo('template_url'); ?>/images/asset-cards.jpg" alt="" class="responsive">
 								<div class="content">
 									<small>Webinar</small>
-									<h3>Delivering Intelligent, Omnichannel Self-Service</h3>
+									<h3><a href="">Delivering Intelligent, Omnichannel Self-Service</a></h3>
 									<p>Mauris commodo quam augue, nec tristique ligula faucibus at. Ut porttitor venenatis lorem, quis.</p>
 									<a href="" class="button">Watch Now</a>
 								</div>
@@ -117,7 +117,7 @@
 								<img src="<?php bloginfo('template_url'); ?>/images/asset-cards.jpg" alt="" class="responsive">
 								<div class="content">
 									<small>Webinar</small>
-									<h3>Delivering Intelligent, Omnichannel Self-Service</h3>
+									<h3><a href="">Delivering Intelligent, Omnichannel Self-Service</a></h3>
 									<p>Mauris commodo quam augue, nec tristique ligula faucibus at. Ut porttitor venenatis lorem, quis.</p>
 									<a href="" class="button">Watch Now</a>
 								</div>
@@ -128,7 +128,7 @@
 								<img src="<?php bloginfo('template_url'); ?>/images/asset-cards.jpg" alt="" class="responsive">
 								<div class="content">
 									<small>Webinar</small>
-									<h3>Delivering Intelligent, Omnichannel Self-Service</h3>
+									<h3><a href="">Delivering Intelligent, Omnichannel Self-Service</a></h3>
 									<p>Mauris commodo quam augue, nec tristique ligula faucibus at. Ut porttitor venenatis lorem, quis.</p>
 									<a href="" class="button">Watch Now</a>
 								</div>

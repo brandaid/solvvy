@@ -1,4 +1,4 @@
-.post {
+.the-post {
 	@extend .asset-cards;
 	margin-bottom: 60px;
 	h2 {
@@ -14,7 +14,7 @@
 
 // 768px
 @media all and (min-width: $screen-portrait) {
-	.post {
+	.the-post {
 		.content {
 			padding: 25px;
 		}
@@ -27,7 +27,7 @@
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
-	.post {
+	.the-post {
 		.content {
 			padding: 40px;
 		}
