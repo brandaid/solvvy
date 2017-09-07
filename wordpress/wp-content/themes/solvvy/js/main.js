@@ -49,6 +49,18 @@ $(document).ready(function() {
 	    }
 	});
 
+	$('.owl-careers').owlCarousel({
+	    loop:true,
+	    autoplay: true,
+	   	navText: "",
+	    nav:true,
+	    URLhashListener:true,
+	    autoplayHoverPause:true,
+	    margin: 10,
+	    items: 1
+	});
+	
+
 	$('select').niceSelect();
 
 	$('.tab-role').addClass('active');

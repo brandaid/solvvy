@@ -9,6 +9,8 @@
 	h2 {
 		font-family: $font-thin;
 		color: white;
+		max-width: 950px;
+		@include center;
 		// 992px
 		@media all and (min-width: $screen-landscape) {
 			font-size: 54px;
