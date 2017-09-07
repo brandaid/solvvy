@@ -164,12 +164,19 @@
 	h2, h3 {
 		font-family: $primary-font;
 		font-size: 26px;
+		a {
+			color: $brand-secondary;
+			display: block;
+			&:hover {
+				color: $brand-primary;
+			}
+		}
 	}
 	p {
 		font-size: 18px;
 		color: $brand-tertiary;
 	}
-	a {
+	a.button {
 		font-size: 15px;
 	}
 }
@@ -195,7 +202,7 @@
 		input,
 		button {
 			display: table-cell;
-			width: 70%;
+			width: 60%;
 			vertical-align: middle;
 			height: 50px;
 			font-size: 16px;
@@ -209,18 +216,22 @@
 			border: 1px solid #d6dde4;
 		}
 		button {
-			border: 0;
+			border: 1px solid $brand-primary;
 			background: $brand-primary;
 			color: white;
 			font-family: $font-semibold;
-			width: 30%;
+			width: 40%;
 			padding: 0 10px;
 			line-height: 50px;
+			font-size: 14px;
+			padding: 0;
 			cursor: pointer;
 			border-radius: 0 4px 4px 0;
 			@include transition;
 			&:hover {
-				background: darken($brand-primary, 5%);
+				background: white;
+				border: 1px solid $brand-primary;
+				color: $brand-primary;
 			}
 		}
 		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -272,7 +283,7 @@
 		p {
 			font-size: 15px;
 		}
-		a {
+		a.button {
 			font-size: 15px;
 			white-space: nowrap;
 			padding-left: 20px;
@@ -310,9 +321,6 @@
 		p {
 			font-size: 18px;
 		}
-		a {
-			font-size: 15px;
-		}
 	}
 	
 	.marketo-newsletter {
@@ -320,8 +328,14 @@
 			li {
 				display: inline-block;
 				vertical-align: middle;
-				padding: 0 10px;
 				@include border-box;
+				width: 36%;
+				&:nth-child(2) {
+					width: 40%;
+				}
+				&:nth-child(3) {
+					width: 22%;
+				}
 			}
 		}
 		p {
@@ -352,10 +366,26 @@
 		ul {
 			li {
 				padding: 0 10px;
+				text-align: right;
+				&:nth-child(2) {
+					width: 40%;
+				}
+				&:nth-child(3) {
+					width: 22%;
+					text-align: left;
+				}
 			}
 		}
 		p {
 			font-size: 18px;
+		}
+		form {
+			input {
+				width: 68%;
+			}
+			button {
+				width: 32%;
+			}
 		}
 	}
 }
