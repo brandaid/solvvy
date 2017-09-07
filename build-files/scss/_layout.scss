@@ -65,7 +65,22 @@ a, a:hover, a:active, a:focus {
 		}
 	}
 }
-
+.title-to-left {
+	h2 {
+		text-align: left;
+		margin-bottom: 50px;
+		// 768px
+		@media all and (min-width: $screen-portrait) {
+		margin-left: 20px;
+		}
+		&:after {
+			margin-left: 0!important;
+		}
+	}
+}
+.align-left {
+	text-align: left;
+}
 .cool-sep {
 	border-top: 2px solid lighten($brand-tertiary, 40%);
 	background: #f8fbfd;
@@ -115,6 +130,12 @@ a, a:hover, a:active, a:focus {
 			vertical-align: top;
 			padding: 0 20px;
 		}
+		&.three-ipad {
+			li {
+				width: 33.33333%;
+			}
+			
+		}
 	}
 	// 992px
 	@media all and (min-width: $screen-landscape) {
@@ -122,4 +143,22 @@ a, a:hover, a:active, a:focus {
 			width: 33.33333%;
 		}
 	}
+}
+.list-boxes-two {
+	@extend .formated-list;
+	@media all and (min-width: $screen-portrait) {
+		font-size: 0;
+		li {
+			width: 48%;
+			@include border-box;
+			display: inline-block;
+			vertical-align: top;
+			&:nth-child(even) {
+				margin-left: 4%;
+			}
+		}
+	}
+}
+.block {
+	display: block;
 }
