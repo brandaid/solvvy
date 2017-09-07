@@ -1,6 +1,7 @@
 .box-partners {
 	@extend .hero-banner;
 	background: url(images/bkg-box-partners.jpg) no-repeat center center; 
+	background-size: cover; 
 	.container {
 		max-width: 100%;
 
