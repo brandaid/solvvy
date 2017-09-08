@@ -165,9 +165,13 @@ $(document).ready(function() {
 // SmartMenus init
 $(function() {
 	$('#main-menu').smartmenus({
-		subIndicators: 		false,
 		mainMenuSubOffsetX:	0,
-		mainMenuSubOffsetY:	10
+		mainMenuSubOffsetY:	10,
+		showOnClick:		true,
+		hideOnClick:		true,
+		subIndicators: 		true,
+		//subIndicatorsPos: 	'append',
+		subIndicatorsText:	''
 	});
 });
 
@@ -179,9 +183,9 @@ $(function() {
     $mainMenuState.change(function(e) {
       var $menu = $('#main-menu');
       if (this.checked) {
-        $menu.hide().slideDown(50, function() { $menu.css('display', ''); });
+        $menu.hide().slideDown(250, function() { $menu.css('display', ''); });
       } else {
-        $menu.show().slideUp(50, function() { $menu.css('display', ''); });
+        $menu.show().slideUp(250, function() { $menu.css('display', ''); });
       }
     });
     // hide mobile menu beforeunload
