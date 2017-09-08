@@ -70,17 +70,20 @@
 									<li>
 										<a href="#">FOR YOUR BUSINNES TYPE</a>
 										<ul>
-											<li><a href="#">Support</a></li>
-											<li><a href="#">Customer Experience</a></li>
-											<li><a href="#">Finance</a></li>
+											<li><a href="#">B2B</a></li>
+											<li><a href="#">B2D</a></li>
+											<li><a href="#">B2C</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="#">FOR YOUR INDUSTRY</a>
 										<ul>
-											<li><a href="#">Support</a></li>
-											<li><a href="#">Customer Experience</a></li>
-											<li><a href="#">Finance</a></li>
+											<li><a href="#">Tech</a></li>
+											<li><a href="#">Health & Beauty</a></li>
+											<li><a href="#">Food & Beverage</a></li>
+											<li><a href="#">Gaming</a></li>
+											<li><a href="#">Financial Services</a></li>
+											<li><a href="#">Fundraising</a></li>
 										</ul>
 									</li>
 									<li class="menu-post">
@@ -98,7 +101,36 @@
 							<li><a href="">Resources</a></li>
 							<li><a href="#">Company</a>
 								<ul>
-									<li><a href="">Premium support</a></li>
+									<li>
+										<a href="#">Company Info</a>
+										<ul>
+											<li><a href="#">About Us</a></li>
+											<li><a href="#">Vision</a></li>
+											<li><a href="#">Leadership</a></li>
+											<li><a href="#">Contact Us</a></li>
+											<li><a href="#">Careers</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">News & Events</a>
+										<ul>
+											<li><a href="#">News & Press Releases</a></li>
+											<li><a href="#">Events</a></li>
+											<li><a href="#">Blog</a></li>
+											<li><a href="#">Newsletters</a></li>
+											<li><a href="#">Awards & Recognition</a></li>
+										</ul>
+									</li>
+									<?php/*
+									<li class="menu-post">
+										<div>
+											<a href=""><h4>LATEST REPORT</h4></a>
+											<p>Bacon ipsum dolor amet salami shankie bacon beef ioin doner.</p>
+											<a href=""><img src="<?php bloginfo('template_url'); ?>/images/hero-image.jpg" alt="" ></a>
+											<div><a class="button" href="#">Read Now</a></div>
+										</div>
+									</li>
+									*/?>
 								</ul>
 							</li>
 							<li class="post">
@@ -114,174 +146,6 @@
 
 				</div>
 			</section>
-
-				
-			
-
-
-
-
-			<?php/*
-			<section class="header-top">
-				<div class="container">
-					<ul>
-						<li><a href="">Contact Us</a></li>
-						<li><a href="">Blog</a></li>
-						<li><a href="">Support</a></li>
-						<li><a href="">Pricing</a></li>
-						<li><a href="" class="login">Login</a></li>
-					</ul>
-				</div>
-			</section>
-
-
-
-
-			<section  class="header-bottom">
-				<div class="container">
-
-
-				<nav class="main-nav" role="navigation">
-
-					<!-- Mobile menu toggle button (hamburger/x icon) -->
-					<input id="main-menu-state" type="checkbox" />
-					<label class="main-menu-btn" for="main-menu-state">
-					<span class="main-menu-btn-icon"></span> Toggle main menu visibility
-					</label>
-
-
-					<div class="nav-brand">
-						<a href=""><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
-					</div>
-
-				  <!-- Sample menu definition -->
-				  <ul id="main-menu" class="sm sm-clean">
-				    <li>
-				    	<a href="">Solutions</a>
-							<ul>
-								<li>
-									<div>
-										<h4>FOR YOUR ROLE</h4>
-										<div><a href="">Support</a></div>
-										<div><a href="">Customer Experience</a></div>
-										<div><a href="">Finance</a></div>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h4>FOR YOUR BUSINESS TYPE</h4>
-										<div><a href="">B2B</a></div>
-										<div><a href="">B2D</a></div>
-										<div><a href="">B2C</a></div>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h4>FOR YOUR INDUSTRY</h4>
-										<div><a href="">Tech</a></div>
-										<div><a href="">Health & Beaty</a></div>
-										<div><a href="">Food & Beverage</a></div>
-										<div><a href="">Gaming</a></div>
-										<div><a href="">Financial Services</a></div>
-										<div><a href="">Fundraising</a></div>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h4>LATEST REPORT</h4>
-										<p>Bacon ipsum dolor amet salami shankie bacon beef ioin doner.</p>
-										<img src="<?php bloginfo('template_url'); ?>/images/hero-image.jpg" alt="" height="100">
-									</div>
-								</li>
-							</ul>
-			    	</li>
-				    <li><a href="">Software</a></li>
-				    <li><a href="">Customers</a></li>
-				    <li><a href="">Resources</a></li>
-				    <li>
-				    	<a href="">Company</a>
-						<ul>
-						    <li><a href="http://www.smartmenus.org/support/premium-support/">Premium support</a></li>
-						    <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
-						  </ul>
-						</li>
-				    <li class="demo"><a href="" class="button">Demo</a></li>
-				    <li class="search"><a href="" class="fa fa-search"></a></li>
-				  </ul>
-				</nav>
-
-
-				</div>
-			</section>
-			*/?>
-
-
-	
-
-
-
-
-
-
-
-
-
-
-		<?php/*
-		<section class="header-bottom">
-			<div class="container">
-				<div class="col-brand">
-					<a href=""><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
-				</div>
-				<div class="col-nav">
-					<nav>
-						<ul class="menu">
-							<li><a href="">Solutions</a>
-								<div>
-									<ul>
-										<h4>FOR YOUR ROLE</h4>
-										<li><a href="">Support</a></li>
-										<li><a href="">Customer Experience</a></li>
-										<li><a href="">Finance</a></li>
-									</ul>
-									<ul>
-										<h4>FOR YOUR BUSINESS TYPE</h4>
-										<li><a href="">B2B</a></li>
-										<li><a href="">B2D</a></li>
-										<li><a href="">B2C</a></li>
-									</ul>
-									<ul>
-										<h4>FOR YOUR INDUSTRY</h4>
-										<li><a href="">Tech</a></li>
-										<li><a href="">Health & Beaty</a></li>
-										<li><a href="">Food & Beverage</a></li>
-										<li><a href="">Gaming</a></li>
-										<li><a href="">Financial Services</a></li>
-										<li><a href="">Fundraising</a></li>
-									</ul>
-									<ul>
-										<li>
-											<div>
-												<h4>LATEST REPORT</h4>
-												<p>Bacon ipsum dolor amet salami shankie bacon beef ioin doner.</p>
-												<img src="<?php bloginfo('template_url'); ?>/images/hero-image.jpg" alt="" height="100">
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="">Software</a></li>
-							<li><a href="">Customers</a></li>
-							<li><a href="">Resources</a></li>
-							<li><a href="">Company</a></li>
-							<li><a href="">Demo</a></li>
-							<li><a href="">P</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</section>
-		*/?>
 
 	</header>
 	<main>
