@@ -17,7 +17,7 @@
 .box-post {
 	@extend .box;
 	@include transition;
-	padding: 80px 50px 120px 50px;
+	padding: 80px 50px;
 	text-align: center;
 	position: relative;
 	margin-bottom: 100px;
@@ -40,10 +40,16 @@
 		}
 	}
 
-	svg {
+	svg.waves-on-bottom {
 		position: absolute;
 		left: 0;
 		bottom: 0;
+		width: 100%;
+	}
+	svg.waves-on-top {
+		position: absolute;
+		left: 0;
+		top: 0;
 		width: 100%;
 	}
 	.hidden-info {
@@ -73,6 +79,43 @@
 .hidden-info {
 	display: none;
 }
+
+.with-waves-on-bottom {
+	padding-bottom: 100px;
+}
+.with-waves-on-top {
+	padding-top: 100px;
+}
+
+.marketo-follow-us {
+	h4 {
+		font-family: $font-light;
+		font-size: 14px;
+		color: $brand-tertiary;
+		letter-spacing: 1px;
+	}
+	.fa {
+		color: $brand-tertiary;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 20px 0 0;
+		font-size: 20px;
+		opacity: .5;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.fixed-form {
+	position: fixed; 
+	top: 0; 
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 }
@@ -92,6 +135,39 @@
 			* {
 				text-align: left;
 			}		
+		}
+	}
+
+	.with-waves-on-bottom {
+		padding-bottom: 200px;
+	}
+	.with-waves-on-top {
+		padding-top: 200px;
+	}
+
+	.marketo-follow-us {
+		h4 {
+			margin: 0;
+		}
+		ul {
+			font-size: 0;
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				width: 25%;
+				@include border-box;
+				&:nth-child(1) {
+					padding-right: 5px;
+					text-align: right;
+				}
+				&:nth-child(2) {
+					width: 50%;
+				}
+				&:nth-child(3) {
+					padding-left: 5px;
+					text-align: left;
+				}
+			}
 		}
 	}
 }
