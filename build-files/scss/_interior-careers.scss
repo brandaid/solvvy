@@ -1,0 +1,163 @@
+.box-careers {
+	@extend .box-partners;
+	padding-top: 190px;
+	padding-bottom: 260px;
+}
+.slider-interior {
+	margin: 60px 0px;
+}
+
+
+.slider-info {
+	padding: 20px;
+	@include border-box;
+	.col-left {
+		padding-bottom: 50px;
+	}
+	.box-case {
+		margin-bottom: 0;
+	}
+}
+
+.slider-info--box {
+	h2 {
+		@extend .underlined;
+		&:after {
+			margin-left: 0;
+		}
+	}
+	p {
+		line-height: 1.5em;
+	}
+	a.big-link {
+		font-size: 20px;
+		line-height: 1.5em;
+		&:hover {
+			color: $brand-primary;
+		}
+	}
+	a.button {
+		margin-top: 30px;
+	}
+}
+
+.box-icon-text {
+	position: relative;
+	padding-left: 70px;
+	@include border-box;
+	margin-top: 30px;
+	i {
+		position: absolute;
+		left: -10px;
+		font-size: 40px;
+		color: $brand-primary;
+		top: -5px;
+	}
+	h4, p {
+		text-align: left;
+		font-size: 18px;
+	}
+	h4 {
+		text-transform: uppercase;
+		font-family: $font-semibold;
+	}
+	
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.box-careers {
+		padding-top: 280px;
+		padding-bottom: 400px;
+	}
+	.slider-info {
+		display: table;
+		width: 100%;
+		.col-left {
+			padding-bottom: 0px;
+		}
+		.col-left,
+		.col-right {
+			display: table-cell;
+			width: 50%;
+			vertical-align: top;
+		}
+	}	
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.box-careers {
+		padding-top: 350px;
+		padding-bottom: 400px;
+	}
+	.bkg-pink {
+		background-image: url(images/backer1.png), url(images/backer2.png);
+	    background-position: right 90%, left 10%;
+	    background-repeat: no-repeat, no-repeat;
+	}
+	.bkg-orbit-right {
+		background: url(images/orbit-metrics-right.png) no-repeat right center;
+	}
+	.slider-info {
+		.col-left {
+			width: 45%;
+			padding-right: 50px;
+		}
+		.col-right {
+			width: 55%;
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.slider-info--box {
+		h2 {
+			font-size: 24px;
+		}
+	}
+	.owl-careers {
+		.owl-dots {
+			display: block;
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+	.slider-interior {
+		margin: 126px 0px;
+	}	
+	.owl-careers {
+		.owl-dots {
+			display: none;
+		}
+		.owl-nav {
+			display: block;
+			top: 43%;
+		}
+	}
+	.slider-info--box {
+		h2 {
+			font-size: 36px;
+		}
+	}
+}
+// 1400px
+@media all and (min-width: $screen-desktop-big) {
+	.owl-careers {
+		.owl-nav {
+			top: 35%;
+		}
+	}
+	.slider-info {
+		.col-right,
+		.col-left {
+			width: 55%;
+			vertical-align: middle;
+		}
+		.col-left {
+			width: 45%
+		}
+	}	
+}

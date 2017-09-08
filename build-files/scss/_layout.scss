@@ -162,3 +162,15 @@ a, a:hover, a:active, a:focus {
 .block {
 	display: block;
 }
+
+.center-element {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.the-element {
+	display: table-cell;
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
+}
