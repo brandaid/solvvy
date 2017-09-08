@@ -3,7 +3,7 @@
 	padding: 40px 40px 80px 40px;
 	margin: 50px 0;
 	div.image {
-		img {
+		img.responsive {
 			max-width: 166px;
 			margin-bottom: 40px;
 		}
@@ -43,7 +43,7 @@
 		}
 		div.image {
 			width: 20%;
-			img {
+			img.responsive {
 				margin-bottom: 0px;
 			}
 		}
