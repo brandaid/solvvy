@@ -9,25 +9,16 @@
 .sm-clean a span.sub-arrow {
   position: absolute;
   top: 50%;
-  margin-top: -17px;
-  left: auto;
-  right: 4px;
-  width: 34px;
-  height: 34px;
+  margin-top: -26px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 50px;
   overflow: hidden;
-  font: bold 16px/34px monospace !important;
-  text-align: center;
-  text-shadow: none;
-  background: rgba(255, 255, 255, 0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  background: transparent;
 }
 .sm-clean a.highlighted span.sub-arrow:before {
   display: block;
-  content: '-';
 }
 .sm-clean > li:first-child > a, .sm-clean > li:first-child > :not(ul) a {
 }
@@ -79,7 +70,7 @@
   border-left: 40px solid transparent;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   /* Switch to desktop layout
   -----------------------------------------------
      These transform the menu tree from
@@ -99,69 +90,24 @@
     float: right;
   }
 
-  .sm-clean ul li, .sm-clean.sm-rtl ul li, .sm-clean.sm-vertical li {
-    float: none;
-  }
+  .sm-clean ul li, .sm-clean.sm-rtl ul li, .sm-clean.sm-vertical li {}
+  .sm-clean a {}
+  .sm-clean ul a, .sm-clean.sm-vertical a {}
+  .sm-clean .sm-nowrap > li > a, .sm-clean .sm-nowrap > li > :not(ul) a {}
+  .sm-clean {}
+  .sm-clean a, .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {}
+  .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {}
+  .sm-clean a.current {}
+  .sm-clean a.disabled {}
+  .sm-clean a.has-submenu {}
+  .sm-clean a span.sub-arrow {}
 
-  .sm-clean a {
-    white-space: nowrap;
-  }
-
-  .sm-clean ul a, .sm-clean.sm-vertical a {
-    white-space: normal;
-  }
-
-  .sm-clean .sm-nowrap > li > a, .sm-clean .sm-nowrap > li > :not(ul) a {
-    white-space: nowrap;
-  }
-
-  /* ...end */
-  .sm-clean {
-  }
-  .sm-clean a, .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {
-  }
-  .sm-clean a:hover, .sm-clean a:focus, .sm-clean a:active, .sm-clean a.highlighted {
-  }
-  .sm-clean a.current {
-  }
-  .sm-clean a.disabled {
-  }
-  .sm-clean a.has-submenu {
-  }
-  .sm-clean a span.sub-arrow {
-    top: 50%;
-    margin-top: -2px;
-    right: 12px;
-    width: 0;
-    height: 0;
-    border-width: 4px;
-    border-style: solid dashed dashed dashed;
-    border-color: #555555 transparent transparent transparent;
-    background: transparent;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-  }
   .sm-clean a.highlighted span.sub-arrow:before {
     display: none;
   }
-  .sm-clean li {
-    border-top: 0;
-  }
+  .sm-clean li {}
   .sm-clean > li > ul:before,
   .sm-clean > li > ul:after {
-    content: '';
-    position: absolute;
-    top: -18px;
-    left: 30px;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    border-width: 9px;
-    border-style: dashed dashed solid dashed;
-    border-color: transparent transparent #fff transparent;
   }
   .sm-clean > li > ul:after {
     top: -16px;
@@ -172,50 +118,28 @@
   .sm-clean ul {
   }
   .sm-clean ul a, .sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted {
-    border: 0 !important;
-    padding: 10px 20px;
-    color: #555555;
   }
   .sm-clean ul a:hover, .sm-clean ul a:focus, .sm-clean ul a:active, .sm-clean ul a.highlighted {
-    background: #eeeeee;
-    color: #d23600;
   }
   .sm-clean ul a.current {
-    color: #d23600;
   }
   .sm-clean ul a.disabled {
-    background: white;
-    color: #cccccc;
   }
   .sm-clean ul a.has-submenu {
-    padding-right: 20px;
   }
   .sm-clean ul a span.sub-arrow {
-    right: 8px;
-    top: 50%;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: dashed dashed dashed solid;
-    border-color: transparent transparent transparent #555555;
   }
   .sm-clean span.scroll-up,
   .sm-clean span.scroll-down {
-    position: absolute;
-    display: none;
-    visibility: hidden;
-    overflow: hidden;
-    background: white;
-    height: 20px;
   }
   .sm-clean span.scroll-up:hover,
   .sm-clean span.scroll-down:hover {
-    background: #eeeeee;
   }
   .sm-clean span.scroll-up:hover span.scroll-up-arrow, .sm-clean span.scroll-up:hover span.scroll-down-arrow {
-    border-color: transparent transparent #d23600 transparent;
+    border-color: transparent transparent red transparent;
   }
   .sm-clean span.scroll-down:hover span.scroll-down-arrow {
-    border-color: #d23600 transparent transparent transparent;
+    border-color: blue transparent transparent transparent;
   }
   .sm-clean span.scroll-up-arrow, .sm-clean span.scroll-down-arrow {
     position: absolute;
@@ -227,12 +151,12 @@
     overflow: hidden;
     border-width: 6px;
     border-style: dashed dashed solid dashed;
-    border-color: transparent transparent #555555 transparent;
+    border-color: transparent transparent transparent transparent;
   }
   .sm-clean span.scroll-down-arrow {
     top: 8px;
     border-style: solid dashed dashed dashed;
-    border-color: #555555 transparent transparent transparent;
+    border-color: transparent transparent transparent transparent;
   }
   .sm-clean.sm-rtl a.has-submenu {
     padding-right: 12px;
@@ -270,20 +194,13 @@
   }
   .sm-clean.sm-vertical {
     padding: 10px 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
   }
   .sm-clean.sm-vertical a {
     padding: 10px 20px;
   }
   .sm-clean.sm-vertical a:hover, .sm-clean.sm-vertical a:focus, .sm-clean.sm-vertical a:active, .sm-clean.sm-vertical a.highlighted {
-    background: white;
   }
   .sm-clean.sm-vertical a.disabled {
-    background: #eeeeee;
   }
   .sm-clean.sm-vertical a span.sub-arrow {
     right: 8px;
@@ -300,10 +217,6 @@
   .sm-clean.sm-vertical ul a {
     padding: 10px 20px;
   }
-  .sm-clean.sm-vertical ul a:hover, .sm-clean.sm-vertical ul a:focus, .sm-clean.sm-vertical ul a:active, .sm-clean.sm-vertical ul a.highlighted {
-    background: #eeeeee;
-  }
-  .sm-clean.sm-vertical ul a.disabled {
-    background: white;
-  }
+  .sm-clean.sm-vertical ul a:hover, .sm-clean.sm-vertical ul a:focus, .sm-clean.sm-vertical ul a:active, .sm-clean.sm-vertical ul a.highlighted {}
+  .sm-clean.sm-vertical ul a.disabled {}
 }
