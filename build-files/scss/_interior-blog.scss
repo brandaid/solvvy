@@ -1,0 +1,101 @@
+.hero-banner-blog {
+	background: url(images/bkg-blog.png) no-repeat center center;
+	padding-top: 90px;
+	padding-bottom: 90px;
+	text-align: center;
+	h1 {
+		color: white;
+		margin: 0;
+	}
+}
+.blog-content {
+	padding: 80px 0;
+	.container {
+		max-width: 1060px;
+	}
+}
+.box-post {
+	@extend .box;
+	@include transition;
+	padding: 80px 50px 120px 50px;
+	text-align: center;
+	position: relative;
+	margin-bottom: 100px;
+	h2 {
+		font-family: $font-medium;
+		margin-bottom: 20px;
+	}
+	p {
+		line-height: 1.5em;
+	}
+	small {
+		display: block;
+		margin-bottom: 50px;
+		color: $brand-tertiary;
+		a {
+			color: $brand-primary;
+			&:hover {
+				color: $brand-secondary;
+			}
+		}
+	}
+
+	svg {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+	.hidden-info {
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+		}		
+	}
+}
+.content-avatar {
+	height: 5px;
+	width: 100%;
+	left: 0;
+	top: -35px;
+	position: absolute;
+	text-align: center;
+}
+.avatar {
+	width: 70px;
+	border-radius: 50%;
+	display: inline-block;
+	overflow: hidden;
+	height: 70px;
+	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+}
+.hidden-info {
+	display: none;
+}
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.hero-banner-blog {
+		background-size: cover;
+	}
+	.box-post {
+		padding-left: 115px;
+		padding-right: 115px;
+		p {
+			text-align: left;
+		}
+		.hidden-info {
+			* {
+				text-align: left;
+			}		
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}
