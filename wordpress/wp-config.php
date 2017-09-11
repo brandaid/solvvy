@@ -29,15 +29,14 @@ if ($_SERVER[‘HTTP_HOST’] != 'localhost') {
 	define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
 
 	/** MySQL hostname */
-	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
+	define( 'DB_HOST', 'localhost' );
 
 	/** Database Charset to use in creating database tables. */
 	define( 'DB_CHARSET', 'utf8' );
 
 	/** The Database Collate type. Don't change this if in doubt. */
 	define( 'DB_COLLATE', '' );
-	define('WP_SITEURL', 'http://solvvy.mbzvrm4-liquidwebsites.com');
-	define('WP_HOME', 'http://solvvy.mbzvrm4-liquidwebsites.com');
+
 
 } else {
 	/** The name of the database for WordPress */
