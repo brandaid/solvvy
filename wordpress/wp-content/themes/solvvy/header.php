@@ -86,9 +86,9 @@
 											<li><a href="#">Fundraising</a></li>
 										</ul>
 									</li>
-									<li class="menu-post">
+									<li class="menu-post last-post">
 										<div>
-											<a href=""><h4>LATEST REPORT</h4></a>
+											<a href=""><h4>LATEST REPORT A</h4></a>
 											<p>Bacon ipsum dolor amet salami shankie bacon beef ioin doner.</p>
 											<a href=""><img src="<?php bloginfo('template_url'); ?>/images/hero-image.jpg" alt="" ></a>
 											<div><a class="button" href="#">Read Now</a></div>
@@ -121,7 +121,6 @@
 											<li><a href="#">Awards & Recognition</a></li>
 										</ul>
 									</li>
-									<?php/*
 									<li class="menu-post">
 										<div>
 											<a href=""><h4>LATEST REPORT</h4></a>
@@ -130,14 +129,19 @@
 											<div><a class="button" href="#">Read Now</a></div>
 										</div>
 									</li>
-									*/?>
 								</ul>
 							</li>
 							<li class="post">
 								<div class="menu-post-clone"></div>
 							</li>
 							<li class="demo"><a class="button" href="#">DEMO</a></li>
-							<li class="search"><a href="" class="icon-search-2"></a></li>
+							<li class="search">
+								<form class="searchbox">
+									<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+									<input type="submit" class="searchbox-submit" value="&#xe80f">
+									<span class="searchbox-icon"><span class="icon-search-2"></span></span>
+								</form>
+							</li>
 							<li class="top-menu">
 								<div class="menu-top-clone"></div>
 							</li>
