@@ -52,6 +52,8 @@
 				<a href="" class="button">Blog</a>
 			</div>
 		</section>
+
+		<!-- SEP -->
 		
 		<div class="cool-sep"></div>
 
@@ -62,54 +64,57 @@
 			</div>
 		</section>
 
+		<!-- SEP -->
+
 		<div class="cool-sep"></div>
 
 		<section class="box-text-top bkg-none container-normal">
 			<div class="container">
 				<h2 class="margin-bottom-90">Key Differentiators</h2>
-				<ul class="list-boxes-three">
+				<ul class="list-boxes-three align-left colorful-icons">
 					<li>
 						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
+							<i class="icon-clock"></i>
 							<h3>LABEL NAME</h3>
 							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
 						</div>
 					</li>
 					<li>
 						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
+							<i class="icon-clock"></i>
 							<h3>LABEL NAME</h3>
 							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
 						</div>
 					</li>
 					<li>
 						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
+							<i class="icon-clock"></i>
 							<h3>LABEL NAME</h3>
 							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
 						</div>
 					</li>
 					<li>
 						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
+							<i class="icon-clock"></i>
 							<h3>LABEL NAME</h3>
 							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
 						</div>
 					</li>
 					<li>
 						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
+							<i class="icon-clock"></i>
 							<h3>LABEL NAME</h3>
 							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
 						</div>
 					</li>
 					<li>
 						<div class="keys-box">
-							<img src="<?php bloginfo('template_url'); ?>/images/ico.png" class="responsive" alt="">
+							<i class="icon-clock"></i>
 							<h3>LABEL NAME</h3>
 							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
 						</div>
 					</li>
+
 				</ul>
 			</div>
 		</section>

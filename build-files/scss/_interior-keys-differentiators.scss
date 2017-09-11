@@ -1,8 +1,10 @@
 .keys-box {
 	text-align: center;
-	img {
-		max-width: 74px;
+	i {
+		font-size: 50px;
 		margin-bottom: 50px;
+		color: $brand-primary;
+		display: block;
 	}
 	h3 {
 		font-family: $font-semibold;
@@ -16,6 +18,40 @@
 		text-align: center;
 	}
 }
+.colorful-icons {
+	margin-top: 80px;
+	li:nth-child(3n+1) {
+		i {
+			color: $brand-primary;
+		}
+	}
+	li:nth-child(3n+2) {
+		i {
+			color: #bdb2f2;
+		}
+	}
+	li:nth-child(3n+3) {
+		i {
+			color: #9155aa;
+		}
+	}
+	li:nth-child(3n+4) {
+		i {
+			color: $brand-secondary;
+		}
+	}
+	li:nth-child(3n+5) {
+		i {
+			color: #f4a6ea;
+		}
+	}
+	li:nth-child(3n+6) {
+		i {
+			color: #fa3777;
+		}
+	}
+}
+
 
 // 768px
 @media all and (min-width: $screen-portrait) {

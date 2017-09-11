@@ -30,7 +30,6 @@
 	}
 	small {
 		display: block;
-		background:red;
 		margin-bottom: 50px;
 		color: $brand-tertiary;
 		position: relative;
@@ -127,7 +126,10 @@
 	@include border-box;
 	@include transition;
 	position: absolute;
+	top: 30px;
+	left: -30%;
 	opacity: 0;
+	height: 0;
 	z-index: 999;
 	&:after {
 		content: "\f0d8";
@@ -159,15 +161,26 @@
 		text-align: center!important;
 		font-size: 16px;
 		margin: 0;
+		height: 0;
+		opacity: 0;
+		@include transition;
 	}
 }
-small.link-author:hover {
-	.popup-author {
+.show-us {
+	height: auto;
+	opacity: 1;
+
+	p {
 		opacity: 1;
+		height: auto;
 	}
 }
+
 // 768px
 @media all and (min-width: $screen-portrait) {
+	.popup-author {
+		left: 15%;
+	}
 }
 
 // 992px
@@ -219,6 +232,10 @@ small.link-author:hover {
 				}
 			}
 		}
+	}
+
+	.popup-author {
+		left: 19%;
 	}
 }
 

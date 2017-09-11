@@ -17,6 +17,11 @@
 .icon-search-2:before { content: '\e80f'; } /* '' */
 .icon-avatar:before { content: '\e810'; } /* '' */
 .icon-operator:before { content: '\e811'; } /* '' */
+.icon-icon-book:before { content: '\e812'; } /* '' */
+.icon-icon-apple:before { content: '\e813'; } /* '' */
+.icon-icon-clock:before { content: '\e814'; } /* '' */
+.icon-icon-robot:before { content: '\e815'; } /* '' */
+.icon-icon-pillar:before { content: '\e816'; } /* '' */
 .icon-user:before { content: '\f061'; } /* '' */
 .icon-neuter:before { content: '\f22c'; } /* '' */
 .icon-twitter:before { content: '\f309'; } /* '' */

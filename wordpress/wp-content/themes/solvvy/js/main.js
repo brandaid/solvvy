@@ -285,4 +285,13 @@ $(window).scroll(function(){
 	        $('.searchbox-icon').css('display','block');
 	    }
 	}
+
 //END SEARCH
+
+
+$(".link-author").click(function(){
+    $(this).siblings(".popup-author").addClass("show-us");
+});
+$(".link-author").mouseout(function() {
+    $(this).siblings(".popup-author").removeClass("show-us");
+});
