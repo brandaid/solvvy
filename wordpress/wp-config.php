@@ -31,14 +31,14 @@ if ($has_init_file) {
 	define('DB_NAME', 's1');
 
 	/** MySQL database username */
-	define('DB_USER', $WP_ENV_INI['DB_USER']);
+	define('DB_USER', 'root');
 
 	/** MySQL database password */
-	define('DB_PASSWORD', $WP_ENV_INI['DB_PASSWORD']);
+	define('DB_PASSWORD', 'root');
 
 } else {
 	/** The name of the database for WordPress */
-	define('DB_NAME', 'solvvy');
+	define('DB_NAME', 's1');
 
 	/** MySQL database username */
 	define('DB_USER', 'root');
