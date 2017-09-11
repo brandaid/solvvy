@@ -17,8 +17,8 @@
  *
  * @package WordPress
  */
-
-if ($_SERVER[‘HTTP_HOST’] != 'localhost') {
+echo $_SERVER['HTTP_HOST'];
+if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	/** The name of the database for WordPress */
 	define( 'DB_NAME', 's1' );
 
