@@ -30,6 +30,9 @@ if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	/** MySQL hostname */
 	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
 
+	define('WP_HOME','https://solvvy.mbzvrm4-liquidwebsites.com');
+	define('WP_SITEURL','https://solvvy.mbzvrm4-liquidwebsites.com');
+
 } else {
 	/** The name of the database for WordPress */
 	define('DB_NAME', 'solvvy');
