@@ -1,0 +1,60 @@
+.searchbox{
+    position:relative;
+    min-width:40px;
+    width:0%;
+    height:40px;
+    float:right;
+    overflow:hidden;    
+    @include transition;
+
+	.searchbox-input{
+	    top:0;
+	    right:0;
+	    border:0;
+	    outline:0;
+	    background: #f0f3f6;
+	    width:100%;
+	    height:40px;
+	    margin:0;
+	    padding:0px 55px 0px 20px;
+	    font-size:20px;
+	    color: $brand-tertiary;
+	}
+
+	.searchbox-icon,
+	.searchbox-submit{
+	    width:40px;
+	    height:40px;
+	    display:block;
+	    position:absolute;
+	    top:0;
+	    font-size:22px;
+	    right:0;
+	    padding:0;
+	    margin:0;
+	    border:0;
+	    outline:0;
+	    line-height:40px;
+	    text-align:center;
+	    cursor:pointer;
+	    color:#9baaba;
+	    background:#fff;
+	    font-family: 'solvvy';
+	}
+
+	&.searchbox-open{
+	    width:100%;
+	}
+}
+.searchbox-input::-webkit-input-placeholder {
+    color: $brand-tertiary;
+}
+.searchbox-input:-moz-placeholder {
+    color: $brand-tertiary;
+}
+.searchbox-input::-moz-placeholder {
+    color: $brand-tertiary;
+}
+.searchbox-input:-ms-input-placeholder {
+    color: $brand-tertiary;
+}
