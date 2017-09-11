@@ -28,17 +28,26 @@ if($has_init_file){
 
 if ($has_init_file) {
 	/** The name of the database for WordPress */
-	define('DB_NAME', 's1');
+	define( 'DB_NAME', 's1' );
 
 	/** MySQL database username */
-	define('DB_USER', 'root');
+	define( 'DB_USER', 's1' );
 
 	/** MySQL database password */
-	define('DB_PASSWORD', 'root');
+	define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
+
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
+
+	/** Database Charset to use in creating database tables. */
+	define( 'DB_CHARSET', 'utf8' );
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define( 'DB_COLLATE', '' );
 
 } else {
 	/** The name of the database for WordPress */
-	define('DB_NAME', 's1');
+	define('DB_NAME', 'solvvy');
 
 	/** MySQL database username */
 	define('DB_USER', 'root');
@@ -46,10 +55,12 @@ if ($has_init_file) {
 	/** MySQL database password */
 	define('DB_PASSWORD', 'root');
 
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
 }
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
