@@ -28,7 +28,7 @@ if($has_init_file){
 
 if ($has_init_file) {
 	/** The name of the database for WordPress */
-	define('DB_NAME', $WP_ENV_INI['DB_NAME']);
+	define('DB_NAME', 's1');
 
 	/** MySQL database username */
 	define('DB_USER', $WP_ENV_INI['DB_USER']);
