@@ -50,7 +50,16 @@
 						</figure>
 					</div>
 					<h2>Lorem ipsum dolor sit amet</h2>
-					<small><a href="">Mathesh Ram</a> on October 6, 2017</small>
+					<small class="link-author"><a href="javascript:void(0);">Mathesh Ram</a> on October 6, 2017
+						<div class="popup-author">
+							<figure class="avatar">
+								<img src="<?php bloginfo('template_url'); ?>/images/the-man-6.jpg" class="responsive" alt="">
+							</figure>
+							<h2>Sophie Conti</h2>
+							<h3>CEO, Customer Service Lab </h3>
+							<p>Sophie is the founder of Customer Service Lab, and she has spent her career working with startups in customer support with some of the most innovative companies like Leap Motion, Tile, Moo, Etsy, Indiegogo, Teespring, and more.</p>
+						</div>
+					</small>
 					<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
 					<div class="hidden-info">
 						<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" class="responsive" alt="">

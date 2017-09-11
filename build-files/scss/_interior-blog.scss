@@ -30,16 +30,18 @@
 	}
 	small {
 		display: block;
+		background:red;
 		margin-bottom: 50px;
 		color: $brand-tertiary;
+		position: relative;
 		a {
 			color: $brand-primary;
+			display: inline-block;
 			&:hover {
 				color: $brand-secondary;
 			}
 		}
 	}
-
 	svg.waves-on-bottom {
 		position: absolute;
 		left: 0;
@@ -86,7 +88,6 @@
 .with-waves-on-top {
 	padding-top: 100px;
 }
-
 .marketo-follow-us {
 	h4 {
 		font-family: $font-light;
@@ -106,7 +107,6 @@
 		}
 	}
 }
-
 .fixed-form {
 	position: fixed; 
 	top: 0; 
@@ -116,6 +116,56 @@
 	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
 }
 
+.popup-author {
+	background: white;
+	padding: 40px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+	max-width: 320px;
+	width: 100%;
+	@include border-box;
+	@include transition;
+	position: absolute;
+	opacity: 0;
+	z-index: 999;
+	&:after {
+		content: "\f0d8";
+		color: white;
+		position: absolute;
+		z-index: 999;
+		left: 48%;
+		top: -17px;
+		text-shadow: -4px 0px 6px rgba(0,0,0,0.1);
+		@include fontawesome;
+		font-size: 26px;
+
+	}
+	figure, h3 {
+		margin: 0 0 22px 0;
+	}
+	h2 {
+		color: $brand-tertiary;
+		font-size: 20px;
+		margin: 0 0 10px 0;
+		font-family: $font-semibold;
+	}
+	h3 {
+		font-family: $font-light;
+		color: $brand-primary;
+		font-size: 18px;
+	}
+	p {
+		text-align: center!important;
+		font-size: 16px;
+		margin: 0;
+	}
+}
+small.link-author:hover {
+	.popup-author {
+		opacity: 1;
+	}
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
 }
