@@ -17,7 +17,6 @@
  *
  * @package WordPress
  */
-echo $_SERVER['HTTP_HOST'];
 if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	/** The name of the database for WordPress */
 	define( 'DB_NAME', 's1' );
@@ -29,7 +28,7 @@ if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
 
 	/** MySQL hostname */
-	define( 'DB_HOST', 'localhost' );
+	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
 
 	/** Database Charset to use in creating database tables. */
 	define( 'DB_CHARSET', 'utf8' );
