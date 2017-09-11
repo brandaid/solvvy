@@ -122,8 +122,6 @@ $(document).ready(function() {
 	    };
 	});
 
-
-
 	// MODAL
 
 	// Get the modal
@@ -204,7 +202,6 @@ $(function() {
 	$('.menu-post-clone').html($postTop);
 });
 
-
 $("#show-all-none, .section-assets-cards").hide();
 
 $('.open-div').click(function() {
@@ -213,12 +210,33 @@ $('.open-div').click(function() {
 	
 });
 
-
 $("#styled-checkbox-1, #styled-checkbox-2, #styled-checkbox-4").click(function() {
     if($(this).is(":checked")) {
         $(".section-assets-cards").slideDown(300);
     } else {
         $(".section-assets-cards").slideUp(200);
     }
+});
+
+$(".button-more").click(function(){
+    if($(this).text()=== "READ MORE"){
+        $(this).text("READ LESS");
+        $(".hidden-info").fadeIn("fast");
+        $(this).addClass("less-class");
+    }
+    else{
+        $(this).text("READ MORE");
+        $(".hidden-info").fadeOut("fast");
+        $(this).removeClass("less-class");
+    }
+    
+});
+
+$(window).scroll(function(){
+  if ($(this).scrollTop() > 400) {
+      $('.marketo-follow-us').addClass('fixed-form');
+  } else {
+      $('.marketo-follow-us').removeClass('fixed-form');
+  }
 });
 
