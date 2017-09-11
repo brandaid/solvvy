@@ -103,10 +103,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
-
-
-
-
-	define('WP_HOME','https://solvvy.mbzvrm4-liquidwebsites.com');
-	define('WP_SITEURL','https://solvvy.mbzvrm4-liquidwebsites.com');
