@@ -20,16 +20,29 @@
 
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 's1' );
+if (($_SERVER['HTTP_HOST'] != 'localhost:8888')&&($_SERVER['HTTP_HOST'] != 'localhost:3000')) {
+	define( 'DB_NAME', 's1' );
 
-/** MySQL database username */
-define( 'DB_USER', 's1' );
+	/** MySQL database username */
+	define( 'DB_USER', 's1' );
 
-/** MySQL database password */
-define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
+	/** MySQL database password */
+	define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
+}else{
+	define( 'DB_NAME', 'solvvy' );
+
+	/** MySQL database username */
+	define( 'DB_USER', 'root' );
+
+	/** MySQL database password */
+	define( 'DB_PASSWORD', 'root' );
+
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost' );
+}
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
