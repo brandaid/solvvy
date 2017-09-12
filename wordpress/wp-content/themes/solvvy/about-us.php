@@ -38,7 +38,47 @@
 		<!-- LINE TIME -->
 
 		<section class="line-time">
-			[line time]
+			<ul class="formated-list line-time-top">
+				<li>
+					<article class="line-time-box">
+						<h4>20XX</h4>
+						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
+					</article>
+				</li>
+				<li>
+					<article class="line-time-box">
+						<h4>20XX</h4>
+						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
+					</article>
+				</li>
+				<li>
+					<article class="line-time-box">
+						<h4>20XX</h4>
+						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
+					</article>
+				</li>
+			</ul>
+			<hr>
+			<ul class="formated-list line-time-bottom">
+				<li>
+					<article class="line-time-box">
+						<h4>20XX</h4>
+						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
+					</article>
+				</li>
+				<li>
+					<article class="line-time-box">
+						<h4>20XX</h4>
+						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
+					</article>
+				</li>
+				<li>
+					<article class="line-time-box">
+						<h4>20XX</h4>
+						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
+					</article>
+				</li>
+			</ul>
 		</section>
 		
 		<!-- SEP -->

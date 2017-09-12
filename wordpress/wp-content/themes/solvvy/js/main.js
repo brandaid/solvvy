@@ -18,7 +18,7 @@ $(document).ready(function() {
 	//PRELOADER
 
 	window.onload = function(){
-		$("#loader").fadeOut(350,function(){$(this).remove()});
+		$("#loader").fadeOut(550,function(){$(this).remove()});
 	};
 	
 	$('.owl-brands').owlCarousel({
@@ -124,37 +124,25 @@ $(document).ready(function() {
 
 	// MODAL
 
-	// Get the modal
-	var modal = document.getElementById('myModal');
+	$('#myBtn').click(function() {
+		$("#myModal").fadeIn();
+	});
 
-	// Get the modal
-	var video = document.getElementById('video');
+	$('.close').click(function() {
+		var src = $("#myModal").find('iframe').attr('src');
+		$("#myModal iframe").attr('src','');
+		$("#myModal iframe").attr('src', src);
+		$("#myModal").fadeOut();	
+	});
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
+	$('#myModal').click(function(event){
+		var src = $("#myModal").find('iframe').attr('src');
+		$("#myModal iframe").attr('src','');
+		$("#myModal iframe").attr('src', src);
+		$("#myModal").fadeOut();
+	    event.stopPropagation();
+	});
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-
-	// When the user clicks on the button, open the modal 
-	btn.onclick = function() {
-	    modal.style.display = "block";
-	}
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	    modal.style.display = "none";
-	    video.src = document.getElementById('video').src;
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	        video.src = document.getElementById('video').src;
-	    }
-	}
 });
 
 
@@ -295,3 +283,37 @@ $(".link-author").click(function(){
 $(".link-author").mouseout(function() {
     $(this).siblings(".popup-author").removeClass("show-us");
 });
+
+//SLIDER SOLUTIONS SUBPAGE
+
+(function() {
+  var $, card;
+  $ = jQuery;
+  (card = $.fn).redraw || (card.redraw = function() {
+      return $(this).each(function() {
+          return this.offsetHeight
+      })
+  });
+  $(function() {
+      return $(".insights-animation").each(function() {
+          var card;
+          card = $(this).find(".cards"); //define elements to rotate
+          card.children().eq(1).addClass('active'); // add class active to center element
+          return setInterval(function() {
+              var cardActive, cardCloned;
+              cardActive = card.find(".card.active");
+              cardActive.prev().addClass("active");
+              cardActive.removeClass("active"); // managing active state
+              cardCloned = card.find(".card:not(.cloned):last");
+              cardActive = cardCloned.clone();
+              card.prepend(cardActive);
+              card.removeClass("slide-in").redraw().addClass("slide-in");
+              cardCloned.addClass("cloned"); // clone element to make loop
+              return setTimeout(function() {
+                      return cardCloned.remove()
+                  },
+                  1000)
+          }, 4500) //set animation time
+      })
+  })
+}).call(this);

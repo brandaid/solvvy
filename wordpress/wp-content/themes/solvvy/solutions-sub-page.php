@@ -29,7 +29,22 @@
 
 		<section class="box-text-top pink-ball box-text-and-image-top">
 			<div class="container">
-				<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive gif-animate">
+				<div class="mackbook-gif">
+					<img src="<?php bloginfo('template_url'); ?>/images/macbook-top.png" alt="" class="responsive">
+					<div class="mackbook-gif-sreen">
+						<div class="col-left">
+							<img src="<?php bloginfo('template_url'); ?>/images/macbook-left.png" alt="" class="responsive">
+						</div>
+						<div class="col-middle">
+							<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive">
+						</div>
+						<div class="col-right">
+							<img src="<?php bloginfo('template_url'); ?>/images/macbook-right.png" alt="" class="responsive">
+						</div>
+					</div>
+					<img src="<?php bloginfo('template_url'); ?>/images/macbook-bottom.png" alt="" class="responsive">
+					
+				</div>
 				<h2>Lorem Ipsum Headline</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
 				<a href="" class="button">Button</a>
@@ -48,37 +63,33 @@
 					<a href="#" class="button">Button</a>
 				</div>
 				<div class="col-slider">
-					
-					<section class="center slider">
-						<div>
-							<h2>Value Driver Label</h2>
+		
+					<div class="insights-animation">
+						<div class="cards slide-in">
+							<div class="card">
+								<h4>Company location</h4>
+							</div>
+							<div class="card">
+								<h4>Company sector</h4>
+							</div>
+							<div class="card">
+								<h4>Tech detection</h4>
+							</div>
+							<div class="card">
+								<h4>Employee count</h4>
+							</div>
+							<div class="card">
+								<h4>Social profiles</h4>
+							</div>
+							<div class="card">
+								<h4>Job title</h4>
+							</div>
+							<div class="card">
+								<h4>Total raised</h4>
+							</div>
 						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-				  </section>
-
+					</div>
+		
 				</div>
 			</div>
 		</section>

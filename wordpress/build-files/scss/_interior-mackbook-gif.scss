@@ -1,0 +1,33 @@
+.mackbook-gif {
+	line-height: 0;
+	margin: 60px 0px;
+	.mackbook-gif-sreen {
+		display: table;
+		width: 100%;
+		.col-left,
+		.col-middle,
+		.col-right {
+			display: table-cell;
+			width: 12.5%;
+			vertical-align: top;
+		}
+		.col-left {
+			width: 12.4%;
+		}
+		.col-middle {
+			width: 75.2%;
+		}
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

@@ -24,7 +24,13 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div id="loader"></div>
+	<div id="loader"><div class="loading">
+  <div class="animation"><div class="circle one"></div></div>
+  <div class="animation"><div class="circle two"></div></div>
+  <div class="animation"><div class="circle three"></div></div>
+  <div class="animation"><div class="circle four"></div></div>
+  <div class="animation"><div class="circle five"></div></div>
+</div></div>
 		<header class="header">
 
 			<section class="header-top">
