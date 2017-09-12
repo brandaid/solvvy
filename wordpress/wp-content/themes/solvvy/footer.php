@@ -21,49 +21,49 @@
 		<div class="container links">
 			<div class="col col-1">
 				<h4>Solutions</h4>
-				<ul>
-					<li><a href="">For Your Role</a></li>
-					<li><a href="">For Your Business Type</a></li>
-					<li><a href="">For Your Industry</a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'fisrt-menu-footer' ) ); ?>
 			</div>
 			<div class="col col-2">
-				<h4><a href="">Software</a></h4>
-				<h4><a href="">Customers</a></h4>
-				<h4><a href="">Resources</a></h4>
-				<h4><a href="">Blog</a></h4>
+
+			<?php wp_nav_menu(
+				array(
+					'theme_location' => 'second-menu-footer',
+					//'menu_class' => 'class',
+					'before' => '<h4>',
+					'after' => '</h4>'
+				)
+			); ?>
 			</div>
 			<div class="col col-3">
 				<h4>Company</h4>
-				<ul>
-					<li><a href="">About Us</a></li>
-					<li><a href="">Careers</a></li>
-					<li><a href="">News & Events</a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'third-menu-footer' ) ); ?>
 			</div>
 			<div class="col col-4">
 				<h4>Get in Touch</h4>
-				<ul>
-					<li><a href="">Contact Us</a></li>
-					<li><a href="">Support</a></li>
-				</ul>				
+				<?php wp_nav_menu( array( 'theme_location' => 'fourth-menu-footer' ) ); ?>
 			</div>
-			<div class="col col-5">
+			<div class="col col-5" style="background: yellow;">
+				<div>custom field</div>
 				<div>
 					<a href="" class="button">LIVE DEMO</a>
 					<a href="" class="button white">PRICING</a>
 				</div>
 			</div>
 			<div class="col col-6"></div>
-			<div class="col col-7 contact">
+			<div class="col col-7 contact" style="background: yellow;">
 				<h4>Our Office</h4>
+				<div>custom field</div>
 				<ul>
 					<li>425 Sherman Ave.</li>
 					<li>Palo Alto, CA 94301</li>
 					<li>(650) 246-9685</li>
 					<li><a href="mailto:info@solvvy.com">info@solvvy.com</a></li>
 				</ul>
-				<div class="social">
+				<div class="social" style="background: yellow;">
+					<?php/* if( !empty(get_field('facebook', 'option')) ) : ?>
+						<li><a href="<?php the_field('facebook', 'option')?>" class="fa fa-facebook" target="blank"></a></li>
+					<?php endif; */?>
+
 					<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
 					<a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 					<a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -75,11 +75,9 @@
 			<div class="container">
 				<div class="legal">
 					<div class="col col-1">
-						<a href="">Privacy Policy</a>
-						<span></span>
-						<a href="">Terms of Service</a>
+						<?php wp_nav_menu( array( 'theme_location' => 'terms-menu' ) ); ?>
 					</div>
-					<div class="col col-2">&copy; 2017 Solvvy, Inc. All rights reserved.</div>
+					<div class="col col-2" style="background: yellow;">&copy; 2017 Solvvy, Inc. All rights reserved.</div>
 				</div>
 			</div>
 		</div>
