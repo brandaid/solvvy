@@ -38,7 +38,7 @@
 		<!-- LINE TIME -->
 
 		<section class="line-time">
-			<ul class="formated-list">
+			<ul class="formated-list line-time-top">
 				<li>
 					<article class="line-time-box">
 						<h4>20XX</h4>
@@ -59,7 +59,7 @@
 				</li>
 			</ul>
 			<hr>
-			<ul class="formated-list">
+			<ul class="formated-list line-time-bottom">
 				<li>
 					<article class="line-time-box">
 						<h4>20XX</h4>
