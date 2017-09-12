@@ -3,7 +3,6 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer'); 
 var reload = browserSync.reload;
 
-
 gulp.task('sass', function(){
     return gulp.src('scss/**/*.scss')
                .pipe(sass().on('error', sass.logError))
