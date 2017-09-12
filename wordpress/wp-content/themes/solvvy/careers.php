@@ -158,8 +158,10 @@
 			</div>
 		</section>
 
+		<!-- SEP -->
 
 		<div class="cool-sep"></div>
+
 
 		<section class="box-text-top align-center container-normal bkg-orbit-right">
 			<div class="container">
@@ -199,15 +201,21 @@
 			</div>
 		</section>
 
+		<!-- SEP -->
+
 		<div class="cool-sep"></div>
+
+		<!-- SPHERES PETER -->
 
 		<section class="box-text-top align-center container-normal bkg-none">
 			<div class="container">
 				<h2>By The Numbers</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf <br> short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. </p>
-				<div>[sferas]</div>
+				<div>[SPHERES PETER]</div>
 			</div>
 		</section>
+
+		<!-- SEP -->
 		
 		<div class="cool-sep"></div>
 
