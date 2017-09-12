@@ -124,37 +124,25 @@ $(document).ready(function() {
 
 	// MODAL
 
-	// Get the modal
-	var modal = document.getElementById('myModal');
+	$('#myBtn').click(function() {
+		$("#myModal").fadeIn();
+	});
 
-	// Get the modal
-	var video = document.getElementById('video');
+	$('.close').click(function() {
+		var src = $("#myModal").find('iframe').attr('src');
+		$("#myModal iframe").attr('src','');
+		$("#myModal iframe").attr('src', src);
+		$("#myModal").fadeOut();	
+	});
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
+	$('#myModal').click(function(event){
+		var src = $("#myModal").find('iframe').attr('src');
+		$("#myModal iframe").attr('src','');
+		$("#myModal iframe").attr('src', src);
+		$("#myModal").fadeOut();
+	    event.stopPropagation();
+	});
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-
-	// When the user clicks on the button, open the modal 
-	btn.onclick = function() {
-	    modal.style.display = "block";
-	}
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	    modal.style.display = "none";
-	    video.src = document.getElementById('video').src;
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	        video.src = document.getElementById('video').src;
-	    }
-	}
 });
 
 
