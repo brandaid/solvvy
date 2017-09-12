@@ -17,8 +17,10 @@
  *
  * @package WordPress
  */
-if ($_SERVER['HTTP_HOST'] != 'localhost') {
-	/** The name of the database for WordPress */
+
+// ** MySQL settings ** //
+/** The name of the database for WordPress */
+if (($_SERVER['HTTP_HOST'] != 'localhost:8888')&&($_SERVER['HTTP_HOST'] != 'localhost:3000')) {
 	define( 'DB_NAME', 's1' );
 
 	/** MySQL database username */
@@ -29,33 +31,26 @@ if ($_SERVER['HTTP_HOST'] != 'localhost') {
 
 	/** MySQL hostname */
 	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
-
-	define('WP_HOME','http://solvvy.mbzvrm4-liquidwebsites.com');
-	define('WP_SITEURL','http://solvvy.mbzvrm4-liquidwebsites.com');
-
-} else {
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'solvvy');
+}else{
+	define( 'DB_NAME', 'solvvy' );
 
 	/** MySQL database username */
-	define('DB_USER', 'root');
+	define( 'DB_USER', 'root' );
 
 	/** MySQL database password */
-	define('DB_PASSWORD', 'root');
+	define( 'DB_PASSWORD', 'root' );
 
 	/** MySQL hostname */
-	define('DB_HOST', 'localhost');
-
+	define( 'DB_HOST', 'localhost' );
 }
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
-
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+define( 'DB_CHARSET', 'utf8' );
 
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
 
-/**#@+
+/**
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
@@ -73,36 +68,25 @@ define('SECURE_AUTH_SALT', '5.CFR|cS=SyT-k+ZB_+u{&xn_etBr=i=>p|s+eHplZP&%i[A+|,S
 define('LOGGED_IN_SALT',   'ZFb{<b`5%-|i.Bt64h])0C^Kz|?xLS(={aWg41WngX[}2|LOJYgw;IBP&Ey2/UkE');
 define('NONCE_SALT',       '&!=k).v$M>0wEEM|%+zhU)A)| 5;>9^83Y,ih5Jh0%IS1KT_4TxwG25Mdlsen+Fi');
 
-/**#@-*/
-
 /**
  * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-
 $table_prefix  = 'D8eZ9xYwa_';
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
- * For information on other constants that can be used for debugging,
- * visit the Codex.
- *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
- */
-define('WP_DEBUG', false);
+
+include 'lw-wp-config.php';
+
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if ( ! defined( 'ABSPATH' ) )
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once ABSPATH . 'wp-settings.php';
+
+

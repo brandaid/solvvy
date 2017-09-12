@@ -1,0 +1,176 @@
+html {
+	font-family: $primary-font;
+}
+
+a, a:hover, a:active, a:focus {
+	text-decoration: none;
+	-webkit-transition: all 230ms ease-in-out;
+	-moz-transition: all 230ms ease-in-out;
+	-ms-transition: all 230ms ease-in-out;
+	-o-transition: all 230ms ease-in-out;
+	transition: all 230ms ease-in-out;
+}
+.container {
+	padding-left: 30px;
+	padding-right: 30px;
+	@include border-box;
+	
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		@include center;
+		max-width: 750px;
+	}
+
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+			max-width: 970px;
+	}
+
+	// 1200px
+	@media all and (min-width: $screen-desktop) {
+		max-width: 1170px;
+	}
+
+	// 1400px
+	@media all and (min-width: $screen-desktop-big) {
+		max-width: 1300px;
+	}
+
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.underlined {
+	&:after {
+		content: "";
+		height: 5px;
+		display: block;
+		@include center;
+		width: 54px;
+		background: $brand-primary;
+		margin-top: 25px;
+		margin-bottom: 25px;
+
+		@media all and (min-width: $screen-landscape) {
+			margin-top: 39px;
+			margin-bottom: 39px;
+		}
+	}
+}
+.title-to-left {
+	h2 {
+		text-align: left;
+		margin-bottom: 50px;
+		// 768px
+		@media all and (min-width: $screen-portrait) {
+		margin-left: 20px;
+		}
+		&:after {
+			margin-left: 0!important;
+		}
+	}
+}
+.align-left {
+	text-align: left;
+}
+.cool-sep {
+	border-top: 2px solid lighten($brand-tertiary, 40%);
+	background: #f8fbfd;
+    background: -webkit-linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
+    background: -o-linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
+    background: -moz-linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
+    background: linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
+	height: 47px;
+	width: calc(100% - 60px);
+	max-width: 1300px; 
+	margin-left: 15px;
+	margin-right: 15px;
+	@include center;
+	&.top {
+		width: 100% !important;
+	}
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		&.top {
+			display: none;
+		}
+	}
+}
+
+.margin-bottom-90 {
+	margin-bottom: 90px;
+}
+
+.formated-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.padding-top {
+	padding-top: 200px!important;
+}
+.list-boxes-three {
+	@extend .formated-list;
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		font-size: 0;
+		li {
+			width: 50%;
+			@include border-box;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 20px;
+		}
+		&.three-ipad {
+			li {
+				width: 33.33333%;
+			}
+			
+		}
+	}
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		li {
+			width: 33.33333%;
+		}
+	}
+}
+.list-boxes-two {
+	@extend .formated-list;
+	@media all and (min-width: $screen-portrait) {
+		font-size: 0;
+		li {
+			width: 48%;
+			@include border-box;
+			display: inline-block;
+			vertical-align: top;
+			&:nth-child(even) {
+				margin-left: 4%;
+			}
+		}
+	}
+}
+.block {
+	display: block;
+}
+
+.center-element {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.the-element {
+	display: table-cell;
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
+}

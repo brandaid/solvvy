@@ -1,0 +1,75 @@
+@import "variables";
+@import "mixins";
+@import "font-face";
+@import "reset";
+@import "preloader";
+@import "layout";
+@import "buttons";
+@import "typography";
+
+@import "header";
+@import "footer";
+@import "navbar";
+
+@import "images";
+@import "loginWP";
+
+// ELEMENTS - LIBRARIES
+@import "lightgallery";
+@import "nice-select";
+@import "modals";
+@import "slick";
+@import "slick-theme";
+@import "boxes";
+@import "slider";
+@import "forms";
+@import "search";
+
+
+// HOME PAGE
+@import "home-hero-banner";
+@import "home-solvvy";
+@import "home-industry-news";
+@import "home-driving-companies";
+@import "home-slider-brands";
+@import "home-metrics";
+@import "home-solution-for-industry";
+@import "home-map";
+
+
+//INTERIOR
+
+@import "interior-box-text-top";
+@import "interior-box-partners";
+@import "interior-blue-box";
+@import "interior-blue-box-waves";
+@import "interior-story-box";
+@import "interior-value-tags";
+@import "interior-heads-metrics";
+@import "interior-keys-differentiators";
+@import "table";
+@import "tabs";
+
+// PAGE RESOURCES
+@import "interior-resources";
+
+// PAGE NEWSLETTER
+@import "interior-newsletter";
+
+// PAGE NEWS AND PRESS
+@import "interior-news-press";
+
+// PAGE EVENTS
+@import "interior-events";
+
+// PAGE CUSTOMERS
+@import "interior-customers";
+
+// PAGE CAREERS
+@import "interior-careers";
+
+// PAGE BLOG
+@import "interior-blog";
+
+// PAGE ABOUT
+@import "interior-about-us";
