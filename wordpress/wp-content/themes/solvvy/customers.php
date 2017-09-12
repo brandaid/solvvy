@@ -29,7 +29,6 @@
 
 		<section class="box-text-top container-normal pink-ball">
 			<div class="container">
-				<h2 class="margin-bottom-90">Featured Resources</h2>
 
 				<ul class="list-boxes-two align-left">
 					<li>
