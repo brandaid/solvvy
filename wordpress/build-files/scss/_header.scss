@@ -52,11 +52,13 @@
 				li{
 					flex-flow: row wrap;
 					margin-left: 30px;
-					.login{
-						&::before{
+					&.login{
+						a::before{
 							font-family: 'solvvy';
 							content: '\e810';
 							margin-right: 5px;
+							font-size: 13px;
+							color: $brand-tertiary;
 						}
 					}
 				}
