@@ -18,7 +18,7 @@ $(document).ready(function() {
 	//PRELOADER
 
 	window.onload = function(){
-		$("#loader").fadeOut(350,function(){$(this).remove()});
+		$("#loader").fadeOut(550,function(){$(this).remove()});
 	};
 	
 	$('.owl-brands').owlCarousel({
