@@ -60,11 +60,51 @@
 	font-size: 18px;
 	&:hover {
 		color: $brand-secondary;
+		text-decoration: underline;
 	}
 	&:after {
 		content: "\00bb";
 		display: inline-block;
 		vertical-align: middle;
 		margin-left: 10px;
+	}
+}
+.button-more {
+	color: $brand-primary;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	margin-top: 60px;
+	font-family: $font-medium;
+	position: relative;
+	@include transition;
+	&:after {
+		content: "\f078";
+		display: block;
+		position: absolute;
+		color: $gray;
+		@include fontawesome;
+		bottom: 0;
+		left: 40%;
+		bottom: -20px;
+		@include transition;
+	}
+	&:hover {
+		color: black;
+		&:after {
+			bottom: -23px;
+		}
+	}
+}
+
+.less-class {
+	&:after {
+		content: "\f077"!important;
+		bottom: 20px!important;
+	}
+	&:hover {
+		&:after {
+			bottom: 25px!important;
+		}
 	}
 }

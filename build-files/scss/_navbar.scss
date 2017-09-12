@@ -1,5 +1,6 @@
 .main-nav {
 	background: white;
+	position: relative;
 
 	&:after {
 		clear: both;
@@ -63,7 +64,7 @@
 				}
 			}
 			&.post{
-				.menu-post{
+				.menu-post.last-post{
 					display: block;
 				}	
 			}
@@ -250,12 +251,10 @@
 
 // 992px
 @media all and (min-width: $screen-landscape) {
-	/* hide the button in desktop view */
 	.main-menu-btn {
 		position: absolute;
 		top: -99999px;
 	}
-	/* always show the menu in desktop view */
 	#main-menu-state:not(:checked) ~ #main-menu {
 		display: block;
 	}
@@ -314,7 +313,6 @@
 	#main-menu.sm-clean li a,
 	#main-menu.sm-clean li li a,
 	#main-menu.sm-clean li li li a{
-		color: orange;
 		text-transform: initial;
 		font-size: 14px;
 		line-height: normal;
@@ -337,20 +335,22 @@
 
 
 	#main-menu.sm-clean ul{
- 		min-width: 855px !important;
+ 		min-width: max-content !important;
     	background: white;
+		padding-left: 50px;
     	@include border-radius(5px);
-    	@include box-shadow(0, 0, 20px, #ccc);
+    	@include box-shadow(0, 0, 20px, $brand-tertiary);
 	}
 	#main-menu.sm-clean ul ul{
 		min-width: auto !important;
 		background: none;
+		padding-left: 0px;
     	@include border-radius(0);
-    	@include box-shadow(0, 0, 0, #fff);		
+    	@include box-shadow(0, 0, 0, #fff);
 	}
 	#main-menu.sm-clean ul li{
-		width: 205px !important;
-		float: left  !important;
+		min-width: 170px;
+		max-width: 190px;
 		padding: 50px 20px 25px 0;
 	}
 	#main-menu.sm-clean ul li ul li{
@@ -364,9 +364,10 @@
 		clear: none;
 
 		&.sm-clean{
+			padding-right: 50px;
 			> li {
 
-				a{
+				> a{
 					color: $brand-secondary;
 					font-family: $font-semibold;
 					font-size: 17px;
@@ -383,6 +384,23 @@
 					&.has-submenu.highlighted::after{
 						content: '\f107';
 					}
+
+					&.has-submenu.highlighted span.sub-arrow{
+						content: '';
+						position: absolute;
+						top: 78%;
+						left: auto;
+						right: 17px;
+						width: 0;
+						height: 0;
+						margin: 0;
+						overflow: hidden;
+						border-width: 9px;
+						border-style: dashed dashed solid dashed;
+						border-color: transparent transparent white transparent;
+						background: transparent;
+						z-index: 99999;
+					}
 				}
 
 				&.search, &.demo{
@@ -390,6 +408,12 @@
 				}
 				&.search{
 					margin: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index:9999;
+					width: 40px;
+					@include transition;
 
 					a{
 						color: #9baaba;
@@ -408,6 +432,7 @@
 					border: 1px solid $brand-primary;
 					&:hover{
 						color: $brand-primary;
+						background: white;
 						border: 1px solid $brand-primary;
 					}
 				}
@@ -415,17 +440,48 @@
 				li a,
 				li li a{
 					padding: 0;
-					&.has-submenu::after {
-	    				content: '';
-	    				margin: 0;
+    				margin: 0;
+					&.has-submenu{
+							&::after {
+		    				content: '';
+		    				margin: 0;
+						}
+						span{
+							display: none;
+						}
+					}
+				}
+				li a{
+					font-size: 16px;
+					margin-bottom: 20px;
+					color: $brand-tertiary;
+					text-transform: uppercase;
+					&:hover{
+						color: $brand-tertiary;
+					}
+				}
+				li li a{
+					color: $brand-primary;
+					padding: 7px 0;
+					&:hover{
+						color: darken($brand-primary, 10%);
 					}
 				}
 
 				& li:nth-child(1){
-					padding-left: 50px;
+					//padding-left: 50px;
 				}
-				& li li:nth-child(1){
-					padding-left: 0;
+				& li{
+					ul{
+						width: auto;
+					}
+					li{
+						width: auto !important;
+
+						&:nth-child(1){
+							padding-left: 0;
+						}
+					}
 				}
 
 				.menu-post{
@@ -434,142 +490,46 @@
 					padding-right: 50px;
 					width: 240px !important;
 					border-radius: 0 5px 5px 0;
+					text-align: center;
+					color: $brand-tertiary;
+					max-width: 240px;
 					&:hover{
 						background: #f6f9fc;
 					}
-				}
-			}
-
-
-			/*
-						
-
-			& li{
-				border-top: none;
-				margin: 0 15px;
-				line-height: 38px;
-
-				&:hover{
-					background: transparent;
-				}
-
-				&.post{
-					display: none;
-				}
-				ul{
-					padding: 25px;
-					margin: 0;
-					li{
-						background: transparent;
+					a, p{
 						margin: 0;
 						padding: 0;
-						display: inline-block;
-						width: 250px;
-
+					}
+					h4, p{
+						color: $brand-tertiary;
+					}
+					h4{
+						font-size: 16px;
+						margin-bottom: 20px;
+					}
+					img{
+						max-width: 120px;
+						padding: 30px 0 27px;
+					}
+					p{
+						font-size: 14px;
+						line-height: 18px;
+					}
+					.button{
+						border: 1px solid $brand-primary;
+						text-transform: capitalize;
+						margin: 0 auto;
+						max-width: 100px;
+						font-size: 14px;
 						&:hover{
+							color: $brand-primary;
 							background: white;
-						}
-						a{
-							padding: 0;
-							line-height: 20px;
-						}
-						a.has-submenu::after, a.has-submenu.highlighted::after{
-							content: '';
-						}
-						&.menu-post{
-							display: block;
-						}
-						ul{
-							background: white;
-							border: none;
-							display: block !important;
-							position: relative;
-							padding: 0;
-							@include box-shadow(0, 0, 0, white);
-							left: 0;
-							li, a{
-								padding: 0;
-								margin: 0;
-								border: 0;
-								background: red;
-							}
+							border: 1px solid $brand-primary;
 						}
 					}
 				}
 			}
-
-			*/
 		}
-
-
-
-/*
-#main-menu,
-#main-menu > ul {
-  position: static !important;
-}
-
-#main-menu > ul {
-  margin-left: 0 !important;
-  right: 0 !important;
-  width: auto !important;
-  max-width: none !important;
-}
-
-
-
-
-
-#main-menu > ul > li {
-  overflow: auto;
-}
-
-
-
-
-
-#main-menu > ul ul {
-  position: static;
-  display: block;
-  margin: 0.83em 0;
-  border: 0;
-  padding: 0 0 0 20px;
-  width: auto;
-  background: transparent;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-#main-menu > ul ul li {
-  display: list-item;
-  list-style-type: disc;
-  border: 0;
-}
-
-#main-menu > ul a {
-  display: inline;
-  border: 0;
-  padding: 0;
-  background: transparent;
-  color: inherit;
-  text-decoration: underline;
-}
-
-
-
-
-#main-menu > ul > li{
-  padding: 0 20px;
-  float: left;
-  width: 33.33%;
-}
-
-*/
-
-
-
-
 	}
 }
 

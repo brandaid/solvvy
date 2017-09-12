@@ -145,7 +145,7 @@
 				<ul>
 					<li><p>Get <b>FREE</b> tools and best practices from Solvvy</p></li>
 					<li>
-						<form action="">
+						<form action="" class="marketo-updates">
 							<input type="text" placeholder="you@email.com">
 							<button>Send Me Updates!</button>
 						</form>
