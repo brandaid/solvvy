@@ -35,13 +35,7 @@
 
 			<section class="header-top">
 				<div class="container">
-					<ul>
-						<li><a href="">Contact Us</a></li>
-						<li><a href="">Blog</a></li>
-						<li><a href="">Support</a></li>
-						<li><a href="">Pricing</a></li>
-						<li><a href="" class="login">Login</a></li>
-					</ul>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 				</div>
 			</section>
 
@@ -58,10 +52,20 @@
 						</label>
 
 						<div class="nav-brand">
-							<a href=""><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
 						</div>
 
+
+						<?php wp_nav_menu(
+							array(
+								'theme_location' => 'main-menu',
+								'menu_class' => 'sm sm-clean',
+								'menu_id' => 'main-menu'
+							)
+						); ?>
+
 						<!-- Sample menu definition -->
+						<?php/*
 						<ul id="main-menu" class="sm sm-clean">
 							<li><a href="#">Solutions</a>
 								<ul>
@@ -152,6 +156,7 @@
 								<div class="menu-top-clone"></div>
 							</li>
 						</ul>
+						*/?>
 					</nav>
 
 				</div>
