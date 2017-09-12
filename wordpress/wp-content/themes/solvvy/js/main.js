@@ -220,12 +220,12 @@ $("#styled-checkbox-1, #styled-checkbox-2, #styled-checkbox-4").click(function()
 $(".button-more").click(function(){
     if($(this).text()=== "READ MORE"){
         $(this).text("READ LESS");
-        $(".hidden-info").fadeIn("fast");
+        $(this).siblings(".hidden-info").fadeIn("fast");
         $(this).addClass("less-class");
     }
     else{
         $(this).text("READ MORE");
-        $(".hidden-info").fadeOut("fast");
+        $(this).siblings(".hidden-info").fadeOut("fast");
         $(this).removeClass("less-class");
     }
     
@@ -285,4 +285,13 @@ $(window).scroll(function(){
 	        $('.searchbox-icon').css('display','block');
 	    }
 	}
+
 //END SEARCH
+
+
+$(".link-author").click(function(){
+    $(this).siblings(".popup-author").addClass("show-us");
+});
+$(".link-author").mouseout(function() {
+    $(this).siblings(".popup-author").removeClass("show-us");
+});
