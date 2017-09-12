@@ -63,37 +63,33 @@
 					<a href="#" class="button">Button</a>
 				</div>
 				<div class="col-slider">
-					
-					<section class="center slider">
-						<div>
-							<h2>Value Driver Label</h2>
+		
+					<div class="insights-animation">
+						<div class="cards slide-in">
+							<div class="card">
+								<h4>Company location</h4>
+							</div>
+							<div class="card">
+								<h4>Company sector</h4>
+							</div>
+							<div class="card">
+								<h4>Tech detection</h4>
+							</div>
+							<div class="card">
+								<h4>Employee count</h4>
+							</div>
+							<div class="card">
+								<h4>Social profiles</h4>
+							</div>
+							<div class="card">
+								<h4>Job title</h4>
+							</div>
+							<div class="card">
+								<h4>Total raised</h4>
+							</div>
 						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-				  </section>
-
+					</div>
+		
 				</div>
 			</div>
 		</section>
