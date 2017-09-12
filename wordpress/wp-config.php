@@ -17,24 +17,21 @@
  *
  * @package WordPress
  */
-
-$has_init_file = file_exists("wp_env.ini");
-
-if($has_init_file){
-	$WP_ENV_INI = parse_ini_file("wp_env.ini");
-}
-
-
-
-if ($has_init_file) {
+if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	/** The name of the database for WordPress */
-	define('DB_NAME', $WP_ENV_INI['DB_NAME']);
+	define( 'DB_NAME', 's1' );
 
 	/** MySQL database username */
-	define('DB_USER', $WP_ENV_INI['DB_USER']);
+	define( 'DB_USER', 's1' );
 
 	/** MySQL database password */
-	define('DB_PASSWORD', $WP_ENV_INI['DB_PASSWORD']);
+	define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
+
+	/** MySQL hostname */
+	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
+
+	define('WP_HOME','http://solvvy.mbzvrm4-liquidwebsites.com');
+	define('WP_SITEURL','http://solvvy.mbzvrm4-liquidwebsites.com');
 
 } else {
 	/** The name of the database for WordPress */
@@ -46,10 +43,10 @@ if ($has_init_file) {
 	/** MySQL database password */
 	define('DB_PASSWORD', 'root');
 
-}
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+}
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
@@ -67,14 +64,14 @@ define('DB_CHARSET', 'utf8');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'Sa]~ -EF:/EYe]Ea=7/eBgm,}{1__t}q3:(l`%Y` v0a%?+i3p>!&WaO}3o$s+VH');
+define('SECURE_AUTH_KEY',  'VgX,N=)k!|0;Rt?0geM<*X1,sw|*M ^]roHx2Py).3}A/o-T076VTMt1.xkz8J#-');
+define('LOGGED_IN_KEY',    '2Ie$DipwKO%HNU`/;vn*FQLry7vb`[XDc76dNzJ]f[nJ@+h&N|n;>3xcXzq@/,y>');
+define('NONCE_KEY',        ':j/x]-]:M|oPe3pT#:G4Eiz0U+8vm4gxUa$B*|WvfVrY3$7[cVycZOwJG6&+/.4-');
+define('AUTH_SALT',        'XwrJjE,94~n0y(n2(uX%&*`H?:m:B9?ilg)r= [&i*mJ>-V#Od`|l$lNSz.d]-o2');
+define('SECURE_AUTH_SALT', '5.CFR|cS=SyT-k+ZB_+u{&xn_etBr=i=>p|s+eHplZP&%i[A+|,SfY*gd,5oT.-/');
+define('LOGGED_IN_SALT',   'ZFb{<b`5%-|i.Bt64h])0C^Kz|?xLS(={aWg41WngX[}2|LOJYgw;IBP&Ey2/UkE');
+define('NONCE_SALT',       '&!=k).v$M>0wEEM|%+zhU)A)| 5;>9^83Y,ih5Jh0%IS1KT_4TxwG25Mdlsen+Fi');
 
 /**#@-*/
 
