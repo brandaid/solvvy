@@ -24,18 +24,27 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div id="loader"><div class="loading">
-  <div class="animation"><div class="circle one"></div></div>
-  <div class="animation"><div class="circle two"></div></div>
-  <div class="animation"><div class="circle three"></div></div>
-  <div class="animation"><div class="circle four"></div></div>
-  <div class="animation"><div class="circle five"></div></div>
-</div></div>
+	<div id="loader">
+		<div class="loading">
+			<div class="animation"><div class="circle one"></div></div>
+			<div class="animation"><div class="circle two"></div></div>
+			<div class="animation"><div class="circle three"></div></div>
+			<div class="animation"><div class="circle four"></div></div>
+			<div class="animation"><div class="circle five"></div></div>
+		</div>
+	</div>
+
+<?php echo do_shortcode('[latest_post]'); ?>
+
 		<header class="header">
 
 			<section class="header-top">
 				<div class="container">
-					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+					<?php wp_nav_menu( 
+						array( 
+							'theme_location' => 'header-menu' ) 
+						);
+					?>
 				</div>
 			</section>
 
@@ -56,15 +65,17 @@
 						</div>
 
 
+						<!-- Sample menu definition -->
 						<?php wp_nav_menu(
 							array(
 								'theme_location' => 'main-menu',
+								'container'=>false,
 								'menu_class' => 'sm sm-clean',
 								'menu_id' => 'main-menu'
 							)
 						); ?>
 
-						<!-- Sample menu definition -->
+
 						<?php/*
 						<ul id="main-menu" class="sm sm-clean">
 							<li><a href="#">Solutions</a>
