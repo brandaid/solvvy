@@ -29,21 +29,10 @@
 
 		<section class="box-text-top pink-ball box-text-and-image-top">
 			<div class="container">
-				<div class="mackbook-gif">
-					<img src="<?php bloginfo('template_url'); ?>/images/macbook-top.png" alt="" class="responsive">
-					<div class="mackbook-gif-sreen">
-						<div class="col-left">
-							<img src="<?php bloginfo('template_url'); ?>/images/macbook-left.png" alt="" class="responsive">
-						</div>
-						<div class="col-middle">
-							<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive">
-						</div>
-						<div class="col-right">
-							<img src="<?php bloginfo('template_url'); ?>/images/macbook-right.png" alt="" class="responsive">
-						</div>
+				<div class="mackbook">
+					<div class="content-mac">
+						<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive">
 					</div>
-					<img src="<?php bloginfo('template_url'); ?>/images/macbook-bottom.png" alt="" class="responsive">
-					
 				</div>
 				<h2>Lorem Ipsum Headline</h2>
 				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>

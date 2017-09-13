@@ -156,7 +156,7 @@ $(function() {
 		showOnClick:		true,
 		hideOnClick:		true,
 		subIndicators: 		true,
-		//subIndicatorsPos: 	'append',
+		subIndicatorsPos: 	'append',
 		subIndicatorsText:	''
 	});
 });

@@ -77,7 +77,7 @@
 					<div class="col col-1">
 						<?php wp_nav_menu( array( 'theme_location' => 'terms-menu' ) ); ?>
 					</div>
-					<div class="col col-2" style="background: yellow;">&copy; 2017 Solvvy, Inc. All rights reserved.</div>
+					<div class="col col-2">&copy; <?php echo date('Y'); ?> Solvvy, Inc. All rights reserved.</div>
 				</div>
 			</div>
 		</div>
