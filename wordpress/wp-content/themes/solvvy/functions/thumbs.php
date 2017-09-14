@@ -6,6 +6,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'brand', 600, 600, false );
     add_image_size( 'featured', 1500, 500, true );
     add_image_size( 'inner-post', 730, 300, true );
+    add_image_size( 'slider_profile', 297, 447, true );
 }
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
@@ -15,6 +16,7 @@ function my_custom_sizes( $sizes ) {
 		'brand' => __('Brand Logo'),
 	    'featured' => __('Featured'),
 	    'inner-post' => __('Inner Post'),
+	    'slider_profile' => __('Slider Profile')
 	) );
 }
 
