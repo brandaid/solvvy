@@ -68,8 +68,8 @@
 								<div class="slider-info--box">
 									<h2><?php echo $single_engineer['slider_title'] ?></h2>
 									<p><?php echo $single_engineer['slider_copy'] ?></p>
-									<a href="<?php echo $single_engineer['slider_related_link_title'] ?>" class="big-link"><?php echo $single_engineer['slider_related_link_destination'] ?></a><br>
-									<a href="<?php echo $single_engineer['slider_call_to_action_text'] ?>" class="button"><?php echo $single_engineer['slider_call_to_action_destination'] ?></a>
+									<a href="<?php echo $single_engineer['slider_related_link_destination'] ?>" class="big-link"><?php echo $single_engineer['slider_related_link_title'] ?></a><br>
+									<a href="<?php echo $single_engineer['slider_call_to_action_destination'] ?>" class="button"><?php echo $single_engineer['slider_call_to_action_text'] ?></a>
 								</div>
 							</div>
 							<div class="col-right">
@@ -167,8 +167,8 @@
 								<div class="slider-info--box">
 									<h2><?php echo $single_salesman['slider_sales_title'] ?></h2>
 									<p><?php echo $single_salesman['slider_sales_copy'] ?></p>
-									<a href="<?php echo $single_salesman['slider_sales_related_link_title'] ?>" class="big-link"><?php echo $single_salesman['slider_sales_related_link_destination'] ?></a><br>
-									<a href="<?php echo $single_salesman['slider_sales_call_to_action_text'] ?>" class="button"><?php echo $single_salesman['slider_sales_call_to_action_destination'] ?></a>
+									<a href="<?php echo $single_salesman['slider_sales_related_link_destination'] ?>" class="big-link"><?php echo $single_salesman['slider_sales_related_link_title'] ?></a><br>
+									<a href="<?php echo $single_salesman['slider_sales_call_to_action_destination'] ?>" class="button"><?php echo $single_salesman['slider_sales_call_to_action_text'] ?></a>
 								</div>
 							</div>
 							<div class="col-right">
