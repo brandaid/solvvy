@@ -104,76 +104,71 @@
 
 		<div class="cool-sep"></div>
 
+		<!-- SECTION BENEFITS -->
 
+		<?php $benefits = get_field('section_benefits'); ?>
+		<?php if($benefits){ ?>
 		<section class="box-text-top align-center container-normal bkg-orbit-right">
 			<div class="container">
-				<h2>To be the best, we hire the best</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf <br>short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. </p>
-				<ul class="list-boxes-two">
+				<h2><?php echo $benefits['section_benefits_title']; ?></h2>
+				<p><?php echo $benefits['sectin_benefits_copy']; ?></p>
+
+				<?php if($benefits['section_benefits_features']){ ?>
+				<ul class="list-boxes-two align-left">
+					<?php forEach($benefits['section_benefits_features'] as $single_feature){ ?>
 					<li>
 						<div class="box-icon-text">
 							<i class="icon-apple"></i>
-							<h4>Health & WEllness</h4>
-							<p>Full health coverage for you and your family (Solvvy pays 100% of your premiums), and a $150 monthly fitness and wellness reimbursement.</p>
+							<h4><?php echo $single_feature['feature_title'] ?></h4>
+							<p><?php  echo$single_feature['feature_description'] ?></p>
 						</div>
 					</li>
-					<li>
-						<div class="box-icon-text">
-							<i class="icon-book"></i>
-							<h4>Health & WEllness</h4>
-							<p>Receive $500 annually (or equivalent) towards a personal development opportunity of your choice, and $2000 annually (or equivalent) for professional development.</p>
-						</div>
-					</li>
-					<li>
-						<div class="box-icon-text">
-							<i class="icon-clock"></i>
-							<h4>Health & WEllness</h4>
-							<p>A lot of us have families, of all shapes and sizes and types, and we welcome each new addition with generous parental and new child bonding leave.</p>
-						</div>
-					</li>
-					<li>
-						<div class="box-icon-text">
-							<i class="icon-smiley"></i>
-							<h4>Health & WEllness</h4>
-							<p>A meeting-light culture (or we try, at least), weekly massage therapy, guest speakers, and opportunities to get to know your team better through things like weekly catered lunch and breakfast, Thursday Socials, and game nights. But we don’t stay in the office 24/7.</p>
-						</div>
-					</li>
+					<?php } ?>
 				</ul>
-				<a href="" class="button-pink">View Open Roles</a>
+				<?php } ?>
+
+				<a href="<?php echo $benefits['section_benefits_link_destination'] ?>" class="button-pink"><?php echo $benefits['section_benefits_link_text'] ?></a>
 			</div>
 		</section>
+		<?php } ?>
 
 		<!-- SEP -->
 
 		<div class="cool-sep"></div>
 
-		<!-- SPHERES -->
+		<!-- SPHERES METRICS-->
 
+		<?php $metrics = get_field('section_metrics'); ?>
+		<?php if($metrics){ ?>
 		<section class="box-text-top align-center container-normal bkg-none">
 			<div class="container">
-				<h2>By The Numbers</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf <br> short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. </p>
+				<h2><?php echo $metrics['metrics_title']; ?></h2>
+				<p><?php echo $metrics['metrics_copy'] ?></p>
 				<div id="cy"></div>
 			</div>
 		</section>
+		<?php } ?>
 
 		<!-- SEP -->
 		
 		<div class="cool-sep"></div>
 
-		<!-- SLIDER -->
-		
+		<!-- SECTION SALES SLIDER -->
+
+		<?php $salesmen = get_field('section_sales_slider'); ?>
+		<?php if($salesmen['slider_sales_elements']){ ?>
 		<section class="slider-interior">
 			<div class="container">
-				<div class="owl-carousel owl-careers">		
+				<div class="owl-carousel owl-careers">	
+					<?php forEach($salesmen['slider_sales_elements'] as $single_salesman){ ?>
 					<div class="item">
 						<article class="slider-info">
 							<div class="col-left">
 								<div class="slider-info--box">
-									<h2>Our engineers are coding their way to the future.</h2>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone shankle corned beef sirloin picanha beef ribs jowl alcatra chicken. </p>
-									<a href="" class="big-link">Ready to have your work change the landscape?</a><br>
-									<a href="" class="button">Current Openings</a>
+									<h2><?php echo $single_salesman['slider_sales_title'] ?></h2>
+									<p><?php echo $single_salesman['slider_sales_copy'] ?></p>
+									<a href="<?php echo $single_salesman['slider_sales_related_link_title'] ?>" class="big-link"><?php echo $single_salesman['slider_sales_related_link_destination'] ?></a><br>
+									<a href="<?php echo $single_salesman['slider_sales_call_to_action_text'] ?>" class="button"><?php echo $single_salesman['slider_sales_call_to_action_destination'] ?></a>
 								</div>
 							</div>
 							<div class="col-right">
@@ -182,179 +177,120 @@
 										<svg id="Layer_1" class="wave-study" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.33 138.75"><title>wave-top</title><path d="M580.79,161.82V34.69C448.9,14.75,312.42,15.39,166,77.74l-.55,84.08Z" transform="translate(-165.46 -23.07)" style="fill:#3f2689"/></svg>
 
 										<svg id="Layer_1" class="wave-study backend" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.91 238.96"><title>wave</title><path d="M1800,6.74c-137.86-19.91-297.31,20.47-456.91,52.37v181.3H1800Z" transform="translate(-1343.09 -1.45)" style="fill:#bdb2f2;opacity:0.3499999940395355;isolation:isolate"/></svg>
-										<img src="<?php bloginfo('template_url'); ?>/images/the-man-2.jpg" alt="" class="responsive">
+										<?php
+											$attachment_id = $single_salesman['slider_sales_profile_image'];
+											$size = "slider_profile";
+											$image = wp_get_attachment_image_src( $attachment_id, $size );
+										?>
+										<img src= "<?php echo $image[0]; ?>" alt="" class="responsive">
+										
 									</figure>
 									<div class="content">
-										<h4>Meet Bobby</h4>
-										<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
+										<h4><?php echo $single_salesman['slider_sales_profile_name'] ?></h4>
+										<p><?php echo $single_salesman['slider_sales_profile_description'] ?></p>
 									</div>
 								</article>
 							</div>
 						</article>
 					</div>
-					<div class="item">
-						<article class="slider-info">
-							<div class="col-left">
-								<div class="slider-info--box">
-									<h2>Our engineers are coding their way to the future.</h2>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone shankle corned beef sirloin picanha beef ribs jowl alcatra chicken. </p>
-									<a href="">Ready to have your work change the landscape?</a><br>
-									<a href="" class="button">Current Openings</a>
-								</div>
-							</div>
-							<div class="col-right">
-								<article class="box box-case">
-									<figure>
-										<svg id="Layer_1" class="wave-study" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.33 138.75"><title>wave-top</title><path d="M580.79,161.82V34.69C448.9,14.75,312.42,15.39,166,77.74l-.55,84.08Z" transform="translate(-165.46 -23.07)" style="fill:#3f2689"/></svg>
-
-										<svg id="Layer_1" class="wave-study backend" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.91 238.96"><title>wave</title><path d="M1800,6.74c-137.86-19.91-297.31,20.47-456.91,52.37v181.3H1800Z" transform="translate(-1343.09 -1.45)" style="fill:#bdb2f2;opacity:0.3499999940395355;isolation:isolate"/></svg>
-										<img src="<?php bloginfo('template_url'); ?>/images/the-man-2.jpg" alt="" class="responsive">
-									</figure>
-									<div class="content">
-										<h4>Meet Bobby</h4>
-										<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-									</div>
-								</article>
-							</div>
-						</article>
-					</div>
-					<div class="item">
-						<article class="slider-info">
-							<div class="col-left">
-								<div class="slider-info--box">
-									<h2>Our engineers are coding their way to the future.</h2>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone shankle corned beef sirloin picanha beef ribs jowl alcatra chicken. </p>
-									<a href="">Ready to have your work change the landscape?</a><br>
-									<a href="" class="button">Current Openings</a>
-								</div>
-							</div>
-							<div class="col-right">
-								<article class="box box-case">
-									<figure>
-										<svg id="Layer_1" class="wave-study" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.33 138.75"><title>wave-top</title><path d="M580.79,161.82V34.69C448.9,14.75,312.42,15.39,166,77.74l-.55,84.08Z" transform="translate(-165.46 -23.07)" style="fill:#3f2689"/></svg>
-
-										<svg id="Layer_1" class="wave-study backend" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.91 238.96"><title>wave</title><path d="M1800,6.74c-137.86-19.91-297.31,20.47-456.91,52.37v181.3H1800Z" transform="translate(-1343.09 -1.45)" style="fill:#bdb2f2;opacity:0.3499999940395355;isolation:isolate"/></svg>
-										<img src="<?php bloginfo('template_url'); ?>/images/the-man-2.jpg" alt="" class="responsive">
-									</figure>
-									<div class="content">
-										<h4>Meet Bobby</h4>
-										<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-									</div>
-								</article>
-							</div>
-						</article>
-					</div>
-					<div class="item">
-						<article class="slider-info">
-							<div class="col-left">
-								<div class="slider-info--box">
-									<h2>Our engineers are coding their way to the future.</h2>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone shankle corned beef sirloin picanha beef ribs jowl alcatra chicken. </p>
-									<a href="">Ready to have your work change the landscape?</a> <br>
-									<a href="" class="button">Current Openings</a>
-								</div>
-							</div>
-							<div class="col-right">
-								<article class="box box-case">
-									<figure>
-										<svg id="Layer_1" class="wave-study" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.33 138.75"><title>wave-top</title><path d="M580.79,161.82V34.69C448.9,14.75,312.42,15.39,166,77.74l-.55,84.08Z" transform="translate(-165.46 -23.07)" style="fill:#3f2689"/></svg>
-
-										<svg id="Layer_1" class="wave-study backend" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.91 238.96"><title>wave</title><path d="M1800,6.74c-137.86-19.91-297.31,20.47-456.91,52.37v181.3H1800Z" transform="translate(-1343.09 -1.45)" style="fill:#bdb2f2;opacity:0.3499999940395355;isolation:isolate"/></svg>
-										<img src="<?php bloginfo('template_url'); ?>/images/the-man-2.jpg" alt="" class="responsive">
-									</figure>
-									<div class="content">
-										<h4>Meet Bobby</h4>
-										<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-									</div>
-								</article>
-							</div>
-						</article>
-					</div>
+					<?php } ?> 
 				</div>
 			</div>
 		</section>
+		<?php } ?>
 
-		<!-- BOX GRAY -->
+		<!-- SECTION CLIENT TESTIMONIALS -->
 
+		<?php $testimonials = get_field('section_clients_testimonials'); ?>
+		<?php if($testimonials){ ?>	
 		<section class="box-gray box-testimonial">
 			<div class="container">
 				<ul class="formated-list">
-					<li><img src="<?php bloginfo('template_url'); ?>/images/glassdor.png" class="responsive" alt=""></li>
-					<li><p>“Ham hock capicola turkey pastrami brisket, meatloaf t-bone pork belly pancetta. Pig short loin shoulder salami. Kevin flank beef turkey shank boudin. Pork loin cow pancetta short loin andouille tail, brisket picanha chuck filet mignon.”</p></li>
-					<li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+					<?php
+						$attachment_id = $testimonials['client_logo'];
+						$size = "client_logo";
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
+					?>
+					<li><img src= "<?php echo $image[0]; ?>" alt="" class="responsive"></li>
+					<li><p><?php echo $testimonials['client_comment'] ?></p></li>
+					<li>
+						<?php for ($i = 1; $i <= $testimonials['stars_calification']; $i++) {  ?>
+						<i class="fa fa-star"></i>
+						<?php } ?>
+					</li>
+
 				</ul>
 			</div>
 		</section>
+		<?php } ?>
 
-		<!-- SLIDER BOTTOM TEAM -->
-	
+		<!-- SECTION SLIDER BOTTOM TEAM -->
+		
+		<?php $team = get_field('section_team_members_testimonials'); ?>
+		<?php if($team){ ?>
 		<section class="box-text-top container-normal align-center bkg-none">
 			<div class="container">
-				<h2>Hear From the Team</h2>
-				<p>Get insights from team members about work at Solvvy or meet the core team.</p>
+				<h2><?php echo $team['team_testimonials_title']; ?></h2>
+				<p><?php echo $team['team_testimonials_copy']; ?></p>
 
-				<div class="owl-carousel owl-careers">		
+				<?php if($team['testimonials_slider']){ ?>
+				<div class="owl-carousel owl-careers">
+					<?php forEach($team['testimonials_slider'] as $single_teammate){ ?>
 					<div class="item">
 						<div class="padding">
 							<article class="box-slider-bottom">
 								<svg class="waves-bottom2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#9155aa;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#5d0e8b"/></svg>
 								<div class="content">
-									<h4>They gave me a subscription to the Dollar Shave Club, but I grow a beard by the end of the day, so I opted for free snacks and goodies from the corner market and grocer. This place is so awesome!</h4>
+									<h4><?php echo $single_teammate['testimonial_description'] ?></h4>
 								</div>
 								<div class="content-image">
-									<img src="<?php bloginfo('template_url'); ?>/images/the-man-3.jpg" class="responsive" alt="">
+									<?php
+										$attachment_id = $single_teammate['testimonial_image'];
+										$size = "slider_team";
+										$image = wp_get_attachment_image_src( $attachment_id, $size );
+									?>
+									<img src= "<?php echo $image[0]; ?>" alt="" class="responsive">
 								</div>
 							</article>
 						</div>
 					</div>
-					<div class="item">
-						<div class="padding">
-							<article class="box-slider-bottom">
-								<svg class="waves-bottom2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#9155aa;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#5d0e8b"/></svg>
-								<div class="content">
-									<h4>They gave me a subscription to the Dollar Shave Club, but I grow a beard by the end of the day, so I opted for free snacks and goodies from the corner market and grocer. This place is so awesome!</h4>
-								</div>
-								<div class="content-image">
-									<img src="<?php bloginfo('template_url'); ?>/images/the-man-3.jpg" class="responsive" alt="">
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="item">
-						<div class="padding">
-							<article class="box-slider-bottom">
-								<svg class="waves-bottom2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#9155aa;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#5d0e8b"/></svg>
-								<div class="content">
-									<h4>They gave me a subscription to the Dollar Shave Club, but I grow a beard by the end of the day, so I opted for free snacks and goodies from the corner market and grocer. This place is so awesome!</h4>
-								</div>
-								<div class="content-image">
-									<img src="<?php bloginfo('template_url'); ?>/images/the-man-3.jpg" class="responsive" alt="">
-								</div>
-							</article>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
-
+				<?php } ?>
 			</div>
 		</section>
-		
-		<!-- BOX BLUE FPO -->
+		<?php } ?>
+
+		<!-- SECTION JOIN US -->
+
+		<?php $joinUs = get_field('section_join_us'); ?>
+		<?php if($joinUs){ ?>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive block">
 		<div class="blue-box-waves in-careers">
 			<div class="container">
 				<div class="image">
 					<div class="images">
-						<img src="<?php bloginfo('template_url'); ?>/images/the-man-5.jpg" class="image-front" alt="">
-						<img src="<?php bloginfo('template_url'); ?>/images/the-man-4.jpg" class="image-back" alt="">
+						<?php
+							$attachment_id = $joinUs['join_us_right_image'];
+							$size = "join_us_section";
+							$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src= "<?php echo $image[0]; ?>" alt="" class="image-back">
+						<?php
+							$attachment_id = $joinUs['join_us_left_image'];
+							$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src= "<?php echo $image[0]; ?>" alt="" class="image-front">
 					</div>
 				</div>
 				<div class="info">
-					<h2>Ready to Join Us?</h2>
-					<p>Strip steak doner bacon capicola. Ribeye swine sirloin, kielbasa shankle tail pork chop t-bone short ribs jerky. Kevin brisket hamburger.</p>
-					<a href="" class="button-tn">APPLY NOW</a>
+					<h2><?php echo $joinUs['join_us_title'] ?></h2>
+					<p><?php echo $joinUs['join_us_description'] ?></p>
+					<a href="<?php echo $joinUs['join_us_button_destination'] ?>" class="button-tn"><?php echo $joinUs['join_us_button_text'] ?></a>
 				</div>
 			</div>
 		</div>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
+		<?php } ?>
 
 <?php get_footer(); ?>
