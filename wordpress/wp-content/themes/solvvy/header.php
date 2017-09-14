@@ -33,9 +33,6 @@
 			<div class="animation"><div class="circle five"></div></div>
 		</div>
 	</div>
-
-<?php echo do_shortcode('[latest_post]'); ?>
-
 		<header class="header">
 
 			<section class="header-top">
@@ -63,6 +60,41 @@
 						<div class="nav-brand">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
 						</div>
+
+
+
+	<?php
+	$args = array(
+		'posts_per_page' => 1,
+		'cat' => 'solvvy'
+	);
+	$q = new WP_Query( $args);
+
+	if ( $q->have_posts() ) {
+		while ( $q->have_posts() ) {
+			$q->the_post();
+			$size = 'thumbnail';
+			?>
+				<div style="display: none;">
+					<div id="get-post">
+						<h4>LASTEST REPORT</h4>
+						<p>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</p>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<img src="<?php the_post_thumbnail_url( $size ); ?>"/>
+						</a>
+						<div><a class="button" href="<?php the_permalink(); ?>">Read Now</a></div>
+					</div>
+				</div>
+			<?php
+			}
+		wp_reset_postdata();
+	}
+	?>
+
 
 
 						<!-- Sample menu definition -->
