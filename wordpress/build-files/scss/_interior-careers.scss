@@ -144,6 +144,20 @@
 	}
 }
 
+
+#cy {
+    background: #fff;
+    width: 100%;
+    height: 800px;
+    // position: absolute;
+    // top: 0px;
+    // bottom: 0px;
+    // left: 0px;
+    // right: 0px;
+    // margin: auto;
+}
+
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.box-careers {
