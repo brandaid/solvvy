@@ -12,16 +12,7 @@
 
 
 		<!-- HERO BANNER -->
-
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Our Customers</h1>
-				<h3>Solvvy delivers precise solutions to complex customer problems.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
