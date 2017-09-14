@@ -200,7 +200,7 @@
 		<?php } ?>
 
 		<!-- SECTION CLIENT TESTIMONIALS -->
-		
+
 		<?php $testimonials = get_field('section_clients_testimonials'); ?>
 		<?php if($testimonials){ ?>	
 		<section class="box-gray box-testimonial">
@@ -224,75 +224,73 @@
 		</section>
 		<?php } ?>
 
-		<!-- SLIDER BOTTOM TEAM -->
-	
+		<!-- SECTION SLIDER BOTTOM TEAM -->
+		
+		<?php $team = get_field('section_team_members_testimonials'); ?>
+		<?php if($team){ ?>
 		<section class="box-text-top container-normal align-center bkg-none">
 			<div class="container">
-				<h2>Hear From the Team</h2>
-				<p>Get insights from team members about work at Solvvy or meet the core team.</p>
+				<h2><?php echo $team['team_testimonials_title']; ?></h2>
+				<p><?php echo $team['team_testimonials_copy']; ?></p>
 
-				<div class="owl-carousel owl-careers">		
+				<?php if($team['testimonials_slider']){ ?>
+				<div class="owl-carousel owl-careers">
+					<?php forEach($team['testimonials_slider'] as $single_teammate){ ?>
 					<div class="item">
 						<div class="padding">
 							<article class="box-slider-bottom">
 								<svg class="waves-bottom2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#9155aa;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#5d0e8b"/></svg>
 								<div class="content">
-									<h4>They gave me a subscription to the Dollar Shave Club, but I grow a beard by the end of the day, so I opted for free snacks and goodies from the corner market and grocer. This place is so awesome!</h4>
+									<h4><?php echo $single_teammate['testimonial_description'] ?></h4>
 								</div>
 								<div class="content-image">
-									<img src="<?php bloginfo('template_url'); ?>/images/the-man-3.jpg" class="responsive" alt="">
+									<?php
+										$attachment_id = $single_teammate['testimonial_image'];
+										$size = "slider_team";
+										$image = wp_get_attachment_image_src( $attachment_id, $size );
+									?>
+									<img src= "<?php echo $image[0]; ?>" alt="" class="responsive">
 								</div>
 							</article>
 						</div>
 					</div>
-					<div class="item">
-						<div class="padding">
-							<article class="box-slider-bottom">
-								<svg class="waves-bottom2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#9155aa;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#5d0e8b"/></svg>
-								<div class="content">
-									<h4>They gave me a subscription to the Dollar Shave Club, but I grow a beard by the end of the day, so I opted for free snacks and goodies from the corner market and grocer. This place is so awesome!</h4>
-								</div>
-								<div class="content-image">
-									<img src="<?php bloginfo('template_url'); ?>/images/the-man-3.jpg" class="responsive" alt="">
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="item">
-						<div class="padding">
-							<article class="box-slider-bottom">
-								<svg class="waves-bottom2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#9155aa;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#5d0e8b"/></svg>
-								<div class="content">
-									<h4>They gave me a subscription to the Dollar Shave Club, but I grow a beard by the end of the day, so I opted for free snacks and goodies from the corner market and grocer. This place is so awesome!</h4>
-								</div>
-								<div class="content-image">
-									<img src="<?php bloginfo('template_url'); ?>/images/the-man-3.jpg" class="responsive" alt="">
-								</div>
-							</article>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
-
+				<?php } ?>
 			</div>
 		</section>
-		
-		<!-- BOX BLUE FPO -->
+		<?php } ?>
+
+		<!-- SECTION JOIN US -->
+
+		<?php $joinUs = get_field('section_join_us'); ?>
+		<?php if($joinUs){ ?>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive block">
 		<div class="blue-box-waves in-careers">
 			<div class="container">
 				<div class="image">
 					<div class="images">
-						<img src="<?php bloginfo('template_url'); ?>/images/the-man-5.jpg" class="image-front" alt="">
-						<img src="<?php bloginfo('template_url'); ?>/images/the-man-4.jpg" class="image-back" alt="">
+						<?php
+							$attachment_id = $joinUs['join_us_right_image'];
+							$size = "join_us_section";
+							$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src= "<?php echo $image[0]; ?>" alt="" class="image-back">
+						<?php
+							$attachment_id = $joinUs['join_us_left_image'];
+							$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src= "<?php echo $image[0]; ?>" alt="" class="image-front">
 					</div>
 				</div>
 				<div class="info">
-					<h2>Ready to Join Us?</h2>
-					<p>Strip steak doner bacon capicola. Ribeye swine sirloin, kielbasa shankle tail pork chop t-bone short ribs jerky. Kevin brisket hamburger.</p>
-					<a href="" class="button-tn">APPLY NOW</a>
+					<h2><?php echo $joinUs['join_us_title'] ?></h2>
+					<p><?php echo $joinUs['join_us_description'] ?></p>
+					<a href="<?php echo $joinUs['join_us_button_destination'] ?>" class="button-tn"><?php echo $joinUs['join_us_button_text'] ?></a>
 				</div>
 			</div>
 		</div>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
+		<?php } ?>
 
 <?php get_footer(); ?>
