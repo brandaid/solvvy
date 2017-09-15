@@ -6,7 +6,7 @@
 		
 		<section class="hero-banner-blog">
 			<div class="container">
-				<h1>Solvvy Newsletters</h1>
+				<h2>Solvvy Newsletters</h2>
 			</div>
 		</section>
 
@@ -14,7 +14,7 @@
 
 		<section class="box-text-top">
 			<div class="container">
-				<h2><?php the_title(); ?></h2>
+				<h1><?php the_title(); ?></h1>
 				<?php the_post_thumbnail( 'inner-post', array( 'class' => 'responsive' ) ); ?>
 				<?php the_content(); ?>
 			</div>
