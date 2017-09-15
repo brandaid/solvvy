@@ -11,17 +11,9 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
+		<!-- SECTION HERO BANNER -->
 
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Solvvy Resources</h1>
-				<h3>Bacon ipsum dolor amet bacon tenderloin landjaeger, turkey short loin.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
@@ -30,7 +22,24 @@
 		<section class="box-text-top container-normal pink-ball">
 			<div class="container">
 				<h2>Featured Resources</h2>
-
+<ul class="list-boxes-three three-ipad">
+<?php
+$args = array( 'post_type' => 'Resources');
+$loop = new WP_Query( $args );
+while ( $loop->have_posts() ) : $loop->the_post();
+?>
+<?php if( get_field('featured_resource') ): ?>
+<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
+<li>
+	<div class="fpo-resources">
+		<img src="<?php bloginfo('template_url'); ?>/images/fpo-cover.png" alt="" class="responsive">
+		<h3><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></h3>
+		<p> <?php the_content(); ?> </p>
+		<a href="<?php the_field('button_link_destination') ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
+	</div>
+</li>
+<?php endif; ?>
+<? endwhile; ?>
 				<ul class="list-boxes-three three-ipad">
 					<li>
 						<div class="fpo-resources">
@@ -145,10 +154,9 @@
 				<ul>
 					<li><p>Get <b>FREE</b> tools and best practices from Solvvy</p></li>
 					<li>
-						<form action="" class="marketo-updates">
-							<input type="text" placeholder="you@email.com">
-							<button>Send Me Updates!</button>
-						</form>
+						<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
+						<form id="mktoForm_1211"></form>
+						<script>MktoForms2.loadForm("//app-ab24.marketo.com", "733-WJM-922", 1211);</script>
 					</li>
 					<li><p>We respect your privacy.</p></li>
 				</ul>

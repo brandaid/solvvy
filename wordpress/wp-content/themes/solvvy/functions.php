@@ -1,6 +1,7 @@
 <?php 
 include(TEMPLATEPATH . '/functions/basic.php');
 include(TEMPLATEPATH . '/functions/custom.php');
+include(TEMPLATEPATH . '/functions/custom-post.php');
 include(TEMPLATEPATH . '/functions/login.php');
 include(TEMPLATEPATH . '/functions/menus.php');
 include(TEMPLATEPATH . '/functions/security.php');
