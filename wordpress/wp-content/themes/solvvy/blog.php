@@ -46,7 +46,13 @@
 				<div class="box-post with-waves-on-bottom">
 					<div class="content-avatar">
 						<figure class="avatar">
-							<img src="<?php bloginfo('template_url'); ?>/images/the-man-6.jpg" class="responsive" alt="">
+							<?php
+					    	    $attachment_id = get_field('avatar');
+					    	    $size = "avatar";
+					    	    $image = wp_get_attachment_image_src( $attachment_id, $size );
+					    	?>
+					    	<img src= "<?php echo $image[0]; ?>" class="responsive" alt="" />
+							<img src="<?php bloginfo('template_url'); ?>/images/the-man-6.jpg" class="responsive" >
 						</figure>
 					</div>
 					<h2>Lorem ipsum dolor sit amet</h2>
