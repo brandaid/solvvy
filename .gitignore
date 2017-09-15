@@ -1,3 +1,4 @@
 wordpress/build-files/node_modules/
 wordpress/wp-content/themes/solvvy/style.css
 .DS_Store
+wordpress/wp-content/uploads/
