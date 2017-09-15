@@ -45,8 +45,39 @@
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 				<!-- POST -->
+
+				<?php if( get_field('waves') == 'red' ) { ?>
+
+					<p>red papu</p>
+					
+					<?php $class = 'with-waves-on-bottom' ?>
+
+				<?php } elseif ( get_field('waves') == 'blue' ) { ?>
+					
+					<p>blue</p> 
+
+					<?php $class = 'with-waves-on-top' ?>
+
+				<?php } else { ?>
+						
+					<p>none</p>
+
+					<?php $class = '' ?>
+
+				<?php } ?>
+
+
+				<?php if( get_field('waves') == 'blue' ): ?>
+					<p>blue papu</p>
+				<?php endif; ?>
 				
-				<div class="box-post with-waves-on-bottom">
+				<div class="box-post <?php echo $class ?>">
+					
+					<?php if( get_field('waves') == 'blue' ) { ?>
+					<svg class="waves-on-top" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 82.81"><title>wave</title><path d="M825,20.24H0v48c300.77,36.57,557.87-9,825-11Z" transform="translate(0 0.44)" style="fill:#bdb2f2"/><path d="M825-.44H0V66.09c98.56,4.31,242.35,1.44,480.54-19.4C587.08,37.37,705.66,42.08,825,49.34Z" transform="translate(0 0.44)" style="fill:#725ab4"/></svg>
+					<?php } ?>
+					
+
 					<div class="content-avatar">
 						<figure class="avatar">
 							<?php
@@ -79,8 +110,13 @@
 						<?php the_field('copy'); ?>
 					</div>
 					<a href="javascript:void(0);" class="button-more">READ MORE</a>
+					
 
+					<?php if( get_field('waves') == 'red' ) { ?>
 					<svg class="waves-on-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#fe92bb;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#fa3777"/></svg>
+					<?php } ?>
+
+
 				</div>
 				
 				<?php endwhile; wp_reset_query(); ?>
