@@ -15,6 +15,7 @@
 		<section class="box-text-top">
 			<div class="container">
 				<h2><?php the_title(); ?></h2>
+				<?php the_post_thumbnail( 'inner-post', array( 'class' => 'responsive' ) ); ?>
 				<?php the_content(); ?>
 			</div>
 		</section>
