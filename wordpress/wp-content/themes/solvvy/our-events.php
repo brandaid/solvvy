@@ -28,12 +28,12 @@
 					<?php 
 
 					$meta_query = array(
-					array(
-						'key' => 'date',
-						'value' => date('Ymd'),
-						'type' => 'DATE',
-						'compare' => '>='
-					)
+						array(
+							'key' => 'date',
+							'value' => date('Ymd'),
+							'type' => 'DATE',
+							'compare' => '>='
+						)
 					);
 
 
@@ -74,66 +74,47 @@
 				<h2>Past Events</h2>
 
 				<ul class="list-boxes-three three-ipad">
+
+					<?php 
+
+					$meta_query = array(
+						array(
+							'key' => 'date',
+							'value' => date('Ymd'),
+							'type' => 'DATE',
+							'compare' => '<='
+						)
+					);
+
+
+					$loop = new WP_Query( array( 
+						'post_type' => 'event', 
+						'posts_per_page' => $posts_per_page,
+						'order' => 'DESC',
+						'orderby' => 'meta_value_num',
+						'meta_key' => 'date',
+						'offset' => (max(1, get_query_var('paged')) - 1) * $posts_per_page,
+						'meta_query' => $meta_query
+						) 
+					); ?>
+
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<li>
 						<div class="box-events">
-							<img src="<?php bloginfo('template_url'); ?>/images/events.jpg" alt="" class="responsive">
+
+							<?php the_post_thumbnail( 'featured_events', array( 'class' => 'responsive' ) ); ?>
+							
 							<div class="content align-left">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">San Francisco, CA <span>October 15, 2017</span></p>
-								<a href="" class="button-tn">Register Now</a>
+								<h3><?php the_title(); ?></h3>
+								<p class="data-article"><?php the_field('location'); ?> <span><?php the_field('date'); ?></span></p>
+								<a href="<?php the_field('cta_link'); ?>" class="button-tn" <?php if( get_field('open_external_window') ): ?> target="blank" <?php endif; ?>><?php the_field('cta_copy'); ?></a>
 							</div>
 						</div>
 					</li>
-					<li>
-						<div class="box-events">
-							<img src="<?php bloginfo('template_url'); ?>/images/events.jpg" alt="" class="responsive">
-							<div class="content align-left">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">San Francisco, CA <span>October 15, 2017</span></p>
-								<a href="" class="button-tn">Register Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="box-events">
-							<img src="<?php bloginfo('template_url'); ?>/images/events.jpg" alt="" class="responsive">
-							<div class="content align-left">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">San Francisco, CA <span>October 15, 2017</span></p>
-								<a href="" class="button-tn">Register Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="box-events">
-							<img src="<?php bloginfo('template_url'); ?>/images/events.jpg" alt="" class="responsive">
-							<div class="content align-left">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">San Francisco, CA <span>October 15, 2017</span></p>
-								<a href="" class="button-tn">Register Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="box-events">
-							<img src="<?php bloginfo('template_url'); ?>/images/events.jpg" alt="" class="responsive">
-							<div class="content align-left">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">San Francisco, CA <span>October 15, 2017</span></p>
-								<a href="" class="button-tn">Register Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="box-events">
-							<img src="<?php bloginfo('template_url'); ?>/images/events.jpg" alt="" class="responsive">
-							<div class="content align-left">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">San Francisco, CA <span>October 15, 2017</span></p>
-								<a href="" class="button-tn">Register Now</a>
-							</div>
-						</div>
-					</li>
+					<?php endwhile; wp_reset_query(); ?>
+
+					
+				
 				</ul>
 			</div>
 		</section>

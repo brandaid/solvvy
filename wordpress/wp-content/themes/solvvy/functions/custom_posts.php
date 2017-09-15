@@ -89,10 +89,10 @@ function replace_default_featured_image_meta_box() {
     add_meta_box('postimagediv', __('Card Image'), 'post_thumbnail_meta_box', 'Resources', 'side');
 }
 
-add_action( 'init', 'create_book_taxonomies', 0 );
+add_action( 'init', 'create_resources_taxonomies', 0 );
 
 // create two taxonomies, genres and writers for the post type "book"
-function create_book_taxonomies() {
+function create_resources_taxonomies() {
     // Add new taxonomy, make it hierarchical (like categories)
     $labels = array(
         'name'              => _x( 'Resource types', 'taxonomy general name', 'textdomain' ),
