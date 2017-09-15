@@ -22,7 +22,7 @@
 		<section class="box-text-top container-normal pink-ball padding-top">
 			<div class="container">
 
-				<ul class="list-boxes-three">
+				<ul class="list-boxes-three align-left">
 					<?php $loop = new WP_Query( array( 'post_type' => 'newsletter', 'order' => 'ASC' ) ); ?>
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<li>

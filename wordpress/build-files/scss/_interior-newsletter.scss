@@ -1,6 +1,7 @@
 .the-post {
 	@extend .asset-cards;
 	margin-bottom: 60px;
+	text-align: center;
 	h2 {
 		&:after {
 			display: none;
