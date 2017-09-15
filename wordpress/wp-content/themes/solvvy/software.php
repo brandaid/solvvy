@@ -13,43 +13,39 @@
 
 		<!-- HERO BANNER -->
 
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Solvvy Software</h1>
-				<h3>Advanced machine learning, artificial intelligence and natural language science. Unique and unparalleled insights about what your customers.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<!-- BOX TEXT -->		
 
-
-		<!-- BOX TEXT -->
-		
-
+				<?php $section_1 = get_field('section_1') ?>
+		<?php if($section_1){ ?>
 		<section class="box-text-top pink-ball align-center">
 			<div class="container">
-				<h2>Lorem Ipsum Headline</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-				<img src="<?php bloginfo('template_url'); ?>/images/infographic.png" class="responsive" alt="">
+				<h2 class="margin-bottom-90"><?php echo $section_1['section_1_title'];  ?></h2>
+				<p><?php echo $section_1['section_1_copy'];  ?></p>
+				<img src="<?php echo $section_1['section_1_image'];  ?>" class="responsive" alt="">
 			</div>
 		</section>
+		<?php } ?>
 
 
 		<!-- BOX BLUE FPO -->
 
 		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
 		<div class="blue-box-waves">
+	    <?php $section_1 = get_field('blue_box') ?>
+		<?php if($section_1){ ?>
 			<div class="container">
 				<div class="image">
-					<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
+					<img src="<?php echo $section_1['image'];  ?>" class="responsive" alt="">
 				</div>
 				<div class="info">
-					<h2>Lorem Ipsum Asset Name</h2>
-					<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-					<a href="" class="button-tn">READ NOW</a>
+					<h2><?php echo $section_1['title'];  ?></h2>
+					<p><?php echo $section_1['copy'];  ?></p>
+					<a class="button-tn" href="<?php echo $section_1['link_button'];  ?>"><?php echo $section_1['text_button'];  ?></a>
 				</div>
 			</div>
+		<?php } ?>
 		</div>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
 
