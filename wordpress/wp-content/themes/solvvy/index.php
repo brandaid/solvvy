@@ -49,7 +49,13 @@
 					<?php endwhile; ?>
 			</div>
 			<div class="col-right">
-				<img src="<?php bloginfo('template_url'); ?>/images/screen.gif" class="screen" alt="">
+				<div class="mackbook-home">
+					<div class="content-mac">
+						<img src="<?php bloginfo('template_url'); ?>/images/screen-home.gif" class="screen" alt="">
+						<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
+					</div>
+				</div>
+				
 			</div>
 		</section>
 

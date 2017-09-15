@@ -24,18 +24,24 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div id="loader"><div class="loading">
-  <div class="animation"><div class="circle one"></div></div>
-  <div class="animation"><div class="circle two"></div></div>
-  <div class="animation"><div class="circle three"></div></div>
-  <div class="animation"><div class="circle four"></div></div>
-  <div class="animation"><div class="circle five"></div></div>
-</div></div>
+	<div id="loader">
+		<div class="loading">
+			<div class="animation"><div class="circle one"></div></div>
+			<div class="animation"><div class="circle two"></div></div>
+			<div class="animation"><div class="circle three"></div></div>
+			<div class="animation"><div class="circle four"></div></div>
+			<div class="animation"><div class="circle five"></div></div>
+		</div>
+	</div>
 		<header class="header">
 
 			<section class="header-top">
 				<div class="container">
-					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+					<?php wp_nav_menu( 
+						array( 
+							'theme_location' => 'header-menu' ) 
+						);
+					?>
 				</div>
 			</section>
 
@@ -56,15 +62,52 @@
 						</div>
 
 
+
+	<?php
+	$args = array(
+		'posts_per_page' => 1,
+		'cat' => 'solvvy'
+	);
+	$q = new WP_Query( $args);
+
+	if ( $q->have_posts() ) {
+		while ( $q->have_posts() ) {
+			$q->the_post();
+			$size = 'thumbnail';
+			?>
+				<div style="display: none;">
+					<div id="get-post">
+						<h4>LASTEST REPORT</h4>
+						<p>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</p>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<img src="<?php the_post_thumbnail_url( $size ); ?>"/>
+						</a>
+						<div><a class="button" href="<?php the_permalink(); ?>">Read Now</a></div>
+					</div>
+				</div>
+			<?php
+			}
+		wp_reset_postdata();
+	}
+	?>
+
+
+
+						<!-- Sample menu definition -->
 						<?php wp_nav_menu(
 							array(
 								'theme_location' => 'main-menu',
+								'container'=>false,
 								'menu_class' => 'sm sm-clean',
 								'menu_id' => 'main-menu'
 							)
 						); ?>
 
-						<!-- Sample menu definition -->
+
 						<?php/*
 						<ul id="main-menu" class="sm sm-clean">
 							<li><a href="#">Solutions</a>

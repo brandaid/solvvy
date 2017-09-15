@@ -93,3 +93,9 @@
 		top: 15%;
 	}
 }
+
+.owl-navbars {
+	.owl-nav.disabled {
+		display: block;
+	}
+}
