@@ -271,9 +271,10 @@
 		<div class="cool-sep"></div>
 
 		<!-- SECTION INDUSTRY -->
-
+		<?php while(has_sub_field('section_6')): ?>
 		<section class="solution-for-industry">
 			<div class="container">
+				<?php if(get_sub_field('industry_title')): ?><h2><?php the_sub_field('industry_title'); ?></h2><?php endif; ?>
 					<div class="columns-solutions">					
 					<div class="col-left">
 				
@@ -283,7 +284,7 @@
 							<option value="industry">For Your Industry</option>
 						</select>
 
-				<?php while(has_sub_field('section_6')): ?>
+
 
 				<?php if(get_sub_field('solutions')): ?>
 				
