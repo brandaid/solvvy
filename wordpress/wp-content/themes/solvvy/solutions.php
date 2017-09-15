@@ -107,6 +107,83 @@
 			</div>
 		</section>
 
+		<section class="solution-for-industry tab-panels">
+			<div class="container">
+				
+				<div class="columns-solutions">
+					
+					<div class="col-left">
+
+						<div class="tab-link active" rel="panel1">
+							<h4><i class="icon-whatsapp"></i>SUPPORT</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link" rel="panel2">
+							<h4><i class="icon-smiley"></i>CUSTOMER SUPPORT</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link" rel="panel3">
+							<h4><i class="icon-atm"></i>FINANCE</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link" rel="panel4">
+							<h4><i class="icon-atm"></i>FINANCE</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link" rel="panel5">
+							<h4><i class="icon-atm"></i>FINANCE</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+						<div class="tab-link" rel="panel6">
+							<h4><i class="icon-atm"></i>FINANCE</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+						</div>
+
+      				</div>
+
+					<div class="col-right">
+
+						<div class="panel active" id="panel1">
+							<h4>LABEL 1</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<a href="" class="button-tn">VIEW MORE</a>	
+						</div>
+						<div class="panel" id="panel2">
+							<h4>LABEL 2</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<a href="" class="button-tn">VIEW MORE</a>
+						</div>
+						<div class="panel" id="panel3">
+							<h4>LABEL 3</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<a href="" class="button-tn">VIEW MORE</a>
+						</div>
+						<div class="panel" id="panel4">
+							<h4>LABEL 4</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<a href="" class="button-tn">VIEW MORE</a>
+						</div>
+						<div class="panel" id="panel5">
+							<h4>LABE 5L</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<a href="" class="button-tn">VIEW MORE</a>
+						</div>
+						<div class="panel" id="panel6">
+							<h4>LABEL 6</h4>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+							<a href="" class="button-tn">VIEW MORE</a>
+						</div>
+				    </div>
+				</div>
+			</div>
+		</section>	
 
 		<!-- DRIVING COMPANIES -->
 		

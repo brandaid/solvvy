@@ -1,3 +1,28 @@
+$(function(){
+
+  $('.tab-link').on('click', function() {
+    var $panel = $(this).closest('.tab-panels');
+
+    $panel.find('.tab-link.active').removeClass('active');
+    $(this).addClass('active');
+
+    // figure out which panel to show
+    var panelToShow = $(this).attr('rel');
+
+    // hide current panel
+    $panel.find('.panel.active').fadeOut(150, showNextPanel);
+
+    // show next panelToShow
+    function showNextPanel() {
+      $(this).removeClass('active');
+
+      $('#'+panelToShow).fadeIn(150, function() {
+        $(this).addClass('active');
+      })
+    }
+  });
+});
+
 $(document).ready(function() {
 
 		//SCROLL SUBIR
@@ -182,23 +207,11 @@ $(function() {
     });
   }
 
-  	//CLONE HEADER MENU AND LAST POST 
   	var $menuTop = $('.header-top ul li').clone();
 	$('.menu-top-clone').html($menuTop);
 
-	var postTop = $('#get-post').html();
-	$('.menu-post').each(function(){
-		$(this).html(postTop);
-	});
-
-
-
-	$( ".post a" ).remove();
-	e = $('<div class="menu-post-clone"><div class="menu-post"></div></div>');
-	$('.post').append(e);
-	/*
-	*/
-	$('.menu-post-clone .menu-post').html(postTop);
+	var $postTop = $('.last-post').clone();
+	$('.menu-post-clone').html($postTop);
 });
 
 $("#show-all-none, .section-assets-cards").hide();
@@ -378,3 +391,5 @@ var elements = 10;
   		name: 'cose'
 		});
 	layout.run();
+
+
