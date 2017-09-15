@@ -86,7 +86,6 @@
 						)
 					);
 
-
 					$loop = new WP_Query( array( 
 						'post_type' => 'event', 
 						'posts_per_page' => $posts_per_page,

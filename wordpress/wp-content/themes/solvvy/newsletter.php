@@ -11,17 +11,9 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
+		<!-- SECTION HERO BANNER -->
 
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Solvvy Newsletters</h1>
-				<h3>Bacon ipsum dolor amet bacon tenderloin landjaeger, turkey short loin.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->

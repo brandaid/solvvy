@@ -12,7 +12,7 @@
 
 		<!-- HERO BANNER -->
 
-		<section class="hero-banner" style="background: url('<?php the_field('hero_image'); ?>') no-repeat center center;">
+		<section class="hero-banner" style="background: url('<?php the_field('hero_image'); ?>') no-repeat center center; background-size: cover;">
 			<div class="container">
 				<h1><?php the_field('hero_title'); ?></h1>
 				<h3><?php the_field('hero_subtitle'); ?></h3>
