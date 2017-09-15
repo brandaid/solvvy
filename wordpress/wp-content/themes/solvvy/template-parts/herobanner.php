@@ -10,7 +10,7 @@
 				$image_array = wp_get_attachment_image_src($image_id, $image_size);
 				$image_url = $image_array[0];
 			?>
-			<section class="hero-banner hero-banner-interior" style="background-image: url(<?php echo $image_url; ?>)">
+			<section class="hero-banner hero-banner-interior" style="background-image: url(<?php echo $image_url; ?>)no-repeat; background-size: cover;">
 			<?php }else{ ?>
 			<section class="hero-banner hero-banner-interior">
 			<?php } ?>
