@@ -13,6 +13,23 @@
 	}
 }
 
+.single {
+	.box-text-top {
+		text-align: left;
+		h1, h2, h3, h4, h5, h6 {
+			font-family: $font-semibold;
+		}
+		h2 {
+			&:after {
+				display: none;
+			}
+		}
+		.responsive {
+			margin: 20px 0 40px 0;
+		}
+	}
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.the-post {
