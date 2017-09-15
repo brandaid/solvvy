@@ -2,20 +2,22 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
-
-		<?php get_template_part( 'template-parts/herobanner' ); ?>
-
-		<!-- SECTION 1 -->
-		<?php $section_1 = get_field('section_1') ?>
-		<?php if($section_1){ ?>
-		<section class="box-text-top pink-ball">
+		<!-- HERO BANNER BLOG -->
+		
+		<section class="hero-banner-blog">
 			<div class="container">
-				<h2><?php echo $section_1['section_1_title'];  ?></h2>
-				<p><?php echo $section_1['section_1_copy'];  ?></p>
+				<h1>Solvvy Newsletters</h1>
 			</div>
 		</section>
-		<?php } ?>
+
+		<!-- SECTION 1 -->
+
+		<section class="box-text-top">
+			<div class="container">
+				<h2><?php the_title(); ?></h2>
+				<?php the_content(); ?>
+			</div>
+		</section>
 		
 		<!-- SEP -->
 
