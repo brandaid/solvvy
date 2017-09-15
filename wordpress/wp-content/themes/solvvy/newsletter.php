@@ -41,9 +41,9 @@
 			</div>
 		</section>
 		
-		<div class="content-button">
+		<!-- <div class="content-button">
 			<a href="javascript:void(0);" class="button-white">Load More</a>
-		</div>
+		</div> -->
 		
 		<div class="cool-sep"></div>
 		
