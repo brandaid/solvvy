@@ -398,3 +398,12 @@ var elements = 10;
 	layout.run();
 */
 
+
+$(document).ready(function() {
+
+	$("#formSearch").submit(function(e){
+		e.preventDefault(e);
+	});
+
+});
+

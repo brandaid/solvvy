@@ -85,6 +85,18 @@
 		<a href="#" class="scrollToTop"><i class="fa fa-chevron-up"></i></a>
 
 	</footer>
+
+
+	<!-- Modal Search -->
+	<div id="myModalSearch" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<?php include 'search.php'; ?>
+		</div>
+	</div>
+
+
+
 	<!--JQUERY -->
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
