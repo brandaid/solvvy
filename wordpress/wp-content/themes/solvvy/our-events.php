@@ -10,25 +10,17 @@
 <?php get_header(); ?>
 <?php the_post(); ?>
 
+		
+		<!-- SECTION HERO BANNER -->
 
-		<!-- HERO BANNER -->
-
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Our Events</h1>
-				<h3>Join our community of Solvvers at an event near you.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
 		
 
 		<section class="box-text-top container-normal pink-ball title-to-left">
-			<div class="container  align-left">
+			<div class="container align-left">
 				<h2>Upcoming Events</h2>
 
 				<ul class="list-boxes-three three-ipad">
