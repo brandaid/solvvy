@@ -23,96 +23,19 @@
 			<div class="container">
 
 				<ul class="list-boxes-three">
+					<?php $loop = new WP_Query( array( 'post_type' => 'newsletter', 'order' => 'ASC' ) ); ?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<li>
 						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
+							<?php the_post_thumbnail( 'newsletter', array( 'class' => 'responsive' ) ); ?>
 							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<small><?php the_time('j F, Y'); ?></small>
+								<a href="<?php the_permalink(); ?>" class="button">Read Now</a>
 							</div>
 						</div>
 					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="the-post">
-							<img src="<?php bloginfo('template_url'); ?>/images/newsletter.jpg" alt="" class="responsive">
-							<div class="content">
-								<h2><a href="">Lorem Retail Shopping Headline Goes Here</a></h2>
-								<small>July, 2017</small>
-								<a href="" class="button">Read Now</a>
-							</div>
-						</div>
-					</li>
+					<?php endwhile; wp_reset_query(); ?>
 				</ul>
 
 			</div>
