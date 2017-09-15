@@ -40,6 +40,9 @@
 
 		<section class="blog-content">
 			<div class="container">
+				
+				<?php $loop = new WP_Query( array( 'post_type' => 'newsletter', 'order' => 'ASC' ) ); ?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 				<!-- POST -->
 				
@@ -61,7 +64,7 @@
 							<figure class="avatar">
 								<img src="<?php bloginfo('template_url'); ?>/images/the-man-6.jpg" class="responsive" alt="">
 							</figure>
-							<h2><?php the_autor(); ?>Sophie Conti</h2>
+							<h2><?php the_field('name'); ?>Sophie Conti</h2>
 							<h3><?php the_field('position'); ?>CEO, Customer Service Lab </h3>
 							<p><?php the_field('bio'); ?>Sophie is the founder of Customer Service Lab, and she has spent her career working with startups in customer support with some of the most innovative companies like Leap Motion, Tile, Moo, Etsy, Indiegogo, Teespring, and more.</p>
 						</div>
@@ -83,7 +86,8 @@
 
 					<svg class="waves-on-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#fe92bb;opacity:0.3499999940395355;isolation:isolate"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#fa3777"/></svg>
 				</div>
-
+				
+				<?php endwhile; wp_reset_query(); ?>
 
 
 				<!-- POST -->
