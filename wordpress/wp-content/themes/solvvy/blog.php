@@ -41,7 +41,7 @@
 		<section class="blog-content">
 			<div class="container">
 				
-				<?php $loop = new WP_Query( array( 'post_type' => 'blog', 'order' => 'ASC' ) ); ?>
+				<?php $loop = new WP_Query( array( 'post_type' => 'post', 'order' => 'ASC' ) ); ?>
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 				<!-- POST -->
