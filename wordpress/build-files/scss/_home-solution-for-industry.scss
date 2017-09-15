@@ -6,11 +6,12 @@
 	}
 }
 
-.panel-solution {
+.panel-solution,
+.panel {
 	display: none;
 	background: white url(images/waves-pink.png) no-repeat bottom;
 	margin-top: 34px;
-	padding: 50px 26px 130px 67px;
+	padding: 50px 26px 130px 26px;
 	@include box-shadow(0px, 0px, 10px, rgba(0,0,0,.2));
 	text-align: left;
 	max-width: 350px;
@@ -61,6 +62,9 @@
 		h4 {
 			color: $brand-tertiary;
 		}
+	}
+	&.active {
+		display: block;
 	}
 }
 .tab-link {
@@ -126,7 +130,8 @@
 			vertical-align: top;
 		}
 	}
-	.panel-solution {
+	.panel-solution,
+	.panel {
 		max-width: 512px;
 		padding: 70px 70px 140px 97px;
 		margin-top: 0;
@@ -166,6 +171,40 @@
 		background-image: url(images/backer1.png), url(images/backer2.png);
 	    background-position: right 90%, left 10%;
 	    background-repeat: no-repeat, no-repeat;
+	}
+
+	.tab-panels {
+		.col-right {
+			position: relative;
+			.panel {
+				position: absolute;
+				left: 50px;
+				top: 0;
+			}
+		}
+	}
+	#panel2 {
+		top: 15%;
+	}
+	#panel3 {
+		top: 30%;
+	}
+	#panel4 {
+		top: auto;
+		bottom: 5%;
+	}
+	#panel5,
+	#panel6 {
+		top: auto;
+		bottom: 0;
+		&:before {
+			top: 40%;
+		}
+	}
+	#panel6 {
+		&:before {
+			top: 80%;
+		}
 	}
 }
 

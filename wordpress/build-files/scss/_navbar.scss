@@ -456,6 +456,7 @@
 					margin-bottom: 20px;
 					color: $brand-tertiary;
 					text-transform: uppercase;
+					font-weight: bold;
 					&:hover{
 						color: $brand-tertiary;
 					}
@@ -463,6 +464,7 @@
 				li li a{
 					color: $brand-primary;
 					padding: 7px 0;
+					font-weight: normal;
 					&:hover{
 						color: darken($brand-primary, 10%);
 					}
@@ -506,6 +508,7 @@
 					h4{
 						font-size: 16px;
 						margin-bottom: 20px;
+						font-weight: bold;
 					}
 					img{
 						max-width: 120px;
@@ -516,6 +519,7 @@
 						line-height: 18px;
 						a{
 							text-transform: initial;
+							font-weight: normal;
 							&:hover{
 								color: $brand-primary;		
 							}
