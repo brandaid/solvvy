@@ -55,32 +55,28 @@
 					    	    $image = wp_get_attachment_image_src( $attachment_id, $size );
 					    	?>
 					    	<img src= "<?php echo $image[0]; ?>" class="responsive" alt="" />
-							<img src="<?php bloginfo('template_url'); ?>/images/the-man-6.jpg" class="responsive" >
 						</figure>
 					</div>
-					<h2>Lorem ipsum dolor sit amet</h2>
-					<small><a href="javascript:void(0);" class="link-author">Mathesh Ram</a> on October 6, 2017
+					<h2><?php the_title(); ?></h2>
+					<small><a href="javascript:void(0);" class="link-author"><?php the_field('name'); ?></a> on <?php the_time('j F, Y'); ?>
 						<div class="popup-author">
 							<figure class="avatar">
-								<img src="<?php bloginfo('template_url'); ?>/images/the-man-6.jpg" class="responsive" alt="">
+								<?php
+					    	    $attachment_id = get_field('avatar');
+					    	    $size = "avatar";
+					    	    $image = wp_get_attachment_image_src( $attachment_id, $size );
+					    	?>
+					    	<img src= "<?php echo $image[0]; ?>" class="responsive" alt="" />
 							</figure>
-							<h2><?php the_field('name'); ?>Sophie Conti</h2>
-							<h3><?php the_field('position'); ?>CEO, Customer Service Lab </h3>
-							<p><?php the_field('bio'); ?>Sophie is the founder of Customer Service Lab, and she has spent her career working with startups in customer support with some of the most innovative companies like Leap Motion, Tile, Moo, Etsy, Indiegogo, Teespring, and more.</p>
+							<h2><?php the_field('name'); ?></h2>
+							<h3><?php the_field('position'); ?></h3>
+							<p><?php the_field('bio'); ?></p>
 						</div>
 					</small>
-					<p><?php the_field('excerpt'); ?>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
+					<p><?php the_field('excerpt'); ?></p>
 					<div class="hidden-info">
-						<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" class="responsive" alt="">
 						<?php the_post_thumbnail( 'inner-post', array( 'class' => 'responsive' ) ); ?>
 						<?php the_field('copy'); ?>
-						<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-						<h3>Lorem Ipsum dole sldaelay</h3>
-						<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-						<h4>Lore upsumss</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tenetur, ipsam fugit sit optio suscipit ratione, tempora corporis quam incidunt, molestiae architecto dicta quas. Facilis, incidunt, perferendis. Sapiente, est, veritatis.</p>
-						<blockquote>Molestiae architecto dicta quas.</blockquote>
-						<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle.</p>
 					</div>
 					<a href="javascript:void(0);" class="button-more">READ MORE</a>
 
