@@ -16,6 +16,7 @@ if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'featured_resource_image', 268, 197, true );
     add_image_size( 'featured_events', 398, 135, true );
     add_image_size( 'newsletter', 400, 175, true );
+    add_image_size( 'avatar', 500, 500, true );
 }
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
@@ -35,6 +36,7 @@ function my_custom_sizes( $sizes ) {
 	    'featured_resource_image' => __('Section Resources'),
 	    'featured_events' => __('Section Events'),
 	    'newsletter' => __('Section Newsletter'),
+	    'avatar' => __('Avatar'),
 	) );
 }
 
