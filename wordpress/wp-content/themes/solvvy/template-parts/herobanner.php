@@ -1,9 +1,18 @@
 		<!-- SECTION HERO BANNER -->
+		
+		<?php $section_hero = get_field('section_hero') ?>		
 
-		<?php $section_hero = get_field('section_hero') ?>
 		<?php if($section_hero){ ?>
 			<?php if($section_hero['hero_background']){ ?>
-			<section class="hero-banner hero-banner-interior" style="background-image: url(<?php echo $section_hero['hero_background']; ?>)">
+				
+				<?php
+					$image_id = $section_hero['hero_background'];
+					$image_size = 'featured';
+					$image_array = wp_get_attachment_image_src($image_id, $image_size);
+					$image_url = $image_array[0];
+				?>
+
+			<section class="hero-banner hero-banner-interior" style="background: url(<?php echo $image_url; ?>)no-repeat; background-size: cover;">
 			<?php }else{ ?>
 			<section class="hero-banner hero-banner-interior">
 			<?php } ?>

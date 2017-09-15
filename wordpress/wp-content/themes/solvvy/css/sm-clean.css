@@ -9,16 +9,20 @@
 .sm-clean a span.sub-arrow {
   position: absolute;
   top: 50%;
-  margin-top: -26px;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  height: 50px;
+  margin-top: -17px;
+  left: auto;
+  right: 4px;
+  width: 34px;
+  height: 34px;
   overflow: hidden;
-  background: transparent;
+  font: bold 16px/34px monospace !important;
+  text-align: center;
+  text-shadow: none;
+  background: rgba(0, 0, 0, 0.1);
 }
 .sm-clean a.highlighted span.sub-arrow:before {
   display: block;
+  content: '-';
 }
 .sm-clean > li:first-child > a, .sm-clean > li:first-child > :not(ul) a {
 }
@@ -100,7 +104,10 @@
   .sm-clean a.current {}
   .sm-clean a.disabled {}
   .sm-clean a.has-submenu {}
-  .sm-clean a span.sub-arrow {}
+  .sm-clean a span.sub-arrow { 
+    background: transparent;
+    display: none;
+  }
 
   .sm-clean a.highlighted span.sub-arrow:before {
     display: none;
