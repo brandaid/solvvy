@@ -13,23 +13,18 @@
 
 		<!-- HERO BANNER -->
 
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>About Solvvy</h1>
-				<h3>Bacon ipsum dolor amet bacon leberkas alcatra doner drumstick. Brisket meatloaf boudin.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
-		<!-- BOX TEXT -->
-
+		<!-- SECTION 1 -->
+		<?php $section_1 = get_field('section_1') ?>
+		<?php if($section_1){ ?>
 		<section class="box-text-top pink-ball">
 			<div class="container">
-				<h2>Our History</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
+				<h2><?php echo $section_1['section_1_title'];  ?></h2>
+				<p><?php echo $section_1['section_1_copy'];  ?></p>
 			</div>
 		</section>
+		<?php } ?>
 		
 		<!-- SEP -->
 
@@ -39,45 +34,63 @@
 
 		<section class="line-time">
 			<ul class="formated-list line-time-top">
-				<li>
-					<article class="line-time-box">
-						<h4>20XX</h4>
-						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
-					</article>
-				</li>
-				<li>
-					<article class="line-time-box">
-						<h4>20XX</h4>
-						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
-					</article>
-				</li>
-				<li>
-					<article class="line-time-box">
-						<h4>20XX</h4>
-						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
-					</article>
-				</li>
+				<?php while(has_sub_field('section_line_time')): ?>
+				<?php if(get_sub_field('line_time_top')): ?>
+				
+					<?php 
+					    
+					if( have_rows('line_time_top') ):
+
+					    while( have_rows('line_time_top') ) : the_row(); 
+					        
+					        ?>
+						<li>
+						<article class="line-time-box">
+						<h4><?php the_sub_field('line_title'); ?></h4>
+						<p><?php the_sub_field('line_copy'); ?></p>
+						</article>
+						</li>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
 			</ul>
 			<hr>
 			<ul class="formated-list line-time-bottom">
-				<li>
-					<article class="line-time-box">
-						<h4>20XX</h4>
-						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
-					</article>
-				</li>
-				<li>
-					<article class="line-time-box">
-						<h4>20XX</h4>
-						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
-					</article>
-				</li>
-				<li>
-					<article class="line-time-box">
-						<h4>20XX</h4>
-						<p>Bacon ipsum dolor amet capicola kielbasa tenderloin andouille alcatra beef ribs fatback biltong sirloin pastrami. Jerky burgdoggen kielbasa turducken beef salami.</p>
-					</article>
-				</li>
+				<?php while(has_sub_field('section_line_time')): ?>
+				<?php if(get_sub_field('line_time_bottom')): ?>
+				
+					<?php 
+					    
+					if( have_rows('line_time_bottom') ):
+
+					    while( have_rows('line_time_bottom') ) : the_row(); 
+					        
+					        ?>
+						<li>
+						<article class="line-time-box">
+						<h4><?php the_sub_field('line_title'); ?></h4>
+						<p><?php the_sub_field('line_copy'); ?></p>
+						</article>
+						</li>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
 			</ul>
 		</section>
 		
@@ -87,72 +100,56 @@
 
 		<!-- VALUES SECTION -->
 
+		<?php $benefits = get_field('section_benefits'); ?>
+		<?php if($benefits){ ?>
 		<section class="box-text-top bkg-none align-center container-normal">
 			<div class="container">
-				<h2 class="margin-bottom-90">Key Differentiators</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf <br> short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle.</p>
+				<h2 class="margin-bottom-90"><?php echo $benefits['section_benefits_title']; ?></h2>
+				<p><?php echo $benefits['sectin_benefits_copy']; ?></p>
+
+				<?php if($benefits['section_benefits_features']){ ?>
 				<ul class="list-boxes-three align-left colorful-icons">
+					<?php forEach($benefits['section_benefits_features'] as $single_feature){ ?>
 					<li>
 						<div class="keys-box">
-							<i class="icon-smiley"></i>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
+							<?php  echo$single_feature['feature_icon'] ?>
+							<p><?php  echo$single_feature['feature_description'] ?></p>
 						</div>
 					</li>
-					<li>
-						<div class="keys-box">
-							<i class="icon-menu"></i>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
-					<li>
-						<div class="keys-box">
-							<i class="icon-avatar"></i>
-							<p>Bacon sirloin kevin beef. Ham hock leberkas meatloaf, pork loin meatball beef ribs venison short ribs ham hock tri-tip.</p>
-						</div>
-					</li>
+					<?php } ?>
 				</ul>
-				<a href="" class="button">Learn More</a>
+				<?php } ?>
+
+				<a href="<?php echo $benefits['section_benefits_link_destination'] ?>" class="button"><?php echo $benefits['section_benefits_link_text'] ?></a>
 			</div>
 		</section>
+		<?php } ?>
 
 		<!-- HERO BANNER -->
 
-		<section class="box-careers">
-			<div class="container">
-				<h2>“Everything should be made as simple as possible, but not simpler.”</h2>
-			</div>
-			<div class="waves"></div>
-		</section>
+		<?php $section_hero = get_field('section_hero2') ?>
+		<?php if($section_hero){ ?>
+			<?php if($section_hero['hero_background']){ ?>
+			<section class="box-careers" style="background-image: url(<?php echo $section_hero['hero_background']; ?>)">
+			<?php }else{ ?>
+			<section class="box-careers">
+			<?php } ?>
+				<div class="container">
+					<h2><?php echo $section_hero['hero_copy'];  ?></h2>
+				</div>
+				<div class="waves"></div>
+			</section>
+		<?php } ?>
 
 		<!-- SPHERES PETER -->
 
-		<section class="box-text-top align-center container-normal bkg-none">
-			<div class="container">
-				<h2>Out Team</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf <br> short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. </p>
-				<div>[SPHERES PETER]</div>
-			</div>
-		</section>
+		<?php get_template_part( 'template-parts/metrics' ); ?>
+
+
 
 		<!-- BOX BLUE FPO -->
 
-		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive block">
-		<div class="blue-box-waves in-careers">
-			<div class="container">
-				<div class="image">
-					<div class="images">
-						<img src="<?php bloginfo('template_url'); ?>/images/the-man-5.jpg" class="image-front" alt="">
-						<img src="<?php bloginfo('template_url'); ?>/images/the-man-4.jpg" class="image-back" alt="">
-					</div>
-				</div>
-				<div class="info">
-					<h2>Ready to Join Us?</h2>
-					<p>Strip steak doner bacon capicola. Ribeye swine sirloin, kielbasa shankle tail pork chop t-bone short ribs jerky. Kevin brisket hamburger.</p>
-					<a href="" class="button-tn">APPLY NOW</a>
-				</div>
-			</div>
-		</div>
-		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
+		<?php get_template_part( 'template-parts/joinus' ); ?>
 
 		
 <?php get_footer(); ?>
