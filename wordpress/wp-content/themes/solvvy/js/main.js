@@ -22,6 +22,28 @@ $(function(){
     }
   });
 });
+function setEqualHeight() {
+	if ($(window).width() > 768) {
+    var tallestcolumn = 0;
+    $('.asset-cards .content').each(
+    function() {
+        currentHeight = $(this).height();
+        if(currentHeight > tallestcolumn) {
+            tallestcolumn  = currentHeight;
+            }
+        }
+    );
+ $('.asset-cards .content').height(tallestcolumn + 36);
+ }
+}
+
+var delay = (function(){
+        var timer = 0;
+        return function(callback, ms){
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+    };
+})();
 
 $(document).ready(function() {
 
@@ -219,21 +241,40 @@ $(function() {
 	$('.menu-post-clone .menu-post').html(postTop);
 });
 
-$("#show-all-none, .section-assets-cards").hide();
+// RESOURCES FILTERS
+// MAKE ALL RESOURCES CARDS THE SAME HEIGHT
+ delay(function(){
+        $('.asset-cards .content').css('height','auto'); //solve for all you browser stretchers out there!
+        setEqualHeight($('.asset-cards .content'));
+    }, 0);
+
+$(".section-assets-cards li").css('opacity','1');
 
 $('.open-div').click(function() {
-	$("#show-all-none").slideToggle();
+	$("#filters").slideToggle();
 	$(this).toggleClass('active');
 	
 });
 
-$("#styled-checkbox-1, #styled-checkbox-2, #styled-checkbox-4").click(function() {
-    if($(this).is(":checked")) {
-        $(".section-assets-cards").slideDown(300);
-    } else {
-        $(".section-assets-cards").slideUp(200);
-    }
+$('#filters input[value="all"]').prop('checked', true); //check 'all' filter 
+
+$('#filters input:checkbox').click(function() {
+var checkbox = $('#filters input:checkbox:checked');
+
+	$('.section-assets-cards li').hide(); // hide all cards
+
+	if (checkbox.length > 0 && $(this).val()!=='all'){ // if a filter that isn't 'all' is checked
+		$('#filters input[value="all"]').prop('checked', false); // uncheck 'all' filter 
+	   checkbox.each(function() {
+	   	    $("." + $(this).val()).fadeIn(500);  // show corresponding cards
+	   });
+   } else {
+   	checkbox.prop('checked', false); // uncheck all filter 
+   	$('#filters input[value="all"]').prop('checked', true); //check 'all' filter 
+   	$(".section-assets-cards li").fadeIn(500); // show all cards
+   }
 });
+
 
 $(".button-more").click(function(){
     if($(this).text()=== "READ MORE"){
@@ -248,7 +289,12 @@ $(".button-more").click(function(){
     }
     
 });
-
+$(window).resize(function() {
+ delay(function(){
+        $('.asset-cards .content').css('height','auto'); //solve for all you browser stretchers out there!
+        setEqualHeight($('.asset-cards .content'));
+    }, 0);
+});
 $(window).scroll(function(){
   if ($(this).scrollTop() > 400) {
       $('.marketo-follow-us').addClass('fixed-form');
@@ -347,3 +393,85 @@ $(".link-author").mouseout(function() {
       })
   })
 }).call(this);
+
+
+// SPHERES
+/*
+var elements = 10;
+    var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F'];
+    var size = [1, 0.9, 0.8, 0.7, 0.6];
+
+	var cy = cytoscape({
+	  	container: document.getElementById('cy'),
+	  	style: [
+	    {
+	        selector: 'node',
+	        style: {
+	            shape: 'ellipse',
+	            label: 'data(id)'
+	        }
+	    }]
+	});
+	for (var i = 0; i < elements; i++) {
+		var size2 = 200 * size[Math.floor(Math.random()*size.length)];
+    	cy.add({
+        	data: { id: 'node' + i },
+        	style: { 
+        		'background-color': colors[Math.floor(Math.random()*colors.length)],
+        		'height' : size2 + 'px',
+        		'width' : size2 + 'px',
+        		'font-size' : size2/5 + 'px',
+        		'color' : '#fff',
+        		'text-valign' : 'center',
+        	}
+        });
+	}
+	for (var i = 0; i < elements; i++) {
+    var source = 'node' + i;
+    do { var target = 'node' + (Math.floor(Math.random() * elements * 0.5) ); }
+	while (source == target);
+    cy.add({
+        data: {
+            id: 'edge' + i,
+            source: source,
+            target: target
+        	}
+    	});
+	}
+	var layout = cy.layout({
+  		name: 'cose'
+		});
+	layout.run();
+*/
+
+
+/* MODAL SEARCH*/
+$(document).ready(function() {
+
+	//$("#formSearch").submit(function(e){});
+
+	$('#myBtnSearch').click(function(e) {
+		$("#myModalSearch").fadeIn();
+		var s = document.getElementById("s").value;
+		console.log(s);
+		e.preventDefault(e);
+
+	});
+
+	$('.close').click(function() {
+		var src = $("#myModalSearch").find('iframe').attr('src');
+		$("#myModalSearch iframe").attr('src','');
+		$("#myModalSearch iframe").attr('src', src);
+		$("#myModalSearch").fadeOut();	
+		$('#s').val('');
+	});
+
+	$('#myModalSearch').click(function(event){
+		var src = $("#myModalSearch").find('iframe').attr('src');
+		$("#myModalSearch iframe").attr('src','');
+		$("#myModalSearch iframe").attr('src', src);
+		$("#myModalSearch").fadeOut();
+	    event.stopPropagation();
+	});
+});
+

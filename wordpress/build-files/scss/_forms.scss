@@ -1,44 +1,62 @@
 form.marketo-updates {
 	display: table;
-	width: 100%;
+	width: 100%!important;
 	max-width: 510px;
 	margin-bottom: 20px;
 	@include center;
-	input,
-	button {
+	div:first-of-type,
+	.mktoButtonRow {
 		display: table-cell;
 		width: 60%;
 		vertical-align: middle;
+	}
+	.mktoGutter,
+	.mktoOffset {
+		display: none!important;
+	}
+
+	> div:first-of-type input,
+	.mktoButtonRow button {
 		height: 50px;
+		width: 100%!important;
 		font-size: 16px;
 		padding: 20px;
 		@include border-box;
 		border: 1px solid transparent;
 		outline: none;
 	}
-	input{
-		border-radius: 4px 0 0 4px;
-		border: 1px solid #d6dde4;
-	}
-	button {
-		border: 1px solid $brand-primary;
-		background: $brand-primary;
-		color: white;
-		font-family: $font-semibold;
-		width: 40%;
-		padding: 0 10px;
-		line-height: 50px;
-		font-size: 14px;
-		padding: 0;
-		cursor: pointer;
-		border-radius: 0 4px 4px 0;
-		@include transition;
-		&:hover {
-			background: white;
-			border: 1px solid $brand-primary;
-			color: $brand-primary;
+	> div:first-of-type {
+		> div {
+			margin-bottom: 0!important;
+		}
+		& input{
+			border-radius: 4px 0 0 4px;
+			border: 1px solid #d6dde4;
 		}
 	}
+	.mktoButtonWrap.mktoRound{
+		margin-left: 0!important;
+		button.mktoButton {
+			border: 1px solid $brand-primary;
+			background: $brand-primary;
+			margin-left: -2px;
+			color: white;
+			font-family: $font-semibold;
+			padding: 0 10px;
+			line-height: 50px;
+			font-size: 14px;
+			padding: 0;
+			cursor: pointer;
+			border-radius: 0 4px 4px 0;
+			@include transition;
+			&:hover {
+				background: white;
+				border: 1px solid $brand-primary;
+				color: $brand-primary;
+			}
+		}
+	}
+	
 	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	  color: #c5ced7;
 	}
@@ -68,11 +86,11 @@ form.marketo-updates {
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	form.marketo-updates{
-		input {
+		> div:first-of-type {
 			width: 68%;
 		}
-		button {
-			width: 32%;
+		.mktoButtonRow {
+			width: 32%!important;
 		}
 	}
 }
