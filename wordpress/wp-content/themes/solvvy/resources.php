@@ -120,9 +120,10 @@ $the_query = new WP_Query( $args ); ?>
 					<li><p>Get <b>FREE</b> tools and best practices from Solvvy</p></li>
 					<li>
 						<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
-						<form id="mktoForm_1211"></form>
+						<form id="mktoForm_1211" class="marketo-updates"></form>
 						<script>MktoForms2.loadForm("//app-ab24.marketo.com", "733-WJM-922", 1211);</script>
 					</li>
+					
 					<li><p>We respect your privacy.</p></li>
 				</ul>
 			</div>
