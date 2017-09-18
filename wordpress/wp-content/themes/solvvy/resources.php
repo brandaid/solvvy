@@ -40,7 +40,7 @@ $the_query = new WP_Query( $args ); ?>
 						<div class="fpo-resources">
 							<img src="<?php if( get_field('featured_resource_image') ): ?><?php the_field('featured_resource_image') ?><?php else: ?><?php bloginfo('template_url'); ?>/images/fpo-cover.png <?php endif; ?>" alt="" class="responsive">
 							<h3><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></h3>
-							<p> <?php the_content(); ?> </p>
+							<p> <?php if( get_field('featured_resource_text') ): ?><?php the_field('featured_resource_text') ?><?php else: ?><?php the_content(); ?><?php endif; ?> </p>
 							<a href="<?php the_field('button_link_destination') ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
 						</div>
 					</li>
