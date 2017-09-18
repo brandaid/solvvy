@@ -22,6 +22,28 @@ $(function(){
     }
   });
 });
+function setEqualHeight() {
+	if ($(window).width() > 768) {
+    var tallestcolumn = 0;
+    $('.asset-cards .content').each(
+    function() {
+        currentHeight = $(this).height();
+        if(currentHeight > tallestcolumn) {
+            tallestcolumn  = currentHeight;
+            }
+        }
+    );
+ $('.asset-cards .content').height(tallestcolumn + 36);
+ }
+}
+
+var delay = (function(){
+        var timer = 0;
+        return function(callback, ms){
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+    };
+})();
 
 $(document).ready(function() {
 
@@ -220,7 +242,13 @@ $(function() {
 });
 
 // RESOURCES FILTERS
+// MAKE ALL RESOURCES CARDS THE SAME HEIGHT
+ delay(function(){
+        $('.asset-cards .content').css('height','auto'); //solve for all you browser stretchers out there!
+        setEqualHeight($('.asset-cards .content'));
+    }, 0);
 
+$(".section-assets-cards li").css('opacity','1');
 
 $('.open-div').click(function() {
 	$("#filters").slideToggle();
@@ -261,7 +289,12 @@ $(".button-more").click(function(){
     }
     
 });
-
+$(window).resize(function() {
+ delay(function(){
+        $('.asset-cards .content').css('height','auto'); //solve for all you browser stretchers out there!
+        setEqualHeight($('.asset-cards .content'));
+    }, 0);
+});
 $(window).scroll(function(){
   if ($(this).scrollTop() > 400) {
       $('.marketo-follow-us').addClass('fixed-form');
@@ -417,6 +450,7 @@ $(document).ready(function() {
 	$("#formSearch").submit(function(e){
 		e.preventDefault(e);
 	});
+
 
 });
 
