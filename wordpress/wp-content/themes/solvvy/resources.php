@@ -95,7 +95,7 @@ $the_query = new WP_Query( $args ); ?>
 				while ( $loop->have_posts() ) : $loop->the_post();
 				?>
 				<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
-				<li class="<?php if ( has_term('', 'my-tax') ) { foreach( $terms as $term ) echo $term->slug . ' '; }?>">
+				<li class="<?php if ( has_term('', 'resource-types') ) { foreach( $terms as $term ) echo $term->slug . ' '; }?>">
 					<div class="asset-cards">
 						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-cards.jpg <?php endif; ?>" alt="" class="responsive">
 						<div class="content">
