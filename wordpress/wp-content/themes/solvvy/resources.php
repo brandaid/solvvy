@@ -18,34 +18,42 @@
 
 		<!-- BOX TEXT -->
 		
+<?php 
+
+$args = array(
+	'posts_per_page'	=> -1,
+	'post_type'			=> 'Resources',
+	'meta_key'		=> 'featured_resource',
+	'meta_value'	=> '1'
+);
+
+$the_query = new WP_Query( $args ); ?>
+<?php if( $the_query->have_posts() ): ?>	
 
 		<section class="box-text-top container-normal pink-ball">
 			<div class="container">
 				<h2>Featured Resources</h2>
-				<ul class="list-boxes-three three-ipad">
-				<?php
-				$args = array( 'post_type' => 'Resources');
-				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post();
-				?>
-				<?php if( get_field('featured_resource') ): ?>
-				<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
-				<li>
-					<div class="fpo-resources">
-						<img src="<?php if( get_field('featured_resource_image') ): ?><?php the_field('featured_resource_image') ?><?php else: ?><?php bloginfo('template_url'); ?>/images/fpo-cover.png <?php endif; ?>" alt="" class="responsive">
-						<h3><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></h3>
-						<p> <?php the_content(); ?> </p>
-						<a href="<?php the_field('button_link_destination') ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
-					</div>
-				</li>
-				<?php endif; ?>
-				<? endwhile; ?>
+				<ul class="list-boxes-three three-ipad assets-featured">
+				<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
+					<li>
+						<div class="fpo-resources">
+							<img src="<?php if( get_field('featured_resource_image') ): ?><?php the_field('featured_resource_image') ?><?php else: ?><?php bloginfo('template_url'); ?>/images/fpo-cover.png <?php endif; ?>" alt="" class="responsive">
+							<h3><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></h3>
+							<p> <?php the_content(); ?> </p>
+							<a href="<?php the_field('button_link_destination') ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
+						</div>
+					</li>
+					<?php endwhile; ?>
 				</ul>
 
 			</div>
 		</section>
 
 		<div class="cool-sep"></div>
+		<?php endif; ?>
+
+<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 		
 		<div class="content-button">
 			<a href="javascript:void(0);" class="open-div">Filter Resources</a>
@@ -82,6 +90,8 @@
 					<ul class="list-boxes-three">
 
 				<?php
+				$args = array( 'post_type' => 'Resources');
+				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
 				?>
 				<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
@@ -97,6 +107,7 @@
 					</div>
 				</li>
 				<? endwhile; ?>
+				<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 					</ul>
 				</div>
 			</section>
@@ -109,9 +120,10 @@
 					<li><p>Get <b>FREE</b> tools and best practices from Solvvy</p></li>
 					<li>
 						<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
-						<form id="mktoForm_1211"></form>
+						<form id="mktoForm_1211" class="marketo-updates"></form>
 						<script>MktoForms2.loadForm("//app-ab24.marketo.com", "733-WJM-922", 1211);</script>
 					</li>
+					
 					<li><p>We respect your privacy.</p></li>
 				</ul>
 			</div>
