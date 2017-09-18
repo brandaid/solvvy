@@ -39,7 +39,7 @@ $the_query = new WP_Query( $args ); ?>
 					<li>
 						<div class="fpo-resources">
 							<img src="<?php if( get_field('featured_resource_image') ): ?><?php the_field('featured_resource_image') ?><?php else: ?><?php bloginfo('template_url'); ?>/images/fpo-cover.png <?php endif; ?>" alt="" class="responsive">
-							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php else: ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="_blank"><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></a></h3>
+							<h3><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></h3>
 							<p> <?php if( get_field('featured_resource_text') ): ?><?php the_field('featured_resource_text') ?><?php else: ?><?php the_content(); ?><?php endif; ?> </p>
 							<a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php else: ?><?php the_field('button_link_pdf') ?><?php endif; ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
 						</div>
