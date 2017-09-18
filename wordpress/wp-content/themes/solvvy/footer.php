@@ -87,13 +87,11 @@
 	</footer>
 
 
-	<!-- Modal Search -->
-	<div id="myModalSearch" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<?php include 'search.php'; ?>
-		</div>
-	</div>
+
+
+
+
+
 
 
 
@@ -105,5 +103,17 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/slick.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<?php wp_footer(); ?>
+
+
+	<!-- Modal Search -->
+	<div id="myModalSearch" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="videoWrapper">
+				<iframe src="https://solvvy.mbzvrm4-liquidwebsites.com" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

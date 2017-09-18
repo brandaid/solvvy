@@ -1,5 +1,7 @@
 <?php //get_header(); ?>
 
+
+<?php
 <ul>
     <h3><b>Results for:</b> <?php echo get_search_query(); ?></h3>
 
@@ -16,6 +18,7 @@
             </div>  
     <?php endif; ?>
 </ul>
+?>
 
 
 <?php //get_footer(); ?>
