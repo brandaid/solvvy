@@ -181,8 +181,7 @@ $(function() {
 		showOnClick:		true,
 		hideOnClick:		true,
 		subIndicators: 		true,
-		subIndicatorsPos: 	'append',
-		subIndicatorsText:	''
+		subIndicatorsPos: 	'append'
 	});
 });
 
@@ -207,11 +206,17 @@ $(function() {
     });
   }
 
+	//CLONE HEADER MENU AND LAST POST 
   	var $menuTop = $('.header-top ul li').clone();
 	$('.menu-top-clone').html($menuTop);
 
-	var $postTop = $('.last-post').clone();
-	$('.menu-post-clone').html($postTop);
+	var postTop = $('#get-post').html();
+	$('.menu-post').each(function(){ $(this).html(postTop); });
+
+	$( ".post a" ).remove();
+	e = $('<div class="menu-post-clone"><div class="menu-post"></div></div>');
+	$('.post').append(e);
+	$('.menu-post-clone .menu-post').html(postTop);
 });
 
 $("#show-all-none, .section-assets-cards").hide();
@@ -345,7 +350,7 @@ $(".link-author").mouseout(function() {
 
 
 // SPHERES
-
+/*
 var elements = 10;
     var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F'];
     var size = [1, 0.9, 0.8, 0.7, 0.6];
@@ -391,5 +396,14 @@ var elements = 10;
   		name: 'cose'
 		});
 	layout.run();
+*/
 
+
+$(document).ready(function() {
+
+	$("#formSearch").submit(function(e){
+		e.preventDefault(e);
+	});
+
+});
 

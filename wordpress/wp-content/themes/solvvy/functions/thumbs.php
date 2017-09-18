@@ -13,6 +13,10 @@ if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'slider_team', 620, 646, true );
     add_image_size( 'case_study', 275, 358, true );
     add_image_size( 'join_us_section', 360, 273, true );
+    add_image_size( 'featured_resource_image', 268, 197, true );
+    add_image_size( 'featured_events', 398, 135, true );
+    add_image_size( 'newsletter', 400, 175, true );
+    add_image_size( 'avatar', 500, 500, true );
 }
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
@@ -28,7 +32,11 @@ function my_custom_sizes( $sizes ) {
 	    'slider_profile' => __('Slider Profile'),
 	    'slider_team' => __('Slider Team'),
 	    'case_study' => __('Case of Study'),
-	    'join_us_section' => __('Section Join')
+	    'join_us_section' => __('Section Join'),
+	    'featured_resource_image' => __('Section Resources'),
+	    'featured_events' => __('Section Events'),
+	    'newsletter' => __('Section Newsletter'),
+	    'avatar' => __('Avatar'),
 	) );
 }
 
