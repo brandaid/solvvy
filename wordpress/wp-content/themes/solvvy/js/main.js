@@ -219,21 +219,34 @@ $(function() {
 	$('.menu-post-clone .menu-post').html(postTop);
 });
 
-$("#show-all-none, .section-assets-cards").hide();
+// RESOURCES FILTERS
+
 
 $('.open-div').click(function() {
-	$("#show-all-none").slideToggle();
+	$("#filters").slideToggle();
 	$(this).toggleClass('active');
 	
 });
 
-$("#styled-checkbox-1, #styled-checkbox-2, #styled-checkbox-4").click(function() {
-    if($(this).is(":checked")) {
-        $(".section-assets-cards").slideDown(300);
-    } else {
-        $(".section-assets-cards").slideUp(200);
-    }
+$('#filters input[value="all"]').prop('checked', true); //check 'all' filter 
+
+$('#filters input:checkbox').click(function() {
+var checkbox = $('#filters input:checkbox:checked');
+
+	$('.section-assets-cards li').hide(); // hide all cards
+
+	if (checkbox.length > 0 && $(this).val()!=='all'){ // if a filter that isn't 'all' is checked
+		$('#filters input[value="all"]').prop('checked', false); // uncheck 'all' filter 
+	   checkbox.each(function() {
+	   	    $("." + $(this).val()).fadeIn(500);  // show corresponding cards
+	   });
+   } else {
+   	checkbox.prop('checked', false); // uncheck all filter 
+   	$('#filters input[value="all"]').prop('checked', true); //check 'all' filter 
+   	$(".section-assets-cards li").fadeIn(500); // show all cards
+   }
 });
+
 
 $(".button-more").click(function(){
     if($(this).text()=== "READ MORE"){
