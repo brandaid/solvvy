@@ -22,7 +22,7 @@
 
 $args = array(
 	'posts_per_page'	=> -1,
-	'post_type'			=> 'Resources',
+	'post_type'			=> 'resources_cards',
 	'meta_key'		=> 'featured_resource',
 	'meta_value'	=> '1'
 );
@@ -90,7 +90,7 @@ $the_query = new WP_Query( $args ); ?>
 					<ul class="list-boxes-three">
 
 				<?php
-				$args = array( 'post_type' => 'Resources');
+				$args = array( 'post_type' => 'resources_cards');
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
 				?>

@@ -126,7 +126,7 @@ function create_newsletter_taxonomies() {
 // RESOURCES
 
 function create_post_type() {
-  register_post_type( 'Resources',
+  register_post_type( 'resources_cards',
     array(
       'labels' => array(
         'name' => __( 'Resources' ),
@@ -147,8 +147,8 @@ add_action( 'init', 'create_post_type' );
 
 add_action( 'admin_head', 'replace_default_featured_image_meta_box', 100 );
 function replace_default_featured_image_meta_box() {
-    remove_meta_box( 'postimagediv', 'Resources', 'side' );
-    add_meta_box('postimagediv', __('Card Image'), 'post_thumbnail_meta_box', 'Resources', 'side');
+    remove_meta_box( 'postimagediv', 'resources_cards', 'side' );
+    add_meta_box('postimagediv', __('Card Image'), 'post_thumbnail_meta_box', 'resources_cards', 'side');
 }
 
 add_action( 'init', 'create_resources_taxonomies', 0 );
@@ -157,7 +157,7 @@ add_action( 'init', 'create_resources_taxonomies', 0 );
 function create_resources_taxonomies() {
     // Add new taxonomy, make it hierarchical (like categories)
     $labels = array(
-        'name'              => _x( 'Resource types', 'taxonomy general name', 'textdomain' ),
+        'name'              => _x( 'Resource type', 'taxonomy general name', 'textdomain' ),
         'singular_name'     => _x( 'Resource type', 'taxonomy singular name', 'textdomain' ),
         'search_items'      => __( 'Search Types', 'textdomain' ),
         'all_items'         => __( 'All Types', 'textdomain' ),
@@ -179,7 +179,7 @@ function create_resources_taxonomies() {
         'rewrite'           => array( 'slug' => 'resource-types' ),
     );
 
-    register_taxonomy( 'resource-types', array( 'Resources' ), $args );
+    register_taxonomy( 'resource-types', array( 'resources_cards' ), $args );
 }
 
 ?>
