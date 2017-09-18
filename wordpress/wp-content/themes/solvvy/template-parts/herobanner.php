@@ -10,7 +10,6 @@
 					$image_size = 'featured';
 					$image_array = wp_get_attachment_image_src($image_id, $image_size);
 					$image_url = $image_array[0];
-					print_r($image_url);
 				?>
 
 			<section class="hero-banner hero-banner-interior" style="background: url(<?php echo $image_url; ?>)no-repeat; background-size: cover;">
