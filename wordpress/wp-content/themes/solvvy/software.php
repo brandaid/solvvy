@@ -52,125 +52,168 @@
 
 		<section class="box-text-top container-normal align-center">
 			<div class="container">
-				<h2 class="margin-bottom-90">Competitive Matrix</h2>
-
-				<div class="wrapperTable">
+					<?php while(has_sub_field('competitive_matrix')): ?>			
+						<?php if(get_sub_field('matrix_title')): ?><h2 class="margin-bottom-90"><?php the_sub_field('matrix_title'); ?></h2><?php endif; ?>
+					<?php endwhile; ?>
+					<div class="wrapperTable">
 					<div class="contTr contTrHeader">
 						<div class="contTdOne contTdOneHeader"></div>
-						<div class="contTdTwo contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></div>
-						<div class="contTdThree contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-zendesk.png" alt=""></div>
-						<div class="contTdFour contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-upwork.png" alt=""></div>
-						<div class="contTdFive contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-mailchimp.png" alt=""></div>
-						<div class="contTdSix contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-task.png" alt=""></div>
-						<div class="contTdSeven contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-double.png" alt=""></div>
-						<div class="contTdEight contTdTwoHeaders"><img src="<?php bloginfo('template_url'); ?>/images/brand-woo.png" alt=""></div>
+				<?php while(has_sub_field('competitive_matrix')): ?>
+								
+				<?php if(get_sub_field('table')): ?>
+					<?php 
+					if( have_rows('table') ):
+					    while( have_rows('table') ) : the_row(); 
+					        ?>
+						<div class="<?php the_sub_field('brand_class'); ?> contTdTwoHeaders"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></div>
+					<?php
+					    endwhile;
+					endif;
+					?>
+				<?php endif; ?>						 
+				<?php endwhile; ?>
 					</div>
-				</div>
+					</div>
+
 				<div class="wrapperTable tableShadow">	
 
-					<h3 class="title-head">Machine Learning</h3>			
-					
+					<h3 class="title-head">Present Actual Answers from KB instead of whole articles</h3>			
 					<div class="contTr">
-						<div class="contTdOne">Machine Learning</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"></div>
-						<div class="contTdFour"></div>
-						<div class="contTdFive"><i class="fa fa-check"></i></div>
-						<div class="contTdSix"><i class="fa fa-check"></i></div>
-						<div class="contTdSeven"></div>
-						<div class="contTdEight"></div>
+						<div class="contTdOne">Present Actual Answers from KB instead of whole articles</div>
+				<?php while(has_sub_field('competitive_matrix')): ?>
+								
+				<?php if(get_sub_field('table')): ?>
+					<?php 
+					if( have_rows('table') ):
+					    while( have_rows('table') ) : the_row(); 
+					        ?>
+						<div class="<?php the_sub_field('brand_class'); ?>"><?php the_sub_field('feature1'); ?></div>
+					<?php
+					    endwhile;
+					endif;
+					?>
+				<?php endif; ?>						 
+				<?php endwhile; ?>
 					</div>
 					
-					<h3 class="title-head">Artificial Intelligence</h3>
+					<h3 class="title-head">Language Understanding Goes Beyond Keywords</h3>
 				
 					<div class="contTr">
-						<div class="contTdOne">Artificial Intelligence</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"></div>
-						<div class="contTdFour"><i class="fa fa-check"></i></div>
-						<div class="contTdFive"></div>
-						<div class="contTdSix"><i class="fa fa-check"></i></div>
-						<div class="contTdSeven"></div>
-						<div class="contTdEight"><i class="fa fa-check"></i></div>
+						<div class="contTdOne">Language Understanding Goes Beyond Keywords</div>
+
+				<?php while(has_sub_field('competitive_matrix')): ?>
+								
+				<?php if(get_sub_field('table')): ?>
+					<?php 
+					if( have_rows('table') ):
+					    while( have_rows('table') ) : the_row(); 
+					        ?>
+						<div class="<?php the_sub_field('brand_class'); ?>"><?php the_sub_field('feature2'); ?></div>
+					<?php
+					    endwhile;
+					endif;
+					?>
+				<?php endif; ?>						 
+				<?php endwhile; ?>
 					</div>
 					
-					<h3 class="title-head">Transparent Metrics</h3>
+					<h3 class="title-head">Consumer Facing</h3>
 				
 					<div class="contTr">
-						<div class="contTdOne">Transparent Metrics</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"><i class="fa fa-check"></i></div>
-						<div class="contTdFour"></div>
-						<div class="contTdFive"></div>
-						<div class="contTdSix"></div>
-						<div class="contTdSeven"><i class="fa fa-check"></i></div>
-						<div class="contTdEight"><i class="fa fa-check"></i></div>
+						<div class="contTdOne">Consumer Facing</div>
+					
+					<?php while(has_sub_field('competitive_matrix')): ?>
+									
+					<?php if(get_sub_field('table')): ?>
+						<?php 
+						if( have_rows('table') ):
+						    while( have_rows('table') ) : the_row(); 
+						        ?>
+							<div class="<?php the_sub_field('brand_class'); ?>"><?php the_sub_field('feature3'); ?></div>
+						<?php
+						    endwhile;
+						endif;
+						?>
+					<?php endif; ?>						 
+					<?php endwhile; ?>
 					</div>
 
-					<h3 class="title-head">Advanced Science</h3>
+					<h3 class="title-head">Rapid Deployment</h3>
 
 					<div class="contTr">
-						<div class="contTdOne">Advanced Science</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"><i class="fa fa-check"></i></div>
-						<div class="contTdFour"></div>
-						<div class="contTdFive"><i class="fa fa-check"></i></div>
-						<div class="contTdSix"></div>
-						<div class="contTdSeven"></div>
-						<div class="contTdEight"></div>
+						<div class="contTdOne">Rapid Deployment</div>
+
+					<?php while(has_sub_field('competitive_matrix')): ?>
+									
+					<?php if(get_sub_field('table')): ?>
+						<?php 
+						if( have_rows('table') ):
+						    while( have_rows('table') ) : the_row(); 
+						        ?>
+							<div class="<?php the_sub_field('brand_class'); ?>"><?php the_sub_field('feature4'); ?></div>
+						<?php
+						    endwhile;
+						endif;
+						?>
+					<?php endif; ?>						 
+					<?php endwhile; ?>
 					</div>
 
-					<h3 class="title-head">Machine Learning</h3>
+					<h3 class="title-head">Continuous Learning</h3>
 
 					<div class="contTr">
-						<div class="contTdOne">Machine Learning</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"></div>	
-						<div class="contTdFour"><i class="fa fa-check"></i></div>
-						<div class="contTdFive"></div>
-						<div class="contTdSix"><i class="fa fa-check"></i></div>
-						<div class="contTdSeven"></div>
-						<div class="contTdEight"><i class="fa fa-check"></i></div>
+						<div class="contTdOne">Continuous Learning</div>
+					<?php while(has_sub_field('competitive_matrix')): ?>
+									
+					<?php if(get_sub_field('table')): ?>
+						<?php 
+						if( have_rows('table') ):
+						    while( have_rows('table') ) : the_row(); 
+						        ?>
+							<div class="<?php the_sub_field('brand_class'); ?>"><?php the_sub_field('feature5'); ?></div>
+						<?php
+						    endwhile;
+						endif;
+						?>
+					<?php endif; ?>						 
+					<?php endwhile; ?>
 					</div>
 					
-					<h3 class="title-head">Artificial Intelligence</h3>
+					<h3 class="title-head">Omnichannel</h3>
 
 					<div class="contTr">
-						<div class="contTdOne">Artificial Intelligence</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"><i class="fa fa-check"></i></div>
-						<div class="contTdFour"></div>
-						<div class="contTdFive"><i class="fa fa-check"></i></div>
-						<div class="contTdSix"></div>
-						<div class="contTdSeven"><i class="fa fa-check"></i></div>
-						<div class="contTdEight"></div>
-					</div>
+						<div class="contTdOne">Omnichannel</div>
 
-					<h3 class="title-head">Transparent Metrics</h3>
+					<?php while(has_sub_field('competitive_matrix')): ?>
+									
+					<?php if(get_sub_field('table')): ?>
+						<?php 
+						if( have_rows('table') ):
+						    while( have_rows('table') ) : the_row(); 
+						        ?>
+							<div class="<?php the_sub_field('brand_class'); ?>"><?php the_sub_field('feature6'); ?></div>
+						<?php
+						    endwhile;
+						endif;
+						?>
+					<?php endif; ?>						 
+					<?php endwhile; ?>
 
-					<div class="contTr">
-						<div class="contTdOne">Transparent Metrics</div>
-						<div class="contTdTwo"><i class="fa fa-check"></i></div>
-						<div class="contTdThree"></div>
-						<div class="contTdFour"><i class="fa fa-check"></i></div>
-						<div class="contTdFive"></div>
-						<div class="contTdSix"><i class="fa fa-check"></i></div>
-						<div class="contTdSeven"><i class="fa fa-check"></i></div>
-						<div class="contTdEight"></div>
 					</div>
-	
 				</div>
 			</div>
 		</section>
 
 		<div class="cool-sep"></div>
-
+				<?php $whats = get_field('whats') ?>
+		<?php if($whats){ ?>
 		<section class="box-text-top bkg-none align-center">
 			<div class="container">
-				<h2>Lorem Ipsum Features Headline</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipis cing elit, sed diam nonummy nibh euismod tinci dunt ut laoreet dolore magna.</p>
+				<h2><?php echo $whats['what_title'];  ?></h2>
+				<p><?php echo $whats['what_copy'];  ?></p>
 			</div>
 		</section>
+		<?php } ?>
 
 		<!-- WHATS IS SOLVVY -->
 
@@ -183,31 +226,59 @@
 					<option value="tab3">FINANCE</option>
 				</select>
 
-				<div class="tab-link-without-icon" data-value="tab1">
-					<h4>Feature Name</h4>
-					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha.</p>
-				</div>
-				<div class="tab-link-without-icon" data-value="tab2">
-					<h4>Feature Name</h4>
-					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha.</p>
-				</div>
-				<div class="tab-link-without-icon" data-value="tab3">
-					<h4>Feature Name</h4>
-					<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha.</p>
-				</div>
+				<?php while(has_sub_field('whats')): ?>
+								
+				<?php if(get_sub_field('solutions')): ?>
+					<?php 
+					    
+					if( have_rows('solutions') ):
+
+					    while( have_rows('solutions') ) : the_row(); 
+					        
+					        ?>
+
+						<div class="tab-link-without-icon" data-value="<?php the_sub_field('data_id'); ?>">
+							<h4><?php the_sub_field('title'); ?></h4>
+							<p><?php the_sub_field('copy'); ?></p>
+						</div>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
 
 			</div>
 			<div class="col-right">
 
-				<div class="" id="tab1">
-					<img src="<?php bloginfo('template_url'); ?>/images/tab1.png" class="responsive" alt="">
-				</div>
-				<div class="" id="tab2">
-					<img src="<?php bloginfo('template_url'); ?>/images/tab2.png" class="responsive" alt="">
-				</div>
-				<div class="" id="tab3">
-					<img src="<?php bloginfo('template_url'); ?>/images/tab3.png" class="responsive" alt="">
-				</div>
+				<?php while(has_sub_field('whats')): ?>
+								
+				<?php if(get_sub_field('solutions')): ?>
+					<?php 
+					    
+					if( have_rows('solutions') ):
+
+					    while( have_rows('solutions') ) : the_row(); 
+					        
+					        ?>
+						
+						<div class="" id="<?php the_sub_field('data_id'); ?>">
+							<img src="<?php the_sub_field('right_image'); ?>" class="responsive" alt="">
+						</div>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
 
 			</div>
 
