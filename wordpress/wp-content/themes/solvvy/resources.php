@@ -39,9 +39,9 @@ $the_query = new WP_Query( $args ); ?>
 					<li>
 						<div class="fpo-resources">
 							<img src="<?php if( get_field('featured_resource_image') ): ?><?php the_field('featured_resource_image') ?><?php else: ?><?php bloginfo('template_url'); ?>/images/fpo-cover.png <?php endif; ?>" alt="" class="responsive">
-							<h3><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></h3>
+							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php else: ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="_blank"><?php foreach( $terms as $term ) echo ' ' . $term->name . ': '; ?> <?php the_title();?></a></h3>
 							<p> <?php if( get_field('featured_resource_text') ): ?><?php the_field('featured_resource_text') ?><?php else: ?><?php the_content(); ?><?php endif; ?> </p>
-							<a href="<?php the_field('button_link_destination') ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
+							<a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php else: ?><?php the_field('button_link_pdf') ?><?php endif; ?>" class="button" target="_blank"><?php the_field('button_text') ?></a>
 						</div>
 					</li>
 					<?php endwhile; ?>
@@ -90,19 +90,19 @@ $the_query = new WP_Query( $args ); ?>
 					<ul class="list-boxes-three">
 
 				<?php
-				$args = array( 'post_type' => 'resources_cards');
+				$args = array( 'post_type' => 'resources_cards','posts_per_page' => -1);
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
 				?>
 				<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
-				<li class="<?php foreach( $terms as $term ) echo $term->slug . ' '; ?>">
+				<li class="<?php if ( has_term('', 'my-tax') ) { foreach( $terms as $term ) echo $term->slug . ' '; }?>">
 					<div class="asset-cards">
 						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-cards.jpg <?php endif; ?>" alt="" class="responsive">
 						<div class="content">
 							<small><?php foreach( $terms as $term ) echo ' ' . $term->name; ?></small>
-							<h3><a href="<?php the_field('button_link_destination') ?>" target="_blank"><?php the_title();?></a></h3>
+							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php else: ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="_blank"><?php the_title();?></a></h3>
 							<p><?php the_content(); ?> </p>
-							<a href="<?php the_field('button_link_destination') ?>" class="button-tn"><?php the_field('button_text') ?></a>
+							<a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php else: ?><?php the_field('button_link_pdf') ?><?php endif; ?>" class="button-tn"><?php the_field('button_text') ?></a>
 						</div>
 					</div>
 				</li>
