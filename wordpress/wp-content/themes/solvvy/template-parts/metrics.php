@@ -40,6 +40,7 @@
 	    -webkit-border-radius: 50%;
 	    -khtml-border-radius: 50%;
 	    padding: 50%;
+	    border: 4px solid #FFF;
 	}
 
 	.bubbles > div > div {
