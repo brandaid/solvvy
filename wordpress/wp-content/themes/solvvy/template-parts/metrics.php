@@ -6,57 +6,77 @@
 	<div class="container">
 		<h2><?php echo $metrics['metrics_title']; ?></h2>
 		<p><?php echo $metrics['metrics_copy'] ?></p>
-		<div id="cy"></div>
-	</div>
-</section>
-<?php } ?>
+		<!--<div id="cy"></div> -->
 
+	</div>
+	<?php if($metrics['metrics_bubles']){ ?>
+	<div id="bubbles-scene" class="bubble-container">
+		
+	</div>
+	<?php } ?>
+</section>
+
+<?php } ?>
+<style type="text/css">
+	.bubble-container{
+		position: relative;
+		height: 100vh;
+		width: 100%;
+	}
+	/* circles library */
+	.bubbles{
+	    position: absolute;
+	}
+
+
+	.bubbles > div {
+	    overflow:hidden;
+	    float:left;
+	    width:auto;
+	    height:auto;
+	    position: relative;
+	    border-radius:50%;
+	    -moz-border-radius:50%;
+	    -webkit-border-radius: 50%;
+	    -khtml-border-radius: 50%;
+	    padding: 50%;
+	}
+
+	.bubbles > div > div {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	}
+	.bubbles > div > div > div {
+	    display: table;
+	    width: 100%;
+	    height: 100%;
+	}
+	.bubbles > div > div > div > div {
+	    display: table-cell;
+	    text-align: center;
+	    vertical-align: middle;
+	}
+	.bubbles span{
+	    display: block;
+	    color: #FFF;
+	}
+	.bubbles span.percent{
+	    font-size: 80px;
+	}
+	.bubbles span.description{
+	    font-size: 40px;
+	}
+</style>
+<script type="text/javascript">var bubblesArray = <?php echo json_encode( $metrics['metrics_bubles'] ) ?>;</script>
+<!--
 <script type="text/javascript">
-var elements = 10;
+var bubblesArray = <?php echo json_encode( $metrics['metrics_bubles'] ) ?>;
+console.log(bubblesArray);
+var elements = bubblesArray.length;
 var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F'];
 var size = [1, 0.9, 0.8, 0.7, 0.6];
 
-var cy = cytoscape({
-	container: document.getElementById('cy'),
-	style: [
-{
-    selector: 'node',
-    style: {
-        shape: 'ellipse',
-        label: 'data(id)'
-    }
-}]
-});
-for (var i = 0; i < elements; i++) {
-var size2 = 200 * size[Math.floor(Math.random()*size.length)];
-cy.add({
-	data: { id: 'node' + i },
-	style: { 
-		'background-color': colors[Math.floor(Math.random()*colors.length)],
-		'height' : size2 + 'px',
-		'width' : size2 + 'px',
-		'font-size' : size2/5 + 'px',
-		'color' : '#fff',
-		'text-valign' : 'center',
-	}
-});
-}
-for (var i = 0; i < elements; i++) {
-var source = 'node' + i;
-do { var target = 'node' + (Math.floor(Math.random() * elements * 0.5) ); }
-while (source == target);
-cy.add({
-data: {
-    id: 'edge' + i,
-    source: source,
-    target: target
-	}
-});
-}
-var layout = cy.layout({
-	name: 'cose'
-});
-cy.nodes().ungrabify(); // disable node dragging
-cy.userZoomingEnabled( false );
-layout.run();
-</script>
+</script>-->
