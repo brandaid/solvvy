@@ -70,13 +70,6 @@
 	    font-size: 40px;
 	}
 </style>
-<script type="text/javascript">var bubblesArray = <?php echo json_encode( $metrics['metrics_bubles'] ) ?>;</script>
-<!--
 <script type="text/javascript">
-var bubblesArray = <?php echo json_encode( $metrics['metrics_bubles'] ) ?>;
-console.log(bubblesArray);
-var elements = bubblesArray.length;
-var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F'];
-var size = [1, 0.9, 0.8, 0.7, 0.6];
-
-</script>-->
+	var bubblesArray = <?php echo json_encode( $metrics['metrics_bubles'] ) ?>;
+</script>
