@@ -20,6 +20,7 @@
 }
 .colorful-icons {
 	margin-top: 80px;
+	list-style-type: none;
 	li:nth-child(3n+1) {
 		i {
 			color: $brand-primary;
