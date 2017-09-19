@@ -12,27 +12,35 @@
 
 		<!-- HERO BANNER -->
 
-		<section class="hero-banner" style="background: url('<?php the_field('hero_image'); ?>') no-repeat center center; background-size: cover;">
-			<div class="container">
-				<h1><?php the_field('hero_title'); ?></h1>
-				<h3><?php the_field('hero_subtitle'); ?></h3>
-				<?php 
+		<?php $section_hero = get_field('section_hero') ?>		
 
-					$link = get_field('hero_button');
+		<?php if($section_hero){ ?>
+			<?php if($section_hero['hero_background']){ ?>
+				
+				<?php
+					$image_id = $section_hero['hero_background'];
+					$image_size = 'featured';
+					$image_array = wp_get_attachment_image_src($image_id, $image_size);
+					$image_url = $image_array[0];
+				?>
 
-					if( $link ): ?>
-	
-					<a class="button" href="<?php echo $link['url']; ?>" id="myBtn"><?php echo $link['title']; ?><i class="icon-play"></i></a>
-
-				<?php endif; ?>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+			<section class="hero-banner" style="background: url(<?php echo $image_url; ?>)no-repeat; background-size: cover;">
+			<?php }else{ ?>
+			<section class="hero-banner">
+			<?php } ?>
+				<div class="container">
+					<h1><?php echo $section_hero['hero_title'];  ?></h1>
+					<h3><?php echo $section_hero['hero_copy'];  ?></h3>
+					 <a class="button" href="<?php echo $section_hero['button_link'] ?>" class="button-pink"><?php echo $section_hero['button_text'] ?><i class="icon-play"></i></a>
+				</div>
+				<div class="waves"></div>
+				<div class="circles"></div>
+			</section>
+		<?php } ?>
 
 		<!-- WHATS IS SOLVVY -->
 					<?php while(has_sub_field('section_1')): ?>
-			<section class="whats-solvvy">
+			<section class="whats-solvvy pink-ball">
 			<div class="col-left">
 
 						
@@ -74,7 +82,7 @@
 								<?php 
 								$link = get_sub_field('sec2_link');
 								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?> &raquo;</a>
+									<a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['title']; ?> &raquo;</a>
 								<?php endif; ?>
 						<?php endif; ?>
 						 

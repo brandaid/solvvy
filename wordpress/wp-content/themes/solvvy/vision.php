@@ -83,7 +83,7 @@
 				<?php if(get_sub_field('key_title')): ?>
 				<h2 class="margin-bottom-90"><?php the_sub_field('key_title'); ?></h2>
 				<?php endif; ?>	
-				<ul class="list-boxes-three align-left colorful-icons">
+				<ul class="list-boxes-four align-left colorful-icons">
 				<?php if(get_sub_field('boxes')): ?>
 					<?php 
 					if( have_rows('boxes') ):

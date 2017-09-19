@@ -118,6 +118,7 @@ a, a:hover, a:active, a:focus {
 .padding-top {
 	padding-top: 200px!important;
 }
+
 .list-boxes-three {
 	@extend .formated-list;
 	// 768px
@@ -137,13 +138,41 @@ a, a:hover, a:active, a:focus {
 			
 		}
 	}
+}	
+
+.list-boxes-four{
+	@media all and (min-width: $screen-portrait) {
+		font-size: 0;
+		li {
+			width: 50%;
+			@include border-box;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 20px;
+		}
+	}	
+
+} 
+
+.list-boxes-three	{
 	// 992px
 	@media all and (min-width: $screen-landscape) {
 		li {
 			width: 33.33333%;
 		}
-	}
+	}	
 }
+
+
+.list-boxes-four {
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		li {
+			width: 25%;
+		}
+	}	
+}
+
 .list-boxes-two {
 	@extend .formated-list;
 	@media all and (min-width: $screen-portrait) {
