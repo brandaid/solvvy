@@ -11,24 +11,22 @@
 <?php the_post(); ?>
 
 
-		<!-- SECTION HERO BANNER -->
-
 		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
 		
-<?php 
+		<?php 
 
-$args = array(
-	'posts_per_page'	=> -1,
-	'post_type'			=> 'resources_cards',
-	'meta_key'		=> 'featured_resource',
-	'meta_value'	=> '1'
-);
+		$args = array(
+			'posts_per_page'	=> -1,
+			'post_type'			=> 'resources_cards',
+			'meta_key'		=> 'featured_resource',
+			'meta_value'	=> '1'
+		);
 
-$the_query = new WP_Query( $args ); ?>
-<?php if( $the_query->have_posts() ): ?>	
+		$the_query = new WP_Query( $args ); ?>
+		<?php if( $the_query->have_posts() ): ?>	
 
 		<section class="box-text-top container-normal pink-ball">
 			<div class="container">
@@ -53,7 +51,7 @@ $the_query = new WP_Query( $args ); ?>
 		<div class="cool-sep"></div>
 		<?php endif; ?>
 
-<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
+		<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 		
 		<div class="content-button">
 			<a href="javascript:void(0);" class="open-div">Filter Resources</a>

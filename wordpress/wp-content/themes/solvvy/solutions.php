@@ -11,32 +11,12 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Solvvy for your Role</h1>
-				<h3>Bacon ipsum dolor amet bacon leberkas alcatra doner drumstick. Brisket meatloaf boudin.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
-
-
-		<!-- BOX TEXT -->
+		<!-- SECTION 1 -->
 		
-
-		<section class="box-text-top pink-ball">
-			<div class="container">
-				<h2>Lorem Ipsum Headline</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-				<a href="" class="button">Learn Morel</a>
-			</div>
-		</section>
-
-		<div class="cool-sep"></div>
-		
+		<?php get_template_part( 'template-parts/section1' ); ?>		
 
 		<!-- PANELS -->
 
@@ -205,83 +185,77 @@
 		</section>
 
 
-		<!-- HERO BANNER -->
-
-
+		<!-- SECONDARY BANNER -->
+		<?php $section_secondary_banner = get_field('section_secondary_banner'); ?>
+		<?php if($section_secondary_banner): ?>
 		<section class="box-partners">
 			<div class="container">
-				<h2>"Solvvy is refreshingly fast and easy!"</h2>
-				<small>Jo WanG, Director of Customer Support at Upwork</small>
-				<img src="<?php bloginfo('template_url'); ?>/images/box-brands.png" class="responsive brand" alt="">
+				<h2><?php the_field('secondary_banner_quote') ?></h2>
+				<?php if(get_field('secondary_banner_quote_author')): ?><small><?php the_field('secondary_banner_quote_author') ?></small><?php endif ?>
+				<img src="<?php if(get_field('secondary_banner_customer_logo')): ?><?php the_field('secondary_banner_customer_logo') ?><?php else : ?><?php bloginfo('template_url'); ?>/images/box-brands.png <?php endif ?>" class="responsive brand" alt="">
 			</div>
 			<div class="waves"></div>
 		</section>
-
+		<?php endif ?>
 
 		<!-- SECTION METRICS -->
 		
-
-		<section class="metrics">
-			<div class="container">
-				<div class="col-left">
-					<h3 class="text-underlined">The only <span>search platform</span> designed for the modern enterprise</h3>
-					<a href="" class="button">Request Demo</a>
+				<?php while(has_sub_field('section_5', 5)): ?>
+				<section class="metrics">
+				<div class="container">
+				<div class="col-left">					
+						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
+						<?php if(get_sub_field('sec5_button')): ?>
+								<?php 
+								$link = get_sub_field('sec5_button');
+								if( $link ): ?>
+									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
+								<?php endif; ?>
+						<?php endif; ?>
+						 
+					<?php endwhile; ?>
 				</div>
 				<div class="col-right">
 					<ul>
-						<li>
-							<div class="box-metric">
+
+				<?php while(has_sub_field('section_5', 5)): ?>
+								
+				<?php if(get_sub_field('box_metrics')): ?>
+					<?php 
+					    
+					if( have_rows('box_metrics') ):
+
+					    while( have_rows('box_metrics') ) : the_row(); 
+					        
+					        ?>
+
+					    <li>
+							<div class="box-metric <?php the_sub_field('color_class'); ?>">
 								<small>
 									<i class="icon-monitor"></i>
-									LOREM IPSUM
+								<?php the_sub_field('icon_text'); ?>
 								</small>
 								<h3>
-									9.7
+									<?php the_sub_field('number'); ?>
 								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
+								<p><?php the_sub_field('copy'); ?></p>
 							</div>
 						</li>
-						<li>
-							<div class="box-metric red">
-								<small>
-									<i class="icon-search"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									23%
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric lighten">
-								<small>
-									<i class="icon-headphones"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									85%
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric lighten2">
-								<small>
-									<i class="icon-window"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									500
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
+
 					</ul>
 				</div>
 			</div>
 		</section>
-
 
 		<!-- BOX BLUE FPO -->
 
@@ -290,12 +264,12 @@
 			<div class="container">
 				<div class="blue-box">
 					<div class="image">
-						<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
+						<img src="<?php if(get_field('asset_left_image')): ?><?php the_field('asset_left_image') ?><?php else : ?><?php bloginfo('template_url'); ?>/images/fpo.png <?php endif ?>" class="responsive" alt="">
 					</div>
 					<div class="info">
-						<h2>Lorem Ipsum Asset Name</h2>
-						<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-						<a href="" class="button-tn">READ NOW</a>
+						<h2><?php the_field('asset_title') ?></h2>
+						<p><?php the_field('asset_description') ?></p>
+						<a href="<?php the_field('asset_button_destination') ?>" class="button-tn" target="_blank"><?php the_field('asset_button_left') ?></a>
 					</div>
 				</div>
 			</div>
