@@ -170,29 +170,40 @@
 
 		<section class="box-gray driving-companies driving-interior">
 			<div class="container">
-				<h3>Driving Search at some of the world’s smartest companies</h3>
+			<?php while(has_sub_field('section_3')): ?>
+				<?php if(get_sub_field('sec3_title')): ?><h3><?php the_sub_field('sec3_title'); ?></h3><?php endif; ?>	
+				<?php if(get_sub_field('sec3_images')): ?>
 				<ul>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving1.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving2.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving3.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving4.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving5.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving6.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving7.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving8.png" alt=""></li>
+				<?php 
+					    
+					if( have_rows('sec3_images') ):
+
+					    while( have_rows('sec3_images') ) : the_row(); 
+					        
+					        ?>
+					<li><img src="<?php the_sub_field('sec3_image'); ?>" alt=""></li>
+							<?php
+					endwhile;
+
+					endif;
+
+					?>
 				</ul>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
 			</div>
 		</section>
 
 
 		<!-- SECONDARY BANNER -->
 		<?php $section_secondary_banner = get_field('section_secondary_banner'); ?>
-		<?php if($section_secondary_banner): ?>
+		<?php if( get_field('secondary_banner_quote')): ?>
 		<section class="box-partners">
 			<div class="container">
 				<h2><?php the_field('secondary_banner_quote') ?></h2>
 				<?php if(get_field('secondary_banner_quote_author')): ?><small><?php the_field('secondary_banner_quote_author') ?></small><?php endif ?>
-				<img src="<?php if(get_field('secondary_banner_customer_logo')): ?><?php the_field('secondary_banner_customer_logo') ?><?php else : ?><?php bloginfo('template_url'); ?>/images/box-brands.png <?php endif ?>" class="responsive brand" alt="">
+				<img src="<?php if(get_field('secondary_banner_customer_logo')): ?><?php the_field('secondary_banner_customer_logo') ?><?php endif ?>" class="responsive brand" alt="">
 			</div>
 			<div class="waves"></div>
 		</section>
@@ -248,18 +259,18 @@
 					endif;
 
 					?>
-				<?php endif; ?>
-							 
-				<?php endwhile; ?>
+
 
 					</ul>
 				</div>
 			</div>
 		</section>
-
+<?php endif; ?>
+							 
+<?php endwhile; ?>
 		<!-- BOX BLUE FPO -->
 
-
+	<?php if(get_field('asset_title')) : ?>
 		<section class="box-gray">
 			<div class="container">
 				<div class="blue-box">
@@ -274,6 +285,7 @@
 				</div>
 			</div>
 		</section>
+	<?php endif ?>
 
 <?php get_footer(); ?>
 
