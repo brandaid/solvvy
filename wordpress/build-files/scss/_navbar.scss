@@ -336,7 +336,7 @@
     	background: white;
 		padding-left: 50px;
     	@include border-radius(5px);
-    	@include box-shadow(0, 0, 20px, $brand-tertiary);
+    	@include box-shadow(0, 0, 40px, #ccc);
 	}
 	#main-menu.sm-clean ul ul{
 		min-width: auto !important;
@@ -380,6 +380,16 @@
 					}
 					&.has-submenu.highlighted::after{
 						content: '\f107';
+					}
+					&.has-submenu.highlighted::before{
+						content: '';
+						position: absolute;
+						bottom: -10px;
+						right: 17px;
+						border-width: 9px;
+					    border-style: dashed dashed solid dashed;
+				    	border-color: transparent transparent white transparent;
+				    	z-index: 10002;
 					}
 
 					&.has-submenu.highlighted span.sub-arrow{

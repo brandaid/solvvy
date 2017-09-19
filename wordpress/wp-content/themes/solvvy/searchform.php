@@ -8,8 +8,8 @@
  */
 ?>
 
-<form role="search" method="get" class="searchbox" action="">
-	<input type="search" placeholder="Search......" name="s" id="s" class="searchbox-input" onkeyup="buttonUp();" required>
-	<input type="submit" id="myBtnSearch" class="searchbox-submit" value="&#xe80f">
+<form role="search" method="get" class="searchbox" id="searchform" action="<?php echo home_url( '/' ); ?>">
+	<input type="text" value="" placeholder="Search......" id="st-search-input" class="searchbox-input" onkeyup="buttonUp();" required />
+	<input type="submit" id="searchsubmit" class="searchbox-submit" value="&#xe80f" />
 	<span class="searchbox-icon"><span class="icon-search-2"></span></span>
 </form>
