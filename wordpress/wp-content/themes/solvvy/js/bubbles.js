@@ -43,6 +43,36 @@ var Bubble = function(opts){
 
 }
 
+var Segment = function(opts){
+	var self = this;
+
+	this.element = false;
+	this.c = opts.c;
+	this.r = opts.r;
+	this.segment_size = opts.segment_size;
+	this.width = this.segment_size.w;
+	this.height = this.segment_size.h;
+	this.x = this.c * this.segment_size.w;
+	this.y = this.r * this.segment_size.h;
+	this.top = this.y;
+	this.left = this.x;
+	this.right = this.x + this.segment_size.w;
+	this.bottom = this.y + this.segment_size.h;
+
+
+	this.render = function(container){
+		var element = $('<div style="background:red;position:absolute;opacity:0.5"></div>');
+		element.css('top', this.top + 'px');
+		element.css('left', this.left + 'px');
+		element.css('width', this.width + 'px');
+		element.css('height', this.height + 'px');
+		element.css('border', '1px solid green');
+		console.log("rendering segment...");
+		container.append(element);
+	};
+
+} 
+
 var BubbleScene = function(opts){
 	var self = this;
 	var sizes = [280, 210];
@@ -50,6 +80,7 @@ var BubbleScene = function(opts){
 	this.bubbles = opts.elements || [];
 	this._width = this._container.width();
 	this._height = this._container.height();
+	this.segments = {};
 
 	this.calculateBackground = function(){
 		var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F', '#F92D6D'];
@@ -78,16 +109,7 @@ var BubbleScene = function(opts){
 
 		for(var c = 0; c < cols ; c++){
 			for(var r = 0; r < rows ; r++){
-				var
-				segment = { c : c , r : r , element : false };
-				segment.width = segment_size.w;
-				segment.height = segment_size.h;
-				segment.x = c * segment_size.w;
-				segment.y = r * segment_size.h;
-				segment.top = segment.y;
-				segment.left = segment.x;
-				segment.right = segment.x + segment_size.w;
-				segment.bottom = segment.y + segment_size.h;
+				var segment = new Segment({ c : c, r : r, segment_size : segment_size });
 				segments.push(segment);
 			}
 		}
@@ -96,8 +118,9 @@ var BubbleScene = function(opts){
 		result.rows = rows;
 		result.cols = cols;
 		result.segment_size = { w : segment_size.w , h : segment_size.h};
-
-		return result;
+		self.segments = result;
+		console.log(this.segments);
+		return this.segments;
 	}
 
 	this.calculatePositions = function(){
@@ -111,26 +134,31 @@ var BubbleScene = function(opts){
 			y : 20
 		};
 
-		var grid = this._calculateSegments(sizes[0]+(min_distance/2),this._width,this._height);
+		this._calculateSegments(sizes[0]+(min_distance/2),this._width,this._height);
 
-		grid.segments.sort(function(a,b){
+		this.segments.segments.sort(function(a,b){
 			var
-			aScore = Math.abs(grid.rows/2 - a.r),
-			bScore = Math.abs(grid.rows/2 - b.r);
+			aScore = Math.abs(self.segments.rows/2 - a.r),
+			bScore = Math.abs(self.segments.rows/2 - b.r);
 
-			aScore = Math.abs(aScore - Math.abs(grid.cols/2 - a.c));
-			bScore = Math.abs(bScore - Math.abs(grid.cols/2 - b.c));
+			aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
+			bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
 
 			return aScore - bScore;
 		});
 		this.bubbles.forEach(function(bubble){
-			var useSegment = grid.segments.find(function(segment){
+			var useSegment = self.segments.segments.find(function(segment){
 				return segment.element === false;
 			});
 			if(useSegment){
+				var maxPosX = useSegment.x + useSegment.width - bubble.size;
+				var minPosX = useSegment.x;
+				var maxPosY = useSegment.y + useSegment.height - bubble.size;
+				var minPosY = useSegment.y;
+
 				useSegment.element = true;
-				bubble.position.x = Math.round((Math.random()* (useSegment.right - bubble.size - min_distance/2))+ useSegment.left) ;
-				bubble.position.y = Math.round((Math.random()* (useSegment.bottom - bubble.size - min_distance/2))+ useSegment.top) ;
+				bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
+				bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
 			}
 		});
 
@@ -143,5 +171,8 @@ var BubbleScene = function(opts){
 		this.bubbles.forEach(function(item){
 			item.render(self._container);
 		});
+		//this.segments.segments.forEach(function(item){
+		//	item.render(self._container);
+		//});
 	}
 }
