@@ -334,7 +334,7 @@
 	#main-menu.sm-clean ul{
  		min-width: max-content !important;
     	background: white;
-		padding-left: 50px;
+		padding-left: 0px;
     	@include border-radius(5px);
     	@include box-shadow(0, 0, 40px, #ccc);
 	}
@@ -350,11 +350,20 @@
 		max-width: 190px;
 		padding: 50px 20px 25px 0;
 	}
+	#main-menu.sm-clean ul li a{
+		word-break: break-word;
+	}
+	#main-menu.sm-clean ul li:first-child{
+		margin-left: 50px;
+	}
 	#main-menu.sm-clean ul li ul li{
 		float: none !important;
 		padding: 0;
 	}
-
+	#main-menu.sm-clean ul li li:first-child {
+		background: transparent;
+		margin-left: 0px;
+	}
 
 	#main-menu {
 		float: right;
