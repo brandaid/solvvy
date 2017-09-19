@@ -12,7 +12,7 @@
 					<?php forEach($benefits['section_benefits_features'] as $single_feature){ ?>
 					<li>
 						<div class="box-icon-text">
-							<i class="icon-apple"></i>
+							<i class="<?php echo $single_feature['feature_icon'] ?>"></i>
 							<h4><?php echo $single_feature['feature_title'] ?></h4>
 							<p><?php  echo$single_feature['feature_description'] ?></p>
 						</div>
