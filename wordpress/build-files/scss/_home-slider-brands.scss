@@ -108,6 +108,7 @@ article.brands {
 	@media all and (min-width: $screen-landscape) {
 		display: table;
 		width: 100%;
+		padding-bottom: 70px;
 		.col-left {
 			text-align: left;
 			img {

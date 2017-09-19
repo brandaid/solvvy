@@ -102,18 +102,58 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.smartmenus.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/slick.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bubbles.js"></script>
+	<script type="text/javascript">
+		(function($){
+			var destArrBubb = [];
+			bubblesArray.forEach(function(item, index, origarr){
+				var singleBubble = new Bubble({
+					bk : "#F6639A",
+					percent : item.bubble_percent,
+					title : item.bubble_title,
+					position : {
+						x : 0,
+						y : 0
+					}
+				});
+				destArrBubb.push(singleBubble);
+			});
+			//console.log(destArrBubb);
+
+			var scene = new BubbleScene({
+				container : '#bubbles-scene',
+				elements : destArrBubb
+			});
+
+			scene.draw();
+		})(jQuery)
+
+		
+		
+	</script>
 	<?php wp_footer(); ?>
 
 
-	<!-- Modal Search -->
-	<div id="myModalSearch" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<div class="videoWrapper">
-				<iframe src="https://solvvy.mbzvrm4-liquidwebsites.com" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			</div>
-		</div>
-	</div>
+<!-- MODAL SEARCH -->
+	<div id="st-results-container"></div>
+	<script type="text/javascript">
+	  var Swiftype = window.Swiftype || {};
+	  (function() {
+	    Swiftype.key = 'gUg6G9puciC_Pvq6ZQ7G';
+	    Swiftype.inputElement = '#st-search-input';
+	    Swiftype.resultContainingElement = '#st-results-container';
+	    Swiftype.attachElement = '#st-search-input';
+	    Swiftype.renderStyle = "overlay";
+
+	    var script = document.createElement('script');
+	    script.type = 'text/javascript';
+	    script.async = true;
+	    script.src = "//s.swiftypecdn.com/embed.js";
+	    var entry = document.getElementsByTagName('script')[0];
+	    entry.parentNode.insertBefore(script, entry);
+	  }());
+	</script>
+	<!-- END MODAL SEARCH -->
 
 </body>
 </html>
