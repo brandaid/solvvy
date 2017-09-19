@@ -112,7 +112,7 @@ var BubbleScene = function(opts){
 		};
 
 		var grid = this._calculateSegments(sizes[0]+(min_distance/2),this._width,this._height);
-		console.log(grid);
+
 		grid.segments.sort(function(a,b){
 			var
 			aScore = Math.abs(grid.rows/2 - a.r),
@@ -129,8 +129,8 @@ var BubbleScene = function(opts){
 			});
 			if(useSegment){
 				useSegment.element = true;
-				bubble.position.x = Math.round((Math.random()* useSegment.right)+ useSegment.left);
-				bubble.position.y = Math.round((Math.random()* useSegment.bottom)+ useSegment.top);
+				bubble.position.x = Math.round((Math.random()* (useSegment.right - bubble.size - min_distance/2))+ useSegment.left) ;
+				bubble.position.y = Math.round((Math.random()* (useSegment.bottom - bubble.size - min_distance/2))+ useSegment.top) ;
 			}
 		});
 
