@@ -103,7 +103,34 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.nice-select.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.smartmenus.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/slick.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+	<!--<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>-->
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bubbles.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var destArrBubb = [];
+			bubblesArray.forEach(function(item, index, origarr){
+				var singleBubble = new Bubble({
+					bk : "#F6639A",
+					percent : item.bubble_percent,
+					title : item.bubble_title,
+					position : {
+						x : 0,
+						y : 0
+					}
+				});
+				destArrBubb.push(singleBubble);
+			});
+			//console.log(destArrBubb);
+
+			var scene = new BubbleScene({
+				container : '#bubbles-scene',
+				elements : destArrBubb
+			});
+
+			scene.draw();
+		})
+		
+	</script>
 	<?php wp_footer(); ?>
 </body>
 </html>
