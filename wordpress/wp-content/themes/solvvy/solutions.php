@@ -20,7 +20,7 @@
 
 		<!-- PANELS -->
 
-
+	<div class="cool-sep"></div>
 		<section class="solution-for-industry">
 			<div class="container">
 				
@@ -197,17 +197,23 @@
 
 
 		<!-- SECONDARY BANNER -->
+
 		<?php $section_secondary_banner = get_field('section_secondary_banner'); ?>
-		<?php if( get_field('secondary_banner_quote')): ?>
-		<section class="box-partners">
-			<div class="container">
-				<h2><?php the_field('secondary_banner_quote') ?></h2>
-				<?php if(get_field('secondary_banner_quote_author')): ?><small><?php the_field('secondary_banner_quote_author') ?></small><?php endif ?>
-				<img src="<?php if(get_field('secondary_banner_customer_logo')): ?><?php the_field('secondary_banner_customer_logo') ?><?php endif ?>" class="responsive brand" alt="">
-			</div>
-			<div class="waves"></div>
-		</section>
-		<?php endif ?>
+		<?php if($section_secondary_banner){ ?>
+		<?php if($section_secondary_banner['secondary_banner_image']){ ?>
+			<section class="box-partners" style="background-image: url(<?php echo $section_secondary_banner['secondary_banner_image']['url']; ?>)">
+		<?php }else{ ?>
+			<section class="box-partners">
+		<?php } ?>
+				<div class="container">
+					<h2><?php echo $section_secondary_banner['secondary_banner_quote']; ?></h2>
+					<?php if($section_secondary_banner['secondary_banner_quote_author']){ ?><small><?php echo $section_secondary_banner['secondary_banner_quote_author']; ?></small><?php } ?>
+					<?php if($section_secondary_banner['secondary_banner_customer_logo']){ ?><img src=" <?php echo $section_secondary_banner['secondary_banner_customer_logo']; ?>" class="responsive brand" alt=""><?php } ?>
+				</div>
+				<div class="waves"></div>
+			</section>
+		<?php } ?>
+
 
 		<!-- SECTION METRICS -->
 		
@@ -268,24 +274,34 @@
 <?php endif; ?>
 							 
 <?php endwhile; ?>
-		<!-- BOX BLUE FPO -->
 
-	<?php if(get_field('asset_title')) : ?>
+		<!-- BOX BLUE FPO -->
+<?php $assetSection = get_field('section_asset'); ?>
+		<?php if($assetSection){ ?>
 		<section class="box-gray">
 			<div class="container">
 				<div class="blue-box">
+					<?php if($assetSection['asset_left_image']){ ?>
 					<div class="image">
-						<img src="<?php if(get_field('asset_left_image')): ?><?php the_field('asset_left_image') ?><?php else : ?><?php bloginfo('template_url'); ?>/images/fpo.png <?php endif ?>" class="responsive" alt="">
+					<?php
+							$attachment_id = $assetSection['asset_left_image'];
+							$size = "join_us_section";
+							$image = wp_get_attachment_image_src( $attachment_id, $size );
+						?>
+						<img src="<?php echo $image[0]; ?>" class="responsive" alt="">
 					</div>
+					<?php } else { ?>
+							<img src="<?php echo $image[0]; ?>" class="responsive" alt="">
+					<?php } ?>
 					<div class="info">
-						<h2><?php the_field('asset_title') ?></h2>
-						<p><?php the_field('asset_description') ?></p>
-						<a href="<?php the_field('asset_button_destination') ?>" class="button-tn" target="_blank"><?php the_field('asset_button_left') ?></a>
+						<h2><?php echo $assetSection['asset_title'] ?></h2>
+						<p><?php echo $assetSection['asset_description'] ?></p>
+						<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
 					</div>
 				</div>
 			</div>
 		</section>
-	<?php endif ?>
+<?php } ?>
 
 <?php get_footer(); ?>
 
