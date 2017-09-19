@@ -168,7 +168,9 @@
 		}
 	}
 	.solution-for-industry {
-
+		background-image: url(images/backer1.png), url(images/backer2.png);
+	    background-position: right 90%, left 10%;
+	    background-repeat: no-repeat, no-repeat;
 	}
 
 	.tab-panels {

@@ -21,147 +21,55 @@
 		<!-- PANELS -->
 
 	<div class="cool-sep"></div>
-		<section class="solution-for-industry">
-			<div class="container">
-				
-				<div class="columns-solutions">
-					
-					<div class="col-left">
-				
-						<select class="solutions" id="solutions">
-							<option value="role">SUPPORT</option>
-							<option value="business">CUSTOMER SUPPORT</option>
-							<option value="industry">FINANCE</option>
-						</select>
-
-						<div class="tab-link" data-value="role">
-							<h4><i class="icon-whatsapp"></i>SUPPORT</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" data-value="business">
-							<h4><i class="icon-smiley"></i>CUSTOMER SUPPORT</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" data-value="industry">
-							<h4><i class="icon-atm"></i>FINANCE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-
-					</div>
-
-					<div class="col-right">
-						<div class="panel-solution panel-role" id="panel-role">
-							<ul>
-								<li>
-									<h4>LABEL</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<a href="" class="button-tn">VIEW MORE</a>
-								</li>
-							</ul>
-						</div>
-						<div class="panel-solution"  id="panel-business">
-							<ul>
-								<li>
-									<h4>LABEL</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<a href="" class="button-tn">VIEW MORE</a>
-								</li>
-							</ul>
-						</div>
-						<div class="panel-solution" id="panel-industry">
-							<ul>
-								<li>
-									<h4>LABEL</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<a href="" class="button-tn">VIEW MORE</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-				
-			</div>
-		</section>
 
 		<section class="solution-for-industry tab-panels">
 			<div class="container">
 				
 				<div class="columns-solutions">
-					
-					<div class="col-left">
+					<?php 
+						$selectedterm = get_field('solutions_cards')->slug;
+						$termslug =  $term->slug;
+							$args = array(
+								'posts_per_page'	=> -1,
+								'post_type'			=> 'solutions_cards',
+								'solutions-types'	=> $selectedterm,
+							);
 
-						<div class="tab-link active" rel="panel1">
-							<h4><i class="icon-whatsapp"></i>SUPPORT</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" rel="panel2">
-							<h4><i class="icon-smiley"></i>CUSTOMER SUPPORT</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" rel="panel3">
-							<h4><i class="icon-atm"></i>FINANCE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" rel="panel4">
-							<h4><i class="icon-atm"></i>FINANCE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" rel="panel5">
-							<h4><i class="icon-atm"></i>FINANCE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" rel="panel6">
-							<h4><i class="icon-atm"></i>FINANCE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
+							$the_query = new WP_Query( $args ); ?>
+							<?php if( $the_query->have_posts() ): ?>
+							
+					<div class="col-left">
+								<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+									<?php $card_info = get_field('card_info'); ?>
+									<?php if($card_info){ ?>
+									<div class="tab-link" rel="panel-<?php the_ID() ?>">
+										<h4><i class="icon-whatsapp"></i><?php the_title(); ?></h4>
+										<p><?php echo $card_info['intro_paragraph']; ?></p>
+									</div>		
+									<?php } ?>
+								<?php endwhile; ?>
 
       				</div>
 
 					<div class="col-right">
-
-						<div class="panel active" id="panel1">
-							<h4>LABEL 1</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<a href="" class="button-tn">VIEW MORE</a>	
-						</div>
-						<div class="panel" id="panel2">
-							<h4>LABEL 2</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<a href="" class="button-tn">VIEW MORE</a>
-						</div>
-						<div class="panel" id="panel3">
-							<h4>LABEL 3</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<a href="" class="button-tn">VIEW MORE</a>
-						</div>
-						<div class="panel" id="panel4">
-							<h4>LABEL 4</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<a href="" class="button-tn">VIEW MORE</a>
-						</div>
-						<div class="panel" id="panel5">
-							<h4>LABE 5L</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<a href="" class="button-tn">VIEW MORE</a>
-						</div>
-						<div class="panel" id="panel6">
-							<h4>LABEL 6</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-							<a href="" class="button-tn">VIEW MORE</a>
-						</div>
+						<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<?php $card_info = get_field('card_info'); 
+							$link = $card_info['card_button'];?>
+							<?php if($card_info){ ?>
+							<div class="panel" id="panel-<?php the_ID() ?>">
+								<h4><?php echo $card_info['card_title']; ?></h4>
+								<p><?php echo $card_info['card_copy']; ?></p>
+								<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button-tn"><?php echo $link['title']; ?></a>	<?php } ?>
+							</div>
+							<?php } ?>
+						<?php endwhile; ?>	
+						
 				    </div>
+				 	<?php endif; ?>
+
+					<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>	
 				</div>
+
 			</div>
 		</section>	
 
@@ -217,8 +125,8 @@
 
 		<!-- SECTION METRICS -->
 		
-				<?php while(has_sub_field('section_5', 5)): ?>
-				<section class="metrics">
+		<?php while(has_sub_field('section_5', 5)): ?>
+			<section class="metrics">
 				<div class="container">
 				<div class="col-left">					
 						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
@@ -235,16 +143,16 @@
 				<div class="col-right">
 					<ul>
 
-				<?php while(has_sub_field('section_5', 5)): ?>
+			<?php while(has_sub_field('section_5', 5)): ?>
 								
-				<?php if(get_sub_field('box_metrics')): ?>
-					<?php 
+			<?php if(get_sub_field('box_metrics')): ?>
+				<?php 
 					    
 					if( have_rows('box_metrics') ):
 
-					    while( have_rows('box_metrics') ) : the_row(); 
+					 while( have_rows('box_metrics') ) : the_row(); 
 					        
-					        ?>
+					  ?>
 
 					    <li>
 							<div class="box-metric <?php the_sub_field('color_class'); ?>">
@@ -271,37 +179,40 @@
 				</div>
 			</div>
 		</section>
-<?php endif; ?>
+		<?php endif; ?>
 							 
-<?php endwhile; ?>
+		<?php endwhile; ?>
 
 		<!-- BOX BLUE FPO -->
-<?php $assetSection = get_field('section_asset'); ?>
-		<?php if($assetSection){ ?>
-		<section class="box-gray">
-			<div class="container">
-				<div class="blue-box">
-					<?php if($assetSection['asset_left_image']){ ?>
-					<div class="image">
-					<?php
-							$attachment_id = $assetSection['asset_left_image'];
-							$size = "join_us_section";
-							$image = wp_get_attachment_image_src( $attachment_id, $size );
-						?>
-						<img src="<?php echo $image[0]; ?>" class="responsive" alt="">
-					</div>
-					<?php } else { ?>
+
+		<?php $assetSection = get_field('section_asset'); ?>
+			<?php if($assetSection){ ?>
+			<section class="box-gray">
+				<div class="container">
+					<div class="blue-box">
+						
+						<div class="image">
+						<?php if($assetSection['asset_left_image']){ ?>
+						<?php
+								$attachment_id = $assetSection['asset_left_image'];
+								$size = "join_us_section";
+								$image = wp_get_attachment_image_src( $attachment_id, $size );
+							?>
 							<img src="<?php echo $image[0]; ?>" class="responsive" alt="">
-					<?php } ?>
-					<div class="info">
-						<h2><?php echo $assetSection['asset_title'] ?></h2>
-						<p><?php echo $assetSection['asset_description'] ?></p>
-						<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
+						
+						<?php } else { ?>
+								<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
+						<?php } ?>
+						</div>
+						<div class="info">
+							<h2><?php echo $assetSection['asset_title'] ?></h2>
+							<p><?php echo $assetSection['asset_description'] ?></p>
+							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-<?php } ?>
+			</section>
+		<?php } ?>
 
 <?php get_footer(); ?>
 
