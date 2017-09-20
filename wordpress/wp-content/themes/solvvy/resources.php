@@ -95,7 +95,7 @@
 				<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
 				<li class="<?php if ( has_term('', 'resource-types') ) { foreach( $terms as $term ) echo $term->slug . ' '; }?>">
 					<div class="asset-cards">
-						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-cards.jpg <?php endif; ?>" alt="" class="responsive">
+						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-card-generic.jpg <?php endif; ?>" alt="" class="responsive">
 						<div class="content">
 							<small><?php foreach( $terms as $term ) echo ' ' . $term->name; ?></small>
 							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php elseif( get_field('button_link_type') == 'pdf' ): ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="_blank"><?php the_title();?></a></h3>

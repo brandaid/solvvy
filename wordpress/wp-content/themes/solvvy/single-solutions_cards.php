@@ -20,11 +20,13 @@
 		<?php if($section_1){ ?>
 		<section class="box-text-top pink-ball box-text-and-image-top">
 			<div class="container">
+				<?php if($section_1['section_1_animation']){ ?>
 				<div class="mackbook">
 					<div class="content-mac">
-						<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive">
+						<img src="<?php echo $section_1['section_1_animation'] ?>" alt="" class="responsive">
 					</div>
 				</div>
+				<?php } ?>
 				<h2><?php echo $section_1['section_1_title'];  ?></h2>
 				<p><?php echo $section_1['section_1_copy'];  ?></p>
 				<?php if($section_1['section_1_button_destination'] && $section_1['section_1_button_text']){ ?><a href="<?php echo $section_1['section_1_button_destination']; ?>" class="button"><?php echo $section_1['section_1_button_text']; ?></a><?php } ?>
@@ -66,18 +68,25 @@
 	<?php } ?>	
 
 		<!-- STORY BOX -->
-
+	<?php $caseStudy = get_field('case_study_section');?>
+		<?php if($caseStudy['case_study_copy']){ ?>
 		<section class="interior-story">
 			<div class="container">
 				<article class="brands">
 					<div class="col-left">
-						<img src="<?php bloginfo('template_url'); ?>/images/br-evite.png" alt="">
-						<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-						<a href="" class="button">Read Their Story</a>
+						<?php
+							$image_id = $caseStudy['case_study_logo'];
+							$image_size = 'case_study_logo';
+							$image_array = wp_get_attachment_image_src($image_id, $image_size);
+							$image_url = $image_array[0];
+						?>
+						<img src="<?php echo $image_url; ?>" alt="">
+						<p><?php echo $caseStudy['case_study_copy']; ?></p>
+						<a href="<?php if($caseStudy['case_study_button_link_type'] == 'url'){ ?><?php echo $caseStudy['case_study_button_link_destination']; ?><?php } else if($caseStudy['case_study_button_link_type'] == 'pdf'){?><?php echo $caseStudy['case_study_button_link_file']; ?><?php } ?>	" class="button"><?php echo $caseStudy['case_study_button_text']; ?></a>
 					</div>
 					<div class="col-right">
 						<figure class="image-slider">
-							<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
+							<img src="<?php echo $caseStudy['case_study_photo']; ?>" alt="">
 						</figure>
 					</div>
 				</article>
@@ -86,7 +95,7 @@
 
 		<div class="cool-sep"></div>
 
-
+	<?php } ?>	
 		<!-- SECTION METRICS -->
 		
 		<?php while(has_sub_field('section_5', 5)): ?>
