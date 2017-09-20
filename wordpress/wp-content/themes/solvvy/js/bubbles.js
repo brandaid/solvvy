@@ -14,6 +14,7 @@ var Bubble = function(opts){
 
 	var self = this;
 
+	this._DOM = false;
 	this.bkbubb = opts.bk;
 	this.bkimg = opts.bkimg;
 	this.percent = opts.percent;
@@ -21,6 +22,7 @@ var Bubble = function(opts){
 	this.linkedin = opts.linkedin;
 	this.twitter = opts.twitter;
 	this.title = opts.title;
+	this.bubbleType = (this.bkimg) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
 		y: opts.position.y
@@ -35,18 +37,21 @@ var Bubble = function(opts){
 	}
 
 	this.render = function(container){
-		var element = $('<div></div>');
-		var bubbleType;
-		(self.bkimg) ? bubbleType = 'people' : bubbleType = 'metric';
+		if(self._DOM == false){
+			var element = $('<div></div>');
+			self._DOM = element.appendTo(container);
+		}
+
+		
 		(self.interest)? self.interest = '<span>'+self.interest+'</span>' : self.interest = '';
-		(self.twitter)? self.twitter = '<a href="'+self.twitter+'"><i class="icon-twitter"></i></a>' : self.twitter = '';
-		(self.linkedin)? self.linkedin = '<a href="'+self.linkedin+'"><i class="icon-linkedin"></i></a>' : self.linkedin = '';
-		element.addClass('bubbles');
-		element.css('top',self.position.y + "px");
-		element.css('left',self.position.x + "px");
-		element.css('width',self.size + "px");
-		element.css('height',self.size + "px");
-		element.html('<div class="'+bubbleType+'" style="background: '+
+		self.twitter =(self.twitter)?  '<a href="'+self.twitter+'"><i class="icon-twitter"></i></a>' : '';
+		self.linkedin = (self.linkedin)? '<a href="'+self.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
+		self._DOM.addClass('bubbles');
+		self._DOM.css('top',self.position.y + "px");
+		self._DOM.css('left',self.position.x + "px");
+		self._DOM.css('width',self.size + "px");
+		self._DOM.css('height',self.size + "px");
+		self._DOM.html('<div class="'+self.bubbleType+'" style="background: '+
 			self.bkbubb+
 			';background-image: url('+
 			self.bkimg+
@@ -61,7 +66,6 @@ var Bubble = function(opts){
 			self.twitter+
 			self.linkedin+
 			'</span></div></div></div></div>');
-		container.append(element);
 	}
 
 }
@@ -97,32 +101,43 @@ var Segment = function(opts){
 
 var Nodeline = function(opts){
 	var self = this;
+	this._DOM = false;
 	this.start = opts.start;
 	this.end = opts.end;
 	this.width = opts.width;
 	this.color = '#B6AAF0';
+
 
 	this.angle = function(){
 		return Math.atan2(this.end.y - this.start.y, this.end.x - this.start.x) * 180 / Math.PI;	
 	};
 
 	this.render = function(container){
-		var element = $('<div style="background:'+ this.color +';position:absolute;"></div>');
+		
+		if(self._DOM == false){
+			var element = $('<div class="lineconnector" style="background:'+ this.color +';"></div>');
+			self._DOM = element.appendTo(container);
+		}
+		
 		var rotation = this.angle();
-		element.css('top', this.start.y + 'px');
-		element.css('left', this.start.x + 'px');
-		element.css('width', (Math.round(getDistance(this.start, this.end))+ 0) + 'px');
-		element.css('height', this.width + 'px');
+		self._DOM.css('top', this.start.y + 'px');
+		self._DOM.css('left', this.start.x + 'px');
+		self._DOM.css('width', (Math.round(getDistance(this.start, this.end))+ 0) + 'px');
+		self._DOM.css('height', this.width + 'px');
 
-		element.css('-ms-transform-origin', '0% 0%');
-		element.css('-webkit-transform-origin', '0% 0%');
-		element.css('transform-origin', '0% 0%');
+		self._DOM.css('-ms-transform-origin', '0% 0%');
+		self._DOM.css('-webkit-transform-origin', '0% 0%');
+		self._DOM.css('transform-origin', '0% 0%');
 
-		element.css('-ms-transform', 'rotate('+rotation+'deg)');
-		element.css('-webkit-transform', 'rotate('+rotation+'deg)');
-		element.css('transform', 'rotate('+rotation+'deg)');
-		container.append(element);
+		self._DOM.css('-ms-transform', 'rotate('+rotation+'deg)');
+		self._DOM.css('-webkit-transform', 'rotate('+rotation+'deg)');
+		self._DOM.css('transform', 'rotate('+rotation+'deg)');
+		
 	};
+
+	this.remove = function(){
+		self._DOM.remove();
+	}
 }
 
 var BubbleScene = function(opts){
@@ -134,6 +149,12 @@ var BubbleScene = function(opts){
 	this._width = this._container.width();
 	this._height = this._container.height();
 	this.segments = {};
+
+	this.update = function(){
+		this._width = this._container.width();
+		this._height = this._container.height();
+		this.draw();
+	}
 
 	this.calculateBackground = function(){
 		var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F', '#F92D6D'];
@@ -172,7 +193,6 @@ var BubbleScene = function(opts){
 		result.cols = cols;
 		result.segment_size = { w : segment_size.w , h : segment_size.h};
 		self.segments = result;
-		console.log(this.segments);
 		return this.segments;
 	}
 
@@ -223,6 +243,11 @@ var BubbleScene = function(opts){
 		this.calculateSizes();
 		this.calculatePositions();
 		
+		self.connectorsAll.forEach(function(item){
+			item.remove();
+		});
+		self.connectorsAll = [];
+
 		this.segments.segments.forEach(function(current_segment){
 			//current_segment.render(self._container);
 			if(current_segment.element === true){
@@ -250,7 +275,6 @@ var BubbleScene = function(opts){
 				
 			}
 		});
-		console.log(this.connectorsAll.length);
 
 		this.connectorsAll.forEach(function(item){
 			item.render(self._container);
