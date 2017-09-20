@@ -15,13 +15,28 @@
 
 
 		<!-- BOX TEXT -->
-		
+	<?php
+	$args = array(
+				'posts_per_page'	=> -1,
+				'post_type'			=> array('news', 'press'),
+				'meta_key'		=> 'featured_story',
+				'meta_value'	=> '1'
+	);
+    $loop = new WP_Query( $args );
+    if ( $loop->have_posts() ) :?>
+       
+
+  
 
 		<section class="box-text-top container-normal pink-ball title-to-left">
 			<div class="container">
 				<h2>Featured Stories</h2>
 
 				<ul class="list-boxes-three three-ipad">
+				<?php  while ( $loop->have_posts() ) : $loop->the_post(); 
+					   $featuredStory = get_field('featured_story_card');
+				?>
+
 					<li>
 						<div class="box-stories">
 							<div class="content-brand">
@@ -30,12 +45,13 @@
 								</div>
 							</div>
 							<div class="content">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								<a href="" class="button">Read More</a>
+								<h3><a href="<?php echo $featuredStory['featured_story_button']['url'] ?>"><?php the_title(); ?></a></h3>
+								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php the_date(); ?></span></p>
+								<?php if($featuredStory['featured_story_button']['title']): ?><a href="<?php echo $featuredStory['featured_story_button']['url'] ?>" target="<?php echo $featuredStory['featured_story_button']['target'] ?>" class="button"><?php echo $featuredStory['featured_story_button']['title'] ?></a><?php endif ?>
 							</div>
 						</div>
 					</li>
+					<?php endwhile;?>
 					<li>
 						<div class="box-stories">
 							<div class="content-brand">
@@ -68,7 +84,9 @@
 
 			</div>
 		</section>
-		
+	     <?php  endif;
+		    wp_reset_postdata();
+		?>	
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-gray-top.png" class="responsive block" alt="">
 		<section class="box-gray-waves">
 			<div class="container">
