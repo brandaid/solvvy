@@ -61,7 +61,6 @@
 			<div class="col col-7 contact">
 				<?php if($companyInfo['office_address_line_1'] || $companyInfo['office_phone_number'] || $companyInfo['contact_email']){ ?>
 				<h4>Our Office</h4>
-				<div>custom field</div>
 				<ul>
 					<li><?php echo $companyInfo['office_address_line_1'] ?></li>
 					<li><?php echo $companyInfo['office_address_line_2'] ?></li>

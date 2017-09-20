@@ -22,6 +22,29 @@
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
+	<script type="text/javascript">
+	(function() {
+	  var didInit = false;
+	  function initMunchkin() {
+	    if(didInit === false) {
+	      didInit = true;
+	      Munchkin.init('733-WJM-922');
+	    }
+	  }
+	  var s = document.createElement('script');
+	  s.type = 'text/javascript';
+	  s.async = true;
+	  s.src = '//munchkin.marketo.net/munchkin.js';
+	  s.onreadystatechange = function() {
+	    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+	      initMunchkin();
+	    }
+	  };
+	  s.onload = initMunchkin;
+	  document.getElementsByTagName('head')[0].appendChild(s);
+	})();
+	</script>
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
