@@ -109,7 +109,7 @@
 		<!-- SECONDARY BANNER -->
 
 		<?php $section_secondary_banner = get_field('section_secondary_banner'); ?>
-		<?php if($section_secondary_banner){ ?>
+		<?php if($section_secondary_banner['secondary_banner_quote']){ ?>
 		<?php if($section_secondary_banner['secondary_banner_image']){ ?>
 			<section class="box-partners" style="background-image: url(<?php echo $section_secondary_banner['secondary_banner_image']['url']; ?>)">
 		<?php }else{ ?>
