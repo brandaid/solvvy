@@ -23,12 +23,17 @@
 				<h2><?php echo $section_1['section_1_title'];  ?></h2>
 				<p><?php echo $section_1['section_1_copy'];  ?></p>
 			</div>
+					<?php } ?>
 		<div class="cool-sep"></div>
+		<?php while(has_sub_field('industry_metrics')): ?>		
+			<?php if(get_sub_field('title_metrics')): ?>
+					<h2><?php the_sub_field('title_metrics'); ?></h2>
+			<?php endif; ?>			
 		</section>
-		<?php } ?>
+
 
 		<div class="heads-metrics">
-				<?php while(has_sub_field('industry_metrics')): ?>
+
 				<?php if(get_sub_field('metrics')): ?>
 					<?php 
 					if( have_rows('metrics') ):
