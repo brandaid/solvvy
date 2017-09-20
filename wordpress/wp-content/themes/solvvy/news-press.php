@@ -11,17 +11,7 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
-
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>News & Press Releases</h1>
-				<h3>There's always something happening at Solvvy.  Learn how we are blazing new roads in Customer Experience! </h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
