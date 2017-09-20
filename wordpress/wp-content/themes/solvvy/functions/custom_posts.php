@@ -197,18 +197,11 @@ function create_post_type_solutions() {
       'menu_position' => 5,
       'public' => true,
       'has_archive' => true,
-      'supports' => array('title', 'editor', 'thumbnail')
+      'supports' => array('title', 'editor')
     )
   );
 }
 add_action( 'init', 'create_post_type_solutions' );
-
-
-add_action( 'admin_head', 'replace_solution_featured_image_meta_box', 100 );
-function replace_solution_featured_image_meta_box() {
-    remove_meta_box( 'postimagediv', 'solutions_cards', 'side' );
-    add_meta_box('postimagediv', __('Solution Icon'), 'post_thumbnail_meta_box', 'solutions_cards', 'side');
-}
 
 add_action( 'init', 'create_solutions_taxonomies', 0 );
 
