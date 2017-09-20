@@ -196,7 +196,7 @@ function create_post_type_solutions() {
       'menu_icon' => 'dashicons-feedback',
       'menu_position' => 5,
       'public' => true,
-        'has_archive' => true,
+      'has_archive' => true,
       'supports' => array('title', 'editor', 'thumbnail')
     )
   );
