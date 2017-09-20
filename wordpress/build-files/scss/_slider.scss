@@ -40,7 +40,7 @@
 		color: lighten($brand-tertiary, 30%);
 		@include transition;
 		&:before {
-			content: '\e80b';
+			content: '\f105';
 			@include font-solvvy;
 		}
 		&:hover {
@@ -68,7 +68,7 @@
 			left: -150px;
 		}
 		&:before {
-			content: '\e80c';
+			content: '\f104';
 		}
 	}
 	.owl-next {

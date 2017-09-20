@@ -43,19 +43,18 @@
 }
 .box-icon-text {
 	position: relative;
-	padding-left: 60px;
 	@include border-box;
 	margin-top: 30px;
+	text-align: center;
 	i {
-		position: absolute;
-		left: -10px;
-		font-size: 40px;
+		position: relative;
+		font-size: 45px;
 		color: $brand-primary;
-		top: -5px;
+		top: -15px;
 	}
 	h4, p {
-		text-align: left;
 		font-size: 18px;
+		text-align: center;
 	}
 	h4 {
 		text-transform: uppercase;
@@ -63,17 +62,17 @@
 		color: $brand-primary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(7) > div {
 	i, h4 {
 		color: #9155aa;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(5) > div  {
 	i, h4 {
 		color: $brand-secondary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(6) > div {
 	i, h4 {
 		color: #bdb2f2;
 	}
