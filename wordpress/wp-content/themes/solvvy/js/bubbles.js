@@ -22,6 +22,9 @@ var Bubble = function(opts){
 	this.linkedin = opts.linkedin;
 	this.twitter = opts.twitter;
 	this.title = opts.title;
+	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
+	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
+	self.interest = (self.interest)? '<span>'+self.interest+'</span>' : '';
 	this.bubbleType = (this.bkimg) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
@@ -41,11 +44,6 @@ var Bubble = function(opts){
 			var element = $('<div></div>');
 			self._DOM = element.appendTo(container);
 		}
-
-		
-		(self.interest)? self.interest = '<span>'+self.interest+'</span>' : self.interest = '';
-		self.twitter =(self.twitter)?  '<a href="'+self.twitter+'"><i class="icon-twitter"></i></a>' : '';
-		self.linkedin = (self.linkedin)? '<a href="'+self.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
 		self._DOM.addClass('bubbles');
 		self._DOM.css('top',self.position.y + "px");
 		self._DOM.css('left',self.position.x + "px");
