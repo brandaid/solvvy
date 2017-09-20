@@ -11,17 +11,7 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
-
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>News & Press Releases</h1>
-				<h3>Bacon ipsum dolor amet bacon tenderloin landjaeger, turkey short loin.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
@@ -82,7 +72,9 @@
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-gray-top.png" class="responsive block" alt="">
 		<section class="box-gray-waves">
 			<div class="container">
-				<h4 class="media-contact">Media Contact: <span>Person Name -</span> <a href="">yourname@solvvy.com</a></h4>
+				<?php $mediaContact = get_field('media_contact'); ?>
+				<?php if($mediaContact){ ?>
+				<h4 class="media-contact">Media Contact: <span><?php echo $mediaContact['name'] ?> <?php if($mediaContact['position']){ ?>- <?php echo $mediaContact['position'] ?> <?php } ?>-  </span> <a href="mailto:<?php echo $mediaContact['contact_email'] ?>"><?php echo $mediaContact['contact_email'] ?></a></h4><?php } ?>
 				<div class="box-two-columns">
 					<div class="left-col">
 						<h2>News</h2>

@@ -11,24 +11,22 @@
 <?php the_post(); ?>
 
 
-		<!-- SECTION HERO BANNER -->
-
 		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
 		
-<?php 
+		<?php 
 
-$args = array(
-	'posts_per_page'	=> -1,
-	'post_type'			=> 'resources_cards',
-	'meta_key'		=> 'featured_resource',
-	'meta_value'	=> '1'
-);
+		$args = array(
+			'posts_per_page'	=> -1,
+			'post_type'			=> 'resources_cards',
+			'meta_key'		=> 'featured_resource',
+			'meta_value'	=> '1'
+		);
 
-$the_query = new WP_Query( $args ); ?>
-<?php if( $the_query->have_posts() ): ?>	
+		$the_query = new WP_Query( $args ); ?>
+		<?php if( $the_query->have_posts() ): ?>	
 
 		<section class="box-text-top container-normal pink-ball">
 			<div class="container">
@@ -53,7 +51,7 @@ $the_query = new WP_Query( $args ); ?>
 		<div class="cool-sep"></div>
 		<?php endif; ?>
 
-<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
+		<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 		
 		<div class="content-button">
 			<a href="javascript:void(0);" class="open-div">Filter Resources</a>
@@ -97,7 +95,7 @@ $the_query = new WP_Query( $args ); ?>
 				<?php $terms = get_the_terms( $post->ID, 'resource-types' ); ?>
 				<li class="<?php if ( has_term('', 'resource-types') ) { foreach( $terms as $term ) echo $term->slug . ' '; }?>">
 					<div class="asset-cards">
-						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-cards.jpg <?php endif; ?>" alt="" class="responsive">
+						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-card-generic.jpg <?php endif; ?>" alt="" class="responsive">
 						<div class="content">
 							<small><?php foreach( $terms as $term ) echo ' ' . $term->name; ?></small>
 							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php elseif( get_field('button_link_type') == 'pdf' ): ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="_blank"><?php the_title();?></a></h3>
