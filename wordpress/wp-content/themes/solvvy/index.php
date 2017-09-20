@@ -31,7 +31,10 @@
 				<div class="container">
 					<h1><?php echo $section_hero['hero_title'];  ?></h1>
 					<h3><?php echo $section_hero['hero_copy'];  ?></h3>
-					 <a class="button" href="<?php echo $section_hero['button_link'] ?>" class="button-pink"><?php echo $section_hero['button_text'] ?><i class="icon-play"></i></a>
+
+					<?php if($section_hero['button_link']) : ?>
+						 <a class="button" id="myBtn" href="#"><?php echo $section_hero['button_text'] ?><i class="icon-play"></i></a>
+					 <?php endif; ?>
 				</div>
 				<div class="waves"></div>
 				<div class="circles"></div>
@@ -385,19 +388,19 @@
 		<div class="cool-sep"></div>
 
 
+	<?php if($section_hero['button_link']) : ?>
 		<!-- Trigger/Open The Modal -->
-
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
-
 		  <!-- Modal content -->
 		  <div class="modal-content">
 		    <span class="close">&times;</span>
 		    <div class="videoWrapper">
-		    	<iframe src="https://player.vimeo.com/video/217907071" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    	<iframe src="<?php echo $section_hero['button_link']; ?>" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		    </div>
 		  </div>
-
 		</div>
+	<?php endif; ?>	
+
 <?php get_footer(); ?>
 
