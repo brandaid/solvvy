@@ -88,7 +88,7 @@
 					        
 					        ?>
 
-						<div class="tab-link-without-icon" data-value="<?php the_sub_field('data_id'); ?>">
+						<div class="tab-link-without-icon <?php the_sub_field('tab_class'); ?>" data-value="<?php the_sub_field('data_id'); ?>">
 							<h4><?php the_sub_field('title'); ?></h4>
 							<p><?php the_sub_field('copy'); ?></p>
 						</div>
