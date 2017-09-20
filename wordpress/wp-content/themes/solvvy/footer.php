@@ -109,6 +109,10 @@
 			bubblesArray.forEach(function(item, index, origarr){
 				var singleBubble = new Bubble({
 					bk : "#F6639A",
+					bkimg : item.bubble_profile_image,
+					inerest : item.bubble_interests,
+					linkedin : item.bubble_linkedin,
+					twitter : item.bubble_twitter,
 					percent : item.bubble_percent,
 					title : item.bubble_title,
 					position : {
