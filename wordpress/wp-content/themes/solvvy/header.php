@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php wp_title(); ?> | <?php bloginfo('title' ); ?></title>
+	<title><?php if ( is_home() || is_front_page()) { ?><?php bloginfo('title' ); ?> <?php } else { ?> <?php wp_title(); ?> | <?php bloginfo('title' ); ?><?php } ?></title>
 
 	<meta name="revisit-after" content="30 days">
 	<meta name="robots" content="index,follow">

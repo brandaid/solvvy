@@ -1,7 +1,7 @@
 var getDistance = function( point1, point2 ) {
 
 	var
-	xs = point2.x - point2.x,
+	xs = point2.x - point1.x,
 	ys = point2.y - point1.y;
 
 	xs *= xs;
@@ -67,15 +67,45 @@ var Segment = function(opts){
 		element.css('width', this.width + 'px');
 		element.css('height', this.height + 'px');
 		element.css('border', '1px solid green');
-		console.log("rendering segment...");
 		container.append(element);
 	};
 
 } 
 
+var Nodeline = function(opts){
+	var self = this;
+	this.start = opts.start;
+	this.end = opts.end;
+	this.width = opts.width;
+	this.color = '#B6AAF0';
+
+	this.angle = function(){
+		return Math.atan2(this.end.y - this.start.y, this.end.x - this.start.x) * 180 / Math.PI;	
+	};
+
+	this.render = function(container){
+		var element = $('<div style="background:'+ this.color +';position:absolute;"></div>');
+		var rotation = this.angle();
+		element.css('top', this.start.y + 'px');
+		element.css('left', this.start.x + 'px');
+		element.css('width', (Math.round(getDistance(this.start, this.end))+ 0) + 'px');
+		element.css('height', this.width + 'px');
+
+		element.css('-ms-transform-origin', '0% 0%');
+		element.css('-webkit-transform-origin', '0% 0%');
+		element.css('transform-origin', '0% 0%');
+
+		element.css('-ms-transform', 'rotate('+rotation+'deg)');
+		element.css('-webkit-transform', 'rotate('+rotation+'deg)');
+		element.css('transform', 'rotate('+rotation+'deg)');
+		container.append(element);
+	};
+}
+
 var BubbleScene = function(opts){
 	var self = this;
 	var sizes = [280, 210];
+	this.connectorsAll = [];
 	this._container = $(opts.container);
 	this.bubbles = opts.elements || [];
 	this._width = this._container.width();
@@ -157,6 +187,7 @@ var BubbleScene = function(opts){
 				var minPosY = useSegment.y;
 
 				useSegment.element = true;
+				useSegment.bubble = bubble;
 				bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
 				bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
 			}
@@ -168,11 +199,60 @@ var BubbleScene = function(opts){
 		this.calculateBackground();
 		this.calculateSizes();
 		this.calculatePositions();
+		
+		//var testLine = new Nodeline({
+		//	start : this.bubbles[0].center(),
+		//	end : this.bubbles[1].center(),
+		//	width : 4
+		//});
+		//testLine.render(this._container);
+		 
+		this.segments.segments.forEach(function(current_segment){
+			//current_segment.render(self._container);
+			if(current_segment.element === true){
+				self.segments.segments.forEach(function(other_segment){
+					if(other_segment.element == true){
+						if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
+							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
+								if(!(other_segment.c == current_segment.c && other_segment.r == current_segment.r)){
+									var connector = new Nodeline({
+										start : current_segment.bubble.center(),
+										end : other_segment.bubble.center(),
+										width : 2
+									});
+									var valid = true;
+									self.connectorsAll.forEach(function(other_connector){
+
+										if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
+											//console.log(current_connector.start.x ,'==', other_connector.end.x ,'&&', current_connector.start.y ,'==', other_connector.end.y)
+											//if(other_connector.start.x == current_connector.end.x && other_connector.start.y == current_connector.end.y){
+												valid = false;
+											//}
+										}
+									});
+									if(valid){self.connectorsAll.push(connector);};
+		
+								}
+								
+							}
+						}
+					}
+					
+				});
+				
+			}
+		});
+		console.log(this.connectorsAll.length);
+
+		this.connectorsAll.forEach(function(item){
+			item.render(self._container);
+		})
+
 		this.bubbles.forEach(function(item){
 			item.render(self._container);
 		});
-		//this.segments.segments.forEach(function(item){
-		//	item.render(self._container);
-		//});
+		
+
+
 	}
 }
