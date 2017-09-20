@@ -58,18 +58,18 @@
 				  $socialMedia = get_field('social_media', 'option');
 			 ?>
 			
-			<div class="col col-7 contact" style="background: yellow;">
-				<?php if($companyInfo['office_address_line_1']){ ?>
+			<div class="col col-7 contact">
+				<?php if($companyInfo['office_address_line_1'] || $companyInfo['office_phone_number'] || $companyInfo['contact_email']){ ?>
 				<h4>Our Office</h4>
 				<div>custom field</div>
 				<ul>
 					<li><?php echo $companyInfo['office_address_line_1'] ?></li>
 					<li><?php echo $companyInfo['office_address_line_2'] ?></li>
 					<li><?php echo $companyInfo['office_phone_number'] ?></li>
-					<li><a href="mailto:info@solvvy.com">info@solvvy.com</a></li>
+					<li><a href="mailto:<?php echo $companyInfo['contact_email'] ?>"><?php echo $companyInfo['contact_email'] ?></a></li>
 				</ul>
 				<?php } ?>
-				<div class="social" style="background: yellow;">
+				<div class="social">
 					<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
 					<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
 					<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>
