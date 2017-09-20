@@ -95,7 +95,7 @@ var Segment = function(opts){
 		container.append(element);
 	};
 
-} 
+}
 
 var Nodeline = function(opts){
 	var self = this;
@@ -107,16 +107,16 @@ var Nodeline = function(opts){
 
 
 	this.angle = function(){
-		return Math.atan2(this.end.y - this.start.y, this.end.x - this.start.x) * 180 / Math.PI;	
+		return Math.atan2(this.end.y - this.start.y, this.end.x - this.start.x) * 180 / Math.PI;
 	};
 
 	this.render = function(container){
-		
+
 		if(self._DOM == false){
 			var element = $('<div class="lineconnector" style="background:'+ this.color +';"></div>');
 			self._DOM = element.appendTo(container);
 		}
-		
+
 		var rotation = this.angle();
 		self._DOM.css('top', this.start.y + 'px');
 		self._DOM.css('left', this.start.x + 'px');
@@ -130,7 +130,7 @@ var Nodeline = function(opts){
 		self._DOM.css('-ms-transform', 'rotate('+rotation+'deg)');
 		self._DOM.css('-webkit-transform', 'rotate('+rotation+'deg)');
 		self._DOM.css('transform', 'rotate('+rotation+'deg)');
-		
+
 	};
 
 	this.remove = function(){
@@ -139,18 +139,28 @@ var Nodeline = function(opts){
 }
 
 var BubbleScene = function(opts){
+
 	var self = this;
 	var sizes = [280, 210];
+	this.min_distance = 20;
 	this.connectorsAll = [];
 	this._container = $(opts.container);
 	this.bubbles = opts.elements || [];
 	this._width = this._container.width();
 	this._height = this._container.height();
 	this.segments = {};
+	this.segment_size = sizes[0]+(this.min_distance/2);
+
+	this.calculateSceneHeight = function(){
+		let cols = Math.floor(this._width / this.segment_size);
+		let rows = Math.ceil(this.bubbles.length / cols);
+		return this.segment_size * rows + 50;
+	}
 
 	this.update = function(){
 		this._width = this._container.width();
-		this._height = this._container.height();
+		this._height = this.calculateSceneHeight();
+		this._container.css('height',this._height+'px');
 		this.draw();
 	}
 
@@ -197,15 +207,14 @@ var BubbleScene = function(opts){
 	this.calculatePositions = function(){
 		var elements_count = this.bubbles.length;
 		var counter = 0;
-		var min_distance = 20;
-		var max_for_row = this._width/(sizes[0]+min_distance);
+		var max_for_row = this._width/(sizes[0]+this.min_distance);
 
 		var max_offset = {
 			x : 20,
 			y : 20
 		};
 
-		this._calculateSegments(sizes[0]+(min_distance/2),this._width,this._height);
+		this._calculateSegments(self.segment_size,this._width,this._height);
 
 		this.segments.segments.sort(function(a,b){
 			var
@@ -240,7 +249,7 @@ var BubbleScene = function(opts){
 		this.calculateBackground();
 		this.calculateSizes();
 		this.calculatePositions();
-		
+
 		self.connectorsAll.forEach(function(item){
 			item.remove();
 		});
@@ -252,7 +261,7 @@ var BubbleScene = function(opts){
 				self.segments.segments.forEach(function(other_segment){
 					if(other_segment.element == true){
 						if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
-							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){								
+							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
 								var connector = new Nodeline({
 									start : current_segment.bubble.center(),
 									end : other_segment.bubble.center(),
@@ -261,16 +270,16 @@ var BubbleScene = function(opts){
 								var valid = true;
 								self.connectorsAll.forEach(function(other_connector){
 									if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
-											valid = false;									
+											valid = false;
 									}
 								});
-								if(valid){self.connectorsAll.push(connector);};						
+								if(valid){self.connectorsAll.push(connector);};
 							}
 						}
 					}
-					
+
 				});
-				
+
 			}
 		});
 
@@ -281,7 +290,7 @@ var BubbleScene = function(opts){
 		this.bubbles.forEach(function(item){
 			item.render(self._container);
 		});
-		
+
 
 
 	}
