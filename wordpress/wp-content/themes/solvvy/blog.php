@@ -26,12 +26,23 @@
 				<ul class="formated-list">
 					<li><h4>FOLLOW US</h4></li>
 					<li>
+					<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
+						<form id="mktoForm_1227" class="marketo-updates"></form>
+					<script>MktoForms2.loadForm("//app-ab24.marketo.com", "733-WJM-922", 1227);</script>
+					<!--
 						<form action="" class="marketo-updates">
 							<input type="text" placeholder="you@email.com">
 							<button>Send Me Updates!</button>
 						</form>
+						-->
 					</li>
-					<li><a href="" class="fa fa-twitter"></a><a href="" class="fa fa-linkedin"></a>  <a href="" class="fa fa-facebook"></a></li>
+					<li>
+						<?php $socialMedia = get_field('social_media', 'option'); ?>
+
+						<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
+						<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
+						<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>						
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -41,7 +52,7 @@
 		<section class="blog-content">
 			<div class="container">
 				
-				<?php $loop = new WP_Query( array( 'post_type' => 'post', 'order' => 'ASC' ) ); ?>
+				<?php $loop = new WP_Query( array( 'post_type' => 'post', 'order' => 'DESC' ) ); ?>
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 				<!-- POST -->

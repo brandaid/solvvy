@@ -31,7 +31,10 @@
 				<div class="container">
 					<h1><?php echo $section_hero['hero_title'];  ?></h1>
 					<h3><?php echo $section_hero['hero_copy'];  ?></h3>
-					 <a class="button" href="<?php echo $section_hero['button_link'] ?>" class="button-pink"><?php echo $section_hero['button_text'] ?><i class="icon-play"></i></a>
+
+					<?php if($section_hero['button_link']) : ?>
+						 <a class="button" id="myBtn" href="#"><?php echo $section_hero['button_text'] ?><i class="icon-play"></i></a>
+					 <?php endif; ?>
 				</div>
 				<div class="waves"></div>
 				<div class="circles"></div>
@@ -54,19 +57,20 @@
 							<?php endif; ?>
 							<?php endif; ?>
 						 
-					<?php endwhile; ?>
+					
 			</div>
 			<div class="col-right">
 				<div class="mackbook-home">
 					<div class="content-mac">
-						<img src="<?php bloginfo('template_url'); ?>/images/screen-home.gif" class="screen" alt="">
+						<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
+						
 						<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
 					</div>
 				</div>
 				
 			</div>
 		</section>
-
+					<?php endwhile; ?>
 		<!-- INDUSTRY NEWS -->
 		
 		<section class="box-gray industry-news">
@@ -348,18 +352,30 @@
 								
 								<?php 
 
-								// loop through rows (sub repeater)
 								while( have_rows('sol_items') ): the_row();
 
-									// display each item as a list - with a class of completed ( if completed )
 									?>
 								<li>
-									<?php if(get_sub_field('item_title')): ?><h4><?php the_sub_field('item_title'); ?></h3><?php endif; ?>
+									<?php if(get_sub_field('item_title')): ?>
+									<?php
+
+									$post_object = get_sub_field('link');
+
+									if( $post_object ): 
+
+										$post = $post_object;
+										setup_postdata( $post ); 
+
+										?>
+									    	<a href="<?php the_permalink(); ?>"><h4><?php the_sub_field('item_title'); ?></h4></a>
+									    <?php wp_reset_postdata(); ?>
+									<?php endif; ?>
+									<?php endif; ?>
 									<?php if(get_sub_field('copy_title')): ?><p><?php the_sub_field('copy_title'); ?></p><?php endif; ?>
 								</li>
 								<?php endwhile; ?>
 								
-							<?php endif; //if( get_sub_field('items') ): ?>
+							<?php endif; ?>
 							</ul>
 						</div>	
 
@@ -385,19 +401,19 @@
 		<div class="cool-sep"></div>
 
 
+	<?php if($section_hero['button_link']) : ?>
 		<!-- Trigger/Open The Modal -->
-
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
-
 		  <!-- Modal content -->
 		  <div class="modal-content">
 		    <span class="close">&times;</span>
 		    <div class="videoWrapper">
-		    	<iframe src="https://player.vimeo.com/video/217907071" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    	<iframe src="<?php echo $section_hero['button_link']; ?>" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		    </div>
 		  </div>
-
 		</div>
+	<?php endif; ?>	
+
 <?php get_footer(); ?>
 

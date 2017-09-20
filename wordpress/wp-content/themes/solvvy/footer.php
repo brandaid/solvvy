@@ -1,14 +1,17 @@
 
 		<!-- BOX MAP -->
+	<?php $footerMap = get_field('footer_map', 'option') ?>		
 
+		<?php if($footerMap['map_title']){ ?>
 		<section class="box-map">
 			<div class="container">
-				<h2>Join The Thousands of Companies Using Solvvy</h2>
-				<p>Signing up is fast, free and easy. Call us today at (650) 246-9685.</p>
-				<a href="" class="button">Button</a>
-				<a href="" class="button button-secondary">Button</a>
+				<h2><?php echo $footerMap['map_title'] ?></h2>
+				<p><?php echo $footerMap['map_subtitle'] ?></p>
+				<?php if($footerMap['map_pink_button']){ ?><a href="<?php echo $footerMap['map_pink_button']['url']; ?>" target="<?php echo $footerMap['map_pink_button']['target']; ?>" class="button"><?php echo $footerMap['map_pink_button']['title']; ?></a><?php } ?>
+				<?php if($footerMap['map_purple_button']){ ?><a href="<?php echo $footerMap['map_purple_button']['url']; ?>" target="<?php echo $footerMap['map_purple_button']['target']; ?>" class="button button-secondary"><?php echo $footerMap['map_purple_button']['title']; ?></a><?php } ?>
 			</div>
 		</section>
+		<?php } ?>
 	</main>
 	<footer class="footer">
 
@@ -69,9 +72,9 @@
 				</ul>
 				<?php } ?>
 				<div class="social">
-					<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
-					<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
-					<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>
+					<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
+					<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
+					<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>
 				</div>
 			</div>
 			

@@ -22,6 +22,7 @@
 
 	<div class="cool-sep"></div>
 
+		<span id="panels"></span>
 		<section class="solution-for-industry tab-panels">
 			<div class="container">
 				
@@ -43,7 +44,7 @@
 									<?php $card_info = get_field('card_info'); ?>
 									<?php if($card_info){ ?>
 									<div class="tab-link" rel="panel-<?php the_ID() ?>">
-										<h4><i class="icon-whatsapp"></i><?php the_title(); ?></h4>
+										<h4><?php if($card_info['icon']){ ?><i class="<?php echo $card_info['icon'] ?>"><?php } ?></i><?php the_title(); ?></h4>
 										<p><?php echo $card_info['intro_paragraph']; ?></p>
 									</div>		
 									<?php } ?>

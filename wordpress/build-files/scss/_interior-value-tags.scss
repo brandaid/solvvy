@@ -47,6 +47,8 @@
 	color: $brand-secondary;
 	font-weight: 600;
 	font-size: 26px;
+	text-align: center;
+	padding: 0 10px;
 }
 .insights-animation .card:not(.active) {
 	transform: scale(0.8);
