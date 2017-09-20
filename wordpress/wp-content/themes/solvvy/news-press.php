@@ -17,7 +17,7 @@
 		<section class="hero-banner hero-banner-interior">
 			<div class="container">
 				<h1>News & Press Releases</h1>
-				<h3>Bacon ipsum dolor amet bacon tenderloin landjaeger, turkey short loin.</h3>
+				<h3>There's always something happening at Solvvy.  Learn how we are blazing new roads in Customer Experience! </h3>
 			</div>
 			<div class="waves"></div>
 			<div class="circles"></div>
@@ -82,7 +82,7 @@
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-gray-top.png" class="responsive block" alt="">
 		<section class="box-gray-waves">
 			<div class="container">
-				<h4 class="media-contact">Media Contact: <span>Person Name -</span> <a href="">yourname@solvvy.com</a></h4>
+				<h4 class="media-contact">Media Contact: <span>Kaan Ersun - VP Marketing -  </span> <a href="mailto:kaan@solvvy.com">kaan@solvvy.com</a></h4>
 				<div class="box-two-columns">
 					<div class="left-col">
 						<h2>News</h2>

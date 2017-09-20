@@ -9,7 +9,7 @@
 	top: -80px;
 	width: 110px;
 	text-align: center;
-	h4, p {
+	h4 {
 		margin: 0;
 		color: $brand-secondary;
 	}
@@ -18,7 +18,7 @@
 		font-weight: $font-thin;
 	}
 	p {
-		font-family: $font-semibold;
+		margin: 0;
 	}
 	span {
 		display: block;
@@ -123,7 +123,7 @@
 			font-size: 70px;
 		}
 		p {
-			font-size: 27px;
+			font-size: 17px;
 		}
 		span {
 			&:after {
@@ -168,7 +168,7 @@
 			font-size: 100px;
 		}
 		p {
-			font-size: 37px;
+			font-size: 25px;
 		}
 		span {
 			&:after {

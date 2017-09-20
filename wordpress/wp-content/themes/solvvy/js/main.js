@@ -1,3 +1,38 @@
+
+//SLIDER SOLUTIONS SUBPAGE
+
+(function() {
+  var $, card;
+  $ = jQuery;
+  (card = $.fn).redraw || (card.redraw = function() {
+      return $(this).each(function() {
+          return this.offsetHeight
+      })
+  });
+  $(function() {
+      return $(".insights-animation").each(function() {
+          var card;
+          card = $(this).find(".cards"); //define elements to rotate
+          card.children().eq(1).addClass('active'); // add class active to center element
+          return setInterval(function() {
+              var cardActive, cardCloned;
+              cardActive = card.find(".card.active");
+              cardActive.prev().addClass("active");
+              cardActive.removeClass("active"); // managing active state
+              cardCloned = card.find(".card:not(.cloned):last");
+              cardActive = cardCloned.clone();
+              card.prepend(cardActive);
+              card.removeClass("slide-in").redraw().addClass("slide-in");
+              cardCloned.addClass("cloned"); // clone element to make loop
+              return setTimeout(function() {
+                      return cardCloned.remove()
+                  },
+                  1000)
+          }, 4500) //set animation time
+      })
+  })
+}).call(this);
+
 $(function(){
 
   $('.tab-link').on('click', function() {
@@ -360,40 +395,6 @@ $(".link-author").click(function(){
 $(".link-author").mouseout(function() {
     $(this).siblings(".popup-author").removeClass("show-us");
 });
-
-//SLIDER SOLUTIONS SUBPAGE
-
-(function() {
-  var $, card;
-  $ = jQuery;
-  (card = $.fn).redraw || (card.redraw = function() {
-      return $(this).each(function() {
-          return this.offsetHeight
-      })
-  });
-  $(function() {
-      return $(".insights-animation").each(function() {
-          var card;
-          card = $(this).find(".cards"); //define elements to rotate
-          card.children().eq(1).addClass('active'); // add class active to center element
-          return setInterval(function() {
-              var cardActive, cardCloned;
-              cardActive = card.find(".card.active");
-              cardActive.prev().addClass("active");
-              cardActive.removeClass("active"); // managing active state
-              cardCloned = card.find(".card:not(.cloned):last");
-              cardActive = cardCloned.clone();
-              card.prepend(cardActive);
-              card.removeClass("slide-in").redraw().addClass("slide-in");
-              cardCloned.addClass("cloned"); // clone element to make loop
-              return setTimeout(function() {
-                      return cardCloned.remove()
-                  },
-                  1000)
-          }, 4500) //set animation time
-      })
-  })
-}).call(this);
 
 
 // SPHERES

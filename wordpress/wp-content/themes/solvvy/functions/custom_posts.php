@@ -182,4 +182,63 @@ function create_resources_taxonomies() {
     register_taxonomy( 'resource-types', array( 'resources_cards' ), $args );
 }
 
+// SOLUTIONS
+
+function create_post_type_solutions() {
+  register_post_type( 'solutions_cards',
+    array(
+      'labels' => array(
+        'name' => __( 'Solutions' ),
+        'singular_name' => __( 'Solution' ),
+        'all_items' => __( 'All Solutions' )
+      ),
+      'taxonomies' => array( 'solutions-types'),
+      'menu_icon' => 'dashicons-feedback',
+      'menu_position' => 5,
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('title', 'editor', 'thumbnail')
+    )
+  );
+}
+add_action( 'init', 'create_post_type_solutions' );
+
+
+add_action( 'admin_head', 'replace_solution_featured_image_meta_box', 100 );
+function replace_solution_featured_image_meta_box() {
+    remove_meta_box( 'postimagediv', 'solutions_cards', 'side' );
+    add_meta_box('postimagediv', __('Solution Icon'), 'post_thumbnail_meta_box', 'solutions_cards', 'side');
+}
+
+add_action( 'init', 'create_solutions_taxonomies', 0 );
+
+// create two taxonomies, genres and writers for the post type "book"
+function create_solutions_taxonomies() {
+    // Add new taxonomy, make it hierarchical (like categories)
+    $labels = array(
+        'name'              => _x( 'Solution type', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Solution type', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Types', 'textdomain' ),
+        'all_items'         => __( 'All Types', 'textdomain' ),
+        'parent_item'       => __( 'Parent Type', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Type:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Type', 'textdomain' ),
+        'update_item'       => __( 'Update Type', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Solution Type', 'textdomain' ),
+        'new_item_name'     => __( 'New Solution Type Name', 'textdomain' ),
+        'menu_name'         => __( 'Solution Type', 'textdomain' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'solutions-types' ),
+    );
+
+    register_taxonomy( 'solutions-types', array( 'solutions_cards' ), $args );
+}
+
 ?>

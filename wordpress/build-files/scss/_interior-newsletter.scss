@@ -13,7 +13,7 @@
 	}
 }
 
-.single {
+.single:not(.single-solutions_cards) {
 	.box-text-top {
 		text-align: left;
 		h1, h2, h3, h4, h5, h6 {
