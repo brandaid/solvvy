@@ -196,7 +196,8 @@ function create_post_type_solutions() {
       'menu_icon' => 'dashicons-feedback',
       'menu_position' => 5,
       'public' => true,
-      'has_archive' => true,
+      'rewrite' => array( 'slug' => '%solutions-types%', 'with_front' => false ),
+        'has_archive' => 'solutions',
       'supports' => array('title', 'editor', 'thumbnail')
     )
   );
@@ -235,10 +236,19 @@ function create_solutions_taxonomies() {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'solutions-types' ),
+        'rewrite'           => array( 'slug' => 'solutions_cards', 'with_front' => false ),
     );
 
     register_taxonomy( 'solutions-types', array( 'solutions_cards' ), $args );
 }
-
+    function wpa_show_permalinks( $post_link, $post ){
+        if ( is_object( $post ) && $post->post_type == 'solutions_cards' ){
+            $terms = wp_get_object_terms( $post->ID, 'solutions-types' );
+            if( $terms ){
+                return str_replace( '%solutions-types%' , $terms[0]->slug , $post_link );
+            }
+        }
+        return $post_link;
+    }
+    add_filter( 'post_type_link', 'wpa_show_permalinks', 1, 2 );
 ?>
