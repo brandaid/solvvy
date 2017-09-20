@@ -52,34 +52,6 @@
 						</div>
 					</li>
 					<?php endwhile;?>
-					<li>
-						<div class="box-stories">
-							<div class="content-brand">
-								<div class="content-img">
-									<img src="<?php bloginfo('template_url'); ?>/images/brand-cnbc.png" alt="" class="responsive">
-								</div>
-							</div>
-							<div class="content">
-								<h3><a href="">5 Ways to Rock Your Profile Shot Like a Boss</a></h3>
-								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								<a href="" class="button">Read More</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="box-stories">
-							<div class="content-brand">
-								<div class="content-img">
-									<img src="<?php bloginfo('template_url'); ?>/images/brand-techcrunch.png" alt="" class="responsive">
-								</div>
-							</div>
-							<div class="content">
-								<h3><a href="">Hottest Stars of Startups Flying Under the Radar</a></h3>
-								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								<a href="" class="button">Read More</a>
-							</div>
-						</div>
-					</li>
 				</ul>
 
 			</div>
