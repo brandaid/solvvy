@@ -138,7 +138,15 @@
 				elements : destArrBubb
 			});
 
-			scene.draw();
+			scene.update();
+			var tmpTimeout;
+			$(window).on('resize', function(){
+				clearTimeout(tmpTimeout);
+				tmpTimeout = setTimeout(function(){
+					scene.update();
+				},500)
+				
+			})
 		})(jQuery)
 
 		
