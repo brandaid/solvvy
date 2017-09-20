@@ -1,14 +1,17 @@
 
 		<!-- BOX MAP -->
+	<?php $footerMap = get_field('footer_map', 'option') ?>		
 
+		<?php if($footerMap['map_title']){ ?>
 		<section class="box-map">
 			<div class="container">
-				<h2>Join The Thousands of Companies Using Solvvy</h2>
-				<p>Signing up is fast, free and easy. Call us today at (650) 246-9685.</p>
-				<a href="" class="button">Button</a>
-				<a href="" class="button button-secondary">Button</a>
+				<h2><?php echo $footerMap['map_title'] ?></h2>
+				<p><?php echo $footerMap['map_subtitle'] ?></p>
+				<?php if($footerMap['map_pink_button']){ ?><a href="<?php echo $footerMap['map_pink_button']['url']; ?>" target="<?php echo $footerMap['map_pink_button']['target']; ?>" class="button"><?php echo $footerMap['map_pink_button']['title']; ?></a><?php } ?>
+				<?php if($footerMap['map_purple_button']){ ?><a href="<?php echo $footerMap['map_purple_button']['url']; ?>" target="<?php echo $footerMap['map_purple_button']['target']; ?>" class="button button-secondary"><?php echo $footerMap['map_purple_button']['title']; ?></a><?php } ?>
 			</div>
 		</section>
+		<?php } ?>
 	</main>
 	<footer class="footer">
 
@@ -135,7 +138,15 @@
 				elements : destArrBubb
 			});
 
-			scene.draw();
+			scene.update();
+			var tmpTimeout;
+			$(window).on('resize', function(){
+				clearTimeout(tmpTimeout);
+				tmpTimeout = setTimeout(function(){
+					scene.update();
+				},500)
+				
+			})
 		})(jQuery)
 
 		

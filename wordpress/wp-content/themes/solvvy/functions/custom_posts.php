@@ -240,5 +240,4 @@ function create_solutions_taxonomies() {
 
     register_taxonomy( 'solutions-types', array( 'solutions_cards' ), $args );
 }
-
 ?>
