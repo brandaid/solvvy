@@ -42,33 +42,40 @@
 				<h4>Get in Touch</h4>
 				<?php wp_nav_menu( array( 'theme_location' => 'fourth-menu-footer' ) ); ?>
 			</div>
-			<div class="col col-5" style="background: yellow;">
-				<div>custom field</div>
+			
+			<?php $footerButtons = get_field('footer_buttons', 'option') ?>		
+
+			<?php if($footerButtons){ ?>
+			<div class="col col-5">
 				<div>
-					<a href="" class="button">LIVE DEMO</a>
-					<a href="" class="button white">PRICING</a>
+					<?php if($footerButtons['pink_button']){ ?><a href="<?php echo $footerButtons['pink_button']['url']; ?>" target="<?php echo $footerButtons['pink_button']['target']; ?>" class="button"><?php echo $footerButtons['pink_button']['title']; ?></a><?php } ?>
+					<?php if($footerButtons['white_button']){ ?><a href="<?php echo $footerButtons['white_button']['url']; ?>" target="<?php echo $footerButtons['white_button']['target']; ?>" class="button white"><?php echo $footerButtons['white_button']['title']; ?></a><?php } ?>
 				</div>
 			</div>
+			<?php } ?>
 			<div class="col col-6"></div>
+			<?php $companyInfo = get_field('company_info', 'option');
+				  $socialMedia = get_field('social_media', 'option');
+			 ?>
+			
 			<div class="col col-7 contact" style="background: yellow;">
+				<?php if($companyInfo['office_address_line_1']){ ?>
 				<h4>Our Office</h4>
 				<div>custom field</div>
 				<ul>
-					<li>425 Sherman Ave.</li>
-					<li>Palo Alto, CA 94301</li>
-					<li>(650) 246-9685</li>
+					<li><?php echo $companyInfo['office_address_line_1'] ?></li>
+					<li><?php echo $companyInfo['office_address_line_2'] ?></li>
+					<li><?php echo $companyInfo['office_phone_number'] ?></li>
 					<li><a href="mailto:info@solvvy.com">info@solvvy.com</a></li>
 				</ul>
+				<?php } ?>
 				<div class="social" style="background: yellow;">
-					<?php/* if( !empty(get_field('facebook', 'option')) ) : ?>
-						<li><a href="<?php the_field('facebook', 'option')?>" class="fa fa-facebook" target="blank"></a></li>
-					<?php endif; */?>
-
-					<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
+					<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
+					<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>
 				</div>
 			</div>
+			
 		</div>
 
 		<div class="footer-end">
