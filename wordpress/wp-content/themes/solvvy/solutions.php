@@ -22,6 +22,7 @@
 
 	<div class="cool-sep"></div>
 
+		<span id="panels"></span>
 		<section class="solution-for-industry tab-panels">
 			<div class="container">
 				

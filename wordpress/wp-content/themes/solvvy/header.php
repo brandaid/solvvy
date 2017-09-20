@@ -72,11 +72,11 @@
 						if ( $q->have_posts() ) {
 							while ( $q->have_posts() ) {
 								$q->the_post();
-								$size = 'thumbnail';
+								$size = 'medium';
 								?>
 									<div style="display: none;">
 										<div id="get-post">
-											<h4>LASTEST REPORT</h4>
+											<h4>LATEST REPORT</h4>
 											<p>
 												<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 													<?php the_title(); ?>
