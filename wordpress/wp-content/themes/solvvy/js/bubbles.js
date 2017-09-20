@@ -13,8 +13,13 @@ var getDistance = function( point1, point2 ) {
 var Bubble = function(opts){
 
 	var self = this;
+
 	this.bkbubb = opts.bk;
+	this.bkimg = opts.bkimg;
 	this.percent = opts.percent;
+	this.interest = opts.inerest;
+	this.linkedin = opts.linkedin;
+	this.twitter = opts.twitter;
 	this.title = opts.title;
 	this.position = {
 		x: opts.position.x,
@@ -31,13 +36,31 @@ var Bubble = function(opts){
 
 	this.render = function(container){
 		var element = $('<div></div>');
+		var bubbleType;
+		(self.bkimg) ? bubbleType = 'people' : bubbleType = 'metric';
+		(self.interest)? self.interest = '<span>'+self.interest+'</span>' : self.interest = '';
+		(self.twitter)? self.twitter = '<a href="'+self.twitter+'"><i class="icon-twitter"></i></a>' : self.twitter = '';
+		(self.linkedin)? self.linkedin = '<a href="'+self.linkedin+'"><i class="icon-linkedin"></i></a>' : self.linkedin = '';
 		element.addClass('bubbles');
 		element.css('top',self.position.y + "px");
 		element.css('left',self.position.x + "px");
 		element.css('width',self.size + "px");
 		element.css('height',self.size + "px");
-		element.addClass('bubbles');
-		element.html('<div style="background: '+self.bkbubb+'"><div><div><div><span class="percent">'+this.percent+'</span><span class="description">'+this.title+'</span></div></div></div> </div>');
+		element.html('<div class="'+bubbleType+'" style="background: '+
+			self.bkbubb+
+			';background-image: url('+
+			self.bkimg+
+			');background-size: cover;"><div><div><div><span class="percent">'+
+			self.percent+
+			'</span>'+
+			self.interest+
+			'<span class="description">'+
+			self.title+
+			'</span>'+
+			'<span>'+
+			self.twitter+
+			self.linkedin+
+			'</span></div></div></div></div>');
 		container.append(element);
 	}
 
@@ -200,40 +223,25 @@ var BubbleScene = function(opts){
 		this.calculateSizes();
 		this.calculatePositions();
 		
-		//var testLine = new Nodeline({
-		//	start : this.bubbles[0].center(),
-		//	end : this.bubbles[1].center(),
-		//	width : 4
-		//});
-		//testLine.render(this._container);
-		 
 		this.segments.segments.forEach(function(current_segment){
 			//current_segment.render(self._container);
 			if(current_segment.element === true){
 				self.segments.segments.forEach(function(other_segment){
 					if(other_segment.element == true){
 						if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
-							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
-								if(!(other_segment.c == current_segment.c && other_segment.r == current_segment.r)){
-									var connector = new Nodeline({
-										start : current_segment.bubble.center(),
-										end : other_segment.bubble.center(),
-										width : 2
-									});
-									var valid = true;
-									self.connectorsAll.forEach(function(other_connector){
-
-										if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
-											//console.log(current_connector.start.x ,'==', other_connector.end.x ,'&&', current_connector.start.y ,'==', other_connector.end.y)
-											//if(other_connector.start.x == current_connector.end.x && other_connector.start.y == current_connector.end.y){
-												valid = false;
-											//}
-										}
-									});
-									if(valid){self.connectorsAll.push(connector);};
-		
-								}
-								
+							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){								
+								var connector = new Nodeline({
+									start : current_segment.bubble.center(),
+									end : other_segment.bubble.center(),
+									width : 2
+								});
+								var valid = true;
+								self.connectorsAll.forEach(function(other_connector){
+									if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
+											valid = false;									
+									}
+								});
+								if(valid){self.connectorsAll.push(connector);};						
 							}
 						}
 					}
