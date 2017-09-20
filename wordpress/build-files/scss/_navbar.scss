@@ -477,7 +477,7 @@
 					text-transform: uppercase;
 					font-weight: bold;
 					&:hover{
-						color: $brand-tertiary;
+						color: darken($brand-tertiary, 20%);
 					}
 				}
 				li li a{
@@ -485,7 +485,7 @@
 					padding: 7px 0;
 					font-weight: normal;
 					&:hover{
-						color: darken($brand-primary, 10%);
+						color: darken($brand-primary, 15%);
 					}
 				}
 
