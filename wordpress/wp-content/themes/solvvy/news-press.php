@@ -47,7 +47,7 @@
 							<div class="content">
 								<h3><a href="<?php if (get_field('featured_story_button')['url']): ?><?php echo get_field('featured_story_button')['url'] ?><?php endif ?>"><?php the_title(); ?></a></h3>
 								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php the_date(); ?></span></p>
-								<?php if (get_field('featured_story_button')['title']): ?><a href="<?php echo get_field('featured_story_button')['url'] ?> ?>" target="<?php echo get_field('featured_story_button')['target'] ?>" class="button"><?php echo get_field('featured_story_button')['title'] ?></a><?php endif ?>
+								<?php if (get_field('featured_story_button')['title']): ?><a href="<?php echo get_field('featured_story_button')['url'] ?>" target="<?php echo get_field('featured_story_button')['target'] ?>" class="button"><?php echo get_field('featured_story_button')['title'] ?></a><?php endif ?>
 							</div>
 						</div>
 					</li>
