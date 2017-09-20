@@ -60,7 +60,7 @@
 							$link = $card_info['card_button'];?>
 							<?php if($card_info){ ?>
 							<div class="panel <?php echo ($i==0)?'active':''; ?>" id="panel-<?php the_ID() ?>">
-								<h4><?php echo $card_info['card_title']; ?></h4>
+								<h4 class="panel-business"><?php echo $card_info['card_title']; ?></h4>
 								<p><?php echo $card_info['card_copy']; ?></p>
 								<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button-tn"><?php echo $link['title']; ?></a>	<?php } ?>
 							</div>
