@@ -6,6 +6,7 @@
 /* circles library */
 .bubbles{
     position: absolute;
+    z-index: 1;
 }
 .bubbles > div {
     overflow:hidden;
@@ -74,4 +75,8 @@
     height: 55px;
     white-space: normal;
     text-align: center;
+}
+.lineconnector{
+    position: absolute;
+    z-index: 0;
 }
