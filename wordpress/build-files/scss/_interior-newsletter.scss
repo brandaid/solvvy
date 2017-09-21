@@ -14,10 +14,12 @@
 }
 
 .single:not(.single-solutions_cards) {
-	a {
-		color: $brand-primary;
-		&:hover {
-			color: $brand-secondary;
+	.content{
+		a {
+			color: $brand-primary;
+			&:hover {
+				color: $brand-secondary;
+			}
 		}
 	}
 	.box-text-top {
