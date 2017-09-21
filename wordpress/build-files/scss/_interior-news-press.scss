@@ -131,12 +131,14 @@ p.data-article {
 }
 
 .single-news, .single-press {
-	img.responsive {
-	    width: auto;
-	    max-width: 100%;
-	    margin: 20px auto;
-	    text-align: center;
-	    display: block;
+	.box-text-top{
+		img.responsive {
+		    width: auto;
+		    max-width: 100%;
+		    margin: 20px auto;
+		    text-align: center;
+		    display: block;
+		}
 	}
 }
 
