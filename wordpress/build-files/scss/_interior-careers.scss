@@ -2,6 +2,11 @@
 	@extend .box-partners;
 	padding-top: 190px;
 	padding-bottom: 260px;
+	p {
+		color: #FFF;
+		text-transform: uppercase;
+		font-size: 1.1em;
+	}
 }
 .slider-interior {
 	margin: 60px 0px;
@@ -43,18 +48,16 @@
 }
 .box-icon-text {
 	position: relative;
-	padding-left: 60px;
 	@include border-box;
 	margin-top: 30px;
 	i {
-		position: absolute;
-		left: -10px;
-		font-size: 40px;
+		position: relative;
+		font-size: 48px;
 		color: $brand-primary;
-		top: -5px;
+		top: -15px;
 	}
 	h4, p {
-		text-align: left;
+		text-align: center;
 		font-size: 18px;
 	}
 	h4 {
@@ -63,17 +66,17 @@
 		color: $brand-primary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(7) > div {
 	i, h4 {
 		color: #9155aa;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(5) > div {
 	i, h4 {
 		color: $brand-secondary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(6) > div {
 	i, h4 {
 		color: #bdb2f2;
 	}
