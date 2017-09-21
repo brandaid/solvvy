@@ -11,27 +11,32 @@
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
-
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>News & Press Releases</h1>
-				<h3>There's always something happening at Solvvy.  Learn how we are blazing new roads in Customer Experience! </h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
-		
+	<?php
+	$args = array(
+				'posts_per_page'	=> -1,
+				'post_type'			=> array('news', 'press'),
+				'meta_key'		=> 'featured_story',
+				'meta_value'	=> '1'
+	);
+    $loop = new WP_Query( $args );
+    if ( $loop->have_posts() ) :?>
+       
+
+  
 
 		<section class="box-text-top container-normal pink-ball title-to-left">
 			<div class="container">
 				<h2>Featured Stories</h2>
 
 				<ul class="list-boxes-three three-ipad">
+				<?php  while ( $loop->have_posts() ) : $loop->the_post(); 
+					  
+				?>
+
 					<li>
 						<div class="box-stories">
 							<div class="content-brand">
@@ -40,49 +45,26 @@
 								</div>
 							</div>
 							<div class="content">
-								<h3><a href="">10 Ways Origami Reduced Stress for Solvvy</a></h3>
-								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								<a href="" class="button">Read More</a>
+								<h3><a href="<?php if (get_field('featured_story_button')['url']): ?><?php echo get_field('featured_story_button')['url'] ?><?php endif ?>"><?php the_title(); ?></a></h3>
+								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php the_date(); ?></span></p>
+								<?php if (get_field('featured_story_button')['title']): ?><a href="<?php echo get_field('featured_story_button')['url'] ?>" target="<?php echo get_field('featured_story_button')['target'] ?>" class="button"><?php echo get_field('featured_story_button')['title'] ?></a><?php endif ?>
 							</div>
 						</div>
 					</li>
-					<li>
-						<div class="box-stories">
-							<div class="content-brand">
-								<div class="content-img">
-									<img src="<?php bloginfo('template_url'); ?>/images/brand-cnbc.png" alt="" class="responsive">
-								</div>
-							</div>
-							<div class="content">
-								<h3><a href="">5 Ways to Rock Your Profile Shot Like a Boss</a></h3>
-								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								<a href="" class="button">Read More</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="box-stories">
-							<div class="content-brand">
-								<div class="content-img">
-									<img src="<?php bloginfo('template_url'); ?>/images/brand-techcrunch.png" alt="" class="responsive">
-								</div>
-							</div>
-							<div class="content">
-								<h3><a href="">Hottest Stars of Startups Flying Under the Radar</a></h3>
-								<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								<a href="" class="button">Read More</a>
-							</div>
-						</div>
-					</li>
+					<?php endwhile;?>
 				</ul>
 
 			</div>
 		</section>
-		
+	     <?php  endif;
+		    wp_reset_postdata();
+		?>	
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-gray-top.png" class="responsive block" alt="">
 		<section class="box-gray-waves">
 			<div class="container">
-				<h4 class="media-contact">Media Contact: <span>Kaan Ersun - VP Marketing -  </span> <a href="mailto:kaan@solvvy.com">kaan@solvvy.com</a></h4>
+				<?php $mediaContact = get_field('media_contact'); ?>
+				<?php if($mediaContact){ ?>
+				<h4 class="media-contact">Media Contact: <span><?php echo $mediaContact['name'] ?> <?php if($mediaContact['position']){ ?>- <?php echo $mediaContact['position'] ?> <?php } ?>-  </span> <a href="mailto:<?php echo $mediaContact['contact_email'] ?>"><?php echo $mediaContact['contact_email'] ?></a></h4><?php } ?>
 				<div class="box-two-columns">
 					<div class="left-col">
 						<h2>News</h2>

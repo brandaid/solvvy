@@ -19,12 +19,16 @@
 
 				<?php $section_1 = get_field('section_1') ?>
 		<?php if($section_1){ ?>
-		<section class="box-text-top pink-ball align-center">
-			<div class="container">
-				<h2 class="margin-bottom-90"><?php echo $section_1['section_1_title'];  ?></h2>
+		<section class="box-text-top pink-ball">
+				<div class="software-container">
+				<div class="col-left">
+				<h2><?php echo $section_1['section_1_title'];  ?></h2>
 				<p><?php echo $section_1['section_1_copy'];  ?></p>
-				<img src="<?php echo $section_1['section_1_image'];  ?>" class="responsive" alt="">
-			</div>
+				</div>
+				<div class="col-right">
+				<img src="<?php echo $section_1['section_1_image'];  ?>" class="responsive" alt="">	
+				</div>
+				</div>
 		</section>
 		<?php } ?>
 
@@ -84,7 +88,7 @@
 					        
 					        ?>
 
-						<div class="tab-link-without-icon" data-value="<?php the_sub_field('data_id'); ?>">
+						<div class="tab-link-without-icon <?php the_sub_field('tab_class'); ?>" data-value="<?php the_sub_field('data_id'); ?>">
 							<h4><?php the_sub_field('title'); ?></h4>
 							<p><?php the_sub_field('copy'); ?></p>
 						</div>

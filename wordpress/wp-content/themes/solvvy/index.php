@@ -57,19 +57,20 @@
 							<?php endif; ?>
 							<?php endif; ?>
 						 
-					<?php endwhile; ?>
+					
 			</div>
 			<div class="col-right">
 				<div class="mackbook-home">
 					<div class="content-mac">
-						<img src="<?php bloginfo('template_url'); ?>/images/screen-home.gif" class="screen" alt="">
+						<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
+						
 						<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
 					</div>
 				</div>
 				
 			</div>
 		</section>
-
+					<?php endwhile; ?>
 		<!-- INDUSTRY NEWS -->
 		
 		<section class="box-gray industry-news">
@@ -351,18 +352,30 @@
 								
 								<?php 
 
-								// loop through rows (sub repeater)
 								while( have_rows('sol_items') ): the_row();
 
-									// display each item as a list - with a class of completed ( if completed )
 									?>
 								<li>
-									<?php if(get_sub_field('item_title')): ?><h4><?php the_sub_field('item_title'); ?></h3><?php endif; ?>
+									<?php if(get_sub_field('item_title')): ?>
+									<?php
+
+									$post_object = get_sub_field('link');
+
+									if( $post_object ): 
+
+										$post = $post_object;
+										setup_postdata( $post ); 
+
+										?>
+									    	<a href="<?php the_permalink(); ?>"><h4><?php the_sub_field('item_title'); ?></h4></a>
+									    <?php wp_reset_postdata(); ?>
+									<?php endif; ?>
+									<?php endif; ?>
 									<?php if(get_sub_field('copy_title')): ?><p><?php the_sub_field('copy_title'); ?></p><?php endif; ?>
 								</li>
 								<?php endwhile; ?>
 								
-							<?php endif; //if( get_sub_field('items') ): ?>
+							<?php endif; ?>
 							</ul>
 						</div>	
 

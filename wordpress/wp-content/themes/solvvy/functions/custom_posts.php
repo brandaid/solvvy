@@ -197,18 +197,11 @@ function create_post_type_solutions() {
       'menu_position' => 5,
       'public' => true,
       'has_archive' => true,
-      'supports' => array('title', 'editor', 'thumbnail')
+      'supports' => array('title', 'editor')
     )
   );
 }
 add_action( 'init', 'create_post_type_solutions' );
-
-
-add_action( 'admin_head', 'replace_solution_featured_image_meta_box', 100 );
-function replace_solution_featured_image_meta_box() {
-    remove_meta_box( 'postimagediv', 'solutions_cards', 'side' );
-    add_meta_box('postimagediv', __('Solution Icon'), 'post_thumbnail_meta_box', 'solutions_cards', 'side');
-}
 
 add_action( 'init', 'create_solutions_taxonomies', 0 );
 
@@ -240,4 +233,95 @@ function create_solutions_taxonomies() {
 
     register_taxonomy( 'solutions-types', array( 'solutions_cards' ), $args );
 }
+
+// NEWS
+
+function create_post_type_news() {
+  register_post_type( 'news',
+    array(
+      'labels' => array(
+        'name' => __( 'News' ),
+        'singular_name' => __( 'News' ),
+        'all_items' => __( 'All News' )
+      ),
+      'taxonomies' => array( 'news-types'),
+      'menu_icon' => 'dashicons-media-document',
+      'menu_position' => 6,
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('title', 'editor')
+    )
+  );
+}
+add_action( 'init', 'create_post_type_news' );
+
+add_action( 'init', 'create_news_taxonomies', 0 );
+
+function create_news_taxonomies() {
+    $labels = array(
+        'name' => _x( 'Categories News', 'taxonomy general name' ),
+        'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search for category' ),
+        'all_items' => __( 'All categories' ),
+        'parent_item' => __( 'Parent category' ),
+        'parent_item_colon' => __( 'Parent category:' ),
+        'edit_item' => __( 'Edit category' ),
+        'update_item' => __( 'Update category' ),
+        'add_new_item' => __( 'Add new category' ),
+        'new_item_name' => __( 'Name of the new category' ),
+    );
+    register_taxonomy( 'category-news', array( 'news' ), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'category-news' ),
+    ));
+}
+
+// PRESS
+
+function create_post_type_press() {
+  register_post_type( 'press',
+    array(
+      'labels' => array(
+        'name' => __( 'Press' ),
+        'singular_name' => __( 'Press' ),
+        'all_items' => __( 'All Press' )
+      ),
+      'taxonomies' => array( 'press-types'),
+      'menu_icon' => 'dashicons-media-document',
+      'menu_position' => 7,
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('title', 'editor')
+    )
+  );
+}
+add_action( 'init', 'create_post_type_press' );
+
+add_action( 'init', 'create_press_taxonomies', 0 );
+
+function create_press_taxonomies() {
+    $labels = array(
+        'name' => _x( 'Categories Press', 'taxonomy general name' ),
+        'singular_name' => _x( 'Category', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search for category' ),
+        'all_items' => __( 'All categories' ),
+        'parent_item' => __( 'Parent category' ),
+        'parent_item_colon' => __( 'Parent category:' ),
+        'edit_item' => __( 'Edit category' ),
+        'update_item' => __( 'Update category' ),
+        'add_new_item' => __( 'Add new category' ),
+        'new_item_name' => __( 'Name of the new category' ),
+    );
+    register_taxonomy( 'category-press', array( 'press' ), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'category-press' ),
+    ));
+}
+
 ?>

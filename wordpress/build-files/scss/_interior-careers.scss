@@ -31,6 +31,7 @@
 	}
 	a.big-link {
 		font-size: 20px;
+		color: #5d0e8b;
 		line-height: 1.5em;
 		&:hover {
 			color: $brand-primary;
@@ -42,18 +43,16 @@
 }
 .box-icon-text {
 	position: relative;
-	padding-left: 60px;
 	@include border-box;
 	margin-top: 30px;
 	i {
-		position: absolute;
-		left: -10px;
+		position: relative;
 		font-size: 40px;
 		color: $brand-primary;
-		top: -5px;
+		top: -15px;
 	}
 	h4, p {
-		text-align: left;
+		text-align: center;
 		font-size: 18px;
 	}
 	h4 {
@@ -62,17 +61,17 @@
 		color: $brand-primary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(7) > div {
 	i, h4 {
 		color: #9155aa;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(5) > div {
 	i, h4 {
 		color: $brand-secondary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(6) > div {
 	i, h4 {
 		color: #bdb2f2;
 	}
