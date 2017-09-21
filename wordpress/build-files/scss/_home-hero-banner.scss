@@ -46,6 +46,15 @@
 		font-size: 24px;
 		margin-bottom: 55px;
 	}
+
+
+	// 1200px
+	@media all and (min-width: $screen-desktop) {
+		&.hero-banner-interior {
+			padding-top: 110px;
+			padding-bottom: 180px;
+		}
+	}
 }
 
 .waves {

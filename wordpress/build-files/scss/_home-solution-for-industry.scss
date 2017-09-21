@@ -208,18 +208,31 @@
 		}
 	}
 
-//PAGE: FOR YOUR INDUSTRY
-body.page-id-923{
-	.tab-link h4{
-		color: $brand-tertiary;
+	//PAGE: FOR YOUR INDUSTRY
+	body.page-id-923{
+		.tab-link h4{
+			color: $brand-tertiary;
+		}
+		.panel h4{
+			color: $brand-tertiary;
+		}
+		.panel{
+	    	background-image: url(images/waves-gray.png);
+		}
 	}
-	.panel h4{
-		color: $brand-tertiary;
+
+	//PAGE: FOR YOUR BUSINESS TYPE
+	body.page-id-909{
+		.tab-link h4{
+			color: $brand-secondary;
+		}
+		.panel h4{
+			color: $brand-secondary;
+		}
+		.panel{
+	    	background-image: url(images/waves-blue.png);
+		}
 	}
-	.panel{
-    	background-image: url(images/waves-gray.png);
-	}
-}
 
 
 }

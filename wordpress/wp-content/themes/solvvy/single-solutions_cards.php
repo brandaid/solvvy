@@ -45,7 +45,11 @@
 				<div class="col-info">
 					<h3><?php echo $valueSection['value_driver_section_title'] ?></h3>
 					<p><?php echo $valueSection['value_driver_section_copy'] ?> </p>
-					<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>	<?php } ?>
+					<?php if($link){ ?>
+						<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button">
+							<?php echo $valueSection['value_driver_section_button_text']; ?>
+						</a>
+					<?php } ?>
 				</div>
 				<div class="col-slider">
 					<?php if($valueSection['value_driver_section_labels']) { ?>
