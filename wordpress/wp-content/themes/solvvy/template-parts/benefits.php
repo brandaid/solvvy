@@ -8,7 +8,7 @@
 				<p><?php echo $benefits['sectin_benefits_copy']; ?></p>
 
 				<?php if($benefits['section_benefits_features']){ ?>
-				<ul class="list-boxes-four align-left">
+				<ul class="list-boxes-two align-left">
 					<?php forEach($benefits['section_benefits_features'] as $single_feature){ ?>
 					<li>
 						<div class="box-icon-text">
