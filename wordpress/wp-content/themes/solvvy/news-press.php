@@ -42,7 +42,7 @@
 							</div>
 							<div class="content">
 								<h3><a href="<?php if (get_field('featured_story_button')['url']): ?><?php echo get_field('featured_story_button')['url'] ?><?php else : ?><?php the_permalink() ?><?php endif ?>"><?php the_title(); ?></a></h3>
-								<p class="data-article"><?php if(get_field('source_name'): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php the_date(); ?></span></p>
+								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php echo get_the_date(); ?></span></p>
 								<?php if( $link ): ?>
 									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
 								<?php else: ?>
