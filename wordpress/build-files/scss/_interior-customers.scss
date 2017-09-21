@@ -7,6 +7,9 @@
 	}
 }
 
+.casestudy h3 a{
+	color: $brand-secondary;
+}
 .wave-study,
 .brand-absolute {
 	position: absolute;
@@ -88,15 +91,18 @@
 
 // 992px
 @media all and (min-width: $screen-landscape) {
+	.casestudy{
+		min-height: 358px;
+	}
 	.box-case {
 		display: table;
-		vertical-align: middle;
+		vertical-align: top;
 		width: 100%;
 		max-width: 100%;
 		figure,
 		.content {
 			display: table-cell;
-			vertical-align: middle;
+			vertical-align: top;
 			width: 45%;
 		}
 		.content {
