@@ -24,11 +24,11 @@
 
 								<!-- USE FILL ATRIBUTTE FOR CHANGE THE COLOR. SEE JEREMY COMMENTS HERE: https://brandaid.basecamphq.com/projects/13941570-solvvy-website-internal/posts/103319255/comments -->
 
-								<svg id="Layer_1" class="wave-study" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.33 138.75"><title>wave-top</title><path d="M580.79,161.82V34.69C448.9,14.75,312.42,15.39,166,77.74l-.55,84.08Z" transform="translate(-165.46 -23.07)" style="fill:<?php echo $single_case['case_of_study_background_1'] ?>"/></svg>
+								<svg id="Layer_1" class="wave-study" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.33 138.75"><title>wave-top</title><path d="M580.79,161.82V34.69C448.9,14.75,312.42,15.39,166,77.74l-.55,84.08Z" transform="translate(-165.46 -23.07)" style="fill:<?php echo $single_case['case_of_study_background_'] ?>"/></svg>
 
 								<!-- USE FILL ATRIBUTTE FOR CHANGE THE COLOR. SEE JEREMY COMMENTS HERE: https://brandaid.basecamphq.com/projects/13941570-solvvy-website-internal/posts/103319255/comments -->
 
-								<svg id="Layer_1" class="wave-study backend" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.91 238.96"><title>wave</title><path d="M1800,6.74c-137.86-19.91-297.31,20.47-456.91,52.37v181.3H1800Z" transform="translate(-1343.09 -1.45)" style="fill:<?php echo $single_case['case_of_study_background_2'] ?>;opacity:0.3499999940395355;isolation:isolate"/></svg>
+								<svg id="Layer_1" class="wave-study backend" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.91 238.96"><title>wave</title><path d="M1800,6.74c-137.86-19.91-297.31,20.47-456.91,52.37v181.3H1800Z" transform="translate(-1343.09 -1.45)" style="fill:<?php echo $single_case['case_of_study_background_'] ?>;opacity:0.3499999940395355;isolation:isolate"/></svg>
 								<?php
 									$attachment_id = $single_case['case_of_study_image'];
 									$size = "case_study";
