@@ -123,12 +123,12 @@
 					<svg class="waves-on-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1657 134.52"><title>wave-top</title><path d="M1657,173V92c-222.29,15.82-453.31,37.81-652.11,5.85C275.33-19.45,191.35,69.61,0,90.44v79.3L121.44,173Z" transform="translate(0 -38.45)" style="fill:#bdb2f2"/><path d="M1657,173V44.1c-183.6,31.36-380.1,76.73-532.61,88.19C752,160.27,403.57,4.84,0,64.52V173Z" transform="translate(0 -38.45)" style="fill:#725ab4"/></svg>
 					<?php } ?>
 
-
-				</div>
 				
+				</div>
 				<?php endwhile; wp_reset_query(); ?>
 
 			</div>
+
 		</section>
 		
 		<div class="cool-sep"></div>
