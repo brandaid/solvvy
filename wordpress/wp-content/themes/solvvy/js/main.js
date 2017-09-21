@@ -114,21 +114,10 @@ $(document).ready(function() {
 
 
 	$('.owl-navbars').owlCarousel({
-	    loop:true,
+	    loop:false,
 	    margin:10,
 	    navText: "",
 	    nav:true,
-	    responsive:{
-	        0:{
-	            items:5
-	        },
-	        600:{
-	            items:5
-	        },
-	        1000:{
-	            items:5
-	        }
-	    }
 	});
 
 	$('.owl-careers').owlCarousel({
