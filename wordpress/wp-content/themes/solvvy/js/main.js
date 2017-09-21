@@ -184,7 +184,7 @@ $(document).ready(function() {
 	        $("#tab3").delay("100").fadeOut();
 
 	        $(this).addClass('active');
-	        $("#tab2, #tab3").removeClass('active');
+	        $(".tab-industry, .tab-business").removeClass('active');
 	    };
 	    if($(this).data("value") === "tab2"){
 	        $("#tab1").delay("100").fadeOut();
@@ -192,7 +192,7 @@ $(document).ready(function() {
 	        $("#tab3").delay("100").fadeOut();
 
 	        $(this).addClass('active');
-	        $("#tab1, #tab3").removeClass('active');
+	        $(".tab-industry, .tab-role").removeClass('active');
 	    };
 	    if($(this).data("value") === "tab3"){
 	        $("#tab1").delay("100").fadeOut();
@@ -200,7 +200,7 @@ $(document).ready(function() {
 	        $("#tab3").delay("500").fadeIn();
 
 	        $(this).addClass('active');
-	        $("#tab2, #tab1").removeClass('active');
+	        $(".tab-business, .tab-role").removeClass('active');
 	    };
 	});
 
