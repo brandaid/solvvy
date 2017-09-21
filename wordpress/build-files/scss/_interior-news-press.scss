@@ -130,6 +130,16 @@ p.data-article {
 	}
 }
 
+.single-news, .single-press {
+	img.responsive {
+	    width: auto;
+	    max-width: 100%;
+	    margin: 20px auto;
+	    text-align: center;
+	    display: block;
+	}
+}
+
 // 992px
 @media all and (min-width: $screen-landscape) {
 	.box-stories {
