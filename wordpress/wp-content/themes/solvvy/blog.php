@@ -139,7 +139,7 @@
 		<div class="blue-box-waves">
 			<div class="container">
 				<div class="image">
-					<img src="<?php echo $section_1['image'];  ?>" class="responsive" alt="">
+					<img src="<?php the_sub_field('image'); ?>" class="responsive" alt="">
 				</div>
 				<div class="info">
 					<h2><?php the_sub_field('title'); ?></h2>
