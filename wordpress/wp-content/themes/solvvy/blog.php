@@ -127,9 +127,9 @@
 				</div>
 				<?php $postID = get_the_ID(); ?>
 				
-				<?php if( have_rows('blue_box', 474) ):
-					while( have_rows('blue_box', 474) ): the_row();
-					$afterPost = get_sub_field('under_post', 474); 
+				<?php if( have_rows('blue_box', 517) ):
+					while( have_rows('blue_box', 517) ): the_row();
+					$afterPost = get_sub_field('under_post', 517); 
 						if( $afterPost ): 
 							$post = $afterPost;
 							setup_postdata( $post );
