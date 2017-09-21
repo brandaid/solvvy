@@ -144,7 +144,7 @@
 				<div class="info">
 					<h2><?php the_sub_field('title'); ?></h2>
 					<p><?php the_sub_field('copy'); ?></p>
-					<a class="button-tn" href="<?php the_sub_field('link_button'); ?>"><?php the_sub_field('text_button'); ?></a>
+					<a class="button-tn" href="<?php the_sub_field('link_button'); ?>" target="_blank"><?php the_sub_field('text_button'); ?></a>
 				</div>
 			</div>
 		</div>
