@@ -108,7 +108,7 @@
 	h4 {
 		font-family: $font-light;
 		color: $brand-tertiary;
-		line-height: 40px;
+		line-height: 50px;
 	}
 }
 
@@ -156,14 +156,19 @@
     pointer-events: none !important;
     text-align: left;
 }
-.content{
-	h4, a{
-		font-size: 25px !important;
+.slider-info{
+	.content{
+		h4, a{
+			font-size: 25px !important;
+		}
+		p{
+			font-size: 16px !important;
+			line-height: 24px;
+		}
 	}
-	p{
-		font-size: 16px !important;
-		line-height: 24px;
-	}
+}
+span.sgnature {
+    font-size: 25px;
 }
 
 
@@ -325,7 +330,7 @@
 			padding: 0px 40px 40px 50px;
 		}
 		h4 {
-			font-size: 30px;
+			font-size: 37px;
 		}
 	}
 
