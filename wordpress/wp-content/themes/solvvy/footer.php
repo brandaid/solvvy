@@ -113,6 +113,7 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bubbles.js"></script>
 	<script type="text/javascript">
+		<?php if(get_field('section_metrics')) {?>
 		(function($){
 			var destArrBubb = [];
 			bubblesArray.forEach(function(item, index, origarr){
@@ -148,7 +149,7 @@
 				
 			})
 		})(jQuery)
-
+		<?php } ?>
 		
 		
 	</script>
