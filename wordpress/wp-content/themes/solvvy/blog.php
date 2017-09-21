@@ -125,6 +125,23 @@
 
 
 				</div>
+				<?php $postID = get_the_ID(); ?>
+				
+				<?php if( have_rows('blue_box', 517) ):
+					while( have_rows('blue_box', 517) ): the_row();
+					$afterPost = get_sub_field('under_post', 517); 
+						if( $afterPost ): 
+							$post = $afterPost;
+							setup_postdata( $post );
+							$afterPostID = get_the_ID();
+								if( $postID == $afterPostID ): ?>
+								       <div><?php the_sub_field('title'); ?></div>
+				<?php
+							endif;
+						 endif;
+					 endwhile; 
+				 endif;
+				 ?>
 				
 				<?php endwhile; wp_reset_query(); ?>
 
