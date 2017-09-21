@@ -25,7 +25,7 @@ var Bubble = function(opts){
 	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
 	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
 	self.interest = (self.interest)? '<span>'+self.interest+'</span>' : '';
-	this.bubbleType = (this.bkimg) ? 'people' : 'metric';
+	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
 		y: opts.position.y
@@ -173,7 +173,12 @@ var BubbleScene = function(opts){
 
 	this.calculateSizes = function(){
 		self.bubbles.forEach(function(item){
-			item.size = sizes[Math.round(Math.random()*1)];
+			if(item.bubbleType != 'people'){
+				var sizeOpt = (item.percent.length > 8)? 0 : 1;
+				item.size = sizes[sizeOpt];
+			}else{
+				item.size = sizes[Math.round(Math.random()*1)];
+			}
 		});
 	};
 
