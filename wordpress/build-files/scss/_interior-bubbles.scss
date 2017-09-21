@@ -58,7 +58,7 @@
 .bubbles span{
     display: block;
     color: #FFF;
-    padding: 10px 8px 0 8px;
+    padding: 10px 22px 0 22px;
 }
 .bubbles a{
    color: #FFF;
@@ -69,12 +69,13 @@
     font-weight: bold;
 }
 .bubbles span.description{
-    font-size: 18px;
+    font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 55px;
+    height: 64px;
     white-space: normal;
     text-align: center;
+    line-height: 20px;
 }
 .bubbles .people span.percent{
     font-size: 25px;
