@@ -15,18 +15,15 @@
 
 
 		<!-- BOX TEXT -->
-	<?php
-	$args = array(
-				'posts_per_page'	=> -1,
-				'post_type'			=> array('news', 'press'),
-				'meta_key'		=> 'featured_story',
-				'meta_value'	=> '1'
-	);
-    $loop = new WP_Query( $args );
-    if ( $loop->have_posts() ) :?>
-       
-
-  
+		<?php
+		$args = array(
+					'posts_per_page'	=> -1,
+					'post_type'			=> array('news', 'press'),
+					'meta_key'		=> 'featured_story',
+					'meta_value'	=> '1'
+		);
+	    $loop = new WP_Query( $args );
+	    if ( $loop->have_posts() ) :?>
 
 		<section class="box-text-top container-normal pink-ball title-to-left">
 			<div class="container">
@@ -34,20 +31,23 @@
 
 				<ul class="list-boxes-three three-ipad">
 				<?php  while ( $loop->have_posts() ) : $loop->the_post(); 
-					  
+						$link = get_field('featured_story_button');
 				?>
-
 					<li>
 						<div class="box-stories">
 							<div class="content-brand">
 								<div class="content-img">
-									<img src="<?php bloginfo('template_url'); ?>/images/brand-wsj.png" alt="" class="responsive">
+								<?php if ( has_post_thumbnail() ) { ?><img src="<?php the_post_thumbnail_url() ?>" class="responsive" alt=""><?php }  ?>
 								</div>
 							</div>
 							<div class="content">
-								<h3><a href="<?php if (get_field('featured_story_button')['url']): ?><?php echo get_field('featured_story_button')['url'] ?><?php endif ?>"><?php the_title(); ?></a></h3>
+								<h3><a href="<?php if (get_field('featured_story_button')['url']): ?><?php echo get_field('featured_story_button')['url'] ?><?php else : ?><?php the_permalink() ?><?php endif ?>"><?php the_title(); ?></a></h3>
 								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php the_date(); ?></span></p>
-								<?php if (get_field('featured_story_button')['title']): ?><a href="<?php echo get_field('featured_story_button')['url'] ?>" target="<?php echo get_field('featured_story_button')['target'] ?>" class="button"><?php echo get_field('featured_story_button')['title'] ?></a><?php endif ?>
+								<?php if( $link ): ?>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
+								<?php else: ?>
+									<a href="<?php the_permalink() ?>" class="button">Read More</a>
+								<?php endif; ?>
 							</div>
 						</div>
 					</li>
@@ -66,90 +66,57 @@
 				<?php if($mediaContact){ ?>
 				<h4 class="media-contact">Media Contact: <span><?php echo $mediaContact['name'] ?> <?php if($mediaContact['position']){ ?>- <?php echo $mediaContact['position'] ?> <?php } ?>-  </span> <a href="mailto:<?php echo $mediaContact['contact_email'] ?>"><?php echo $mediaContact['contact_email'] ?></a></h4><?php } ?>
 				<div class="box-two-columns">
+					<?php
+					$args = array(
+								'posts_per_page'	=> 8,
+								'post_type'			=> 'news',
+					);
+				    $loop = new WP_Query( $args );
+				    $count = $loop->found_posts;
+				    if ( $loop->have_posts() ) :?>
+				       
 					<div class="left-col">
 						<h2>News</h2>
 						<ul class="list-boxes-two">
+							<?php  while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<li>
 								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+									<h3 class="titles-news"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+									<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php echo get_the_date(); ?></span></p>
 								</article>
 							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
+							<?php endwhile;?>
 						</ul>
-						<a href="" class="button-pink">Read More</a>
+						<?php if($loop->max_num_pages > 1){ ?><a href="<?php echo get_post_type_archive_link( 'news'); ?>" class="button-pink">Read More</a><?php } ?>
 					</div>
+				<?php  endif;
+		   		 wp_reset_postdata();
+				?>	
+				<?php
+					$args = array(
+								'posts_per_page'	=> 4,
+								'post_type'			=> 'press',
+					);
+				    $loop = new WP_Query( $args );
+				    $count = $loop->found_posts;
+				    if ( $loop->have_posts() ) :?>
 					<div class="right-col">
 						<h2>Press</h2>
 						<ul class="formated-list">
+						<?php  while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<li>
 								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
+									<h3 class="titles-news"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+									<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> <span>-</span> <?php endif ?><span><?php echo get_the_date(); ?></span></p>
 								</article>
 							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
-							<li>
-								<article>
-									<h3 class="titles-news"><a href="">Bacon ipsum dolor amet strip steak ham hock rump cow kevin shank doner amet strip</a></h3>
-									<p class="data-article">News Source Name <span>Month 15, 2017</span></p>
-								</article>
-							</li>
+						<?php endwhile;?>
 						</ul>
-						<a href="" class="button-pink">View More</a>
+						<?php if($loop->max_num_pages > 1){ ?><a href="<?php echo get_post_type_archive_link( 'press'); ?>" class="button-pink">View More</a><?php } ?>
 					</div>
+					<?php  endif;
+			   		 wp_reset_postdata();
+					?>	
 				</div>
 			</div>
 		</section>
