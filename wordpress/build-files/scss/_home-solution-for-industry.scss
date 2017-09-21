@@ -180,6 +180,7 @@
 				position: absolute;
 				left: 50px;
 				top: 0;
+				height: 100%;
 			}
 		}
 	}
@@ -206,6 +207,21 @@
 			top: 80%;
 		}
 	}
+
+//PAGE: FOR YOUR INDUSTRY
+body.page-id-923{
+	.tab-link h4{
+		color: $brand-tertiary;
+	}
+	.panel h4{
+		color: $brand-tertiary;
+	}
+	.panel{
+    	background-image: url(images/waves-gray.png);
+	}
+}
+
+
 }
 
 // 1200px
