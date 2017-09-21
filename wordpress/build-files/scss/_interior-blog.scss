@@ -34,10 +34,10 @@
 		color: $brand-tertiary;
 		position: relative;
 		a {
-			color: $brand-primary;
+			color: $brand-secondary;
 			display: inline-block;
 			&:hover {
-				color: $brand-secondary;
+				color: $brand-primary;
 			}
 		}
 	}
@@ -176,6 +176,10 @@
 	}
 }
 
+
+.blog-img {
+	margin-bottom: 120px;
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.popup-author {
