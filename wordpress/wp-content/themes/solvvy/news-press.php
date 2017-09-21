@@ -34,7 +34,7 @@
 
 				<ul class="list-boxes-three three-ipad">
 				<?php  while ( $loop->have_posts() ) : $loop->the_post(); 
-					   $featuredStory = get_field('featured_story_card');
+					  
 				?>
 
 					<li>
@@ -45,9 +45,9 @@
 								</div>
 							</div>
 							<div class="content">
-								<h3><a href="<?php echo $featuredStory['featured_story_button']['url'] ?>"><?php the_title(); ?></a></h3>
+								<h3><a href="<?php if (get_field('featured_story_button')['url']): ?><?php echo get_field('featured_story_button')['url'] ?><?php endif ?>"><?php the_title(); ?></a></h3>
 								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php the_date(); ?></span></p>
-								<?php if($featuredStory['featured_story_button']['title']): ?><a href="<?php echo $featuredStory['featured_story_button']['url'] ?>" target="<?php echo $featuredStory['featured_story_button']['target'] ?>" class="button"><?php echo $featuredStory['featured_story_button']['title'] ?></a><?php endif ?>
+								<?php if (get_field('featured_story_button')['title']): ?><a href="<?php echo get_field('featured_story_button')['url'] ?>" target="<?php echo get_field('featured_story_button')['target'] ?>" class="button"><?php echo get_field('featured_story_button')['title'] ?></a><?php endif ?>
 							</div>
 						</div>
 					</li>
