@@ -136,6 +136,7 @@
 			<?php } ?>
 				<div class="container">
 					<h2><?php echo $section_hero['hero_copy'];  ?></h2>
+					<p><?php echo $section_secondary_banner['hero_signature']; ?></p>
 				</div>
 				<div class="waves"></div>
 			</section>
