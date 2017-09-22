@@ -49,7 +49,6 @@
 }
 .box-text-and-image-top {
 	@extend .box-text-top;
-	background: url(images/bkg-orbits.png) no-repeat top center;
 	background-size: cover;
 	.container {
 		max-width: 1300px;
@@ -62,6 +61,26 @@
 			text-align: center;
 		}
 	}
+
+	&.box-text-top.pink-ball{
+		background: none;
+		&:before{
+			content: '';
+		}
+		&:after{
+			content: '';
+			background: url(images/bkg-orbits.png) repeat top right;
+			background-size: cover;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: auto;
+			bottom: -200px;
+			z-index: -1;
+		}
+	}	
 }
 
 .bkg-none {
@@ -113,6 +132,7 @@
 	}
 }
 
+//1400px
 @media all and (min-width: $screen-desktop-big) {
 	.software-container {
 		margin: 0 auto;
