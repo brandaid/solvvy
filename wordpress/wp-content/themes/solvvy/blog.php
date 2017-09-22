@@ -50,11 +50,11 @@
 		<!-- BOX TEXT -->
 
 		<section class="blog-content">
-			<div class="container">
+			
 				
 				<?php $loop = new WP_Query( array( 'post_type' => 'post', 'order' => 'DESC' ) ); ?>
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
+<div class="container">
 				<!-- POST -->
 
 				<?php if( get_field('waves') == 'red' ) { 
@@ -124,6 +124,7 @@
 					<?php } ?>
 
 				</div>
+				</div>
 				<?php $postID = get_the_ID(); ?>
 				
 				<?php if( have_rows('blue_box', 517) ):
@@ -134,7 +135,20 @@
 							setup_postdata( $post );
 							$afterPostID = get_the_ID();
 								if( $postID == $afterPostID ): ?>
-								       <div><?php the_sub_field('title'); ?></div>
+		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
+		<div class="blue-box-waves">
+			<div class="container">
+				<div class="image">
+					<img src="<?php the_sub_field('image'); ?>" class="responsive" alt="">
+				</div>
+				<div class="info">
+					<h2><?php the_sub_field('title'); ?></h2>
+					<p><?php the_sub_field('copy'); ?></p>
+					<a class="button-tn" href="<?php the_sub_field('link_button'); ?>" target="_blank"><?php the_sub_field('text_button'); ?></a>
+				</div>
+			</div>
+		</div>
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive blog-img">
 				<?php
 							endif;
 						 endif;
@@ -144,7 +158,7 @@
 
 				<?php endwhile; wp_reset_query(); ?>
 
-			</div>
+			
 
 		</section>
 		

@@ -9,7 +9,7 @@
 								<?php 
 								$link = get_sub_field('sec5_button');
 								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
 								<?php endif; ?>
 						<?php endif; ?>
 						 
@@ -32,7 +32,7 @@
 					    <li>
 							<div class="box-metric <?php the_sub_field('color_class'); ?>">
 								<small>
-									<i class="icon-monitor"></i>
+									<i class="<?php the_sub_field('icon_image') ?>"></i>
 								<?php the_sub_field('icon_text'); ?>
 								</small>
 								<h3>

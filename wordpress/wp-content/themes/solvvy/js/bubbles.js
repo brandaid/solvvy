@@ -24,7 +24,7 @@ var Bubble = function(opts){
 	this.title = opts.title;
 	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
 	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
-	self.interest = (self.interest)? '<span>'+self.interest+'</span>' : '';
+	self.interest = (self.interest)? '<span class="position">'+self.interest+'</span>' : '';
 	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
@@ -141,7 +141,7 @@ var Nodeline = function(opts){
 var BubbleScene = function(opts){
 
 	var self = this;
-	var sizes = [280, 210];
+	var sizes = [280, 220];
 	this.min_distance = 20;
 	this.connectorsAll = [];
 	this._container = $(opts.container);

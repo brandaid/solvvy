@@ -65,7 +65,7 @@
 								<?php 
 								$link = get_sub_field('f_button');
 								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
 								<?php endif; ?>
 						<?php endif; ?>		 
 					<?php endwhile; ?>
