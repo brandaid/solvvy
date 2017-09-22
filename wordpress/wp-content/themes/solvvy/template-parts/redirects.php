@@ -9,7 +9,11 @@
 					<li>
 						<div class="center-element">
 							<div class="the-element">
-								<a href="<?php echo $single_redirect['customer_page'] ?>">
+								<?php if ($single_redirect['customer_page']) { ?>
+								<a href="<?php echo $single_redirect['customer_page'] ?>" target="_blank">
+								<?php }else{ ?>
+								<a target="_blank">
+								<?php } ?>
 									<?php
 										$attachment_id = $single_redirect['customer_grey_brand'];
 										$size = "redirects_logo";
