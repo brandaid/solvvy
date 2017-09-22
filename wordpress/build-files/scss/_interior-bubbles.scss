@@ -84,6 +84,11 @@
     line-height: 20px;
     font-weight: 700;
 }
+.bubbles span.position{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 15px;
+}
 .bubbles .people span.percent{
     font-size: 25px;
 }
