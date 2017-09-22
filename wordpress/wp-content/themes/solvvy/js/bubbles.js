@@ -24,8 +24,8 @@ var Bubble = function(opts){
 	this.title = opts.title;
 	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
 	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
-	self.interest = (self.interest)? '<span>'+self.interest+'</span>' : '';
-	this.bubbleType = (this.bkimg) ? 'people' : 'metric';
+	self.interest = (self.interest)? '<span class="position">'+self.interest+'</span>' : '';
+	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
 		y: opts.position.y
@@ -141,7 +141,7 @@ var Nodeline = function(opts){
 var BubbleScene = function(opts){
 
 	var self = this;
-	var sizes = [280, 210];
+	var sizes = [280, 220];
 	this.min_distance = 20;
 	this.connectorsAll = [];
 	this._container = $(opts.container);
@@ -173,7 +173,12 @@ var BubbleScene = function(opts){
 
 	this.calculateSizes = function(){
 		self.bubbles.forEach(function(item){
-			item.size = sizes[Math.round(Math.random()*1)];
+			if(item.bubbleType != 'people'){
+				var sizeOpt = (item.percent.length > 8)? 0 : 1;
+				item.size = sizes[sizeOpt];
+			}else{
+				item.size = sizes[Math.round(Math.random()*1)];
+			}
 		});
 	};
 

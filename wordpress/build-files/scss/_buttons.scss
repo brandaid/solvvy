@@ -70,7 +70,7 @@
 	}
 }
 .button-more {
-	color: $brand-primary;
+	color: $brand-secondary;
 	font-size: 14px;
 	letter-spacing: 1px;
 	display: inline-block;
@@ -90,7 +90,7 @@
 		@include transition;
 	}
 	&:hover {
-		color: black;
+		color: $brand-primary;
 		&:after {
 			bottom: -23px;
 		}

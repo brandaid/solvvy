@@ -42,32 +42,34 @@
 		<?php } ?>
 
 		<!-- WHATS IS SOLVVY -->
-					<?php while(has_sub_field('section_1')): ?>
+			<?php while(has_sub_field('section_1')): ?>
 			<section class="whats-solvvy pink-ball">
-			<div class="col-left">
-
-						
-							<?php if(get_sub_field('sec1_title')): ?><h2><?php the_sub_field('sec1_title'); ?></h2><?php endif; ?>
-							<?php if(get_sub_field('sec1_copy')): ?><p><?php the_sub_field('sec1_copy'); ?></p><?php endif; ?>
-							<?php if(get_sub_field('sec1_button')): ?>
-							<?php 
-								$link = get_sub_field('sec1_button');
-								if( $link ): ?>
-							<a class="button" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-							<?php endif; ?>
-							<?php endif; ?>
-						 
-					
-			</div>
-			<div class="col-right">
-				<div class="mackbook-home">
-					<div class="content-mac">
-						<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
-						
-						<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
-					</div>
-				</div>
+			<div class="wrapper">
+				<div class="col-left">
 				
+							
+								<?php if(get_sub_field('sec1_title')): ?><h2><?php the_sub_field('sec1_title'); ?></h2><?php endif; ?>
+								<?php if(get_sub_field('sec1_copy')): ?><p><?php the_sub_field('sec1_copy'); ?></p><?php endif; ?>
+								<?php if(get_sub_field('sec1_button')): ?>
+								<?php 
+									$link = get_sub_field('sec1_button');
+									if( $link ): ?>
+								<a class="button" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+								<?php endif; ?>
+								<?php endif; ?>
+							 
+						
+				</div>
+				<div class="col-right">
+					<div class="mackbook-home">
+						<div class="content-mac">
+							<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
+							
+							<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</section>
 					<?php endwhile; ?>
@@ -86,7 +88,7 @@
 								<?php 
 								$link = get_sub_field('sec2_link');
 								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['title']; ?> &raquo;</a>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> &raquo;</a>
 								<?php endif; ?>
 						<?php endif; ?>
 						 
@@ -151,7 +153,7 @@
 								$link = get_sub_field('brand_link');
 								if( $link ): ?>
 									 <div class="item">
-										<a class="button-brand" href="<?php echo $link['url']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
+										<a class="button-brand" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
 									</div>
 
 								<?php endif; ?>
@@ -194,7 +196,7 @@
 									<?php 
 									$link = get_sub_field('brand_button');
 									if( $link ): ?>
-										<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
+										<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
 									<?php endif; ?>
 								<?php endif; ?>
 							</div>
@@ -232,7 +234,7 @@
 								<?php 
 								$link = get_sub_field('sec5_button');
 								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
 								<?php endif; ?>
 						<?php endif; ?>
 						 
