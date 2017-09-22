@@ -417,5 +417,42 @@
 		</div>
 	<?php endif; ?>	
 
+
+
+		<!-- The Modal Time -->
+		<div id="myModalTime" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <div class="form">
+		    	<div class="header">
+			    	<img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt="">
+			    	<h4>Schedule a Demo</h4>
+		    	</div>
+		    	<form action="">
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel">First Name:</label>
+		    			<input type="text">
+			    	</div>
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel">Last Name:</label>
+		    			<input type="text">
+			    	</div>
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel"><span>*</span><strong>Email Address:</strong></label>
+		    			<input type="text">
+			    	</div>
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel">Company Name:</label>
+		    			<input type="text">
+			    	</div>
+			    	<div>
+		    			<button type="submit" class="mktoButton">SUBMIT</button>
+			    	</div>
+	    		</form>
+		    </div>
+		  </div>
+		</div>
+
+
 <?php get_footer(); ?>
 

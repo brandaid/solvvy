@@ -475,3 +475,21 @@ var elements = 10;
 		});
 	layout.run();
 */
+
+
+// MODAL TIME
+$(document).ready(function() {
+	setTimeout(function(){
+		$("#myModalTime").fadeIn();
+	}, 7000);
+
+	$('.close').click(function() {
+		$("#myModalTime").fadeOut();	
+	});
+	/*
+	$('#myModalTime').click(function(event){
+		$("#myModalTime").fadeOut();
+	    event.stopPropagation();
+	});
+	*/
+});
