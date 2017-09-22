@@ -41,7 +41,7 @@
 								</div>
 							</div>
 							<div class="content">
-								<h3><a href="<?php if( $link ): ?><?php echo $link['url'] ?><?php else: ?><?php the_permalink() ?><?php endif; ?>"><?php the_title(); ?></a></h3>
+								<h3><a <?php if( $link ): ?> href="<?php echo $link['url'] ?>" target="<?php echo $link['target'] ?>"<?php else: ?>href="<?php the_permalink() ?>"<?php endif; ?>><?php the_title(); ?></a></h3>
 								<p class="data-article"><?php if(get_field('source_name')): ?><?php the_field('source_name') ?> - <?php endif ?><span><?php echo get_the_date(); ?></span></p>
 								<?php if( $link ): ?>
 									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
