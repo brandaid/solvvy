@@ -34,11 +34,11 @@
 	}
 	&:hover {
 		background: white;
-		-moz-transform: scale(1.05);
-		-webkit-transform: scale(1.05);
-		-o-transform: scale(1.05);
-		-ms-transform: scale(1.05);
-		transform: scale(1.05);
+		-moz-transform: scale(1.01);
+		-webkit-transform: scale(1.01);
+		-o-transform: scale(1.01);
+		-ms-transform: scale(1.01);
+		transform: scale(1.01);
 		@include box-shadow(0px, 0px, 10px, rgba(0,0,0,.2));
 	}
 	// 1200px

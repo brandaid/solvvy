@@ -4,7 +4,11 @@
 
 // 768px
 @media all and (min-width: $screen-portrait) {
-
+	h3.truncated{
+		height: 96px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	}
 }
 
 // 992px
