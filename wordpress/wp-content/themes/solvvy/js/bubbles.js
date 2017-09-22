@@ -16,7 +16,7 @@ var Bubble = function(opts){
 
 	this._DOM = false;
 	this.bkbubb = opts.bk;
-	this.bkimg = opts.bkimg;
+	this.bkimg = (opts.bkimg)? '<img src="'+ opts.bkimg+'">' : '' ;
 	this.percent = opts.percent;
 	this.interest = opts.inerest;
 	this.linkedin = opts.linkedin;
@@ -24,7 +24,7 @@ var Bubble = function(opts){
 	this.title = opts.title;
 	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
 	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
-	self.interest = (self.interest)? '<span class="position">'+self.interest+'</span>' : '';
+	this.interest = (this.interest)? '<span class="position">'+this.interest+'</span>' : '';
 	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
@@ -51,9 +51,8 @@ var Bubble = function(opts){
 		self._DOM.css('height',self.size + "px");
 		self._DOM.html('<div class="'+self.bubbleType+'" style="background: '+
 			self.bkbubb+
-			';background-image: url('+
-			self.bkimg+
-			');background-size: cover;"><div><div><div><span class="percent">'+
+			';"><div><div><div>'+
+			'<span class="percent">'+
 			self.percent+
 			'</span>'+
 			self.interest+
@@ -63,7 +62,10 @@ var Bubble = function(opts){
 			'<span>'+
 			self.twitter+
 			self.linkedin+
-			'</span></div></div></div></div>');
+			'</span>'+
+			self.bkimg+'</div></div></div></div>');
+
+
 	}
 
 }
