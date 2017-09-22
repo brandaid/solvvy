@@ -66,7 +66,8 @@
 				<h4>Our Office</h4>
 				<ul>
 					<li><?php echo $companyInfo['office_address_line_1'] ?></li>
-					<li><?php echo $companyInfo['office_address_line_2'] ?></li>
+					<?php if($companyInfo['office_address_line_2']){ ?><li><?php echo $companyInfo['office_address_line_2'] ?></li><?php } ?>
+					<?php if($companyInfo['office_address_line_3']){ ?><li><?php echo $companyInfo['office_address_line_3'] ?></li><?php } ?>
 					<li><?php echo $companyInfo['office_phone_number'] ?></li>
 					<li><a href="mailto:<?php echo $companyInfo['contact_email'] ?>"><?php echo $companyInfo['contact_email'] ?></a></li>
 				</ul>
