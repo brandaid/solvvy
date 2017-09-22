@@ -2,8 +2,9 @@
 
 		<?php $testimonials = get_field('section_clients_testimonials'); ?>
 		<?php if($testimonials){ ?>	
+		<?php $link = $testimonials['testimonial_link'] ?>
 		<section class="box-gray box-testimonial">
-			<a href="<?php echo $testimonials['testimonial_link'] ?>" target="_blank">
+			<a <?php if($link){ ?>href="<?php echo $link['url'] ?>" target="<?php echo $link['target'] ?>"<?php } ?>>
 				<div class="container">
 					<ul class="formated-list">
 						<?php
