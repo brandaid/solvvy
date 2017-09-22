@@ -32,7 +32,7 @@
 					    <li>
 							<div class="box-metric <?php the_sub_field('color_class'); ?>">
 								<small>
-									<i class="icon-monitor"></i>
+									<i class="<?php the_sub_field('icon_image') ?>"></i>
 								<?php the_sub_field('icon_text'); ?>
 								</small>
 								<h3>
