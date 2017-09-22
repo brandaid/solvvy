@@ -64,18 +64,25 @@
    color: #FFF;
    font-size: 35px;
 }
-.bubbles span.percent{
+.bubbles .metric span.percent{
+    font-size: 52px;
+    font-weight: bolder;
+}
+
+.bubbles .people span.percent{
     font-size: 35px;
     font-weight: bold;
 }
+
 .bubbles span.description{
     font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 64px;
+    height: 63px;
     white-space: normal;
     text-align: center;
     line-height: 20px;
+    font-weight: 700;
 }
 .bubbles .people span.percent{
     font-size: 25px;

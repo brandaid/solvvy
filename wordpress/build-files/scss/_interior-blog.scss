@@ -34,10 +34,10 @@
 		color: $brand-tertiary;
 		position: relative;
 		a {
-			color: $brand-primary;
+			color: $brand-secondary;
 			display: inline-block;
 			&:hover {
-				color: $brand-secondary;
+				color: $brand-primary;
 			}
 		}
 	}

@@ -54,6 +54,12 @@
         border: 0;
     }
 }
+
+.page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, .page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 200px;
+    padding-bottom: 40px;
+}
+
 .contTdOne {
     display: none;
 }
