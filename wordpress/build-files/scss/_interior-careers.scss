@@ -82,6 +82,10 @@
 	}
 }
 .box-testimonial {
+	@include transition;
+	&:hover {
+		background: darken($gray_lighter, 1%);
+	}
 	.responsive {
 		max-width: 185px;
 		margin-bottom: 20px;
