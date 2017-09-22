@@ -153,7 +153,7 @@
 								$link = get_sub_field('brand_link');
 								if( $link ): ?>
 									 <div class="item">
-										<a class="button-brand" href="<?php echo $link['url']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
+										<a class="button-brand" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
 									</div>
 
 								<?php endif; ?>
