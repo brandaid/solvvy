@@ -481,7 +481,7 @@ var elements = 10;
 $(document).ready(function() {
 	setTimeout(function(){
 		$("#myModalTime").fadeIn();
-	}, 7000);
+	}, 77000);
 
 	$('.close').click(function() {
 		$("#myModalTime").fadeOut();	
@@ -492,4 +492,13 @@ $(document).ready(function() {
 	    event.stopPropagation();
 	});
 	*/
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= 100) {
+		   $('.header').addClass('shadow-fixed-menu');
+		}
+		else {
+		   $('.header').removeClass('shadow-fixed-menu');
+		}
+	});
 });
