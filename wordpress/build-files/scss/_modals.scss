@@ -182,16 +182,21 @@
 	    right: -30px;
 	    top: -30px;
 	}
-
+    .modal-content {
+        max-width: 600px;
+    }
 }
 // 992px
 @media all and (min-width: $screen-landscape) {
+    .modal-content {
+        
+    }
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	.modal-content {
 	    width: 100%;
-	    max-width: 960px;
+	    max-width: 700px;
 	}
 }
