@@ -128,7 +128,7 @@
 
 		<!-- SECTION METRICS -->
 		
-		<?php while(has_sub_field('section_5', 5)): ?>
+		<?php while(has_sub_field('section_5')): ?>
 			<section class="metrics">
 				<div class="container">
 				<div class="col-left">					
