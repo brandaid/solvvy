@@ -36,7 +36,7 @@
 		z-index: 9999;
 		background: #fff;
 		&.shadow-fixed-menu{
-			@include box-shadow(0, 0, 20px, $brand-tertiary);
+			@include box-shadow(0, 0, 20px, rgba(0,0,0,0.1));
 		}
 		
 		.header-top{

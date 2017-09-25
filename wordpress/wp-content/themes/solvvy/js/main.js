@@ -479,13 +479,13 @@ var elements = 10;
 
 // MODAL TIME
 $(document).ready(function() {
-	setTimeout(function(){
+	/*setTimeout(function(){
 		$("#myModalTime").fadeIn();
-	}, 77000);
+	}, 3000);
 
 	$('.close').click(function() {
 		$("#myModalTime").fadeOut();	
-	});
+	});*/
 	/*
 	$('#myModalTime').click(function(event){
 		$("#myModalTime").fadeOut();
