@@ -266,6 +266,13 @@
 		&.five {
 			left: 20%;
 			top: -184px;
+			span {
+				&:after {
+					width: 61px;
+					left: -17px;
+					bottom: -32px;
+				}
+			}
 		}
 	}
 }
