@@ -128,6 +128,7 @@
 
 		<!-- SECTION METRICS -->
 		
+
 		<?php while(has_sub_field('section_5')): ?>
 			<section class="metrics">
 				<div class="container">
@@ -146,7 +147,7 @@
 				<div class="col-right">
 					<ul>
 
-			<?php while(has_sub_field('section_5', 5)): ?>
+			<?php while(has_sub_field('section_5')): ?>
 								
 			<?php if(get_sub_field('box_metrics')): ?>
 				<?php 
@@ -185,6 +186,8 @@
 		<?php endif; ?>
 							 
 		<?php endwhile; ?>
+
+	
 
 		<!-- BOX BLUE FPO -->
 
