@@ -479,17 +479,26 @@ var elements = 10;
 
 // MODAL TIME
 $(document).ready(function() {
-	setTimeout(function(){
+	/*setTimeout(function(){
 		$("#myModalTime").fadeIn();
-	}, 7000);
+	}, 3000);
 
 	$('.close').click(function() {
 		$("#myModalTime").fadeOut();	
-	});
+	});*/
 	/*
 	$('#myModalTime').click(function(event){
 		$("#myModalTime").fadeOut();
 	    event.stopPropagation();
 	});
 	*/
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= 100) {
+		   $('.header').addClass('shadow-fixed-menu');
+		}
+		else {
+		   $('.header').removeClass('shadow-fixed-menu');
+		}
+	});
 });

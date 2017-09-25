@@ -424,7 +424,7 @@
 		  <div class="modal-content">
 		    <span class="close">&times;</span>
 		    <div class="form">
-		    	<div class="header">
+		    	<div class="header-modal">
 			    	<img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt="">
 			    	<h4>Schedule a Demo</h4>
 		    	</div>

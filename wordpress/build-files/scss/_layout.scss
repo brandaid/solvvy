@@ -206,3 +206,10 @@ a, a:hover, a:active, a:focus {
 	width: 100%;
 	vertical-align: middle;
 }
+
+//992px
+@media all and (min-width: $screen-landscape) {
+	main{
+		padding-top: 125px;
+	}
+}
