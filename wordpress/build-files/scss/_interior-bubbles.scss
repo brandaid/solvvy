@@ -24,16 +24,23 @@
 .bubbles .metrics{
 
 }
-.bubbles .people{
-
+.bubbles .people img{
+    -webkit-transition: opacity 700ms; /* Safari */
+    transition: opacity 700ms;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 .bubbles .people span{
     opacity: 0;
-    -webkit-transition: opacity 700ms; /* Safari */
-    transition: opacity 700ms;
+    -webkit-transition: opacity 500ms; /* Safari */
+    transition: opacity 500ms;
+    z-index: 2;
 }
-.bubbles .people:hover {
-    background-image: none !important;
+.bubbles .people:hover img{
+    opacity: 0.15;
 }
 .bubbles .people:hover span{
     opacity: 1;
