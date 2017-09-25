@@ -95,7 +95,7 @@
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
 						</div>
 
-						<?php
+						<?php/*
 						$args = array(
 							'posts_per_page' => 1,
 							'cat' => 'solvvy'
@@ -125,7 +125,25 @@
 								}
 							wp_reset_postdata();
 						}
-						?>
+						*/?>
+
+
+						<?php $latest_report = get_field('latest_report', 'option'); ?>
+						<div style="display: none;">
+							<div id="get-post">
+								<h4>LATEST REPORT</h4>
+								<?php if( $latest_report['latest_image'] ){ ?>
+									<a href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>">
+										<img src="<?php echo $latest_report['latest_image'] ?>"/>
+									</a>
+								<?php } ?>
+								<div>
+									<a class="button" href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>">
+										Read Now
+									</a>
+								</div>
+							</div>
+						</div>
 
 						<!-- Sample menu definition -->
 						<?php wp_nav_menu(
@@ -142,4 +160,5 @@
 			</section>
 
 	</header>
+
 	<main>
