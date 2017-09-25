@@ -86,6 +86,7 @@
 						?>
 						<img src="<?php echo $image_url; ?>" alt="">
 						<p><?php echo $caseStudy['case_study_copy']; ?></p>
+						<p class="autor"><?php echo $caseStudy['case_study_subcopy']; ?></p>
 						<a href="<?php if($caseStudy['case_study_button_link_type'] == 'url'){ ?><?php echo $caseStudy['case_study_button_link_destination']; ?><?php } else if($caseStudy['case_study_button_link_type'] == 'pdf'){?><?php echo $caseStudy['case_study_button_link_file']; ?><?php } ?>	" class="button"><?php echo $caseStudy['case_study_button_text']; ?></a>
 					</div>
 					<div class="col-right">
