@@ -20,9 +20,9 @@
 	}	
 }
 
-	@media all and (max-width: $screen-portrait) {
-		.autor {
-			font-size: 15px!important;
+@media all and (max-width: $screen-portrait) {
+	.autor {
+		font-size: 15px!important;
 		}
 	}
 .button-brand {
@@ -95,7 +95,9 @@
 		}
 	}
 }
-
+.autor {
+	font-size: 16px;
+		}
 article.brands {
 	.col-left {
 		text-align: center;
