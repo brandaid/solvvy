@@ -140,8 +140,9 @@
 			width: 275px;
 			span {
 				&:after {
-					left: -15px;
-					bottom: -24px;
+					left: -9px;
+					bottom: -19px;
+					width: 35px;
 				}
 			}
 		}
@@ -376,9 +377,9 @@
 			left: 82%;
 			span {
 				&:after {
-					width: 320px;
-					left: -180px;
-					bottom: -158px;
+					width: 270px;
+					left: -151px;
+					bottom: -134px;
 					transform: rotate(100deg);
 				}
 			}
