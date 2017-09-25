@@ -67,7 +67,7 @@
 		background: url(images/waves-slider.png) no-repeat center center;
 		background-size: contain;
 		position: absolute;
-		height: 134px;
+		height: 126px;
 		display: block;
 		width: 100%;
 		z-index: 99;
@@ -94,10 +94,12 @@ article.brands {
 	.col-left {
 		text-align: center;
 		p {
-			font-size: 33px;
+			font-size: 20px;
 			line-height: 1.6em;
 			font-family: $font-light;
-			margin-bottom: 50px;
+		}
+		.autor {
+			font-size: 16px;
 		}
 		img {
 			@include center;
@@ -117,32 +119,56 @@ article.brands {
 			}
 			p {
 				max-width: 90%;
-				font-size: 24px;
+			}
+			.autor {
+				font-size: 16px;
+				padding-bottom: 10px;
 			}
 		}
 		.col-left,
 		.col-right {
 			display: table-cell;
 			vertical-align: top;
-			width: 35%;
+			width: 50%;
 		}
 		.col-right {
-			width: 65%;
+			width: 50%;
+		}
+		.image-slider {
+			&:after {
+				height: 103px;
+			}
 		}
 		// 1200px
 		@media all and (min-width: $screen-desktop) {
 			.col-left {
-				width: 43%;
+				width: 50%;
 				p {
 					max-width: 492px;
 					line-height: 1.4em;
-					font-size: 38px;
+					font-size: 22px;
+				}
+				.autor {
+					font-size: 17px;
+					width: 65%;
 				}
 			}
 			.col-right {
-				width: 57%;
+				width: 50%;
+			}
+			.image-slider {
+				&:after {
+					height: 126px;
+				}
 			}
 		}
 	}
 }
 
+		@media all and (min-width: $screen-desktop-big) {
+			.image-slider {
+				&:after {
+					height: 141px!important;
+				}
+			}
+		}
