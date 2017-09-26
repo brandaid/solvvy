@@ -192,6 +192,7 @@
 							<div class="col-left">
 								<img src="<?php the_sub_field('brand_image'); ?>" alt="">
 								<p><?php the_sub_field('brand_copy'); ?></p>
+								<p class="autor"><?php the_sub_field('brand_subcopy'); ?></p>
 								<?php if(get_sub_field('brand_link')): ?>
 									<?php 
 									$link = get_sub_field('brand_button');
