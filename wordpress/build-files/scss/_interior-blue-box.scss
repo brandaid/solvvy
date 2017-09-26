@@ -33,6 +33,9 @@
 
 // 992px
 @media all and (min-width: $screen-landscape) {
+	.page-template-solutions .blue-box {
+		margin: 0;
+}
 	.blue-box {
 		background: $brand-marine url(images/waves-box-blue.png) no-repeat bottom center;
 		padding: 50px 75px 85px 75px;
