@@ -32,16 +32,6 @@
 			top: -2px;
 			font-size: 20px;
 		}
-		&:after {
-			content: "\f054";
-			@include fontawesome;
-			font-size: 18px;
-			position: relative;
-			vertical-align: middle;
-			opacity: .5;
-			margin-left: 20px;
-		}
-
 	}
 	p {
 		font-size: 16px;
@@ -73,6 +63,25 @@
 .columns-solutions {
 	margin-top: 80px;
 }
+
+// Arrow only for HOME
+.home{
+	.panel-solution,
+	.panel {
+		h4 {
+			&:after {
+				content: "\f054";
+				@include fontawesome;
+				font-size: 18px;
+				position: relative;
+				vertical-align: middle;
+				opacity: .5;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 
