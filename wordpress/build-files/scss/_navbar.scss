@@ -417,6 +417,9 @@
 						background: transparent;
 						z-index: 99999;
 					}
+					& span.sub-arrow{
+						display: none;
+					}
 				}
 
 				&.search, &.demo{
