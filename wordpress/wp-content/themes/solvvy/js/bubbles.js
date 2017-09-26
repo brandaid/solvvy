@@ -22,8 +22,8 @@ var Bubble = function(opts){
 	this.linkedin = opts.linkedin;
 	this.twitter = opts.twitter;
 	this.title = opts.title;
-	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
-	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
+	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'" target="_blank"><i class="icon-twitter"></i></a>' : '';
+	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'" target="_blank"><i class="icon-linkedin"></i></a>' : '';
 	this.interest = (this.interest)? '<span class="position">'+this.interest+'</span>' : '';
 	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
@@ -49,9 +49,9 @@ var Bubble = function(opts){
 		self._DOM.css('left',self.position.x + "px");
 		self._DOM.css('width',self.size + "px");
 		self._DOM.css('height',self.size + "px");
-		self._DOM.html('<div class="'+self.bubbleType+'" style="background: '+
+		self._DOM.html('<div class="'+self.bubbleType+'"><div style="background: '+
 			self.bkbubb+
-			';"><div><div><div>'+
+			';"><div><div>'+
 			'<span class="percent">'+
 			self.percent+
 			'</span>'+
@@ -180,7 +180,6 @@ var BubbleScene = function(opts){
 				item.size = sizes[sizeOpt];
 			}else{
 				var sizeOpt = (item.title.length + item.title.length > 250)? 0 : 1;
-				console.log(item.title.length + item.title.length);
 				item.size = sizes[sizeOpt];
 			}
 		});
