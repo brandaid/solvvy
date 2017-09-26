@@ -51,11 +51,21 @@
 	
 }
 
-@media all and (min-width: $screen-portrait1) {
+@media all and (min-width: $screen-smallportrait) {
 	.mackbook {
 		.content-mac {
 			img {
 				max-width: 175px;
+			}
+		}
+	}
+}
+
+@media all and (min-width: $screen-portrait1) {
+	.mackbook {
+		.content-mac {
+			img {
+				max-width: 280px;
 			}
 		}
 	}
