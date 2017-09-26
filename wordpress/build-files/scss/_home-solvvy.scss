@@ -31,14 +31,26 @@
 		}
 	}
 	.col-right {
-	    max-height: 470px;
 		padding-top: 80px;
 		line-height: 0;
 		width: 100%;
     	display: block;
 		@include border-box;
 	}
-
+	.tab-link:hover, .tab-link-without-icon:hover {
+		background: #eef0f2;
+		background: -webkit-linear-gradient(legacy-direction(to right), #eef0f2, transparent);
+		background: -webkit-gradient(linear, left top, right top, from(#eef0f2), to(transparent));
+		background: -webkit-linear-gradient(left, #eef0f2, transparent);
+		background: -o-linear-gradient(left, #eef0f2, transparent);
+		background: linear-gradient(to right, #eef0f2, transparent)!important; }
+	.tab-link.active, .active.tab-link-without-icon {
+		background: #eef0f2;
+		background: -webkit-linear-gradient(legacy-direction(to right), #eef0f2, transparent);
+		background: -webkit-gradient(linear, left top, right top, from(#eef0f2), to(transparent));
+		background: -webkit-linear-gradient(left, #eef0f2, transparent);
+		background: -o-linear-gradient(left, #eef0f2, transparent);
+		background: linear-gradient(to right, #eef0f2, transparent)!important; }
 
 	// 992px
 	@media all and (min-width: $screen-landscape) {	
@@ -80,7 +92,6 @@
 			}
 		}
 		.col-right {
-			max-height: none;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -115,6 +126,9 @@
 
 
 }
+
+
+
 .screen {
 	width: 100%;
 	height: auto;
@@ -123,7 +137,28 @@
 
 
 // 992px
-@media all and (min-width: $screen-landscape) {
+	@media all and (min-width: $screen-landscape) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 0;
+			}
+		}	
+}
+
+	@media all and (min-width: 1250px) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 600px;
+			}
+		}
+	}
+// 1400
+	@media all and (min-width: 1386px) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 600px;
+			}
+		}	
 }
 
 // 1200px
@@ -131,5 +166,13 @@
 		.page-template-software .whats-solvvy {
 			padding: 0 0 100px 0;			
 		}
-
 }
+
+	@media all and (min-width: 1550px) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 300px;
+			}
+		}
+	}
+			
