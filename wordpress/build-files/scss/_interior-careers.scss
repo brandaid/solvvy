@@ -216,8 +216,11 @@ span.sgnature {
 // 992px
 @media all and (min-width: $screen-landscape) {
 	.box-careers {
-		padding-top: 350px;
-		padding-bottom: 400px;
+		padding-top: 150px;
+		padding-bottom: 250px;
+		.container{
+			min-height: 520px;
+		}
 	}
 	.bkg-pink {
 		background-image: url(images/backer1.png), url(images/backer2.png);
