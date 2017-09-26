@@ -8,7 +8,6 @@
 */
 ?>
 <?php get_header(); ?>
-<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
 <?php the_post(); ?>
 
 		<!-- HERO BANNER -->
