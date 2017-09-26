@@ -51,7 +51,7 @@
 	
 }
 
-@media all and (min-width: $screen-smallportrait) {
+@media all and (max-width: $screen-smallportrait) {
 	.mackbook {
 		.content-mac {
 			img {
@@ -61,7 +61,7 @@
 	}
 }
 
-@media all and (min-width: $screen-portrait1) {
+@media all and (max-width: $screen-portrait1) {
 	.mackbook {
 		.content-mac {
 			img {
