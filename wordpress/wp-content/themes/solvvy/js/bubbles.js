@@ -167,9 +167,9 @@ var BubbleScene = function(opts){
 	}
 
 	this.calculateBackground = function(){
-		var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F', '#F92D6D'];
+		var colors = ['#725AB0', '#F6639A', '#5F108F', '#F92D6D'];
 		self.bubbles.forEach(function(item){
-			item.bkbubb = colors[Math.round(Math.random()*4)];
+			item.bkbubb = colors[Math.round(Math.random()*3)];
 		});
 	};
 
@@ -179,7 +179,9 @@ var BubbleScene = function(opts){
 				var sizeOpt = (item.percent.length > 8)? 0 : 1;
 				item.size = sizes[sizeOpt];
 			}else{
-				item.size = sizes[Math.round(Math.random()*1)];
+				var sizeOpt = (item.title.length + item.title.length > 250)? 0 : 1;
+				console.log(item.title.length + item.title.length);
+				item.size = sizes[sizeOpt];
 			}
 		});
 	};
