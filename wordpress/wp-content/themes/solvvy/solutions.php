@@ -175,8 +175,8 @@
 			<?php if($assetSection){ ?>
 			<section class="box-gray">
 				<div class="container">
-					<div class="blue-box">
-						
+					<div class="line-height"><img src="https://solvvy.mbzvrm4-liquidwebsites.com/wp-content/themes/solvvy/images/waves-box-top.png" alt="" class="responsive"></div>
+					<div class="blue-box">						
 						<div class="image">
 						<?php if($assetSection['asset_left_image']){ ?>
 						<?php
