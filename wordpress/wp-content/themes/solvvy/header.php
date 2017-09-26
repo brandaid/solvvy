@@ -46,6 +46,7 @@
 	</script>
 
 	<?php wp_head(); ?>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 </head>
 <body <?php body_class(); ?>>
 	<div id="loader">
