@@ -78,6 +78,8 @@
 			border-bottom: 0;
 			border-left: 2px solid $brand-primary;
 			padding-top: 0;
+			position: relative;
+			margin: 0 auto;
 			h4 {
 				margin-top: 0;
 			}
@@ -118,7 +120,7 @@
 @media all and (min-width: $screen-desktop) {
 	.line-time-top,
 	.line-time-bottom {
-		max-width: 80%;
+		max-width: 60%;
 	}
 	.line-time-top {
 		margin-left: 20%!important;
