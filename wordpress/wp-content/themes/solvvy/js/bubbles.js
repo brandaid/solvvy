@@ -224,16 +224,14 @@ var BubbleScene = function(opts){
 
 		this._calculateSegments(self.segment_size,this._width,this._height);
 
-		this.segments.segments.sort(function(a,b){
-			var
-			aScore = Math.abs(self.segments.rows/2 - a.r),
-			bScore = Math.abs(self.segments.rows/2 - b.r);
-
-			aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
-			bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
-
-			return aScore - bScore;
-		});
+		//this.segments.segments.sort(function(a,b){
+		//	var
+		//	aScore = Math.abs(self.segments.rows/2 - a.r),
+		//	bScore = Math.abs(self.segments.rows/2 - b.r);
+		//	aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
+		//	bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
+		//	return aScore - bScore;
+		//});
 		this.bubbles.forEach(function(bubble){
 			var useSegment = self.segments.segments.find(function(segment){
 				return segment.element === false;
