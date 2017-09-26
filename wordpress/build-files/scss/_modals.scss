@@ -92,6 +92,89 @@
     }
 }
 
+
+//Modal Time Form
+#myModalTime{
+    .modal-content{
+        background: white url(images/bg-form-modal.jpg) no-repeat right center;
+        min-height: 550px;
+        background-size: 50%;
+
+        .form{
+            @include border-box;
+            width: 50%;
+            padding: 50px 75px 75px 75px;
+
+            .header-modal{
+                text-align: center;
+                margin-bottom: 25px;
+                img{
+                    width: 35%;
+                }
+                h4{
+                    margin: 10px 0;
+                    color: #9baaba;
+                }
+            }
+            .mktoFormRow{
+                width: 100%;
+                margin-bottom: 25px;
+                @include border-box;
+                .mktoLabel{
+                    color: $brand-tertiary;
+                    margin-bottom: 5px;
+                    display: block;
+                    font-size: 15px;
+                    span{
+                        color: $brand-primary;
+                    }
+                }
+            }
+
+            input, button{
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                background: white;
+                @include border-box;
+            }
+            input{
+                @include border-radius(3px);
+                @include box-shadow(0, 0, 20px, #d2daea);
+                border: 1px solid #d6dde4;
+                padding: 15px 20px;
+                font-size: 16px;
+                color: $brand-tertiary;
+                &:focus{
+                    border: 1px solid #d6dde4;
+                    outline:none;
+                }
+            }
+            button.mktoButton {
+                border: 1px solid $brand-primary;
+                background: $brand-primary;
+                color: white;
+                font-family: $font-semibold;
+                padding: 0;
+                line-height: 50px;
+                font-size: 14px;
+                padding: 0;
+                cursor: pointer;
+                @include border-radius(3px);
+                @include transition;
+                &:hover {
+                    background: white;
+                    border: 1px solid $brand-primary;
+                    color: $brand-primary;
+                }
+            }
+
+
+        }
+    }
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.close {
@@ -99,16 +182,19 @@
 	    right: -30px;
 	    top: -30px;
 	}
-
+    .modal-content {
+        max-width: 600px;
+    }
 }
 // 992px
 @media all and (min-width: $screen-landscape) {
+
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	.modal-content {
 	    width: 100%;
-	    max-width: 960px;
+	    max-width: 700px;
 	}
 }

@@ -192,6 +192,7 @@
 							<div class="col-left">
 								<img src="<?php the_sub_field('brand_image'); ?>" alt="">
 								<p><?php the_sub_field('brand_copy'); ?></p>
+								<p class="autor"><?php the_sub_field('brand_subcopy'); ?></p>
 								<?php if(get_sub_field('brand_link')): ?>
 									<?php 
 									$link = get_sub_field('brand_button');
@@ -416,6 +417,43 @@
 		  </div>
 		</div>
 	<?php endif; ?>	
+
+
+
+		<!-- The Modal Time -->
+		<div id="myModalTime" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <div class="form">
+		    	<div class="header-modal">
+			    	<img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt="">
+			    	<h4>Schedule a Demo</h4>
+		    	</div>
+		    	<form action="">
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel">First Name:</label>
+		    			<input type="text">
+			    	</div>
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel">Last Name:</label>
+		    			<input type="text">
+			    	</div>
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel"><span>*</span><strong>Email Address:</strong></label>
+		    			<input type="text">
+			    	</div>
+			    	<div class="mktoFormRow">
+			    		<label class="mktoLabel">Company Name:</label>
+		    			<input type="text">
+			    	</div>
+			    	<div>
+		    			<button type="submit" class="mktoButton">SUBMIT</button>
+			    	</div>
+	    		</form>
+		    </div>
+		  </div>
+		</div>
+
 
 <?php get_footer(); ?>
 
