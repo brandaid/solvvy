@@ -189,6 +189,8 @@ body:not(.wp-admin) .wph-modal--mask{
                 }
                 .mktoButtonRow{
                     margin: 0;
+                    display: block;
+                    clear: both;
                     span{
                         margin: 0 !important;
                     }
