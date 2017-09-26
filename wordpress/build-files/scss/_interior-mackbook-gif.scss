@@ -45,22 +45,62 @@
 		padding-top: 3%;
 		padding-bottom: 7%;
 		img {
-			max-width: 950px;
 			width: 90%;
 		}
 	}
 	
 }
 
+@media all and (max-width: $screen-smallportrait) {
+	.mackbook {
+		.content-mac {
+			img {
+				max-width: 175px;
+			}
+		}
+	}
+}
+
+@media all and (max-width: $screen-portrait1) {
+	.mackbook {
+		.content-mac {
+			img {
+				max-width: 280px;
+			}
+		}
+	}
+}
+
+
 // 768px
 @media all and (min-width: $screen-portrait) {
-
+	.mackbook {
+		.content-mac {
+			img {
+				max-width: 400px;
+			}
+		}
+	}
 }
 
 // 992px
 @media all and (min-width: $screen-landscape) {
+	.mackbook {
+		.content-mac {
+			img {
+				max-width: 500px;
+			}
+		}
+	}
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
+	.mackbook {
+		.content-mac {
+			img {
+				max-width: 685px;
+			}
+		}
+	}
 }
