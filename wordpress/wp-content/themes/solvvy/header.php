@@ -132,8 +132,15 @@
 						<div style="display: none;">
 							<div id="get-post">
 								<h4>LATEST REPORT</h4>
+								<?php if( $latest_report['latest_title'] ) { ?>
+								<p>
+									<a href="<?php echo $latest_report['latest_read_more']; ?>" title="<?php the_title_attribute(); ?>" target="<?php echo $latest_report['latest_target']; ?>">
+									 	<?php echo $latest_report['latest_title']; ?>
+									</a>
+								</p>		
+								<?php } ?>						
 								<?php if( $latest_report['latest_image'] ){ ?>
-									<a href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>">
+									<a href="<?php echo $latest_report['latest_read_more']; ?>" target="<?php echo $latest_report['latest_target']; ?>">
 										<img src="<?php echo $latest_report['latest_image'] ?>"/>
 									</a>
 								<?php } ?>
