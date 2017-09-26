@@ -173,10 +173,9 @@
 
 		<?php $assetSection = get_field('section_asset'); ?>
 			<?php if($assetSection){ ?>
-			<section class="box-gray">
-				<div class="container">
 					<div class="line-height"><img src="https://solvvy.mbzvrm4-liquidwebsites.com/wp-content/themes/solvvy/images/waves-box-top.png" alt="" class="responsive"></div>
-					<div class="blue-box">						
+					<div class="blue-box-waves">						
+						<div class="container">
 						<div class="image">
 						<?php if($assetSection['asset_left_image']){ ?>
 						<?php
@@ -195,9 +194,9 @@
 							<p><?php echo $assetSection['asset_description'] ?></p>
 							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
 						</div>
+						</div>
 					</div>
-				</div>
-			</section>
+					<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
 		<?php } ?>
 
 <?php get_footer(); ?>
