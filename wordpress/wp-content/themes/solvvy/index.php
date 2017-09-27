@@ -226,180 +226,117 @@
 
 		<!-- SECTION METRICS -->
 		
-				<?php while(has_sub_field('section_5')): ?>
-				<section class="metrics">
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
+			<section class="metrics">
 				<div class="container">
-				<div class="col-left">					
-						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
-						<?php if(get_sub_field('sec5_button')): ?>
-								<?php 
-								$link = get_sub_field('sec5_button');
-								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
-								<?php endif; ?>
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
+
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
 						<?php endif; ?>
-						 
-					<?php endwhile; ?>
-				</div>
-				<div class="col-right">
-					<ul>
-
-				<?php while(has_sub_field('section_5')): ?>
-								
-				<?php if(get_sub_field('box_metrics')): ?>
-					<?php 
-					    
-					if( have_rows('box_metrics') ):
-
-					    while( have_rows('box_metrics') ) : the_row(); 
-					        
-					        ?>
-
-					    <li>
-							<div class="box-metric <?php the_sub_field('color_class'); ?>">
-								<small>
-									<i class="icon-monitor"></i>
-								<?php the_sub_field('icon_text'); ?>
-								</small>
-								<h3>
-									<?php the_sub_field('number'); ?>
-								</h3>
-								<p><?php the_sub_field('copy'); ?></p>
-							</div>
-						</li>
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-				<?php endif; ?>
 							 
-				<?php endwhile; ?>
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
 
-					</ul>
-				</div>
+						</ul>
+					</div>
 			</div>
 		</section>
+
+		<?php } ?>
 
 		<div class="cool-sep"></div>
 
 		<!-- SECTION INDUSTRY -->
-		<?php while(has_sub_field('section_6')): ?>
-		<section class="solution-for-industry">
-			<div class="container">
-				<?php if(get_sub_field('industry_title')): ?><h2><?php the_sub_field('industry_title'); ?></h2><?php endif; ?>
+
+
+		<?php $industy_section = get_field('section_6') ?>
+		<?php if($industy_section){ ?>
+			<section class="solution-for-industry">
+				<div class="container">
+					<?php if($industy_section['industry_title']){ ?>
+					<h2><?php echo $industy_section['industry_title'] ?></h2>
+					<?php } ?>
 					<div class="columns-solutions">					
-					<div class="col-left">
-				
-						<select class="solutions" id="solutions">
-							<option value="role">For Your Role</option>
-							<option value="business">For Your Business Type</option>
-							<option value="industry">For Your Industry</option>
-						</select>
-
-
-
-				<?php if(get_sub_field('solutions')): ?>
-				
-					<?php 
-					    
-					if( have_rows('solutions') ):
-
-					    while( have_rows('solutions') ) : the_row(); 
-					        
-					        ?>
-
-
-
-						<div class="tab-link <?php the_sub_field('tab_class'); ?>" data-value="<?php the_sub_field('sol_data_value'); ?>">
-							<h4><?php the_sub_field('sol_title'); ?></h4>
-							<p><?php the_sub_field('sol_copy'); ?></p>
+						<div class="col-left">		
+							<select class="solutions" id="solutions">
+								<option value="role">For Your Role</option>
+								<option value="business">For Your Business Type</option>
+								<option value="industry">For Your Industry</option>
+							</select>
+							<?php if($industy_section['solutions']){ ?>
+								<?php forEach($industy_section['solutions'] as $single_solution){ ?>
+									<div class="tab-link <?php echo $single_solution['tab_class']; ?>" data-value="<?php echo $single_solution['sol_data_value'] ?>">
+										<h4>
+											<i class="<?php echo $single_solution['icon_image']; ?>" ></i>
+											<?php echo $single_solution['sol_title'] ?>
+												
+										</h4>
+										<p><?php echo $single_solution['sol_copy'] ?></p>
+									</div>	
+								<?php } ?>	
+							<?php } ?>	 		
 						</div>
-						
 
-
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-				
-				<?php endif; ?>
-							 
-				<?php endwhile; ?>
-
-				
+						<div class="col-right">
+							<?php if($industy_section['panel_solutions']){ ?>	
+								<?php forEach($industy_section['panel_solutions'] as $single_panel ){ ?>
+									<div class="panel-solution <?php echo $single_panel['class_id'] ?>" id="<?php echo $single_panel['class_id'] ?>">
+										<ul>	
+											<?php if( $single_panel['sol_items']){ ?>
+												<?php forEach($single_panel['sol_items'] as $single_item){ ?>
+												<li>
+													<?php if( $single_item['item_title'] ){ ?>
+														<?php $post_object = $single_item['link'];
+															if( $post_object ): 
+																$post = $post_object;
+																setup_postdata( $post ); 
+														?>
+														<a href="<?php the_permalink(); ?>">
+															<h4>
+																<i class="<?php echo $single_item['icon_image'] ?>"></i>
+																<?php echo $single_item['item_title'] ?>	
+															</h4>
+														</a>
+														<?php wp_reset_postdata(); ?>
+														<?php endif; ?>
+													<?php } ?>
+													<?php if($single_item['copy_title']){ ?>
+														<p><?php echo $single_item['copy_title'] ?></p>
+													<?php } ?>
+												</li>		
+												<?php } ?>
+											<?php } ?>
+										</ul>
+									</div>				
+								<?php } ?>
+							<?php } ?>
+						</div>
 					</div>
-
-					<div class="col-right">
-						
-				<?php while(has_sub_field('section_6')): ?>
-	
-				<?php if(get_sub_field('panel_solutions')): ?>
-					<?php 
-					    
-					if( have_rows('panel_solutions') ):
-
-					    while( have_rows('panel_solutions') ) : the_row(); 
-					        
-					        ?>
-
-						<div class="panel-solution <?php the_sub_field('class_id'); ?>" id="<?php the_sub_field('class_id'); ?>">
-							<ul>
-								
-							<?php if( have_rows('sol_items') ): ?>
-								
-								<?php 
-
-								while( have_rows('sol_items') ): the_row();
-
-									?>
-								<li>
-									<?php if(get_sub_field('item_title')): ?>
-									<?php
-
-									$post_object = get_sub_field('link');
-
-									if( $post_object ): 
-
-										$post = $post_object;
-										setup_postdata( $post ); 
-
-										?>
-									    	<a href="<?php the_permalink(); ?>" target="<?php the_sub_field('open_link'); ?>"><h4><?php the_sub_field('item_title'); ?></h4></a>
-									    <?php wp_reset_postdata(); ?>
-									<?php endif; ?>
-									<?php endif; ?>
-									<?php if(get_sub_field('copy_title')): ?><p><?php the_sub_field('copy_title'); ?></p><?php endif; ?>
-								</li>
-								<?php endwhile; ?>
-								
-							<?php endif; ?>
-							</ul>
-						</div>	
-
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-				<?php endif; ?>
-							 
-				<?php endwhile; ?>
-
-
-					</div>
-
 				</div>
-				
-			</div>
-		</section>
+			</section>
+		<?php } ?>
 
 		<div class="cool-sep"></div>
 
@@ -416,44 +353,8 @@
 		    </div>
 		  </div>
 		</div>
-	<?php endif; ?>	
-
-
-
-		<!-- The Modal Time -->
-		<div id="myModalTime" class="modal">
-		  <div class="modal-content">
-		    <span class="close">&times;</span>
-		    <div class="form">
-		    	<div class="header-modal">
-			    	<img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt="">
-			    	<h4>Schedule a Demo</h4>
-		    	</div>
-		    	<form action="">
-			    	<div class="mktoFormRow">
-			    		<label class="mktoLabel">First Name:</label>
-		    			<input type="text">
-			    	</div>
-			    	<div class="mktoFormRow">
-			    		<label class="mktoLabel">Last Name:</label>
-		    			<input type="text">
-			    	</div>
-			    	<div class="mktoFormRow">
-			    		<label class="mktoLabel"><span>*</span><strong>Email Address:</strong></label>
-		    			<input type="text">
-			    	</div>
-			    	<div class="mktoFormRow">
-			    		<label class="mktoLabel">Company Name:</label>
-		    			<input type="text">
-			    	</div>
-			    	<div>
-		    			<button type="submit" class="mktoButton">SUBMIT</button>
-			    	</div>
-	    		</form>
-		    </div>
-		  </div>
-		</div>
-
+	<?php endif; ?>
 
 <?php get_footer(); ?>
+
 

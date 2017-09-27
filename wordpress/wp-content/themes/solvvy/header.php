@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sm-clean.css">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/cytoscape.js"></script>
+	<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -52,6 +53,7 @@
 	</script>
 
 	<?php wp_head(); ?>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 </head>
 <body <?php body_class(); ?>>
 		<!-- Google Tag Manager (noscript) -->
