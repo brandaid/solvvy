@@ -24,6 +24,9 @@
 
 #main-menu {
 	clear: both;
+	&.sub-arrow {
+		display: none;
+	}
 	&.sm-clean{
 		border-radius: 0;
 		background: #38316b;
@@ -563,13 +566,6 @@
 				}
 			}
 		}
-	}
-}
-
-// 768px
-@media all and (min-width: $screen-portrait) {
-	.sub-arrow {
-		display: none;
 	}
 }
 
