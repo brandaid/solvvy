@@ -121,7 +121,7 @@
 				</ul>
 				<?php } ?>
 
-				<a href="<?php echo $benefits['section_benefits_link_destination'] ?>" class="button"><?php echo $benefits['section_benefits_link_text'] ?></a>
+				<a href="<?php echo $benefits['section_benefits_link_destination'] ?>" target="<?php echo $benefits['open_link'] ?>" class="button"><?php echo $benefits['section_benefits_link_text'] ?></a>
 			</div>
 		</section>
 		<?php } ?>

@@ -100,9 +100,9 @@
 						<img src="<?php if( has_post_thumbnail() ): ?><?php the_post_thumbnail_url(); ?><?php else: ?><?php bloginfo('template_url'); ?>/images/asset-card-generic.jpg <?php endif; ?>" alt="" class="responsive">
 						<div class="content">
 							<small><?php foreach( $terms as $term ) echo ' ' . $term->name; ?></small>
-							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php elseif( get_field('button_link_type') == 'pdf' ): ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="_blank"><?php the_title();?></a></h3>
+							<h3><a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php elseif( get_field('button_link_type') == 'pdf' ): ?><?php the_field('button_link_pdf') ?><?php endif; ?>" target="<?php the_field('open_link') ?>"><?php the_title();?></a></h3>
 							<p><?php the_content(); ?> </p>
-							<a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php elseif( get_field('button_link_type') == 'pdf' ): ?><?php the_field('button_link_pdf') ?><?php endif; ?>" class="button-tn" target="_blank"><?php the_field('button_text') ?></a>
+							<a href=" <?php if( get_field('button_link_type') == 'url' ):?><?php the_field('button_link_destination') ?><?php elseif( get_field('button_link_type') == 'pdf' ): ?><?php the_field('button_link_pdf') ?><?php endif; ?>" class="button-tn" target="<?php the_field('open_link') ?>"><?php the_field('button_text') ?></a>
 						</div>
 					</div>
 				</li>

@@ -23,7 +23,7 @@
 				<div class="info">
 					<h2><?php echo $joinUs['join_us_title'] ?></h2>
 					<p><?php echo $joinUs['join_us_description'] ?></p>
-					<a href="<?php echo $joinUs['join_us_button_destination'] ?>" class="button-tn"><?php echo $joinUs['join_us_button_text'] ?></a>
+					<a href="<?php echo $joinUs['join_us_button_destination'] ?>" target="<?php echo $joinUs['open_link'] ?>" class="button-tn"><?php echo $joinUs['join_us_button_text'] ?></a>
 				</div>
 			</div>
 		</div>
