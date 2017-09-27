@@ -25,7 +25,11 @@
 }
 
 .page-template-about-us .box-text-top, .page-template-careers .box-text-top {
-	padding: 45px 0 90px 0!important;
+	padding: 45px 0 90px 0;
+}
+
+.page-template-about-us .box-text-top.pink-ball, .page-template-careers .box-text-top.pink-ball {
+	padding: 100px 0 25px 0;
 }
 .container-normal {
 	.container {
