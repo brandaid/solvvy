@@ -113,8 +113,8 @@
 	}
 }
 .fixed-form {
-	position: fixed; 
-	top: 126px; 
+	position: initial; 
+	top: 159px; 
 	left: 0;
 	z-index: 999;
 	width: 100%;
@@ -190,6 +190,9 @@
 @media all and (min-width: $screen-portrait) {
 	.popup-author {
 		left: 15%;
+	}
+	.fixed-form {
+		position: fixed; 
 	}
 }
 
