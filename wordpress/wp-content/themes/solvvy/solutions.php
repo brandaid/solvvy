@@ -179,7 +179,7 @@
 
 		<?php $assetSection = get_field('section_asset'); ?>
 			<?php if($assetSection){ ?>
-					<div class="line-height"><img src="https://solvvy.mbzvrm4-liquidwebsites.com/wp-content/themes/solvvy/images/waves-box-top.png" alt="" class="responsive"></div>
+					<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
 					<div class="blue-box-waves">						
 						<div class="container">
 						<div class="image">
