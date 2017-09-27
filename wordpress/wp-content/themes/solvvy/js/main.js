@@ -342,6 +342,9 @@ $(window).resize(function() {
 $(window).scroll(function(){
   if ($(this).scrollTop() > 400) {
       $('.marketo-follow-us').addClass('fixed-form');
+		if ( $( "#wpadminbar" ).length ) {
+			$(".fixed-form").css('top', '158px');
+		}
   } else {
       $('.marketo-follow-us').removeClass('fixed-form');
   }
@@ -522,6 +525,3 @@ $(document).ready(function() {
 		}
 	});
 });
-
-
-
