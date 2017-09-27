@@ -72,6 +72,23 @@ function setEqualHeight() {
  }
 }
 
+
+// FEATURED RESOURCES
+function setEqualHeightAsset() {
+	if ($(window).width() > 768) {
+    var tallestcolumnasset = 0;
+    $('.assets-featured .fpo-resources-cont').each(
+    function() {
+        currentHeightAsset = $(this).height();
+        if(currentHeightAsset > tallestcolumnasset) {
+            tallestcolumnasset  = currentHeightAsset;
+            }
+        }
+    );
+ $('.assets-featured .fpo-resources-cont').height(tallestcolumnasset + 30);
+ }
+}
+
 var delay = (function(){
         var timer = 0;
         return function(callback, ms){
@@ -265,11 +282,14 @@ $(function() {
 	$('.menu-post-clone .menu-post').html(postTop);
 });
 
-// RESOURCES FILTERS
+// RESOURCES FILTERS AND FEATURED RESOURCES
 // MAKE ALL RESOURCES CARDS THE SAME HEIGHT
  delay(function(){
         $('.asset-cards .content').css('height','auto'); //solve for all you browser stretchers out there!
         setEqualHeight($('.asset-cards .content'));
+
+        $('.assets-featured .fpo-resources-cont').css('height','auto');
+    	setEqualHeightAsset($('.assets-featured .fpo-resources-cont'));
     }, 0);
 
 $(".section-assets-cards li").css('opacity','1');
@@ -502,3 +522,6 @@ $(document).ready(function() {
 		}
 	});
 });
+
+
+
