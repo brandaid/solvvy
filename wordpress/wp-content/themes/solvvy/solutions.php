@@ -40,15 +40,21 @@
 							<?php if( $the_query->have_posts() ): ?>
 							
 					<div class="col-left">
-								<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-									<?php $card_info = get_field('card_info'); ?>
-									<?php if($card_info){ ?>
-									<div class="tab-link" rel="panel-<?php the_ID() ?>">
-										<h4><?php if($card_info['icon']){ ?><i class="<?php echo $card_info['icon'] ?>"><?php } ?></i><?php the_title(); ?></h4>
-										<p><?php echo $card_info['intro_paragraph']; ?></p>
-									</div>		
-									<?php } ?>
-								<?php endwhile; ?>
+						<select class="solutions <?php echo $selectedterm ?>" id="subpages">
+						<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<option rel="panel-<?php the_ID() ?>" value="panel-<?php the_ID() ?>"><?php the_title(); ?></option>				
+						<?php endwhile; ?>
+						</select>
+
+						<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<?php $card_info = get_field('card_info'); ?>
+							<?php if($card_info){ ?>
+							<div class="tab-link" rel="panel-<?php the_ID() ?>">
+								<h4><?php if($card_info['icon']){ ?><i class="<?php echo $card_info['icon'] ?>"><?php } ?></i><?php the_title(); ?></h4>
+								<p><?php echo $card_info['intro_paragraph']; ?></p>
+							</div>		
+							<?php } ?>
+						<?php endwhile; ?>
 
       				</div>
 
@@ -59,7 +65,7 @@
 							<?php $card_info = get_field('card_info'); 
 							$link = $card_info['card_button'];?>
 							<?php if($card_info){ ?>
-							<div class="panel <?php echo ($i==0)?'active':''; ?>" id="panel-<?php the_ID() ?>">
+							<div class="panel <?php echo ($i==0)?'active':''; ?> <?php echo $selectedterm ?>" id="panel-<?php the_ID() ?>">
 								<h4 class="panel-business"><?php echo $card_info['card_title']; ?></h4>
 								<p><?php echo $card_info['card_copy']; ?></p>
 								<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button-tn"><?php echo $link['title']; ?></a>	<?php } ?>
@@ -173,7 +179,7 @@
 
 		<?php $assetSection = get_field('section_asset'); ?>
 			<?php if($assetSection){ ?>
-					<div class="line-height"><img src="https://solvvy.mbzvrm4-liquidwebsites.com/wp-content/themes/solvvy/images/waves-box-top.png" alt="" class="responsive"></div>
+					<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
 					<div class="blue-box-waves">						
 						<div class="container">
 						<div class="image">

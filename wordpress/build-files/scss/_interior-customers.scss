@@ -6,7 +6,9 @@
 		overflow: hidden;
 	}
 }
-
+.casestudy{
+	min-height: 350px;
+}
 .casestudy h3 a{
 	color: $brand-secondary;
 }
@@ -92,7 +94,7 @@
 // 992px
 @media all and (min-width: $screen-landscape) {
 	.casestudy{
-		min-height: 358px;
+		min-height: 445px;
 	}
 	.box-case {
 		display: table;
