@@ -217,6 +217,7 @@
 	.fpo-resources {
 		h3 {
 			font-size: 20px;
+			min-height: 80px;
 		}
 		p {
 			font-size: 15px;
@@ -291,8 +292,13 @@
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	.fpo-resources {
+		img{
+			max-height: 160px;
+			width: auto;
+		}
 		h3 {
 			font-size: 26px;
+			min-height: 100px;
 		}
 		p {
 			font-size: 18px;
