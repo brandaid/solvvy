@@ -7,6 +7,7 @@
   color: #bbbbbb;
 }
 .sm-clean a span.sub-arrow {
+  display: none;
   position: absolute;
   top: 50%;
   margin-top: -17px;
