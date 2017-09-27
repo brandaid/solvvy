@@ -417,9 +417,6 @@
 						background: transparent;
 						z-index: 99999;
 					}
-					& span.sub-arrow{
-						display: none;
-					}
 				}
 
 				&.search, &.demo{
@@ -569,7 +566,12 @@
 	}
 }
 
-
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.sub-arrow {
+		display: none;
+	}
+}
 
 // 1024px
 @media all and (min-width: $screen-portrait) {
