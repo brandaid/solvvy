@@ -39,9 +39,9 @@
 					<li>
 						<?php $socialMedia = get_field('social_media', 'option'); ?>
 
-						<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
-						<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
-						<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>						
+						<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
+						<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
+						<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>						
 					</li>
 				</ul>
 			</div>
