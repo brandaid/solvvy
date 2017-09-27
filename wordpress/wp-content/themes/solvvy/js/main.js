@@ -231,6 +231,19 @@ $(document).ready(function() {
 	    event.stopPropagation();
 	});
 
+	$('li.option').on('click', function(){
+
+		console.log("click click click");
+
+		var panelToShow = $(this).attr('data-value');
+		$('.panel').removeClass('active');
+		$('.panel').css('display', 'none');
+		$('#'+panelToShow).fadeIn(150, function() {
+		  $(this).addClass('active');
+		});
+
+	});
+
 });
 
 
@@ -342,6 +355,9 @@ $(window).resize(function() {
 $(window).scroll(function(){
   if ($(this).scrollTop() > 400) {
       $('.marketo-follow-us').addClass('fixed-form');
+		if ( $( "#wpadminbar" ).length ) {
+			$(".fixed-form").css('top', '158px');
+		}
   } else {
       $('.marketo-follow-us').removeClass('fixed-form');
   }
@@ -522,6 +538,3 @@ $(document).ready(function() {
 		}
 	});
 });
-
-
-
