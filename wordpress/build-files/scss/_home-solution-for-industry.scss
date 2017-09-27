@@ -99,9 +99,16 @@
 	}
 }
 
-// 768px
-@media all and (min-width: $screen-portrait) {
-
+// 991px
+@media all and (max-width: 991px) {
+	.panel-solution {
+		h4 {
+			padding-left: 15px;
+			i {
+				left: -22px;
+			}
+		}
+	}
 }
 
 // 992px
