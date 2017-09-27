@@ -154,6 +154,43 @@
         }
     }
 }
+.nice-select.for-your-industry{
+    border-color: $brand-tertiary;
+    color: $brand-tertiary;
+    &:before, &:after{
+        border-color: $brand-tertiary;
+    }
+    &:hover {
+        border-color: $brand-tertiary;
+        background: $brand-tertiary;
+        color: white;
+    }
+}
+.nice-select.for-your-role{
+    border-color: $brand-primary;
+    color: $brand-primary;
+    &:before, &:after{
+        border-color: $brand-primary;
+    }
+    &:hover {
+        border-color: $brand-primary;
+        background: $brand-primary;
+        color: white;
+    }
+
+}
+.nice-select.for-your-business-type{
+    border-color: $brand-secondary;
+    color: $brand-secondary;
+    &:before, &:after{
+        border-color: $brand-secondary;
+    }
+    &:hover{
+        color: white;
+    }
+}
+
+
 
 // Use display instead of opacity for IE <= 10
 .no-csspointerevents .nice-select {

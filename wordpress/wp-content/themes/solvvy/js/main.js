@@ -231,6 +231,19 @@ $(document).ready(function() {
 	    event.stopPropagation();
 	});
 
+	$('li.option').on('click', function(){
+
+		console.log("click click click");
+
+		var panelToShow = $(this).attr('data-value');
+		$('.panel').removeClass('active');
+		$('.panel').css('display', 'none');
+		$('#'+panelToShow).fadeIn(150, function() {
+		  $(this).addClass('active');
+		});
+
+	});
+
 });
 
 
