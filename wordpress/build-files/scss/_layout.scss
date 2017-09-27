@@ -122,6 +122,19 @@ a, a:hover, a:active, a:focus {
 	padding-top: 200px!important;
 }
 
+.test-cols-1 {
+    width: 100% !important;
+	& .customers-box p {
+    	max-width: none !important;
+    }
+}
+.test-cols-2 {
+    width: 50% !important;
+	& .customers-box p {
+    	max-width: none !important;
+    }
+}
+
 .list-boxes-three {
 	@extend .formated-list;
 	// 768px
