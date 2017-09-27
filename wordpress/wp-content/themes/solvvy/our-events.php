@@ -104,7 +104,7 @@
 							<?php the_post_thumbnail( 'featured_events', array( 'class' => 'responsive' ) ); ?>
 							
 							<div class="content align-left">
-								<h3><?php the_title(); ?></h3>
+								<h3 class="truncated"><?php the_title(); ?></h3>
 								<p class="data-article"><?php the_field('location'); ?> <span><?php the_field('date'); ?></span></p>
 								<a href="<?php the_field('cta_link'); ?>" class="button-tn" <?php if( get_field('open_external_window') ): ?> target="blank" <?php endif; ?>><?php the_field('cta_copy'); ?></a>
 							</div>
