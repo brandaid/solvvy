@@ -10,7 +10,7 @@
 				<div class="info">
 					<h2><?php echo $section_1['title'];  ?></h2>
 					<p><?php echo $section_1['copy'];  ?></p>
-					<a class="button-tn" href="<?php echo $section_1['link_button'];  ?>" target="<?php echo $section_1['open_link'];  ?>"><?php echo $section_1['text_button'];  ?></a>
+					<a href="<?php if( $section_1['button_link_type'] == 'url' ):?><?php echo $section_1['button_link_destination'] ?><?php elseif( $section_1['button_link_type'] == 'pdf' ): ?><?php echo $section_1['button_link_pdf'] ?><?php endif; ?>" class="button-tn" target="<?php echo $section_1['open_link_in_a_new_tab'][0]; ?>"><?php echo $section_1['text_button']; ?></a>
 				</div>
 			</div>
 		<?php } ?>
