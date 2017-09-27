@@ -5,7 +5,6 @@
 		@extend .underlined;
 	}
 }
-
 .panel-solution,
 .panel {
 	display: none;
@@ -57,6 +56,24 @@
 		display: block;
 	}
 }
+
+.solution-for-industry{
+	.panel.for-your-industry{
+		background: white url(images/waves-gray.png) no-repeat bottom;
+		h4 {
+			color: $brand-tertiary;
+		}
+	}
+}
+.solution-for-industry{
+	.panel.for-your-business-type{
+		background: white url(images/waves-blue.png) no-repeat bottom;
+		h4 {
+			color: $brand-secondary;
+		}
+	}
+}
+
 .tab-link {
 	display: none;
 }
@@ -118,7 +135,7 @@
 		&.active {
 			@include linear-gradient(to right, #f9fbfd, transparent);
 		}
-		&.tab-business {
+		&.tab-business, {
 			h4 {
 				color: $brand-secondary;
 			}
