@@ -193,13 +193,10 @@
 								<img src="<?php the_sub_field('brand_image'); ?>" alt="">
 								<p><?php the_sub_field('brand_copy'); ?></p>
 								<p class="autor"><?php the_sub_field('brand_subcopy'); ?></p>
-								<?php if(get_sub_field('brand_link')): ?>
-									<?php 
-									$link = get_sub_field('brand_button');
-									if( $link ): ?>
-										<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
-									<?php endif; ?>
-								<?php endif; ?>
+
+					<a href="<?php if( get_sub_field('button_link_type') == 'url' ):?><?php the_sub_field('button_link_destination') ?>
+						<?php elseif( get_sub_field('button_link_type') == 'pdf' ): ?><?php the_sub_field('button_link_pdf') ?><?php endif; ?>" target="<?php the_sub_field('open_link') ?>" class="button"><?php the_sub_field('button_text') ?></a>
+
 							</div>
 							<div class="col-right">
 								<figure class="image-slider">
