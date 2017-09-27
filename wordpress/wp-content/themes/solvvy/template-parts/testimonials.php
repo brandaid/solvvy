@@ -1,12 +1,12 @@
 <!-- SECTION TESTIMONIALS -->
 
 <?php $testimonials = get_field('section_customer_testimonials'); ?>
-<?php if($testimonials){ ?>
+<?php $i = 0; if($testimonials){ ?>
 <section class="box-customers">
 	<div class="container">
 		<ul class="list-boxes-three align-left">
-			<?php forEach($testimonials as $single_testimonial){ ?>
-			<li>
+			<?php forEach($testimonials as $single_testimonial): ?>
+			<li class="<?php echo testimonial_counter($i); ?>">
 				<div class="customers-box">
 					<p><?php echo $single_testimonial['customer_testimonial_'] ?></p>
 					<?php
@@ -19,8 +19,27 @@
 					<small><?php echo $single_testimonial['customer_position'] ?></small>
 				</div>
 			</li>
-			<?php } ?>
+			<?php $i++; endforeach; ?>
 		</ul>
 	</div>
 </section>
 <?php } ?>
+
+<?php
+	function testimonial_counter($i) {
+		$size = sizeof(get_field('section_customer_testimonials'));
+
+		if( ($size-$i == 2) && ($size%3 == 2) ) {
+			return 'test-cols-2';
+		}
+		else if( ($size-$i == 1) && ($size%3 == 2) ) {
+			return 'test-cols-2';
+		}
+		else if( ($size-$i == 1) && ($size%3 == 1) ) {
+			return 'test-cols-1';
+		}
+		else {
+			return null;
+		}
+	}
+?>
