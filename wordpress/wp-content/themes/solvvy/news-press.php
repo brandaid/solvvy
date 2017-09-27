@@ -87,7 +87,7 @@
 							</li>
 							<?php endwhile;?>
 						</ul>
-						<?php if($loop->max_num_pages > 1){ ?><a href="<?php echo get_post_type_archive_link( 'news'); ?>" class="button-pink">Read More</a><?php } ?>
+						<?php if($loop->max_num_pages > 1){ ?><a href="<?php echo get_post_type_archive_link( 'news'); ?>" target="_blank" class="button-pink">Read More</a><?php } ?>
 					</div>
 				<?php  endif;
 		   		 wp_reset_postdata();
