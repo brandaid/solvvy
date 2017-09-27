@@ -84,14 +84,8 @@
 						<?php if(get_sub_field('sec2_image')): ?><img src="<?php the_sub_field('sec2_image'); ?>" alt=""/><?php endif; ?>
 						<?php if(get_sub_field('sec2_copy')): ?><p><?php the_sub_field('sec2_copy'); ?></p><?php endif; ?>
 						<hr>
-						<?php if(get_sub_field('sec2_link')): ?>
-								<?php 
-								$link = get_sub_field('sec2_link');
-								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> &raquo;</a>
-								<?php endif; ?>
-						<?php endif; ?>
-						 
+						<a href="<?php if( get_sub_field('button_link_type') == 'url' ):?><?php the_sub_field('button_link_destination') ?>
+						<?php elseif( get_sub_field('button_link_type') == 'pdf' ): ?><?php the_sub_field('button_link_pdf') ?><?php endif; ?>" target="<?php the_sub_field('open_link') ?>"><?php the_sub_field('button_text') ?> &raquo;</a>						 
 					<?php endwhile; ?>
 			</div>
 		</section>
