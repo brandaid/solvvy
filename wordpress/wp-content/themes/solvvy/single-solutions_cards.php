@@ -45,7 +45,11 @@
 				<div class="col-info">
 					<h3><?php echo $valueSection['value_driver_section_title'] ?></h3>
 					<p><?php echo $valueSection['value_driver_section_copy'] ?> </p>
-					<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>	<?php } ?>
+					<?php if($link){ ?>
+						<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button">
+							<?php echo $valueSection['value_driver_section_button_text']; ?>
+						</a>
+					<?php } ?>
 				</div>
 				<div class="col-slider">
 					<?php if($valueSection['value_driver_section_labels']) { ?>
@@ -82,6 +86,7 @@
 						?>
 						<img src="<?php echo $image_url; ?>" alt="">
 						<p><?php echo $caseStudy['case_study_copy']; ?></p>
+						<p class="autor"><?php echo $caseStudy['case_study_subcopy']; ?></p>
 						<a href="<?php if($caseStudy['case_study_button_link_type'] == 'url'){ ?><?php echo $caseStudy['case_study_button_link_destination']; ?><?php } else if($caseStudy['case_study_button_link_type'] == 'pdf'){?><?php echo $caseStudy['case_study_button_link_file']; ?><?php } ?>	" class="button"><?php echo $caseStudy['case_study_button_text']; ?></a>
 					</div>
 					<div class="col-right">
@@ -98,63 +103,45 @@
 	<?php } ?>	
 		<!-- SECTION METRICS -->
 		
-		<?php while(has_sub_field('section_5', 5)): ?>
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
 			<section class="metrics">
 				<div class="container">
-				<div class="col-left">					
-						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
-						<?php if(get_sub_field('sec5_button')): ?>
-								<?php 
-								$link = get_sub_field('sec5_button');
-								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
-								<?php endif; ?>
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
+
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
 						<?php endif; ?>
-						 
-					<?php endwhile; ?>
-				</div>
-				<div class="col-right">
-					<ul>
-
-			<?php while(has_sub_field('section_5', 5)): ?>
-								
-			<?php if(get_sub_field('box_metrics')): ?>
-				<?php 
-					    
-					if( have_rows('box_metrics') ):
-
-					 while( have_rows('box_metrics') ) : the_row(); 
-					        
-					  ?>
-
-					    <li>
-							<div class="box-metric <?php the_sub_field('color_class'); ?>">
-								<small>
-									<i class="icon-monitor"></i>
-								<?php the_sub_field('icon_text'); ?>
-								</small>
-								<h3>
-									<?php the_sub_field('number'); ?>
-								</h3>
-								<p><?php the_sub_field('copy'); ?></p>
-							</div>
-						</li>
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-
-
-					</ul>
-				</div>
-			</div>
-		</section>
-		<?php endif; ?>
 							 
-		<?php endwhile; ?>
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
+
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		<?php } ?>
 
 		<!-- BOX BLUE FPO -->
 		<?php $assetSection = get_field('section_asset'); ?>

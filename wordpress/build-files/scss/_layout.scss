@@ -82,17 +82,17 @@ a, a:hover, a:active, a:focus {
 	text-align: left;
 }
 .cool-sep {
-	border-top: 2px solid lighten($brand-tertiary, 40%);
 	background: #f8fbfd;
-    background: -webkit-linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
-    background: -o-linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
-    background: -moz-linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
-    background: linear-gradient(rgba(196,205,223,0.1), rgba(0,0,0,0.0));
-	height: 47px;
+    background: url(images/shadow-sep.png) no-repeat top;
+   	background-size: 100%;
+	height: 110px;
 	width: calc(100% - 60px);
 	max-width: 1300px; 
 	margin-left: 15px;
 	margin-right: 15px;
+	margin-bottom: -60px;
+	position: relative;
+	z-index: 9;
 	@include center;
 	&.top {
 		width: 100% !important;
@@ -105,6 +105,9 @@ a, a:hover, a:active, a:focus {
 	}
 }
 
+.margin-bottom-50 {
+	margin-bottom: 50px;
+}
 .margin-bottom-90 {
 	margin-bottom: 90px;
 }
@@ -202,4 +205,11 @@ a, a:hover, a:active, a:focus {
 	height: 100%;
 	width: 100%;
 	vertical-align: middle;
+}
+
+//992px
+@media all and (min-width: $screen-landscape) {
+	main{
+		padding-top: 125px;
+	}
 }

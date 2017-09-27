@@ -6,12 +6,12 @@
 	<div class="container">
 		<h2><?php echo $metrics['metrics_title']; ?></h2>
 		<p><?php echo $metrics['metrics_copy'] ?></p>
+		<?php if($metrics['metrics_bubles']){ ?>
+		<div id="bubbles-scene" class="bubble-container">
+			
+		</div>
+		<?php } ?>
 	</div>
-	<?php if($metrics['metrics_bubles']){ ?>
-	<div id="bubbles-scene" class="bubble-container">
-		
-	</div>
-	<?php } ?>
 </section>
 
 <?php } ?>

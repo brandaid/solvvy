@@ -16,16 +16,16 @@ var Bubble = function(opts){
 
 	this._DOM = false;
 	this.bkbubb = opts.bk;
-	this.bkimg = opts.bkimg;
+	this.bkimg = (opts.bkimg)? '<img src="'+ opts.bkimg+'">' : '' ;
 	this.percent = opts.percent;
 	this.interest = opts.inerest;
 	this.linkedin = opts.linkedin;
 	this.twitter = opts.twitter;
 	this.title = opts.title;
-	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
-	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
-	self.interest = (self.interest)? '<span>'+self.interest+'</span>' : '';
-	this.bubbleType = (this.bkimg) ? 'people' : 'metric';
+	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'" target="_blank"><i class="icon-twitter"></i></a>' : '';
+	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'" target="_blank"><i class="icon-linkedin"></i></a>' : '';
+	this.interest = (this.interest)? '<span class="position">'+this.interest+'</span>' : '';
+	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
 		y: opts.position.y
@@ -49,11 +49,10 @@ var Bubble = function(opts){
 		self._DOM.css('left',self.position.x + "px");
 		self._DOM.css('width',self.size + "px");
 		self._DOM.css('height',self.size + "px");
-		self._DOM.html('<div class="'+self.bubbleType+'" style="background: '+
+		self._DOM.html('<div class="'+self.bubbleType+'"><div style="background: '+
 			self.bkbubb+
-			';background-image: url('+
-			self.bkimg+
-			');background-size: cover;"><div><div><div><span class="percent">'+
+			';"><div><div>'+
+			'<span class="percent">'+
 			self.percent+
 			'</span>'+
 			self.interest+
@@ -63,7 +62,10 @@ var Bubble = function(opts){
 			'<span>'+
 			self.twitter+
 			self.linkedin+
-			'</span></div></div></div></div>');
+			'</span>'+
+			self.bkimg+'</div></div></div></div>');
+
+
 	}
 
 }
@@ -141,7 +143,7 @@ var Nodeline = function(opts){
 var BubbleScene = function(opts){
 
 	var self = this;
-	var sizes = [280, 210];
+	var sizes = [280, 220];
 	this.min_distance = 20;
 	this.connectorsAll = [];
 	this._container = $(opts.container);
@@ -165,15 +167,21 @@ var BubbleScene = function(opts){
 	}
 
 	this.calculateBackground = function(){
-		var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F', '#F92D6D'];
+		var colors = ['#725AB0', '#F6639A', '#5F108F', '#F92D6D'];
 		self.bubbles.forEach(function(item){
-			item.bkbubb = colors[Math.round(Math.random()*4)];
+			item.bkbubb = colors[Math.round(Math.random()*3)];
 		});
 	};
 
 	this.calculateSizes = function(){
 		self.bubbles.forEach(function(item){
-			item.size = sizes[Math.round(Math.random()*1)];
+			if(item.bubbleType != 'people'){
+				var sizeOpt = (item.percent.length > 8)? 0 : 1;
+				item.size = sizes[sizeOpt];
+			}else{
+				var sizeOpt = (item.title.length + item.title.length > 250)? 0 : 1;
+				item.size = sizes[sizeOpt];
+			}
 		});
 	};
 
@@ -216,16 +224,14 @@ var BubbleScene = function(opts){
 
 		this._calculateSegments(self.segment_size,this._width,this._height);
 
-		this.segments.segments.sort(function(a,b){
-			var
-			aScore = Math.abs(self.segments.rows/2 - a.r),
-			bScore = Math.abs(self.segments.rows/2 - b.r);
-
-			aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
-			bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
-
-			return aScore - bScore;
-		});
+		//this.segments.segments.sort(function(a,b){
+		//	var
+		//	aScore = Math.abs(self.segments.rows/2 - a.r),
+		//	bScore = Math.abs(self.segments.rows/2 - b.r);
+		//	aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
+		//	bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
+		//	return aScore - bScore;
+		//});
 		this.bubbles.forEach(function(bubble){
 			var useSegment = self.segments.segments.find(function(segment){
 				return segment.element === false;

@@ -14,6 +14,14 @@
 }
 
 .single:not(.single-solutions_cards) {
+	.content{
+		a {
+			color: $brand-primary;
+			&:hover {
+				color: $brand-secondary;
+			}
+		}
+	}
 	.box-text-top {
 		text-align: left;
 		h1, h2, h3, h4, h5, h6 {

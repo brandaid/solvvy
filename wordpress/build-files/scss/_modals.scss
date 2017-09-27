@@ -92,6 +92,112 @@
     }
 }
 
+
+//Modal Time Form
+.wph-modal.wph-modal--popup{
+    max-width: 450px !important;
+}
+
+body:not(.wp-admin) .wph-modal--mask{
+    background: rgba(0,0,0,0.6) !important;
+}
+.wph-modal .wph-modal--close a{ 
+    color: #fff !important; 
+    padding: 5px;
+    &:hover{
+        color: $brand-primary !important;
+    }
+}
+.wph-modal.wph-modal--minimal{
+    section{
+        .wph-modal--message{
+            form{
+                padding: 30px 55px 55px 55px;
+                margin: 0;
+                width: 100% !important;
+
+                //title
+                .mktoFormRow{
+                    .mktoHtmlText{
+                        width: 100% !important;
+                        h2{
+                            font-size: 16px !important;
+                            color: #9baaba !important;
+
+                            &:before{
+                                content: '';
+                                background: url(images/brand.png) no-repeat center center;
+                                //background-size: cover;
+                                background-size: contain;
+                                display: block;
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .mktoFormRow, .mktoButtonRow{
+                    width: 100%;
+                    margin: 0 0 10px;
+                    //@include border-box;
+                    .mktoFormCol{
+                        margin: 0 0 10px !important;
+                    }
+                    .mktoOffset, .mktoGutter{
+                        display: none;
+                    }
+
+                    input, button, select{
+                        width: 100% !important;
+                        padding: 0;
+                        margin: 0;
+                        border: 0;
+                        background: white;
+                        @include border-box;
+                    }
+                    input, select{
+                        @include border-radius(3px);
+                        @include box-shadow(0, 0, 20px, #d2daea);
+                        border: 1px solid #d6dde4;
+                        padding: 15px 20px;
+                        font-size: 14px;
+                        color: $brand-tertiary;
+                        &:focus{
+                            border: 1px solid #d6dde4;
+                            outline:none;
+                        }
+                    }
+                    button.mktoButton {
+                        border: 1px solid $brand-primary;
+                        background: $brand-primary;
+                        color: white;
+                        font-family: $font-semibold;
+                        padding: 0;
+                        line-height: 50px;
+                        font-size: 14px;
+                        padding: 0;
+                        cursor: pointer;
+                        @include border-radius(3px);
+                        @include transition;
+                        width: calc(100% - 4px) !important;
+                        &:hover {
+                            background: white;
+                            border: 1px solid $brand-primary;
+                            color: $brand-primary;
+                        }
+                    }
+                }
+                .mktoButtonRow{
+                    margin: 0;
+                    span{
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }            
+    }
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.close {
@@ -99,16 +205,22 @@
 	    right: -30px;
 	    top: -30px;
 	}
-
+    .modal-content {
+        max-width: 600px;
+    }
+    .wph-modal.wph-modal--popup{
+        max-width: 800px !important;
+    }
 }
 // 992px
 @media all and (min-width: $screen-landscape) {
+
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	.modal-content {
 	    width: 100%;
-	    max-width: 960px;
+	    max-width: 700px;
 	}
 }

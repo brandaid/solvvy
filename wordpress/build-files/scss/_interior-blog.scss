@@ -27,6 +27,12 @@
 	}
 	p {
 		line-height: 1.5em;
+		a {
+			color: $brand-primary;
+			&:hover {
+				color: $brand-secondary;
+			}
+		}
 	}
 	small {
 		display: block;
@@ -34,10 +40,10 @@
 		color: $brand-tertiary;
 		position: relative;
 		a {
-			color: $brand-primary;
+			color: $brand-secondary;
 			display: inline-block;
 			&:hover {
-				color: $brand-secondary;
+				color: $brand-primary;
 			}
 		}
 	}
@@ -108,9 +114,9 @@
 }
 .fixed-form {
 	position: fixed; 
-	top: 0; 
+	top: 159px; 
 	left: 0;
-	z-index: 9999;
+	z-index: 999;
 	width: 100%;
 	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
 }
@@ -176,6 +182,10 @@
 	}
 }
 
+
+.blog-img {
+	margin-bottom: 120px;
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.popup-author {

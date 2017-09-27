@@ -66,7 +66,8 @@
 				<h4>Our Office</h4>
 				<ul>
 					<li><?php echo $companyInfo['office_address_line_1'] ?></li>
-					<li><?php echo $companyInfo['office_address_line_2'] ?></li>
+					<?php if($companyInfo['office_address_line_2']){ ?><li><?php echo $companyInfo['office_address_line_2'] ?></li><?php } ?>
+					<?php if($companyInfo['office_address_line_3']){ ?><li><?php echo $companyInfo['office_address_line_3'] ?></li><?php } ?>
 					<li><?php echo $companyInfo['office_phone_number'] ?></li>
 					<li><a href="mailto:<?php echo $companyInfo['contact_email'] ?>"><?php echo $companyInfo['contact_email'] ?></a></li>
 				</ul>
@@ -113,6 +114,7 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bubbles.js"></script>
 	<script type="text/javascript">
+		<?php if(get_field('section_metrics')) {?>
 		(function($){
 			var destArrBubb = [];
 			bubblesArray.forEach(function(item, index, origarr){
@@ -148,7 +150,7 @@
 				
 			})
 		})(jQuery)
-
+		<?php } ?>
 		
 		
 	</script>

@@ -8,6 +8,7 @@
 */
 ?>
 <?php get_header(); ?>
+<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
 <?php the_post(); ?>
 
 		<!-- HERO BANNER -->
@@ -42,32 +43,34 @@
 		<?php } ?>
 
 		<!-- WHATS IS SOLVVY -->
-					<?php while(has_sub_field('section_1')): ?>
+			<?php while(has_sub_field('section_1')): ?>
 			<section class="whats-solvvy pink-ball">
-			<div class="col-left">
-
-						
-							<?php if(get_sub_field('sec1_title')): ?><h2><?php the_sub_field('sec1_title'); ?></h2><?php endif; ?>
-							<?php if(get_sub_field('sec1_copy')): ?><p><?php the_sub_field('sec1_copy'); ?></p><?php endif; ?>
-							<?php if(get_sub_field('sec1_button')): ?>
-							<?php 
-								$link = get_sub_field('sec1_button');
-								if( $link ): ?>
-							<a class="button" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
-							<?php endif; ?>
-							<?php endif; ?>
-						 
-					
-			</div>
-			<div class="col-right">
-				<div class="mackbook-home">
-					<div class="content-mac">
-						<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
-						
-						<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
-					</div>
-				</div>
+			<div class="wrapper">
+				<div class="col-left">
 				
+							
+								<?php if(get_sub_field('sec1_title')): ?><h2><?php the_sub_field('sec1_title'); ?></h2><?php endif; ?>
+								<?php if(get_sub_field('sec1_copy')): ?><p><?php the_sub_field('sec1_copy'); ?></p><?php endif; ?>
+								<?php if(get_sub_field('sec1_button')): ?>
+								<?php 
+									$link = get_sub_field('sec1_button');
+									if( $link ): ?>
+								<a class="button" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+								<?php endif; ?>
+								<?php endif; ?>
+							 
+						
+				</div>
+				<div class="col-right">
+					<div class="mackbook-home">
+						<div class="content-mac">
+							<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
+							
+							<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</section>
 					<?php endwhile; ?>
@@ -86,7 +89,7 @@
 								<?php 
 								$link = get_sub_field('sec2_link');
 								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['title']; ?> &raquo;</a>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> &raquo;</a>
 								<?php endif; ?>
 						<?php endif; ?>
 						 
@@ -151,7 +154,7 @@
 								$link = get_sub_field('brand_link');
 								if( $link ): ?>
 									 <div class="item">
-										<a class="button-brand" href="<?php echo $link['url']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
+										<a class="button-brand" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
 									</div>
 
 								<?php endif; ?>
@@ -190,11 +193,12 @@
 							<div class="col-left">
 								<img src="<?php the_sub_field('brand_image'); ?>" alt="">
 								<p><?php the_sub_field('brand_copy'); ?></p>
+								<p class="autor"><?php the_sub_field('brand_subcopy'); ?></p>
 								<?php if(get_sub_field('brand_link')): ?>
 									<?php 
 									$link = get_sub_field('brand_button');
 									if( $link ): ?>
-										<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
+										<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
 									<?php endif; ?>
 								<?php endif; ?>
 							</div>
@@ -223,62 +227,45 @@
 
 		<!-- SECTION METRICS -->
 		
-				<?php while(has_sub_field('section_5')): ?>
-				<section class="metrics">
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
+			<section class="metrics">
 				<div class="container">
-				<div class="col-left">					
-						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
-						<?php if(get_sub_field('sec5_button')): ?>
-								<?php 
-								$link = get_sub_field('sec5_button');
-								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
-								<?php endif; ?>
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
+
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
 						<?php endif; ?>
-						 
-					<?php endwhile; ?>
-				</div>
-				<div class="col-right">
-					<ul>
-
-				<?php while(has_sub_field('section_5')): ?>
-								
-				<?php if(get_sub_field('box_metrics')): ?>
-					<?php 
-					    
-					if( have_rows('box_metrics') ):
-
-					    while( have_rows('box_metrics') ) : the_row(); 
-					        
-					        ?>
-
-					    <li>
-							<div class="box-metric <?php the_sub_field('color_class'); ?>">
-								<small>
-									<i class="icon-monitor"></i>
-								<?php the_sub_field('icon_text'); ?>
-								</small>
-								<h3>
-									<?php the_sub_field('number'); ?>
-								</h3>
-								<p><?php the_sub_field('copy'); ?></p>
-							</div>
-						</li>
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-				<?php endif; ?>
 							 
-				<?php endwhile; ?>
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
 
-					</ul>
-				</div>
+						</ul>
+					</div>
 			</div>
 		</section>
+
+		<?php } ?>
 
 		<div class="cool-sep"></div>
 
@@ -413,7 +400,8 @@
 		    </div>
 		  </div>
 		</div>
-	<?php endif; ?>	
+	<?php endif; ?>
 
 <?php get_footer(); ?>
+
 

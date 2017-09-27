@@ -111,8 +111,9 @@
 				<ul class="list-boxes-three align-left colorful-icons">
 					<?php forEach($benefits['section_benefits_features'] as $single_feature){ ?>
 					<li>
-						<div class="keys-box">
-							<?php  echo$single_feature['feature_icon'] ?>
+						<div class="keys-box box-icon-text align-center">
+							<i class="<?php  echo$single_feature['feature_icon'] ?>"></i>
+							<h4><?php echo $single_feature['feature_subtitle'] ?></h4>
 							<p><?php  echo$single_feature['feature_description'] ?></p>
 						</div>
 					</li>
@@ -136,6 +137,7 @@
 			<?php } ?>
 				<div class="container">
 					<h2><?php echo $section_hero['hero_copy'];  ?></h2>
+					<p><?php echo $section_hero['hero_signature']; ?></p>
 				</div>
 				<div class="waves"></div>
 			</section>

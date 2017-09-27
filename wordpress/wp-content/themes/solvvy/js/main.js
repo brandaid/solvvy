@@ -114,21 +114,10 @@ $(document).ready(function() {
 
 
 	$('.owl-navbars').owlCarousel({
-	    loop:true,
+	    loop:false,
 	    margin:10,
 	    navText: "",
 	    nav:true,
-	    responsive:{
-	        0:{
-	            items:5
-	        },
-	        600:{
-	            items:5
-	        },
-	        1000:{
-	            items:5
-	        }
-	    }
 	});
 
 	$('.owl-careers').owlCarousel({
@@ -184,7 +173,7 @@ $(document).ready(function() {
 	        $("#tab3").delay("100").fadeOut();
 
 	        $(this).addClass('active');
-	        $("#tab2, #tab3").removeClass('active');
+	        $(".tab-industry, .tab-business").removeClass('active');
 	    };
 	    if($(this).data("value") === "tab2"){
 	        $("#tab1").delay("100").fadeOut();
@@ -192,7 +181,7 @@ $(document).ready(function() {
 	        $("#tab3").delay("100").fadeOut();
 
 	        $(this).addClass('active');
-	        $("#tab1, #tab3").removeClass('active');
+	        $(".tab-industry, .tab-role").removeClass('active');
 	    };
 	    if($(this).data("value") === "tab3"){
 	        $("#tab1").delay("100").fadeOut();
@@ -200,7 +189,7 @@ $(document).ready(function() {
 	        $("#tab3").delay("500").fadeIn();
 
 	        $(this).addClass('active');
-	        $("#tab2, #tab1").removeClass('active');
+	        $(".tab-business, .tab-role").removeClass('active');
 	    };
 	});
 
@@ -486,3 +475,30 @@ var elements = 10;
 		});
 	layout.run();
 */
+
+
+// MODAL TIME
+$(document).ready(function() {
+	/*setTimeout(function(){
+		$("#myModalTime").fadeIn();
+	}, 3000);
+
+	$('.close').click(function() {
+		$("#myModalTime").fadeOut();	
+	});*/
+	/*
+	$('#myModalTime').click(function(event){
+		$("#myModalTime").fadeOut();
+	    event.stopPropagation();
+	});
+	*/
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= 100) {
+		   $('.header').addClass('shadow-fixed-menu');
+		}
+		else {
+		   $('.header').removeClass('shadow-fixed-menu');
+		}
+	});
+});

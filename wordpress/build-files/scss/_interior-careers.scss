@@ -2,6 +2,11 @@
 	@extend .box-partners;
 	padding-top: 190px;
 	padding-bottom: 260px;
+	p {
+		color: #FFF;
+		text-transform: uppercase;
+		font-size: 1.3em;
+	}
 }
 .slider-interior {
 	margin: 60px 0px;
@@ -30,7 +35,7 @@
 		line-height: 1.5em;
 	}
 	a.big-link {
-		font-size: 20px;
+		font-size: 22px;
 		color: #5d0e8b;
 		line-height: 1.5em;
 		&:hover {
@@ -43,18 +48,16 @@
 }
 .box-icon-text {
 	position: relative;
-	padding-left: 60px;
 	@include border-box;
 	margin-top: 30px;
 	i {
-		position: absolute;
-		left: -10px;
-		font-size: 40px;
+		position: relative;
+		font-size: 48px;
 		color: $brand-primary;
-		top: -5px;
+		top: -15px;
 	}
 	h4, p {
-		text-align: left;
+		text-align: center;
 		font-size: 18px;
 	}
 	h4 {
@@ -63,22 +66,26 @@
 		color: $brand-primary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(2) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(7) > div {
 	i, h4 {
 		color: #9155aa;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(5) > div {
 	i, h4 {
 		color: $brand-secondary;
 	}
 }
-.page-template-careers .bkg-orbit-right ul > li:nth-child(4) > div {
+.page-template-careers .bkg-orbit-right ul > li:nth-child(3) > div, .page-template-careers .bkg-orbit-right ul > li:nth-child(6) > div {
 	i, h4 {
 		color: #bdb2f2;
 	}
 }
 .box-testimonial {
+	@include transition;
+	&:hover {
+		background: darken($gray_lighter, 1%);
+	}
 	.responsive {
 		max-width: 185px;
 		margin-bottom: 20px;
@@ -105,7 +112,7 @@
 	h4 {
 		font-family: $font-light;
 		color: $brand-tertiary;
-		line-height: 1.5em;
+		line-height: 50px;
 	}
 }
 
@@ -153,6 +160,20 @@
     pointer-events: none !important;
     text-align: left;
 }
+.slider-info{
+	.content{
+		h4, a{
+			font-size: 25px !important;
+		}
+		p{
+			font-size: 16px !important;
+			line-height: 24px;
+		}
+	}
+}
+span.sgnature {
+    font-size: 25px;
+}
 
 
 // 768px
@@ -195,8 +216,11 @@
 // 992px
 @media all and (min-width: $screen-landscape) {
 	.box-careers {
-		padding-top: 350px;
-		padding-bottom: 400px;
+		padding-top: 150px;
+		padding-bottom: 250px;
+		.container{
+			min-height: 520px;
+		}
 	}
 	.bkg-pink {
 		background-image: url(images/backer1.png), url(images/backer2.png);
@@ -313,7 +337,7 @@
 			padding: 0px 40px 40px 50px;
 		}
 		h4 {
-			font-size: 38px;
+			font-size: 37px;
 		}
 	}
 

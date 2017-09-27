@@ -128,72 +128,54 @@
 
 		<!-- SECTION METRICS -->
 		
-		<?php while(has_sub_field('section_5', 5)): ?>
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
 			<section class="metrics">
 				<div class="container">
-				<div class="col-left">					
-						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
-						<?php if(get_sub_field('sec5_button')): ?>
-								<?php 
-								$link = get_sub_field('sec5_button');
-								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" class="button"><?php echo $link['title']; ?></a>
-								<?php endif; ?>
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
+
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
 						<?php endif; ?>
-						 
-					<?php endwhile; ?>
-				</div>
-				<div class="col-right">
-					<ul>
+							 
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
 
-			<?php while(has_sub_field('section_5', 5)): ?>
-								
-			<?php if(get_sub_field('box_metrics')): ?>
-				<?php 
-					    
-					if( have_rows('box_metrics') ):
-
-					 while( have_rows('box_metrics') ) : the_row(); 
-					        
-					  ?>
-
-					    <li>
-							<div class="box-metric <?php the_sub_field('color_class'); ?>">
-								<small>
-									<i class="icon-monitor"></i>
-								<?php the_sub_field('icon_text'); ?>
-								</small>
-								<h3>
-									<?php the_sub_field('number'); ?>
-								</h3>
-								<p><?php the_sub_field('copy'); ?></p>
-							</div>
-						</li>
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-
-
-					</ul>
-				</div>
+						</ul>
+					</div>
 			</div>
 		</section>
-		<?php endif; ?>
-							 
-		<?php endwhile; ?>
+
+		<?php } ?>
+	
 
 		<!-- BOX BLUE FPO -->
 
 		<?php $assetSection = get_field('section_asset'); ?>
 			<?php if($assetSection){ ?>
-			<section class="box-gray">
-				<div class="container">
-					<div class="blue-box">
-						
+					<div class="line-height"><img src="https://solvvy.mbzvrm4-liquidwebsites.com/wp-content/themes/solvvy/images/waves-box-top.png" alt="" class="responsive"></div>
+					<div class="blue-box-waves">						
+						<div class="container">
 						<div class="image">
 						<?php if($assetSection['asset_left_image']){ ?>
 						<?php
@@ -212,9 +194,9 @@
 							<p><?php echo $assetSection['asset_description'] ?></p>
 							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
 						</div>
+						</div>
 					</div>
-				</div>
-			</section>
+					<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
 		<?php } ?>
 
 <?php get_footer(); ?>

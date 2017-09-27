@@ -32,16 +32,6 @@
 			top: -2px;
 			font-size: 20px;
 		}
-		&:after {
-			content: "\f054";
-			@include fontawesome;
-			font-size: 18px;
-			position: relative;
-			vertical-align: middle;
-			opacity: .5;
-			margin-left: 20px;
-		}
-
 	}
 	p {
 		font-size: 16px;
@@ -73,6 +63,25 @@
 .columns-solutions {
 	margin-top: 80px;
 }
+
+// Arrow only for HOME
+.home{
+	.panel-solution,
+	.panel {
+		h4 {
+			&:after {
+				content: "\f054";
+				@include fontawesome;
+				font-size: 18px;
+				position: relative;
+				vertical-align: middle;
+				opacity: .5;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 
@@ -206,6 +215,34 @@
 			top: 80%;
 		}
 	}
+
+	//PAGE: FOR YOUR INDUSTRY
+	body.page-id-923{
+		.tab-link h4{
+			color: $brand-tertiary;
+		}
+		.panel h4{
+			color: $brand-tertiary;
+		}
+		.panel{
+	    	background-image: url(images/waves-gray.png);
+		}
+	}
+
+	//PAGE: FOR YOUR BUSINESS TYPE
+	body.page-id-909{
+		.tab-link h4{
+			color: $brand-secondary;
+		}
+		.panel h4{
+			color: $brand-secondary;
+		}
+		.panel{
+	    	background-image: url(images/waves-blue.png);
+		}
+	}
+
+
 }
 
 // 1200px

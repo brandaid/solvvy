@@ -2,12 +2,20 @@
 	text-align: center;
 	background: url(images/orbit.png) no-repeat bottom right;
 	position: relative;
-	padding: 60px 0px 0 30px;
+	padding: 60px 30px 0 30px;
 	@include border-box;
+	&.pink-ball:before {
+		top: -130px;
+		text-align: center;
+	}
+	.wrapper {
+		overflow: hidden;
+	}
 	h2 {
 		@extend .underlined;
 		font-family: $font-semibold;
 		font-size: 36px;
+		text-align:center;
 	}
 	p {
 		font-size: 20px;
@@ -15,18 +23,44 @@
 		margin-bottom: 56px;
 	}
 	.col-left {
-		padding-right: 30px;
+		@include border-box;
+		width: 100%;
+    	display: block;
+		h2 {
+			text-align: center;
+		}
 	}
 	.col-right {
 		padding-top: 80px;
 		line-height: 0;
+		width: 100%;
+    	display: block;
+		@include border-box;
+	}
+	.tab-link:hover, .tab-link-without-icon:hover {
+		background: #eef0f2;
+		background: -webkit-linear-gradient(legacy-direction(to right), #eef0f2, transparent);
+		background: -webkit-gradient(linear, left top, right top, from(#eef0f2), to(transparent));
+		background: -webkit-linear-gradient(left, #eef0f2, transparent);
+		background: -o-linear-gradient(left, #eef0f2, transparent);
+		background: linear-gradient(to right, #eef0f2, transparent)!important; }
+	.tab-link.active, .active.tab-link-without-icon {
+		background: #eef0f2;
+		background: -webkit-linear-gradient(legacy-direction(to right), #eef0f2, transparent);
+		background: -webkit-gradient(linear, left top, right top, from(#eef0f2), to(transparent));
+		background: -webkit-linear-gradient(left, #eef0f2, transparent);
+		background: -o-linear-gradient(left, #eef0f2, transparent);
+		background: linear-gradient(to right, #eef0f2, transparent)!important; }
+
+	// 992px
+	@media all and (min-width: $screen-landscape) {	
+
 	}
 
-	
-	// 992px
-	@media all and (min-width: $screen-landscape) {
-		display: table;
+	@media all and (min-width: 1250px) {
 		width: 100%;
+		padding-right: 0;
+		text-align: left;
 		h2 {
 			&:after {
 				margin-left: 0;
@@ -40,12 +74,16 @@
 		}
 		.col-left,
 		.col-right {
-			display: table-cell;
 			width: 40%;
 			vertical-align: bottom;
+			display: inline-block;
 		}
 		.col-left {
+			padding-right: 30px;
 			text-align: left;
+			h2 {
+				text-align: left;
+			}
 			p {
 				padding-right: 20px;
 			}
@@ -54,32 +92,43 @@
 			}
 		}
 		.col-right {
+			position: absolute;
+			top: 0;
+			right: 0;
 			padding-top: 0;
 			width: 60%;
 		}
-		// 1200px
-		@media all and (min-width: $screen-desktop-big) {
-			padding: 170px 0 0 0;
-
-			.col-left,
-			.col-right {
-				width: 50%;
+		.wrapper {
+			position: relative;
+		}
+	}
+	// 1200px
+	@media all and (min-width: $screen-desktop-big) {
+		padding: 170px 0 0 0;
+		&.pink-ball:before {
+			top: -100px;
+		}
+		.col-left,
+		.col-right {
+			width: 50%;
+		}
+		.col-left {
+			padding-left: 15%;
+			p {
+				max-width: 460px;
+				padding: 0;
 			}
-			.col-left {
-				padding-left: 15%;
-				p {
-					max-width: 460px;
-					padding: 0;
-				}
-				.button {
-					margin-bottom: 80px;
-				}
+			.button {
+				margin-bottom: 80px;
 			}
 		}
 	}
 
 
 }
+
+
+
 .screen {
 	width: 100%;
 	height: auto;
@@ -88,13 +137,42 @@
 
 
 // 992px
-@media all and (min-width: $screen-landscape) {
+	@media all and (min-width: $screen-landscape) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 0;
+			}
+		}	
+}
+
+	@media all and (min-width: 1250px) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 600px;
+			}
+		}
+	}
+// 1400
+	@media all and (min-width: 1386px) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 600px;
+			}
+		}	
 }
 
 // 1200px
 	@media all and (min-width: $screen-desktop) {
 		.page-template-software .whats-solvvy {
-			padding: 0 0 0 0;			
+			padding: 0 0 100px 0;			
 		}
-
 }
+
+	@media all and (min-width: 1550px) {
+		.page-template-software .whats-solvvy {
+			#tab3 {
+				padding-top: 300px;
+			}
+		}
+	}
+			

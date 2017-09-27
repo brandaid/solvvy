@@ -1,3 +1,8 @@
+.page-template-news-press {
+	.list-boxes-three {
+		text-align: left;
+	}
+}
 .box-stories {
 	@extend .asset-cards;
 	text-align: left;
@@ -119,8 +124,20 @@ p.data-article {
 	.box-two-columns {
 		.left-col {
 			.button-pink {
-				margin-left: 51%;
+				margin-left: 52%;
 			}
+		}
+	}
+}
+
+.single-news, .single-press {
+	.box-text-top{
+		img.responsive {
+		    width: auto;
+		    max-width: 100%;
+		    margin: 20px auto!important;
+		    text-align: center;
+		    display: block;
 		}
 	}
 }

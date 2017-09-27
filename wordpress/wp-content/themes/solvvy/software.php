@@ -35,23 +35,7 @@
 
 		<!-- BOX BLUE FPO -->
 
-		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
-		<div class="blue-box-waves">
-	    <?php $section_1 = get_field('blue_box') ?>
-		<?php if($section_1){ ?>
-			<div class="container">
-				<div class="image">
-					<img src="<?php echo $section_1['image'];  ?>" class="responsive" alt="">
-				</div>
-				<div class="info">
-					<h2><?php echo $section_1['title'];  ?></h2>
-					<p><?php echo $section_1['copy'];  ?></p>
-					<a class="button-tn" href="<?php echo $section_1['link_button'];  ?>"><?php echo $section_1['text_button'];  ?></a>
-				</div>
-			</div>
-		<?php } ?>
-		</div>
-		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
+		<?php get_template_part( 'template-parts/boxpurplefpo' ); ?>
 
 		<!-- COMPETITIVE MATRIX -->
 
@@ -88,7 +72,7 @@
 					        
 					        ?>
 
-						<div class="tab-link-without-icon" data-value="<?php the_sub_field('data_id'); ?>">
+						<div class="tab-link-without-icon <?php the_sub_field('tab_class'); ?>" data-value="<?php the_sub_field('data_id'); ?>">
 							<h4><?php the_sub_field('title'); ?></h4>
 							<p><?php the_sub_field('copy'); ?></p>
 						</div>
