@@ -192,7 +192,7 @@
 						<div class="info">
 							<h2><?php echo $assetSection['asset_title'] ?></h2>
 							<p><?php echo $assetSection['asset_description'] ?></p>
-							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
+							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="<?php echo $assetSection['open_link'] ?>"><?php echo $assetSection['asset_button_text'] ?></a>
 						</div>
 						</div>
 					</div>

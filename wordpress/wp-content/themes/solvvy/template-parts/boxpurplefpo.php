@@ -10,7 +10,7 @@
 				<div class="info">
 					<h2><?php echo $section_1['title'];  ?></h2>
 					<p><?php echo $section_1['copy'];  ?></p>
-					<a class="button-tn" href="<?php echo $section_1['link_button'];  ?>"><?php echo $section_1['text_button'];  ?></a>
+					<a class="button-tn" href="<?php echo $section_1['link_button'];  ?>" target="<?php echo $section_1['open_link'];  ?>"><?php echo $section_1['text_button'];  ?></a>
 				</div>
 			</div>
 		<?php } ?>

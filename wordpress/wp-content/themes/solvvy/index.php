@@ -370,7 +370,7 @@
 										setup_postdata( $post ); 
 
 										?>
-									    	<a href="<?php the_permalink(); ?>"><h4><?php the_sub_field('item_title'); ?></h4></a>
+									    	<a href="<?php the_permalink(); ?>" target="<?php the_sub_field('open_link'); ?>"><h4><?php the_sub_field('item_title'); ?></h4></a>
 									    <?php wp_reset_postdata(); ?>
 									<?php endif; ?>
 									<?php endif; ?>
