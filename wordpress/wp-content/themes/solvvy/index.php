@@ -313,7 +313,7 @@
 																$post = $post_object;
 																setup_postdata( $post ); 
 														?>
-														<a href="<?php the_permalink(); ?>" target="<?php echo $sol_items['open_link'] ?>">
+														<a href="<?php the_permalink(); ?>" target="<?php echo $single_item['open_link'] ?>">
 															<h4>
 																<i class="<?php echo $single_item['icon_image'] ?>"></i>
 																<?php echo $single_item['item_title'] ?>	
