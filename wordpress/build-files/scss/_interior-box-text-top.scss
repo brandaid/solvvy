@@ -24,6 +24,9 @@
 	}
 }
 
+.page-template-about-us .box-text-top, .page-template-careers .box-text-top {
+	padding: 45px 0 90px 0!important;
+}
 .container-normal {
 	.container {
 		max-width: 1330px;
@@ -97,7 +100,7 @@
 	}
 }
 .page-template-software .box-text-top {
-	padding: 100px 0 0;
+	padding: 30px 0 0;
 }
 // 768px
 @media all and (min-width: $screen-portrait) {
