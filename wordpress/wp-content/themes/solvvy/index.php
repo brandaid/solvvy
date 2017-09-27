@@ -8,7 +8,6 @@
 */
 ?>
 <?php get_header(); ?>
-<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
 <?php the_post(); ?>
 
 		<!-- HERO BANNER -->
@@ -314,7 +313,7 @@
 																$post = $post_object;
 																setup_postdata( $post ); 
 														?>
-														<a href="<?php the_permalink(); ?>">
+														<a href="<?php the_permalink(); ?>" target="<?php echo $single_item['open_link'] ?>">
 															<h4>
 																<i class="<?php echo $single_item['icon_image'] ?>"></i>
 																<?php echo $single_item['item_title'] ?>	
