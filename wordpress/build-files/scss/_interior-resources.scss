@@ -25,6 +25,8 @@
 .content-button {
 	text-align: center;
 	padding: 20px 20px 0 20px;
+	position: relative;
+	z-index: 15;
 }
 .open-div {
 	color: $brand-primary;
