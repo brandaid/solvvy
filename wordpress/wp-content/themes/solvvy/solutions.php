@@ -34,6 +34,7 @@
 								'posts_per_page'	=> -1,
 								'post_type'			=> 'solutions_cards',
 								'solutions-types'	=> $selectedterm,
+								'order'			    => 'DESC'
 							);
 
 							$the_query = new WP_Query( $args ); ?>
