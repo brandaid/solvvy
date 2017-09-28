@@ -119,6 +119,10 @@
 .page-template-software .box-text-top {
 	padding: 30px 0 0;
 }
+
+.page-template-software .box-text-top.container-normal.align-center {
+	padding: 90px 0 0;
+}
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.software-container {
