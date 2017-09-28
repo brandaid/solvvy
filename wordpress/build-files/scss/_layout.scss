@@ -122,6 +122,19 @@ a, a:hover, a:active, a:focus {
 	padding-top: 200px!important;
 }
 
+.test-cols-1 {
+    width: 100% !important;
+	& .customers-box p {
+    	max-width: none !important;
+    }
+}
+.test-cols-2 {
+    width: 50% !important;
+	& .customers-box p {
+    	max-width: none !important;
+    }
+}
+
 .list-boxes-three {
 	@extend .formated-list;
 	// 768px
@@ -144,6 +157,9 @@ a, a:hover, a:active, a:focus {
 }	
 
 .list-boxes-four{
+	list-style-type: none;
+    padding: 0;
+
 	@media all and (min-width: $screen-portrait) {
 		font-size: 0;
 		li {

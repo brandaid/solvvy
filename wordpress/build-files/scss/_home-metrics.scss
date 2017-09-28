@@ -85,8 +85,8 @@
 	.metrics {
 		background: url(images/orbit-metrics.png) no-repeat left center;
 		text-align: left;
-		padding-top: 100px;
-		padding-bottom: 200px;
+		padding-top: 50px;
+		padding-bottom: 80px;
 		.container {
 			display: table;
 			width: 100%;
@@ -159,7 +159,7 @@
 	}
 	.box-metric {
 		max-width: 400px;
-		display: inline-block;
+		display: block;
 		small {
 			i {
 				margin-bottom: 12px;
