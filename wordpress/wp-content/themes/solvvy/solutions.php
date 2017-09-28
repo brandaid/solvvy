@@ -87,7 +87,7 @@
 							<div class="panel <?php echo ($i==0)?'active':''; ?> <?php if ($direct_parent == 920): ?> for-your-role <?php elseif ($direct_parent == 909):?>for-your-business-type <?php elseif ($direct_parent == 923):?>for-your-industry<?php endif ?>" id="panel-<?php the_ID() ?>">
 								<h4 class="panel-business"><?php echo $card_info['card_title']; ?></h4>
 								<p><?php echo $card_info['card_copy']; ?></p>
-								<a href="<?php the_permalink(); ?>" class="button-tn">Read More</a>	
+								<a href="<?php the_permalink(); ?>" class="button-tn">View More</a>	
 							</div>
 							<?php }  $i++; ?>
 						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
