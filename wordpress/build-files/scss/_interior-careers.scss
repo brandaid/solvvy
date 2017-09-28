@@ -116,6 +116,7 @@
 		font-family: $font-light;
 		color: $brand-tertiary;
 		line-height: 50px;
+		font-weight: lighter;
 	}
 }
 
@@ -167,6 +168,7 @@
 	.content{
 		h4, a{
 			font-size: 25px !important;
+			font-weight: normal;
 		}
 		p{
 			font-size: 16px !important;

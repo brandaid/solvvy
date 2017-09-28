@@ -23,7 +23,8 @@
 	}
 	small {
 		color: #6b7d92;
-		font-size: 14.5px;
+		font-size: 13px;
+		font-style: italic;
 	}
 	span {
 		display: block;
@@ -176,6 +177,7 @@
 	}
 	.titlemetrics {
 	padding-bottom: 180px;
+	padding-top: 30px;
 }
 	.globe-metric {
 		width: 150px;
@@ -288,8 +290,7 @@
 			font-size: 70px;
 		}
 		p {
-			font-size: 13px;
-			font-style: italic;
+			font-size: 17px;
 			margin-bottom: 20px;
 		}
 		span {
@@ -351,8 +352,7 @@
 			font-size: 100px;
 		}
 		p {
-			font-size: 17px;
-			font-style: italic;
+			font-size: 21px;
 		}
 		span {
 			&:after {

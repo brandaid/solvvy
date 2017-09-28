@@ -7,6 +7,10 @@
         box-shadow: 0 0 100px 0 rgba(93,14,139,.3);
     }
 }
+
+.page-template-software .wrapperTable .tableShadow {
+        margin-bottom: 95px!important;
+}
 .contTrHeader {
     padding: 0;  
 }
@@ -58,8 +62,8 @@
 .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
 .page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
 .page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
-    min-width: 200px;
-    padding-bottom: 40px;
+    padding-bottom: 21px;
+    min-width: 95px;
 }
 
 .contTdOne {
@@ -104,16 +108,28 @@ div.wrapperTable.tableShadow > div:nth-child(14) {
     .contTdEight {
         width: 10%;
     }
+    .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+.page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+.page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 120px;
+    padding-bottom: 31px;
+}
 }
 
 // 992px
 @media all and (min-width: $screen-landscape) {
+    .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+.page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+.page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 150px;
+    padding-bottom: 44px;
+}
 }
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
     .wrapperTable {
-        margin-top: 120px;
+        margin-top: 160px;
         &.tableShadow {
             margin-top: 60px; 
         }
@@ -124,6 +140,11 @@ div.wrapperTable.tableShadow > div:nth-child(14) {
             bottom: 20px;
         }
     }
+    .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+    .page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+    .page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 200px;
+}
 }
 // 1400px
 @media all and (min-width: $screen-desktop-big) {
