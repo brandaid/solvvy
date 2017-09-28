@@ -2,7 +2,7 @@
 	text-align: center;
 	background: url(images/bkg-box-text-top.png) no-repeat bottom right;
 	position: relative;
-	padding: 100px 0;
+	padding: 100px 0 25px 0;
 	@include border-box;
 	
 	h2 {
@@ -24,6 +24,29 @@
 	}
 }
 
+.page-template-about-us .box-text-top, .page-template-careers .box-text-top {
+	padding: 45px 0 90px 0;
+}
+
+.page-template-about-us .box-text-top.pink-ball, .page-template-careers .box-text-top.pink-ball {
+	padding: 100px 0 25px 0;
+}
+
+.page-template-vision .box-text-top.align-center {
+	padding: 90px 0;
+}
+
+.page-template-vision .box-text-top.container-normal {
+	padding: 30px 0;
+}
+
+.page-template-customers .box-text-top.container-normal.pink-ball {
+	padding: 120px 0 39px 0;
+}
+
+.page-template-our-events .box-text-top.lessmargin {
+	padding: 30px 0 40px 0;
+}
 .container-normal {
 	.container {
 		max-width: 1330px;
@@ -97,8 +120,16 @@
 	}
 }
 .page-template-software .box-text-top {
+	padding: 30px 0 0;
+}
+
+.page-template-software .box-text-top.container-normal.align-center {
+	padding: 90px 0 0;
+}
+.page-template-software .morespace {
 	padding: 100px 0 0;
 }
+
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.software-container {

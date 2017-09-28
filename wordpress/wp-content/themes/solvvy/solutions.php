@@ -34,6 +34,7 @@
 								'posts_per_page'	=> -1,
 								'post_type'			=> 'solutions_cards',
 								'solutions-types'	=> $selectedterm,
+								'order'			    => 'DESC'
 							);
 
 							$the_query = new WP_Query( $args ); ?>
@@ -180,7 +181,7 @@
 		<?php $assetSection = get_field('section_asset'); ?>
 			<?php if($assetSection){ ?>
 					<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
-					<div class="blue-box-waves">						
+					<div class="blue-box-waves">
 						<div class="container">
 						<div class="image">
 						<?php if($assetSection['asset_left_image']){ ?>
@@ -198,7 +199,7 @@
 						<div class="info">
 							<h2><?php echo $assetSection['asset_title'] ?></h2>
 							<p><?php echo $assetSection['asset_description'] ?></p>
-							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="<?php echo $assetSection['open_link'] ?>"><?php echo $assetSection['asset_button_text'] ?></a>
+							<a href="<?php if( $assetSection['asset_button_link_type'] == 'url' ):?><?php echo $assetSection['asset_button_destination'] ?><?php elseif( $assetSection['asset_button_link_type'] == 'pdf' ): ?><?php echo $assetSection['asset_button_link_pdf'] ?><?php endif; ?>" class="button-tn" target="<?php echo $assetSection['open_link_in_a_new_tab'][0]; ?>"><?php echo $assetSection['asset_button_text']; ?></a>
 						</div>
 						</div>
 					</div>

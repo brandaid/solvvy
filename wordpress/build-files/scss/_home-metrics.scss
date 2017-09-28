@@ -31,11 +31,11 @@
 		position: absolute;
 		right: 0;
 		top: 20px;
-		font-size: 18px;
+		font-size: 14px;
 		i {
 			display: block;
 			font-size: 30px;
-			padding-bottom: 10px;
+			margin-bottom: 10px;
 			margin-right: -4px;
 		}
 	}
@@ -85,8 +85,8 @@
 	.metrics {
 		background: url(images/orbit-metrics.png) no-repeat left center;
 		text-align: left;
-		padding-top: 100px;
-		padding-bottom: 200px;
+		padding-top: 40px;
+		padding-bottom: 90px;
 		.container {
 			display: table;
 			width: 100%;
@@ -159,7 +159,7 @@
 	}
 	.box-metric {
 		max-width: 400px;
-		display: inline-block;
+		display: block;
 		small {
 			i {
 				margin-bottom: 12px;

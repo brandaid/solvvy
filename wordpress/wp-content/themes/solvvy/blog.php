@@ -144,7 +144,7 @@
 				<div class="info">
 					<h2><?php the_sub_field('title'); ?></h2>
 					<p><?php the_sub_field('copy'); ?></p>
-					<a class="button-tn" href="<?php the_sub_field('link_button'); ?>" target="<?php the_sub_field('open_link'); ?>"><?php the_sub_field('text_button'); ?></a>
+					<a href="<?php if(get_sub_field('type_link') == 'url'){ ?><?php the_sub_field('link_button'); ?><?php } else if(get_sub_field('type_link') == 'pdf'){?><?php the_sub_field('link_pdf'); ?><?php } ?>" class="button-tn" target="<?php the_sub_field('open_link_in_a_new_tab'); ?>"><?php the_sub_field('text_button'); ?></a>
 				</div>
 			</div>
 		</div>
