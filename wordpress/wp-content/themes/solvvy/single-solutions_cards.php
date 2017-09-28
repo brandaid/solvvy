@@ -163,9 +163,9 @@
 				<?php } ?>
 				</div>
 				<div class="info">
-					<h2><?php echo $assetSection['asset_title'] ?></h2>
+					<h2><?php echo $assetSection['asset_title'] ?></h2>					
 					<p><?php echo $assetSection['asset_description'] ?></p>
-					<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
+					<a href="<?php if( $assetSection['asset_button_link_type'] == 'url' ):?><?php echo $assetSection['asset_button_destination'] ?><?php elseif( $assetSection['asset_button_link_type'] == 'pdf' ): ?><?php echo $assetSection['asset_button_link_pdf'] ?><?php endif; ?>" class="button-tn" target="<?php echo $assetSection['open_link_in_a_new_tab'][0]; ?>"><?php echo $assetSection['asset_button_text']; ?></a>
 				</div>
 			</div>
 		</div>
