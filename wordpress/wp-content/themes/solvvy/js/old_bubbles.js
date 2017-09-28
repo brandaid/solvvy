@@ -143,7 +143,7 @@ var Nodeline = function(opts){
 var BubbleScene = function(opts){
 
 	var self = this;
-	var sizes = [280, 210];
+	var sizes = [280, 220];
 	this.min_distance = 20;
 	this.connectorsAll = [];
 	this._container = $(opts.container);
@@ -167,47 +167,21 @@ var BubbleScene = function(opts){
 	}
 
 	this.calculateBackground = function(){
-		var colors = ['#9753A9', '#725AB0', '#D5CEFA', '#FF3378', '#5F108F', '#F92D6D', '#FF639F'];
-		var counter = 0;
-
+		var colors = ['#725AB0', '#F6639A', '#5F108F', '#F92D6D'];
 		self.bubbles.forEach(function(item){
-			if(item.bubbleType == 'metric'){
-				if(counter == 0 || counter == 2 || counter == 8){
-					item.bkbubb = colors[0];
-				}else if(counter == 6){
-					item.bkbubb = colors[1];
-				}else if(counter == 4){
-					item.bkbubb = colors[2];
-				}else if(counter == 5){
-					item.bkbubb = colors[6];
-				}else if(counter == 7){
-					item.bkbubb = colors[3];
-				}else{
-					item.bkbubb = colors[4];
-				}
-			}else{
-				item.bkbubb = colors[Math.round(Math.random()*3)];
-			}
-
-			//item.bkbubb = colors[Math.round(Math.random()*3)];
-			counter++;
+			item.bkbubb = colors[Math.round(Math.random()*3)];
 		});
 	};
 
 	this.calculateSizes = function(){
-		var counter = 0;
 		self.bubbles.forEach(function(item){
 			if(item.bubbleType != 'people'){
-				if(counter == 0 || counter == 2 || counter == 3 || counter == 5 || counter == 7 || counter == 9){
-					item.size = sizes[1];
-				}else{
-					item.size = sizes[0];
-				}
+				var sizeOpt = (item.percent.length > 8)? 0 : 1;
+				item.size = sizes[sizeOpt];
 			}else{
 				var sizeOpt = (item.title.length + item.title.length > 250)? 0 : 1;
 				item.size = sizes[sizeOpt];
 			}
-			counter++;
 		});
 	};
 
@@ -223,8 +197,8 @@ var BubbleScene = function(opts){
 			h : Math.floor(height / rows)
 		};
 
-		for(var r = 0; r < rows ; r++){
-			for(var c = 0; c < cols ; c++){
+		for(var c = 0; c < cols ; c++){
+			for(var r = 0; r < rows ; r++){
 				var segment = new Segment({ c : c, r : r, segment_size : segment_size });
 				segments.push(segment);
 			}
@@ -239,8 +213,8 @@ var BubbleScene = function(opts){
 	}
 
 	this.calculatePositions = function(){
-		var counter = 0;
 		var elements_count = this.bubbles.length;
+		var counter = 0;
 		var max_for_row = this._width/(sizes[0]+this.min_distance);
 
 		var max_offset = {
@@ -250,8 +224,15 @@ var BubbleScene = function(opts){
 
 		this._calculateSegments(self.segment_size,this._width,this._height);
 
+		//this.segments.segments.sort(function(a,b){
+		//	var
+		//	aScore = Math.abs(self.segments.rows/2 - a.r),
+		//	bScore = Math.abs(self.segments.rows/2 - b.r);
+		//	aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
+		//	bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
+		//	return aScore - bScore;
+		//});
 		this.bubbles.forEach(function(bubble){
-			
 			var useSegment = self.segments.segments.find(function(segment){
 				return segment.element === false;
 			});
@@ -263,49 +244,9 @@ var BubbleScene = function(opts){
 
 				useSegment.element = true;
 				useSegment.bubble = bubble;
-
-				if(bubble.bubbleType == 'metric'){
-					if(counter == 0){
-						bubble.position.x = 0;
-						bubble.position.y = 190;
-					}else if(counter == 1){
-						bubble.position.x = minPosX + 70;
-						bubble.position.y = 20;
-					}else if(counter == 2){
-						bubble.position.x = minPosX + 105;
-						bubble.position.y = 125;
-					}else if(counter == 3){
-						bubble.position.x = 1063;
-						bubble.position.y = 54;
-					}else if(counter == 4){
-						bubble.position.x = 31;
-						bubble.position.y = 484;
-					}else if(counter == 5){
-						bubble.position.x = 308;
-						bubble.position.y = 314;
-					}else if(counter == 6){
-						bubble.position.x = 669;
-						bubble.position.y = 392;
-					}else if(counter == 7){
-						bubble.position.x = 1035;
-						bubble.position.y = 467;
-					}else if(counter == 8){
-						bubble.position.x = 380;
-						bubble.position.y = 608;
-					}else if(counter == 9){
-						bubble.position.x = 776;
-						bubble.position.y = 719;
-					}else {
-						bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
-						bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
-					}
-				}else{
-					bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
-					bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
-				}
-
+				bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
+				bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
 			}
-			counter++;
 		});
 
 	}
@@ -319,96 +260,33 @@ var BubbleScene = function(opts){
 			item.remove();
 		});
 		self.connectorsAll = [];
-		var counter = 0;
-		this.segments.segments.forEach(function(current_segment){
 
-			var other_counter = 0;
+		this.segments.segments.forEach(function(current_segment){
 			//current_segment.render(self._container);
 			if(current_segment.element === true){
-				if(current_segment.bubble.bubbleType == 'metric'){
-					
-						self.segments.segments.forEach(function(other_segment){
-							var create_con = false;
-							
-							if(counter == 0){
-								if(other_counter == 1 || other_counter == 5){
-									create_con = true;
-								}
-							}else if(counter == 1){
-								if(other_counter == 2 || other_counter == 5){
-									create_con = true;
-								}
-							}else if(counter == 2){
-								if(other_counter == 3 || other_counter == 7 || other_counter == 5){
-									create_con = true;
-								}
-							}else if(counter == 3){
-								if(other_counter == 7){
-									create_con = true;
-								}
-							}else if(counter == 4){
-								if(other_counter == 0 || other_counter == 5){
-									create_con = true;
-								}
-							}else if(counter == 5){
-								if(other_counter == 6 || other_counter == 8){
-									create_con = true;
-								}
-							}else if(counter == 6){
-								if(other_counter == 2 || other_counter == 7 || other_counter == 9){
-									create_con = true;
-								}
-							}else if(counter == 7){
-								if(other_counter == 9){
-									create_con = true;
-								}
-							}else if(counter == 8){
-								if(other_counter == 4 || other_counter == 6 || other_counter == 9){
-									create_con = true;
-								}
-							}else if(counter == 9){
-									
-							} 
-
-							if(create_con){
+				self.segments.segments.forEach(function(other_segment){
+					if(other_segment.element == true){
+						if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
+							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
 								var connector = new Nodeline({
 									start : current_segment.bubble.center(),
 									end : other_segment.bubble.center(),
 									width : 2
 								});
-								self.connectorsAll.push(connector);
+								var valid = true;
+								self.connectorsAll.forEach(function(other_connector){
+									if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
+										valid = false;
+									};
+								});
+								if(valid){self.connectorsAll.push(connector);};
 							}
-							other_counter ++;
-						});
-						
-				}else{
-					if(current_segment.element === true){
-						self.segments.segments.forEach(function(other_segment){
-							if(other_segment.element == true){
-								if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
-									if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
-										var connector = new Nodeline({
-											start : current_segment.bubble.center(),
-											end : other_segment.bubble.center(),
-											width : 2
-										});
-										var valid = true;
-										self.connectorsAll.forEach(function(other_connector){
-											if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
-												valid = false;
-											};
-										});
-										if(valid){self.connectorsAll.push(connector);};
-									}
-								}
-							}
-
-						});
-
+						}
 					}
-				}
+
+				});
+
 			}
-			counter ++;
 		});
 
 		this.connectorsAll.forEach(function(item){
