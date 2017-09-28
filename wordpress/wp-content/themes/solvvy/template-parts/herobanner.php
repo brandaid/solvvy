@@ -1,10 +1,14 @@
 		<!-- SECTION HERO BANNER -->
-		
-		<?php $section_hero = get_field('section_hero') ?>		
+
+		<?php $section_hero = get_field('section_hero') ?>
+
+
+
+		<i class="<?php echo $section_hero['icon']; ?>"></i>
 
 		<?php if($section_hero){ ?>
 			<?php if($section_hero['hero_background']){ ?>
-				
+
 				<?php
 					$image_id = $section_hero['hero_background'];
 					$image_size = 'featured';
