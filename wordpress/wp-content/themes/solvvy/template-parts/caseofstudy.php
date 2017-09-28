@@ -36,9 +36,9 @@
 
 							</figure>
 							<div class="content">
-								<h3><a href="<?php echo $single_case['case_of_study_button_destination'] ?>" target="<?php echo $single_case['open_link'] ?>"><?php echo $single_case['case_of_study_title'] ?></a></h3>
+								<h3><a href="<?php if( $section_case_of_study['button_link_type'] == 'url' ):?><?php echo $section_case_of_study['button_destination'] ?><?php elseif( $section_case_of_study['button_link_type'] == 'pdf' ): ?><?php echo $section_case_of_study['asset_button_link_pdf'] ?><?php endif; ?>" target="<?php echo $section_case_of_study['open_link'][0]; ?>"><?php echo $section_case_of_study['button_text']; ?></a></h3>
 								<p><?php echo $single_case['case_of_study_description'] ?></p>
-								<a href="<?php echo $single_case['case_of_study_button_destination'] ?>" class="button-tn" target="<?php echo $single_case['open_link'] ?>"><?php echo $single_case['case_of_study_cta_button_text'] ?></a>
+									<a href="<?php if( $section_case_of_study['button_link_type'] == 'url' ):?><?php echo $section_case_of_study['button_destination'] ?><?php elseif( $section_case_of_study['button_link_type'] == 'pdf' ): ?><?php echo $section_case_of_study['asset_button_link_pdf'] ?><?php endif; ?>" class="button-tn" target="<?php echo $section_case_of_study['open_link'][0]; ?>"><?php echo $section_case_of_study['button_text']; ?></a>
 							</div>
 						</article>
 					</li>
