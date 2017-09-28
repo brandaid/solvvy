@@ -133,7 +133,7 @@
 						<?php $latest_report = get_field('latest_report', 'option'); ?>
 						<div style="display: none;">
 							<div id="get-post">
-								<h4>LATEST REPORT</h4>
+								<h4>LATEST WHITEPAPER</h4>
 								<?php if( $latest_report['latest_title'] ) { ?>
 								<p>
 									<a href="<?php echo $latest_report['latest_read_more']; ?>" title="<?php the_title_attribute(); ?>" target="<?php echo $latest_report['latest_target']; ?>">
