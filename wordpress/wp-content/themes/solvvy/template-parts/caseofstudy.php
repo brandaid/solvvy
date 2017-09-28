@@ -36,9 +36,9 @@
 
 							</figure>
 							<div class="content">
-								<h3><a href="<?php echo $single_case['case_of_study_button_destination'] ?>" target="<?php echo $single_case['open_link'] ?>"><?php echo $single_case['case_of_study_title'] ?></a></h3>
+								<h3><a href="<?php if( $single_case['button_link_type'] == 'url' ):?><?php echo $single_case['button_destination'] ?><?php elseif( $single_case['button_link_type'] == 'pdf' ): ?><?php echo $single_case['asset_button_link_pdf'] ?><?php endif; ?>" target="<?php echo $single_case['open_link'][0]; ?>"><?php echo $single_case['button_text']; ?></a></h3>
 								<p><?php echo $single_case['case_of_study_description'] ?></p>
-								<a href="<?php echo $single_case['case_of_study_button_destination'] ?>" class="button-tn" target="<?php echo $single_case['open_link'] ?>"><?php echo $single_case['case_of_study_cta_button_text'] ?></a>
+									<a href="<?php if( $single_case['button_link_type'] == 'url' ):?><?php echo $single_case['button_destination'] ?><?php elseif( $single_case['button_link_type'] == 'pdf' ): ?><?php echo $single_case['asset_button_link_pdf'] ?><?php endif; ?>" class="button-tn" target="<?php echo $single_case['open_link'][0]; ?>"><?php echo $single_case['button_text']; ?></a>
 							</div>
 						</article>
 					</li>
