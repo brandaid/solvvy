@@ -69,7 +69,7 @@
 
 		<div class="cool-sep"></div>
 
-		<section class="box-text-top container-normal title-to-left">
+		<section class="box-text-top container-normal title-to-left lessmargin">
 			<div class="container  align-left">
 				<h2>Past Events</h2>
 
