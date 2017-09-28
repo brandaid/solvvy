@@ -31,7 +31,7 @@
 							if($rows){ ?>
 							
 					<div class="col-left">
-						<select class="solutions" id="subpages">
+						<select class="solutions <?php if (get_the_ID() == 920): ?> for-your-role <?php elseif (get_the_ID() == 909):?>for-your-business-type <?php elseif (get_the_ID() == 923):?>for-your-industry<?php endif ?>" id="subpages">
     					<?php foreach($rows as $row){ ?>
     					<?php // set up post object
 					        $post_object = $row['postobject'];
@@ -53,6 +53,7 @@
 					        $post = $post_object;
 					        setup_postdata($post);
 					        ?>
+
 							<?php $card_info = get_field('card_info'); ?>
 							<?php if($card_info){ ?>
 							<div class="tab-link" rel="panel-<?php the_ID() ?>">
@@ -78,10 +79,12 @@
 					        $post = $post_object;
 					        setup_postdata($post);
 					        ?>
+					        <?php global $post;
+							$direct_parent = $post->post_parent; ?>
 							<?php $card_info = get_field('card_info'); 
 							$link = $card_info['card_button'];?>
 							<?php if($card_info){ ?>
-							<div class="panel <?php echo ($i==0)?'active':''; ?> <?php echo $selectedterm ?>" id="panel-<?php the_ID() ?>">
+							<div class="panel <?php echo ($i==0)?'active':''; ?> <?php if ($direct_parent == 920): ?> for-your-role <?php elseif ($direct_parent == 909):?>for-your-business-type <?php elseif ($direct_parent == 923):?>for-your-industry<?php endif ?>" id="panel-<?php the_ID() ?>">
 								<h4 class="panel-business"><?php echo $card_info['card_title']; ?></h4>
 								<p><?php echo $card_info['card_copy']; ?></p>
 								<a href="<?php the_permalink(); ?>" class="button-tn">Read More</a>	
