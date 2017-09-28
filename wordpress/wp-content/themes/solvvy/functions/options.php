@@ -16,8 +16,8 @@ if( function_exists('acf_add_options_page') ) {
 if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_page(array(
-        'page_title'    => 'Latest Report',
-        'menu_title'    => 'Latest Report',
+        'page_title'    => 'Latest Whitepaper',
+        'menu_title'    => 'Latest Whitepaper',
         'menu_slug'     => 'latest-report',
         'capability'    => 'edit_posts',
         'redirect'      => false,
