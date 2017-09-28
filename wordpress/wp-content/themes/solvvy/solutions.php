@@ -27,27 +27,32 @@
 			<div class="container">
 				
 				<div class="columns-solutions">
-					<?php 
-						$selectedterm = get_field('solutions_cards')->slug;
-						$termslug =  $term->slug;
-							$args = array(
-								'posts_per_page'	=> -1,
-								'post_type'			=> 'solutions_cards',
-								'solutions-types'	=> $selectedterm,
-								'order'			    => 'DESC'
-							);
-
-							$the_query = new WP_Query( $args ); ?>
-							<?php if( $the_query->have_posts() ): ?>
+					<?php $rows = get_field('solutions_cards');
+							if($rows){ ?>
 							
 					<div class="col-left">
-						<select class="solutions <?php echo $selectedterm ?>" id="subpages">
-						<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-							<option rel="panel-<?php the_ID() ?>" value="panel-<?php the_ID() ?>"><?php the_title(); ?></option>				
-						<?php endwhile; ?>
+						<select class="solutions" id="subpages">
+    					<?php foreach($rows as $row){ ?>
+    					<?php // set up post object
+					        $post_object = $row['postobject'];
+					        if( $post_object ) {
+					        $post = $post_object;
+					        setup_postdata($post);
+					        ?>
+							<option rel="panel-<?php the_ID() ?>" value="panel-<?php the_ID() ?>"><?php the_title(); ?></option>
+							    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+   								 <?php }; ?>				
+						<?php }; ?>
 						</select>
 
-						<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+   						<?php foreach($rows as $row){ ?>
+   						 <?php // set up post object
+					        $post_object = $row['postobject'];
+					        if( $post_object ) {
+					        $post = $post_object;
+					        setup_postdata($post);
+					        ?>
 							<?php $card_info = get_field('card_info'); ?>
 							<?php if($card_info){ ?>
 							<div class="tab-link" rel="panel-<?php the_ID() ?>">
@@ -55,29 +60,42 @@
 								<p><?php echo $card_info['intro_paragraph']; ?></p>
 							</div>		
 							<?php } ?>
-						<?php endwhile; ?>
+							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+    						<?php }; ?>
+						<?php }; ?>
 
       				</div>
 
 					<div class="col-right">
 						<?php 
 						$i=0;
-						while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						foreach($rows as $row){ ?>
+
+					    <?php // set up post object
+					        $post_object = $row['postobject'];
+					        if( $post_object ) {
+					        $post = $post_object;
+					        setup_postdata($post);
+					        ?>
 							<?php $card_info = get_field('card_info'); 
 							$link = $card_info['card_button'];?>
 							<?php if($card_info){ ?>
 							<div class="panel <?php echo ($i==0)?'active':''; ?> <?php echo $selectedterm ?>" id="panel-<?php the_ID() ?>">
 								<h4 class="panel-business"><?php echo $card_info['card_title']; ?></h4>
 								<p><?php echo $card_info['card_copy']; ?></p>
-								<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button-tn"><?php echo $link['title']; ?></a>	<?php } ?>
+								<a href="<?php the_permalink(); ?>" class="button-tn">Read More</a>	
 							</div>
 							<?php }  $i++; ?>
-						<?php endwhile; ?>	
+						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+					    <?php }; ?>
+
+					    <?php }; ?>
 						
 				    </div>
-				 	<?php endif; ?>
-
-					<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>	
+				 	<!-- End Repeater -->
+					<?php }; ?>
 				</div>
 
 			</div>
