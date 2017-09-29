@@ -72,6 +72,9 @@
 			<div class="animation"><div class="circle five"></div></div>
 		</div>
 	</div>
+
+	<div id="search_modal" style="display: none;"></div>
+	
 		<header class="header">
 
 			<section class="header-top">
