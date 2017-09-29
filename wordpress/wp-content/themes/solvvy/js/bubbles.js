@@ -182,8 +182,10 @@ var BubbleScene = function(opts){
 					item.bkbubb = colors[6];
 				}else if(counter == 7){
 					item.bkbubb = colors[3];
-				}else{
+				}else if(counter == 1){
 					item.bkbubb = colors[4];
+				}else{
+					item.bkbubb = colors[Math.floor(Math.random()*6+1)];
 				}
 			}else{
 				item.bkbubb = colors[Math.floor(Math.random()*6+1)];
@@ -200,11 +202,15 @@ var BubbleScene = function(opts){
 			if(item.bubbleType != 'people'){
 				if(counter == 0 || counter == 2 || counter == 3 || counter == 5 || counter == 7 || counter == 9){
 					item.size = sizes[1];
+				}else if(counter == 0 + 10 || counter == 2 + 10 || counter == 3 + 10 || counter == 5 + 10 || counter == 7 + 10 || counter == 9 + 10){
+					item.size = sizes[1];
 				}else{
 					item.size = sizes[0];
 				}
 			}else{
 				if(counter == 1 || counter == 4 || counter == 6 || counter == 9 || counter == 13 || counter == 16 || counter == 18 || counter == 21 || counter == 25|| counter == 28|| counter == 30|| counter == 33){
+					item.size = sizes[0];
+				}else if((counter == 1 + 35) ||( counter == 4 + 35) ||( counter == 6 + 35) ||( counter == 9 + 35) || (counter == 13 + 35) || (counter == 16 + 35) || (counter == 18 + 35) || (counter == 21 + 35) || (counter == 25 + 35)|| (counter == 28 + 35)|| (counter == 30 + 35)|| (counter == 33 + 35)){
 					item.size = sizes[0];
 				}else{
 					item.size = sizes[1];
@@ -387,17 +393,17 @@ var BubbleScene = function(opts){
 							bubble.position.x = 703;
 							bubble.position.y = 0 + 960 + 960;
 						}else if(counter == 27){
-							bubble.position.x = 1036;
-							bubble.position.y = 80 + 960 + 960;
-						}else if(counter == 28){
-							bubble.position.x = 190;
-							bubble.position.y = 2265;
-						}else if(counter == 29){
-							bubble.position.x = 686;
-							bubble.position.y = 354 + 960 + 960;
-						}else if(counter == 30){
 							bubble.position.x = 708;
 							bubble.position.y = 291 + 960 + 960;
+						}else if(counter == 28){
+							bubble.position.x = 50;
+							bubble.position.y = 445 + 960 + 960;
+						}else if(counter == 29){
+							bubble.position.x = 406;
+							bubble.position.y = 354 + 960 + 960;
+						}else if(counter == 30){
+							bubble.position.x = 1036;
+							bubble.position.y = 80 + 960 + 960;
 						}else if(counter == 31){
 							bubble.position.x = 1031;
 							bubble.position.y = 481 + 960 + 960;
@@ -508,136 +514,141 @@ var BubbleScene = function(opts){
 							self.segments.segments.forEach(function(other_segment){
 								var create_con = false;
 								
-								if(counter == 0){
-									if(other_counter == 1 || other_counter == 5){
-										create_con = true;
+								if(other_segment.element === true){
+									if(counter == 0){
+										if(other_counter == 1 || other_counter == 5){
+											create_con = true;
+										}
+									}else if(counter == 1){
+										if(other_counter == 2 || other_counter == 5 || other_counter == 6){
+											create_con = true;
+										}
+									}else if(counter == 2){
+										if(other_counter == 3 ){
+											create_con = true;
+										}
+									}else if(counter == 3){
+										if(other_counter == 7 || other_counter == 6){
+											create_con = true;
+										}
+									}else if(counter == 4){
+										if(other_counter == 0 || other_counter == 5){
+											create_con = true;
+										}
+									}else if(counter == 5){
+										if(other_counter == 6 || other_counter == 9){
+											create_con = true;
+										}
+									}else if(counter == 6){
+										if(other_counter == 2 || other_counter == 7 || other_counter == 9){
+											create_con = true;
+										}
+									}else if(counter == 7){
+										if(other_counter == 10 || other_counter == 11){
+											create_con = true;
+										}
+									}else if(counter == 8){
+										if(other_counter == 4 || other_counter == 12 || other_counter == 9){
+											create_con = true;
+										}
+									}else if(counter == 9){
+										if(other_counter == 4 || other_counter == 13){
+											create_con = true;
+										}
+									}else if(counter == 10){
+										if(other_counter == 9 || other_counter == 6 || other_counter == 11 || other_counter ==14){
+											create_con = true;
+										}
+									}else if(counter == 11){
+										if(other_counter == 15){
+											create_con = true;
+										}
+									}else if(counter == 12){
+										if(other_counter == 13 || other_counter == 16 || other_counter == 17){
+											create_con = true;
+										}
+									}else if(counter == 13){
+										if(other_counter == 14 || other_counter == 17 || other_counter == 18){
+											create_con = true;
+										}
+									}else if(counter == 14){
+										if(other_counter == 15 ){
+											create_con = true;
+										}
+									}else if(counter == 15){
+										if(other_counter == 19 || other_counter == 18){
+											create_con = true;
+										}
+									}else if(counter == 16){
+										if( other_counter == 17){
+											create_con = true;
+										}
+									}else if(counter == 17){
+										if(other_counter == 18 || other_counter == 21){
+											create_con = true;
+										}
+									}else if(counter == 18){
+										if(other_counter == 14 || other_counter == 19 || other_counter == 21){
+											create_con = true;
+										}
+									}else if(counter == 19){
+										if(other_counter == 22 || other_counter == 23){
+											create_con = true;
+										}
+									}else if(counter == 20){
+										if(other_counter == 16 || other_counter == 24 || other_counter == 21){
+											create_con = true;
+										}
+									}else if(counter == 21){
+										if(other_counter == 16 || other_counter == 25){
+											create_con = true;
+										}
+									}else if(counter == 22){
+										if(other_counter == 21 || other_counter == 18 || other_counter == 23 || other_counter == 26){
+											create_con = true;
+										}
+									}else if(counter == 23){
+										if(other_counter == 27){
+											create_con = true;
+										}
+									}else if(counter == 24){
+										if(other_counter == 25 || other_counter == 28){
+											create_con = true;
+										}
+									}else if(counter == 25){
+										if(other_counter == 26 || other_counter == 28 || other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter == 26){
+										if(other_counter == 27 || other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter == 27){
+										if( other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter == 28){
+										if( other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter > 30){
+										if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c ){
+											if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r){
+												create_con = true;
+											}
+										}
 									}
-								}else if(counter == 1){
-									if(other_counter == 2 || other_counter == 5 || other_counter == 6){
-										create_con = true;
-									}
-								}else if(counter == 2){
-									if(other_counter == 3 ){
-										create_con = true;
-									}
-								}else if(counter == 3){
-									if(other_counter == 7 || other_counter == 6){
-										create_con = true;
-									}
-								}else if(counter == 4){
-									if(other_counter == 0 || other_counter == 5){
-										create_con = true;
-									}
-								}else if(counter == 5){
-									if(other_counter == 6 || other_counter == 9){
-										create_con = true;
-									}
-								}else if(counter == 6){
-									if(other_counter == 2 || other_counter == 7 || other_counter == 9){
-										create_con = true;
-									}
-								}else if(counter == 7){
-									if(other_counter == 10 || other_counter == 11){
-										create_con = true;
-									}
-								}else if(counter == 8){
-									if(other_counter == 4 || other_counter == 12 || other_counter == 9){
-										create_con = true;
-									}
-								}else if(counter == 9){
-									if(other_counter == 4 || other_counter == 13){
-										create_con = true;
-									}
-								}else if(counter == 10){
-									if(other_counter == 9 || other_counter == 6 || other_counter == 11 || other_counter ==14){
-										create_con = true;
-									}
-								}else if(counter == 11){
-									if(other_counter == 15){
-										create_con = true;
-									}
-								}else if(counter == 12){
-									if(other_counter == 13 || other_counter == 16 || other_counter == 17){
-										create_con = true;
-									}
-								}else if(counter == 13){
-									if(other_counter == 14 || other_counter == 17 || other_counter == 18){
-										create_con = true;
-									}
-								}else if(counter == 14){
-									if(other_counter == 15 ){
-										create_con = true;
-									}
-								}else if(counter == 15){
-									if(other_counter == 19 || other_counter == 18){
-										create_con = true;
-									}
-								}else if(counter == 16){
-									if( other_counter == 17){
-										create_con = true;
-									}
-								}else if(counter == 17){
-									if(other_counter == 18 || other_counter == 21){
-										create_con = true;
-									}
-								}else if(counter == 18){
-									if(other_counter == 14 || other_counter == 19 || other_counter == 21){
-										create_con = true;
-									}
-								}else if(counter == 19){
-									if(other_counter == 22 || other_counter == 23){
-										create_con = true;
-									}
-								}else if(counter == 20){
-									if(other_counter == 16 || other_counter == 24 || other_counter == 21){
-										create_con = true;
-									}
-								}else if(counter == 21){
-									if(other_counter == 16 || other_counter == 25){
-										create_con = true;
-									}
-								}else if(counter == 22){
-									if(other_counter == 21 || other_counter == 18 || other_counter == 23 || other_counter == 26){
-										create_con = true;
-									}
-								}else if(counter == 23){
-									if(other_counter == 27){
-										create_con = true;
-									}
-								}else if(counter == 24){
-									if(other_counter == 25 || other_counter == 28){
-										create_con = true;
-									}
-								}else if(counter == 25){
-									if(other_counter == 26 || other_counter == 28 || other_counter == 29){
-										create_con = true;
-									}
-								}else if(counter == 26){
-									if(other_counter == 27 || other_counter == 29){
-										create_con = true;
-									}
-								}else if(counter == 27){
-									if( other_counter == 29){
-										create_con = true;
-									}
-								}else if(counter == 28){
-									if( other_counter == 29){
-										create_con = true;
-									}
-								}else if(counter == 29){
-									if(other_counter == 30 || other_counter == 33){
-										
+									if(create_con){
+										var connector = new Nodeline({
+											start : current_segment.bubble.center(),
+											end : other_segment.bubble.center(),
+											width : 2
+										});
+										self.connectorsAll.push(connector);
 									}
 								}
 
-								if(create_con){
-									var connector = new Nodeline({
-										start : current_segment.bubble.center(),
-										end : other_segment.bubble.center(),
-										width : 2
-									});
-									self.connectorsAll.push(connector);
-								}
+
 								other_counter ++;
 							});
 
