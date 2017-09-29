@@ -651,19 +651,27 @@
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.sm-clean#main-menu ul {
-		max-width: none!important;
+	#menu-item-932 > .sub-menu {
 		width: 860px!important;
+		max-width: none!important;
+	}
+	#menu-item-338 > .sub-menu {
+		width: 670px!important;
+		max-width: none!important;
 	}
 	.hero-banner-interior h1 {
     margin-top: 110px!important;
 	}
 }
 
-@supports (-ms-ime-align:auto) {
-	#main-menu.sm-clean ul {
-		max-width: none!important;
+_:-ms-lang(x), _:-webkit-full-screen, .selector { 
+	#menu-item-932 > .sub-menu {
 		width: 860px!important;
+		max-width: none!important;
+	}
+	#menu-item-338 > .sub-menu {
+		width: 670px!important;
+		max-width: none!important;
 	}
 }
 
