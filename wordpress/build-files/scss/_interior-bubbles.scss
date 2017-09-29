@@ -160,15 +160,15 @@
         display: none;
     }
 }
-@media (max-width: 800px){
+@media (max-width: 801px){
     div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show {
         max-height: 480px !important;
-        figure.wph-modal--image.mobile-hidden, .wph-modal--message{
-            max-height: 480px !important;
-            img{
-                max-height: 480px !important;
-            }
-        }
-
+    }
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image.mobile-hidden, 
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show .wph-modal--message{
+        max-height: 480px !important;
+    }
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image.mobile-hidden img{
+        max-height: 480px !important;
     }
 }
