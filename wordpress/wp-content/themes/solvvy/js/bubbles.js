@@ -646,7 +646,7 @@ var BubbleScene = function(opts){
 				}else{
 					self.segments.segments.forEach(function(other_segment){
 						if(other_segment.element == true){
-							if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
+							if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c ){
 								if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
 									var connector = new Nodeline({
 										start : current_segment.bubble.center(),
