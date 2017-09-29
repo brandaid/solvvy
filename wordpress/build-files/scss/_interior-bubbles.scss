@@ -153,10 +153,20 @@
     margin: 0px;
     width: 100% !important;
 }
-@media (max-width: 770px){
+@media (max-width: 800px){
     /*new staging test*/
     .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image, 
     .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image img{
         display: none;
+    }
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show {
+        max-height: 480px !important;
+        figure.wph-modal--image.mobile-hidden, .wph-modal--message{
+            max-height: 480px !important;
+            img{
+                max-height: 480px !important;
+            }
+        }
+
     }
 }
