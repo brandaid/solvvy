@@ -651,26 +651,17 @@
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-   ul#sm-15067128636768142-10 {
-		max-width: none!important;
-		width: 670px!important;
-}
-	ul#sm-15067128636768142-2 {
+	.sm-clean#main-menu ul {
 		max-width: none!important;
 		width: 860px!important;
 	}
-.hero-banner-interior h1 {
+	.hero-banner-interior h1 {
     margin-top: 110px!important;
-}
-
+	}
 }
 
 @supports (-ms-ime-align:auto) {
-   ul#sm-15067128636768142-10 {
-		max-width: none!important;
-		width: 670px!important;
-}
-	ul#sm-15067128636768142-2 {
+	.sm-clean#main-menu ul {
 		max-width: none!important;
 		width: 860px!important;
 	}
