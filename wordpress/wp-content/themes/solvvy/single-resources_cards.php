@@ -6,7 +6,7 @@
 		
 		<section class="hero-banner-blog">
 			<div class="container">
-				<h2>Solvvy Resources Cards</h2>
+				<h2>Solvvy Resources</h2>
 			</div>
 		</section>
 
