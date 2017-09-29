@@ -661,7 +661,7 @@
 }
 
 @supports (-ms-ime-align:auto) {
-	.sm-clean#main-menu ul {
+	#main-menu.sm-clean ul {
 		max-width: none!important;
 		width: 860px!important;
 	}
