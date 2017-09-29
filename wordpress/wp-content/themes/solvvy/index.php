@@ -305,7 +305,7 @@
 												<?php forEach($single_panel['sol_items'] as $single_item){ ?>
 												<li>
 													<?php if( $single_item['item_title'] ){ ?>
-														<a href="http://google.com" target="<?php echo $single_item['open_link'] ?>">
+														<a href="<?php echo $single_item['item_url'] ?>" target="<?php echo $single_item['open_link'] ?>">
 															<h4>
 																<i class="<?php echo $single_item['icon_image'] ?>"></i>
 																<?php echo $single_item['item_title'] ?>	
