@@ -650,6 +650,15 @@
 	}
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   #main-menu.sm-clean ul {
+		max-width: none!important;
+		width: 670px!important;
+}
+}
+
+
+
 // 1024px
 @media all and (min-width: $screen-portrait) {
 }
