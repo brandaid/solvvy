@@ -96,15 +96,6 @@
 
 	</footer>
 
-
-
-
-
-
-
-
-
-
 	<!--JQUERY -->
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
@@ -155,28 +146,6 @@
 		
 	</script>
 	<?php wp_footer(); ?>
-
-
-<!-- MODAL SEARCH -->
-	<div id="st-results-container"></div>
-	<script type="text/javascript">
-	  var Swiftype = window.Swiftype || {};
-	  (function() {
-	    Swiftype.key = 'gUg6G9puciC_Pvq6ZQ7G';
-	    Swiftype.inputElement = '#st-search-input';
-	    Swiftype.resultContainingElement = '#st-results-container';
-	    Swiftype.attachElement = '#st-search-input';
-	    Swiftype.renderStyle = "overlay";
-
-	    var script = document.createElement('script');
-	    script.type = 'text/javascript';
-	    script.async = true;
-	    script.src = "//s.swiftypecdn.com/embed.js";
-	    var entry = document.getElementsByTagName('script')[0];
-	    entry.parentNode.insertBefore(script, entry);
-	  }());
-	</script>
-	<!-- END MODAL SEARCH -->
 
 </body>
 </html>
