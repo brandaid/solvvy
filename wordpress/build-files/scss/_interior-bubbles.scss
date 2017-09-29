@@ -153,3 +153,9 @@
     margin: 0px;
     width: 100% !important;
 }
+@media (max-width: 770px){
+    .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image, 
+    .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image img{
+        display: none;
+    }
+}
