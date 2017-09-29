@@ -1,0 +1,25 @@
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.interior-story {
+		padding: 80px 0;
+}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop-big) {
+	.interior-story {
+		padding: 30px 0;
+}
+}
+
+
+

@@ -1,0 +1,162 @@
+.wrapperTable {
+    max-width: 100%;
+    border-radius: 10px;
+    background: white;
+    &.tableShadow {
+        margin: 30px 0 65px 0; 
+        box-shadow: 0 0 100px 0 rgba(93,14,139,.3);
+    }
+}
+
+.page-template-software .wrapperTable.tableShadow {
+    margin-bottom: 95px!important;
+}
+
+.contTrHeader {
+    padding: 0;  
+}
+.contTdOne {
+    border: 0;
+    color: #6b7d92;
+    font-size: 16px;
+    padding-left: 30px;
+}
+.contTdTwoHeaders {
+    position: relative;
+    img {
+        position: absolute;
+        max-width: 50px;
+        left: 5px;
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+}
+.contTr {
+    display: table;
+    width: 100%;
+    .fa-check {
+        color: #fa3777;
+    }
+}
+
+.contTdOne,
+.contTdTwo, 
+.contTdThree, 
+.contTdFour, 
+.contTdFive,
+.contTdSix,
+.contTdSeven,
+.contTdEight {
+    display: table-cell;
+    vertical-align: middle;
+    width: 14.2857%;
+    border-left: 1px solid darken($gray_lighter, 5%);
+    padding: $margen ($margen / 2);
+    text-align: center;
+    @include border-box;
+    padding: 25px 0px;
+    &.contTdTwoHeaders {
+        border: 0;
+    }
+}
+
+.page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+.page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+.page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    padding-bottom: 21px;
+    min-width: 95px;
+}
+
+.contTdOne {
+    display: none;
+}
+
+.title-head {
+    background: $brand-secondary;
+    padding: 10px;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 15px;
+    color: white;
+    margin: 0;
+}
+
+div.wrapperTable.tableShadow > div:nth-child(2),
+div.wrapperTable.tableShadow > div:nth-child(6),
+div.wrapperTable.tableShadow > div:nth-child(10),
+div.wrapperTable.tableShadow > div:nth-child(14) {
+    background: #f6f9fc;
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+    .title-head {
+        display: none;
+    }
+    .contTdOne {
+        text-align: left;
+        border: 0;
+        display: table-cell;
+        width: 30%;
+        padding-left: 30px;
+    }
+    .contTdTwo, 
+    .contTdThree, 
+    .contTdFour, 
+    .contTdFive,
+    .contTdSix,
+    .contTdSeven,
+    .contTdEight {
+        width: 10%;
+    }
+    .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+.page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+.page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 120px;
+    padding-bottom: 31px;
+}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+    .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+.page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+.page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 150px;
+    padding-bottom: 44px;
+}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+    .wrapperTable {
+        margin-top: 160px;
+        &.tableShadow {
+            margin-top: 60px; 
+        }
+    }
+    .contTdTwoHeaders {
+        img {
+            max-width: 100px;
+            bottom: 20px;
+        }
+    }
+    .page-template-vision .contTdThree.contTdTwoHeaders img, .page-template-vision .contTdFour.contTdTwoHeaders img, .page-template-vision .contTdFive.contTdTwoHeaders img, 
+    .page-template-vision .contTdSix.contTdTwoHeaders img, .page-template-software .contTdThree.contTdTwoHeaders img, .page-template-software .contTdFour.contTdTwoHeaders img, 
+    .page-template-software .contTdFive.contTdTwoHeaders img, .page-template-software .contTdSix.contTdTwoHeaders img {
+    min-width: 200px;
+}
+}
+// 1400px
+@media all and (min-width: $screen-desktop-big) {
+    .contTr {
+        .fa-check {
+            font-size: 30px;
+        }
+    }
+    .contTdTwoHeaders {
+        img {
+            max-width: 130px;
+        }
+    }
+}

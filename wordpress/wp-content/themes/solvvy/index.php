@@ -12,39 +12,87 @@
 
 		<!-- HERO BANNER -->
 
-		<section class="hero-banner">
-			<div class="container">
-				<h1>Unlock the power of you enterprise knowledge</h1>
-				<h3>Solvvy is behind some of the world's most advanced machine learning, artificial intelligence and natural language science.</h3>
-				<a href="#" class="button" id="myBtn">WATCH <i class="icon-play"></i></a>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php $section_hero = get_field('section_hero') ?>		
+
+		<?php if($section_hero){ ?>
+			<?php if($section_hero['hero_background']){ ?>
+				
+				<?php
+					$image_id = $section_hero['hero_background'];
+					$image_size = 'featured';
+					$image_array = wp_get_attachment_image_src($image_id, $image_size);
+					$image_url = $image_array[0];
+				?>
+
+			<section class="hero-banner" style="background: url(<?php echo $image_url; ?>)no-repeat; background-size: cover;">
+			<?php }else{ ?>
+			<section class="hero-banner">
+			<?php } ?>
+				<div class="container">
+					<h1><?php echo $section_hero['hero_title'];  ?></h1>
+					<h3><?php echo $section_hero['hero_copy'];  ?></h3>
+
+					<?php if($section_hero['button_link']) : ?>
+						 <a class="button" id="myBtn" href="#"><?php echo $section_hero['button_text'] ?><i class="icon-play"></i></a>
+					 <?php endif; ?>
+				</div>
+				<div class="waves"></div>
+				<div class="circles"></div>
+			</section>
+		<?php } ?>
 
 		<!-- WHATS IS SOLVVY -->
-
-		<section class="whats-solvvy">
-			<div class="col-left">
-				<h2>What is Solvvy?</h2>
-				<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone shankle corned beef sirloin picanha beef ribs jowl alcatra chicken. </p>
-				<a href="" class="button">Learn More</a>
-			</div>
-			<div class="col-right">
-				<img src="<?php bloginfo('template_url'); ?>/images/screen.gif" class="screen" alt="">
+			<?php while(has_sub_field('section_1')): ?>
+			<section class="whats-solvvy pink-ball">
+			<div class="wrapper">
+				<div class="col-left">
+				
+							
+								<?php if(get_sub_field('sec1_title')): ?><h2><?php the_sub_field('sec1_title'); ?></h2><?php endif; ?>
+								<?php if(get_sub_field('sec1_copy')): ?><p><?php the_sub_field('sec1_copy'); ?></p><?php endif; ?>
+								<?php if(get_sub_field('sec1_button')): ?>
+								<?php 
+									$link = get_sub_field('sec1_button');
+									if( $link ): ?>
+								<a class="button" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+								<?php endif; ?>
+								<?php endif; ?>
+							 
+						
+				</div>
+				<div class="col-right">
+					<div class="mackbook-home">
+						<div class="content-mac">
+							<?php if(get_sub_field('image')): ?><img src="<?php the_sub_field('image'); ?>" class="screen" alt=""><?php endif; ?>
+							
+							<!-- <img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive"> -->
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</section>
-
+					<?php endwhile; ?>
 		<!-- INDUSTRY NEWS -->
 		
 		<section class="box-gray industry-news">
 			<div class="container">
-				<h3>INDUSTRY NEWS</h3>
-				<hr>
-				<img src="<?php bloginfo('template_url'); ?>/images/techcrunch.png" alt="">
-				<p>Strip steak doner bacon capicola. Ribeye swine sirloin, kielbasa shankle tail pork chop t-bone short ribs jerky. Kevin brisket hamburger.</p>
-				<hr>
-				<a href="">Read More &raquo;</a>
+					<?php while(has_sub_field('section_2')): ?>
+						
+						<?php if(get_sub_field('sec2_title')): ?><h3><?php the_sub_field('sec2_title'); ?></h3><?php endif; ?>
+						<hr>
+						<?php if(get_sub_field('sec2_image')): ?><img src="<?php the_sub_field('sec2_image'); ?>" alt=""/><?php endif; ?>
+						<?php if(get_sub_field('sec2_copy')): ?><p><?php the_sub_field('sec2_copy'); ?></p><?php endif; ?>
+						<hr>
+						<?php if(get_sub_field('sec2_link')): ?>
+								<?php 
+								$link = get_sub_field('sec2_link');
+								if( $link ): ?>
+									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> &raquo;</a>
+								<?php endif; ?>
+						<?php endif; ?>
+						 
+					<?php endwhile; ?>
 			</div>
 		</section>
 
@@ -52,17 +100,30 @@
 
 		<section class="driving-companies">
 			<div class="container">
-				<h3>Driving Search at some of the world’s smartest companies</h3>
+				<?php while(has_sub_field('section_3')): ?>
+				<?php if(get_sub_field('sec3_title')): ?><h3><?php the_sub_field('sec3_title'); ?></h3><?php endif; ?>	
+				<?php if(get_sub_field('sec3_images')): ?>
 				<ul>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving1.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving2.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving3.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving4.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving5.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving6.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving7.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving8.png" alt=""></li>
+					<?php 
+					    
+					if( have_rows('sec3_images') ):
+
+					    while( have_rows('sec3_images') ) : the_row(); 
+					        
+					        ?>
+					        <li><img src="<?php the_sub_field('sec3_image'); ?>" alt=""></li>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
 				</ul>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
+
 			</div>
 		</section>
 
@@ -76,99 +137,85 @@
 				<section class="buttons-brand">
 					
 					<div class="owl-carousel owl-navbars">
-					
-						<div class="item">
-							<a class="button-brand" href="#uno"><img src="<?php bloginfo('template_url'); ?>/images/br-amazon.png" alt=""></a>
-						</div>
-						<div class="item">
-							<a class="button-brand" href="#dos"><img src="<?php bloginfo('template_url'); ?>/images/br-lithium.png" alt=""></a>
-						</div>
-						<div class="item">
-							<a class="button-brand" href="#tres"><img src="<?php bloginfo('template_url'); ?>/images/br-evite.png" alt=""></a>
-						</div>
-						<div class="item">
-							<a class="button-brand" href="#cuatro"><img src="<?php bloginfo('template_url'); ?>/images/br-optimizely.png" alt=""></a>
-						</div>
-						<div class="item">
-							<a class="button-brand" href="#cinco"><img src="<?php bloginfo('template_url'); ?>/images/br-shopify.png" alt=""></a>
-						</div>
+				<?php while(has_sub_field('section_4')): ?>
+								
+				<?php if(get_sub_field('sec4_brands')): ?>
+					<?php 
+					    
+					if( have_rows('sec4_brands') ):
+
+					    while( have_rows('sec4_brands') ) : the_row(); 
+					        
+					        ?>
+
+						<?php if(get_sub_field('brand_link')): ?>
+						<?php 
+								$link = get_sub_field('brand_link');
+								if( $link ): ?>
+									 <div class="item">
+										<a class="button-brand" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></a>
+									</div>
+
+								<?php endif; ?>
+						<?php endif; ?>
+
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
 
 					</div>
 
 				</section>
-
 				
 				<div class="owl-carousel owl-brands">
-				    <div class="item" data-hash="uno">
+				    
+				<?php while(has_sub_field('section_4')): ?>
+								
+				<?php if(get_sub_field('sec4_brands')): ?>
+					<?php 
+					    
+					if( have_rows('sec4_brands') ):
+
+					    while( have_rows('sec4_brands') ) : the_row(); 
+					        
+					        ?>
+
+							<div class="item" data-hash="<?php the_sub_field('brand_data'); ?>">
 						<article class="brands">
 							<div class="col-left">
-								<img src="<?php bloginfo('template_url'); ?>/images/br-amazon.png" alt="">
-								<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-								<a href="" class="button">Read Their Story</a>
+								<img src="<?php the_sub_field('brand_image'); ?>" alt="">
+								<p><?php the_sub_field('brand_copy'); ?></p>
+								<p class="autor"><?php the_sub_field('brand_subcopy'); ?></p>
+
+					<a href="<?php if( get_sub_field('button_link_type') == 'url' ):?><?php the_sub_field('button_link_destination') ?>
+						<?php elseif( get_sub_field('button_link_type') == 'pdf' ): ?><?php the_sub_field('button_link_pdf') ?><?php endif; ?>" target="<?php the_sub_field('open_link') ?>" class="button"><?php the_sub_field('button_text') ?></a>
+
 							</div>
 							<div class="col-right">
 								<figure class="image-slider">
-									<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
+									<img src="<?php the_sub_field('brand_slide_image'); ?>" alt="">
 								</figure>
 							</div>
 						</article>
-				    </div>
-				    <div class="item" data-hash="dos">
-				    	<article class="brands">
-							<div class="col-left">
-								<img src="<?php bloginfo('template_url'); ?>/images/br-lithium.png" alt="">
-								<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-								<a href="" class="button">Read Their Story</a>
-							</div>
-							<div class="col-right">
-								<figure class="image-slider">
-									<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
-								</figure>
-							</div>
-						</article>
-				    </div>
-				    <div class="item" data-hash="tres">
-				    	<article class="brands">
-							<div class="col-left">
-								<img src="<?php bloginfo('template_url'); ?>/images/br-evite.png" alt="">
-								<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-								<a href="" class="button">Read Their Story</a>
-							</div>
-							<div class="col-right">
-								<figure class="image-slider">
-									<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
-								</figure>
-							</div>
-						</article>
-				    </div>
-				    <div class="item" data-hash="cuatro">
-				    	<article class="brands">
-							<div class="col-left">
-								<img src="<?php bloginfo('template_url'); ?>/images/br-optimizely.png" alt="">
-								<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-								<a href="" class="button">Read Their Story</a>
-							</div>
-							<div class="col-right">
-								<figure class="image-slider">
-									<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
-								</figure>
-							</div>
-						</article>
-				    </div>
-				    <div class="item" data-hash="cinco">
-				    	<article class="brands">
-							<div class="col-left">
-								<img src="<?php bloginfo('template_url'); ?>/images/br-shopify.png" alt="">
-								<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-								<a href="" class="button">Read Their Story</a>
-							</div>
-							<div class="col-right">
-								<figure class="image-slider">
-									<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
-								</figure>
-							</div>
-						</article>
-				    </div>
+				    		</div>
+							<?php
+								
+					    endwhile;
+
+					endif;
+
+					?>
+				<?php endif; ?>
+							 
+				<?php endwhile; ?>
+
 				</div>
 			</div>
 		</section>
@@ -176,171 +223,135 @@
 
 		<!-- SECTION METRICS -->
 		
-		<section class="metrics">
-			<div class="container">
-				<div class="col-left">
-					<h3 class="text-underlined">The only <span>search platform</span> designed for the modern enterprise</h3>
-					<a href="" class="button">Request Demo</a>
-				</div>
-				<div class="col-right">
-					<ul>
-						<li>
-							<div class="box-metric">
-								<small>
-									<i class="icon-monitor"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									9.7
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric red">
-								<small>
-									<i class="icon-search"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									23%
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric lighten">
-								<small>
-									<i class="icon-headphones"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									85%
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric lighten2">
-								<small>
-									<i class="icon-window"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									500
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-					</ul>
-				</div>
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
+			<section class="metrics">
+				<div class="container">
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
+
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
+						<?php endif; ?>
+							 
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
+
+						</ul>
+					</div>
 			</div>
 		</section>
+
+		<?php } ?>
 
 		<div class="cool-sep"></div>
 
 		<!-- SECTION INDUSTRY -->
 
-		<section class="solution-for-industry">
-			<div class="container">
-				<h2>The Right Solution for your Industry</h2>
-				
-				<div class="columns-solutions">
-					
-					<div class="col-left">
-				
-						<select class="solutions" id="solutions">
-							<option value="role">For Your Role</option>
-							<option value="business">For Your Business Type</option>
-							<option value="industry">For Your Industry</option>
-						</select>
 
-						<div class="tab-link tab-role" data-value="role">
-							<h4><i class="icon-whatsapp"></i>FOR YOUR ROLE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link tab-business" data-value="business">
-							<h4><i class="icon-barcode-scan"></i>For Your Business Type</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link tab-industry" data-value="industry">
-							<h4><i class="icon-bowl"></i>For Your Industry</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
+		<?php $industy_section = get_field('section_6') ?>
+		<?php if($industy_section){ ?>
+			<section class="solution-for-industry">
+				<div class="container">
+					<?php if($industy_section['industry_title']){ ?>
+					<h2><?php echo $industy_section['industry_title'] ?></h2>
+					<?php } ?>
+					<div class="columns-solutions">					
+						<div class="col-left">		
+							<select class="solutions" id="solutions">
+								<option value="role">For Your Role</option>
+								<option value="business">For Your Business Type</option>
+								<option value="industry">For Your Industry</option>
+							</select>
+							<?php if($industy_section['solutions']){ ?>
+								<?php forEach($industy_section['solutions'] as $single_solution){ ?>
+									<div class="tab-link <?php echo $single_solution['tab_class']; ?>" data-value="<?php echo $single_solution['sol_data_value'] ?>">
+										<h4>
+											<i class="<?php echo $single_solution['icon_image']; ?>" ></i>
+											<?php echo $single_solution['sol_title'] ?>
+												
+										</h4>
+										<p><?php echo $single_solution['sol_copy'] ?></p>
+									</div>	
+								<?php } ?>	
+							<?php } ?>	 		
 						</div>
 
+						<div class="col-right">
+							<?php if($industy_section['panel_solutions']){ ?>	
+								<?php forEach($industy_section['panel_solutions'] as $single_panel ){ ?>
+									<div class="panel-solution <?php echo $single_panel['class_id'] ?>" id="<?php echo $single_panel['class_id'] ?>">
+										<ul>	
+											<?php if( $single_panel['sol_items']){ ?>
+												<?php forEach($single_panel['sol_items'] as $single_item){ ?>
+												<li>
+													<?php if( $single_item['item_title'] ){ ?>
+														<?php $post_object = $single_item['link'];
+															if( $post_object ): 
+																$post = $post_object;
+																setup_postdata( $post ); 
+														?>
+														<a href="<?php the_permalink(); ?>" target="<?php echo $single_item['open_link'] ?>">
+															<h4>
+																<i class="<?php echo $single_item['icon_image'] ?>"></i>
+																<?php echo $single_item['item_title'] ?>	
+															</h4>
+														</a>
+														<?php wp_reset_postdata(); ?>
+														<?php endif; ?>
+													<?php } ?>
+													<?php if($single_item['copy_title']){ ?>
+														<p><?php echo $single_item['copy_title'] ?></p>
+													<?php } ?>
+												</li>		
+												<?php } ?>
+											<?php } ?>
+										</ul>
+									</div>				
+								<?php } ?>
+							<?php } ?>
+						</div>
 					</div>
-
-					<div class="col-right">
-						<div class="panel-solution panel-role" id="panel-role">
-							<ul>
-								<li>
-									<h4><i class="icon-headphones"></i>SUPPORT</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-								<li>
-									<h4><i class="icon-smiley"></i>Customer Experience</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-								<li>
-									<h4><i class="icon-atm"></i>Finance</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-							</ul>
-						</div>
-						<div class="panel-solution panel-business"  id="panel-business">
-							<ul>
-								<li>
-									<h4><i class="icon-headphones"></i>SUPPORT</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-								<li>
-									<h4><i class="icon-smiley"></i>Customer Experience</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-								<li>
-									<h4><i class="icon-atm"></i>Finance</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-							</ul>
-						</div>
-						<div class="panel-solution panel-industry" id="panel-industry">
-							<ul>
-								<li>
-									<h4><i class="icon-headphones"></i>SUPPORT</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-								<li>
-									<h4><i class="icon-smiley"></i>Customer Experience</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-								<li>
-									<h4><i class="icon-atm"></i>Finance</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-								</li>
-							</ul>
-						</div>
-
-					</div>
-
 				</div>
-				
-			</div>
-		</section>
+			</section>
+		<?php } ?>
+
+		<div class="cool-sep"></div>
 
 
+	<?php if($section_hero['button_link']) : ?>
 		<!-- Trigger/Open The Modal -->
-
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
-
 		  <!-- Modal content -->
 		  <div class="modal-content">
 		    <span class="close">&times;</span>
 		    <div class="videoWrapper">
-		    	<iframe src="https://player.vimeo.com/video/217907071" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    	<iframe src="<?php echo $section_hero['button_link']; ?>" width="640" height="360" id="video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		    </div>
 		  </div>
-
 		</div>
+	<?php endif; ?>
+
 <?php get_footer(); ?>
+
 

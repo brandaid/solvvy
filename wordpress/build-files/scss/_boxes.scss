@@ -1,0 +1,47 @@
+.box {
+	background: white;
+	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
+	margin-bottom: 50px;
+	.content {
+		padding: 20px;
+		h3 {
+			font-size: 24px;
+		}
+		p {
+			font-size: 15px;
+			margin-bottom: 35px;
+		}
+	}
+}
+.waves-bottom {
+	background: white url('images/waves-events.png') bottom left no-repeat;
+	padding-bottom: 50px;
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.box {
+		p {
+			font-size: 15px;
+		}
+	}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.box {
+		.content {
+			padding: 40px;
+			h3 {
+				font-size: 26px;
+			}
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

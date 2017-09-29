@@ -1,0 +1,59 @@
+.tab-link-without-icon {
+	@extend .tab-link;
+	h4 {
+		&:after {
+			content: "\f054";
+			@include fontawesome;
+			font-size: 18px;
+			position: relative;
+			vertical-align: middle;
+			opacity: .5;
+			margin-left: 20px;
+		}
+	}
+	p {
+		font-size: 14px;
+		font-family: $font-light;
+	}
+}
+
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.tab-link-without-icon {
+		padding: 30px 0 30px 0;
+		h4 {
+			&:after {
+				content: "\f054";
+				@include fontawesome;
+				font-size: 18px;
+				position: relative;
+				vertical-align: middle;
+				opacity: .5;
+				margin-left: 20px;
+			}
+		}
+		p {
+			font-size: 18px;
+			margin: 0;
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+	.tab-link-without-icon {
+		padding: 45px 65px;
+		h4 {
+			&:after {
+				content: "\f054";
+				@include fontawesome;
+				font-size: 18px;
+				position: relative;
+				vertical-align: middle;
+				opacity: .5;
+				margin-left: 20px;
+			}
+		}
+	}
+}

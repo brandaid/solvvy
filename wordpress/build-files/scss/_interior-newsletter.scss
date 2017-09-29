@@ -1,0 +1,64 @@
+.the-post {
+	@extend .asset-cards;
+	margin-bottom: 60px;
+	text-align: center;
+	h2 {
+		&:after {
+			display: none;
+		}
+		margin-bottom: 25px;
+	}
+	small {
+		margin-bottom: 20px;
+	}
+}
+
+.single:not(.single-solutions_cards) {
+	.content{
+		a {
+			color: $brand-primary;
+			&:hover {
+				color: $brand-secondary;
+			}
+		}
+	}
+	.box-text-top {
+		text-align: left;
+		h1, h2, h3, h4, h5, h6 {
+			font-family: $font-semibold;
+		}
+		h2 {
+			&:after {
+				display: none;
+			}
+		}
+		.responsive {
+			margin: 20px 0 40px 0;
+		}
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.the-post {
+		.content {
+			padding: 25px;
+		}
+	}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+	.the-post {
+		.content {
+			padding: 40px;
+		}
+		small {
+			margin-bottom: 40px;
+		}
+	}
+}

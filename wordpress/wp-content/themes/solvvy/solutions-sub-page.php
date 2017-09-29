@@ -6,200 +6,92 @@
  Template Name: Template Solutions Subpage
 
 */
-?>
+ ?>
 <?php get_header(); ?>
 <?php the_post(); ?>
 
 
-		<!-- HERO BANNER -->
-
-
-		<section class="hero-banner hero-banner-interior">
-			<div class="container">
-				<h1>Solvvy for Customer Experience</h1>
-				<h3>Bacon ipsum dolor amet bacon leberkas alcatra doner drumstick. Brisket meatloaf boudin.</h3>
-			</div>
-			<div class="waves"></div>
-			<div class="circles"></div>
-		</section>
+		<?php get_template_part( 'template-parts/herobanner' ); ?>
 
 
 		<!-- BOX TEXT -->
 		
-
+		<?php $section_1 = get_field('section_1') ?>
+		<?php if($section_1){ ?>
 		<section class="box-text-top pink-ball box-text-and-image-top">
 			<div class="container">
-				<img src="<?php bloginfo('template_url'); ?>/images/macbook.gif" alt="" class="responsive gif-animate">
-				<h2>Lorem Ipsum Headline</h2>
-				<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork pastrami. Pastrami ground round capicola sirloin chicken turducken swine hamburger pig.</p>
-				<a href="" class="button">Button</a>
+				<?php if($section_1['section_1_animation']){ ?>
+				<div class="mackbook">
+					<div class="content-mac">
+						<img src="<?php echo $section_1['section_1_animation'] ?>" alt="" class="responsive">
+					</div>
+				</div>
+				<?php } ?>
+				<h2><?php echo $section_1['section_1_title'];  ?></h2>
+				<p><?php echo $section_1['section_1_copy'];  ?></p>
+				<?php if($section_1['section_1_button_destination'] && $section_1['section_1_button_text']){ ?><a href="<?php echo $section_1['section_1_button_destination']; ?>" class="button"><?php echo $section_1['section_1_button_text']; ?></a><?php } ?>
 			</div>
 		</section>
-
+		<?php } ?>
 
 		<!-- VALUE TAGS -->
-
+		<?php $valueSection = get_field('value_driver_section');
+		$link = $valueSection['value_driver_section_button'];
+		 ?>
+		<?php if($valueSection){ ?>
 
 		<section class="value-tags">
 			<div class="container">
 				<div class="col-info">
-					<h3>Lorem Ipsum Healine</h3>
-					<p>Bacon ipsum dolor amet flank turkey sausage, brisket meatball beef ribs chicken. Cow meatloaf short ribs, tail pork loin filet mignon leberkas chicken burgdoggen tenderloin brisket shankle. Salami prosciutto leberkas picanha, boudin turkey fatback meatloaf shankle flank chuck. Porchetta pancetta rump capicola pork </p>
-					<a href="#" class="button">Button</a>
+					<h3><?php echo $valueSection['value_driver_section_title'] ?></h3>
+					<p><?php echo $valueSection['value_driver_section_copy'] ?> </p>
+					<?php if($link){ ?>
+						<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button">
+							<?php echo $valueSection['value_driver_section_button_text']; ?>
+						</a>
+					<?php } ?>
 				</div>
 				<div class="col-slider">
+					<?php if($valueSection['value_driver_section_labels']) { ?>
 					
-					<section class="center slider">
-						<div>
-							<h2>Value Driver Label</h2>
+					<div class="insights-animation">
+						<div class="cards slide-in">
+						<?php foreach ($valueSection['value_driver_section_labels'] as $label) {?>
+							<div class="card">
+								<h4><?php echo $label['value_driver_label']; ?></h4>
+							</div>
+						<?php } ?>
+							
+							
 						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-						<div>
-							<h2>Value Driver Label</h2>
-						</div>
-				  </section>
-
+					</div>
+					<?php }; ?>
 				</div>
 			</div>
 		</section>
-		
-
-		<!-- PANELS -->
-
-
-		<section class="solution-for-industry">
-			<div class="container">
-				
-				<div class="columns-solutions">
-					
-					<div class="col-left">
-				
-						<select class="solutions" id="solutions">
-							<option value="role">SUPPORT</option>
-							<option value="business">CUSTOMER SUPPORT</option>
-							<option value="industry">FINANCE</option>
-						</select>
-
-						<div class="tab-link" data-value="role">
-							<h4><i class="icon-whatsapp"></i>SUPPORT</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" data-value="business">
-							<h4><i class="icon-smiley"></i>CUSTOMER SUPPORT</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-						<div class="tab-link" data-value="industry">
-							<h4><i class="icon-atm"></i>FINANCE</h4>
-							<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-						</div>
-
-					</div>
-
-					<div class="col-right">
-						<div class="panel-solution panel-role" id="panel-role">
-							<ul>
-								<li>
-									<h4>LABEL</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<a href="" class="button-tn">VIEW MORE</a>
-								</li>
-							</ul>
-						</div>
-						<div class="panel-solution"  id="panel-business">
-							<ul>
-								<li>
-									<h4>LABEL</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<a href="" class="button-tn">VIEW MORE</a>
-								</li>
-							</ul>
-						</div>
-						<div class="panel-solution" id="panel-industry">
-							<ul>
-								<li>
-									<h4>LABEL</h4>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<p>Bacon ipsum dolor amet sausage landjaeger strip steak, filet mignon spare ribs t-bone. shankle corned beef sirloin picanha beef ribs jowl alcatra chicken.</p>
-									<a href="" class="button-tn">VIEW MORE</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-				
-			</div>
-		</section>
-
-
-		<!-- DRIVING COMPANIES -->
-		
-
-		<section class="box-gray driving-companies driving-interior">
-			<div class="container">
-				<h3>Driving Search at some of the world’s smartest companies</h3>
-				<ul>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving1.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving2.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving3.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving4.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving5.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving6.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving7.png" alt=""></li>
-					<li><img src="<?php bloginfo('template_url'); ?>/images/driving8.png" alt=""></li>
-				</ul>
-			</div>
-		</section>
-
-
-		<!-- HERO BANNER -->
-
-
-		<section class="box-partners">
-			<div class="container">
-				<h2>"Solvvy is refreshingly fast and easy!"</h2>
-				<small>Jo WanG, Director of Customer Support at Upwork</small>
-				<img src="<?php bloginfo('template_url'); ?>/images/box-brands.png" class="responsive brand" alt="">
-			</div>
-			<div class="waves"></div>
-		</section>
-
+	<?php } ?>	
 
 		<!-- STORY BOX -->
-
+	<?php $caseStudy = get_field('case_study_section');?>
+		<?php if($caseStudy['case_study_copy']){ ?>
 		<section class="interior-story">
 			<div class="container">
 				<article class="brands">
 					<div class="col-left">
-						<img src="<?php bloginfo('template_url'); ?>/images/br-evite.png" alt="">
-						<p>Within 00 days of signing up for Solvvy, Optimizely instantly resolved 28% of its inbound support tickets.</p>
-						<a href="" class="button">Read Their Story</a>
+						<?php
+							$image_id = $caseStudy['case_study_logo'];
+							$image_size = 'case_study_logo';
+							$image_array = wp_get_attachment_image_src($image_id, $image_size);
+							$image_url = $image_array[0];
+						?>
+						<img src="<?php echo $image_url; ?>" alt="">
+						<p><?php echo $caseStudy['case_study_copy']; ?></p>
+						<p class="autor"><?php echo $caseStudy['case_study_subcopy']; ?></p>
+						<a href="<?php if($caseStudy['case_study_button_link_type'] == 'url'){ ?><?php echo $caseStudy['case_study_button_link_destination']; ?><?php } else if($caseStudy['case_study_button_link_type'] == 'pdf'){?><?php echo $caseStudy['case_study_button_link_file']; ?><?php } ?>	" class="button"><?php echo $caseStudy['case_study_button_text']; ?></a>
 					</div>
 					<div class="col-right">
 						<figure class="image-slider">
-							<img src="<?php bloginfo('template_url'); ?>/images/image-slider-brand.jpg" alt="">
+							<img src="<?php echo $caseStudy['case_study_photo']; ?>" alt="">
 						</figure>
 					</div>
 				</article>
@@ -208,88 +100,77 @@
 
 		<div class="cool-sep"></div>
 
-
+	<?php } ?>	
 		<!-- SECTION METRICS -->
 		
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
+			<section class="metrics">
+				<div class="container">
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
 
-		<section class="metrics">
-			<div class="container">
-				<div class="col-left">
-					<h3 class="text-underlined">The only <span>search platform</span> designed for the modern enterprise</h3>
-					<a href="" class="button">Request Demo</a>
-				</div>
-				<div class="col-right">
-					<ul>
-						<li>
-							<div class="box-metric">
-								<small>
-									<i class="icon-monitor"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									9.7
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric red">
-								<small>
-									<i class="icon-search"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									23%
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric lighten">
-								<small>
-									<i class="icon-headphones"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									85%
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-						<li>
-							<div class="box-metric lighten2">
-								<small>
-									<i class="icon-window"></i>
-									LOREM IPSUM
-								</small>
-								<h3>
-									500
-								</h3>
-								<p>Bacon ipsum dolor amet sausage  to landjaeger strip steak, filet mignon et spare ribs t-bone.</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
+						<?php endif; ?>
+							 
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
 
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		<?php } ?>
 
 		<!-- BOX BLUE FPO -->
-		<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
+		<?php $assetSection = get_field('section_asset'); ?>
+		<?php if($assetSection){ ?>
+		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive block">
 		<div class="blue-box-waves">
 			<div class="container">
 				<div class="image">
+				<?php if($assetSection['asset_left_image']){ ?>
+				<?php
+				$attachment_id = $assetSection['asset_left_image'];
+				$size = "join_us_section";
+				$image = wp_get_attachment_image_src( $attachment_id, $size );
+				?>
+					<img src="<?php echo $image[0]; ?>" class="responsive" alt="">
+						
+				<?php } else { ?>
 					<img src="<?php bloginfo('template_url'); ?>/images/fpo.png" class="responsive" alt="">
+				<?php } ?>
 				</div>
 				<div class="info">
-					<h2>Lorem Ipsum Asset Name</h2>
-					<p>Filet mignon kevin burgdoggen, alcatra shankle pancetta picanha pastrami cow tail drumstick beef ribs. Strip steak spare ribs shoulder tongue rump, frankfurter bresaola burgdoggen biltong hamburger corned beef tenderloin tail salami. Cow rump pork loin ham hock capicola frankfurter biltong brisket doner.</p>
-					<a href="" class="button-tn">READ NOW</a>
+					<h2><?php echo $assetSection['asset_title'] ?></h2>
+					<p><?php echo $assetSection['asset_description'] ?></p>
+					<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
 				</div>
 			</div>
 		</div>
 		<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
-
+		<?php } ?>
 
 
 <?php get_footer(); ?>

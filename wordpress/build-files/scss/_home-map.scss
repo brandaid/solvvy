@@ -1,0 +1,85 @@
+.box-map {
+	padding: 60px 0 230px 0;
+	text-align: center;
+	position: relative;
+	.container {
+		background: url(images/map.png) top center no-repeat;
+		background-size: contain;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	&:before {
+		content: url(images/blue-ball.png);
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		left: 0;
+		bottom: 260px;
+		z-index: 999;
+	}
+	h2 {
+		@extend .underlined;
+		font-size: 36px;
+		font-family: $font-medium;
+	}
+	p {
+		font-size: 20px;
+		line-height: 1.7em;
+		margin-bottom: 30px;
+	}
+	a.button {
+		margin: 15px 0;
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	.box-map {
+		.container {
+			background: url(images/map.png) center center no-repeat;
+			background-size: cover;
+		}
+		a.button {
+			margin: 15px 25px;
+		}
+	}
+}
+
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.box-map {
+		.container {
+			background-size: contain;
+		}
+		h2 {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+	.box-map {
+		padding: 50px 0 250px 0;
+		.container {
+			padding-top: 190px;
+			padding-bottom: 190px;
+		}
+		h2 {
+			font-size: 44px;
+		}
+		p {
+			font-size: 24px;
+			margin-bottom: 50px;
+		}
+		a.button {
+			margin: 0px 25px;
+		}
+		&:before {
+			bottom: 225px;
+		}
+	}
+}

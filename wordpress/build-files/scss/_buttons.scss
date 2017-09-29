@@ -1,0 +1,110 @@
+.button {
+	background: $brand-primary;
+	color: white;
+	display: inline-block;
+	border: 1px solid $brand-primary;
+	padding: 20px 45px;
+	font-family: $font-semibold;
+	@include border-radius(4px);
+	@include border-box;
+	text-align: center;
+	width: 100%;
+
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		font-size: 21px;
+		width: auto;
+	}
+	&:hover {
+		background: white;
+		color: $brand-primary;
+	}
+	&.button-secondary {
+		background: $brand-secondary;
+		border-color: $brand-secondary;
+		&:hover {
+			color: 	$brand-secondary;
+			background: white;
+		}
+	}
+}
+
+.button-tn {
+	@extend .button;
+	padding: 17px 25px;
+	font-size: 15px;
+}
+
+.icon-play {
+	font-size: 24px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+.button-white {
+	@extend .button;
+	background: white;
+	border: 1px solid $brand-primary;
+	color: $brand-primary;
+	&:hover {
+		color: white;
+		background: $brand-primary;
+	}
+}
+
+.button-pink {
+	color: $brand-primary;
+	text-decoration: underline;
+	font-family: $font-semibold;
+	font-size: 18px;
+	&:hover {
+		color: $brand-secondary;
+		text-decoration: underline;
+	}
+	&:after {
+		content: "\00bb";
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 10px;
+	}
+}
+.button-more {
+	color: $brand-secondary;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	margin-top: 60px;
+	font-family: $font-medium;
+	position: relative;
+	@include transition;
+	&:after {
+		content: "\f078";
+		display: block;
+		position: absolute;
+		color: $gray;
+		@include fontawesome;
+		bottom: 0;
+		left: 40%;
+		bottom: -20px;
+		@include transition;
+	}
+	&:hover {
+		color: $brand-primary;
+		&:after {
+			bottom: -23px;
+		}
+	}
+}
+
+.less-class {
+	&:after {
+		content: "\f077"!important;
+		bottom: 20px!important;
+	}
+	&:hover {
+		&:after {
+			bottom: 25px!important;
+		}
+	}
+}
