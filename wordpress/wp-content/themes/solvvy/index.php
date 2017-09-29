@@ -305,19 +305,12 @@
 												<?php forEach($single_panel['sol_items'] as $single_item){ ?>
 												<li>
 													<?php if( $single_item['item_title'] ){ ?>
-														<?php $post_object = $single_item['link'];
-															if( $post_object ): 
-																$post = $post_object;
-																setup_postdata( $post ); 
-														?>
-														<a href="<?php the_permalink(); ?>" target="<?php echo $single_item['open_link'] ?>">
+														<a href="http://google.com" target="<?php echo $single_item['open_link'] ?>">
 															<h4>
 																<i class="<?php echo $single_item['icon_image'] ?>"></i>
 																<?php echo $single_item['item_title'] ?>	
 															</h4>
 														</a>
-														<?php wp_reset_postdata(); ?>
-														<?php endif; ?>
 													<?php } ?>
 													<?php if($single_item['copy_title']){ ?>
 														<p><?php echo $single_item['copy_title'] ?></p>
