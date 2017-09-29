@@ -223,6 +223,7 @@ $(document).ready(function() {
 		$("#myModal").fadeOut();	
 	});
 
+
 	$('#myModal').click(function(event){
 		var src = $("#myModal").find('iframe').attr('src');
 		$("#myModal iframe").attr('src','');
@@ -549,3 +550,4 @@ $(document).ready(function() {
 		}
 	});
 });
+
