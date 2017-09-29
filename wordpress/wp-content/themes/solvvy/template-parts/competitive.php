@@ -18,9 +18,10 @@
 								
 				<?php if(get_sub_field('table')): ?>
 					<?php 
+					$count = 0;
 					if( have_rows('table') ):
 					    while( have_rows('table') ) : the_row(); 
-					        ?>
+					      $count++;  ?>
 						<div class="<?php if ($count == 1){ ?>contTdTwo <?php } elseif ($count == 2){ ?>contTdThree <?php } elseif ($count == 3){ ?>contTdFour <?php } elseif ($count == 4){ ?>contTdFive <?php } elseif ($count == 5){ ?>contTdSix <?php } elseif ($count == 6){ ?>contTdSeven<?php } ?> contTdTwoHeaders"><img src="<?php the_sub_field('brand_image'); ?>" alt=""></div>
 					<?php
 					    endwhile;
