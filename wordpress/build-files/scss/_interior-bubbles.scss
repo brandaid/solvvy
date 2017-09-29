@@ -128,3 +128,34 @@
         z-index: 2;
     }
 }
+
+/* Modal patch */
+
+.wph-modal.wph-modal--minimal section .wph-modal--message form .mktoFormRow, .wph-modal.wph-modal--minimal section .wph-modal--message form .mktoButtonRow {
+    width: 100%;
+    margin: 0px;
+}
+
+.wph-modal.wph-modal--minimal section .wph-modal--message form .mktoFormRow input, .wph-modal.wph-modal--minimal section .wph-modal--message form .mktoFormRow select, .wph-modal.wph-modal--minimal section .wph-modal--message form .mktoButtonRow input, .wph-modal.wph-modal--minimal section .wph-modal--message form .mktoButtonRow select {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 20px #d2daea;
+    box-shadow: 0 0 20px #d2daea;
+    border: 1px solid #d6dde4;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #6b7d92;
+    line-height: 1em;
+}
+
+.wph-modal.wph-modal--minimal section .wph-modal--message form {
+    padding: 0px 95px;
+    margin: 0px;
+    width: 100% !important;
+}
+@media (max-width: 770px){
+    .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image, 
+    .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image img{
+        display: none;
+    }
+}

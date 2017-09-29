@@ -367,6 +367,15 @@ $(window).scroll(function(){
 
 
 //SEARCH
+
+$(document).ready(function () {
+    $('.searchbox-icon').click(function () {
+        $("#ajaxsearchlite1").toggle();
+        $(".search").toggleClass("searchbox-width");
+    });
+});
+/*
+
   $(document).ready(function(){
 	var submitIcon = $('.searchbox-icon');
 	var inputBox = $('.searchbox-input');
@@ -410,6 +419,8 @@ $(window).scroll(function(){
 	        $('.searchbox-icon').css('display','block');
 	    }
 	}
+
+	*/
 
 //END SEARCH
 
