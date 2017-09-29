@@ -335,6 +335,7 @@ $(window).scroll(function(){
 $(document).ready(function () {
     $('.searchbox-icon').click(function () {
         $("#ajaxsearchlite1").toggle();
+        $(".search").toggleClass("searchbox-width");
     });
 });
 /*

@@ -167,6 +167,7 @@
     width: 100% !important;
     max-width: 550px;
     z-index: 99999;
+    box-shadow: 0px 0px 100px 30px #111;
 }
 .results.mCustScr._mCSap_1 {
     background: #fff;
@@ -227,6 +228,12 @@
     color: #9baaba;
     background: #fff;
     font-family: 'solvvy';
+}
+.results .item .asl_content h3 a {
+    color: #5d0e8b !important;
+}
+.search.searchbox-width {
+	width: 290px !important;
 }
 
 
@@ -504,7 +511,7 @@
 					right: 0;
 					top: 0;
 					z-index:9999;
-					width: 290px;
+					width: 40px;
 					height: 40px;
 					@include transition;
 
