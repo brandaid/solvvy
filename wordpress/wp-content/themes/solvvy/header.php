@@ -21,6 +21,9 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sm-core-css.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sm-clean.css">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/all-ie-only.css" />
+	<![endif]-->
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/cytoscape.js"></script>
 	<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
 
