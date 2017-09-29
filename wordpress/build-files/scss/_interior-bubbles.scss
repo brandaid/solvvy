@@ -162,13 +162,13 @@
 }
 @media (max-width: 801px){
     div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show {
-        max-height: 480px !important;
+        max-height: 490px !important;
     }
-    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image.mobile-hidden, 
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image, 
     div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show .wph-modal--message{
         max-height: 480px !important;
     }
-    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image.mobile-hidden img{
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image img{
         max-height: 480px !important;
     }
 }
