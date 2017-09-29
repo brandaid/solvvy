@@ -7,9 +7,12 @@
 		text-transform: uppercase;
 		font-size: 1.3em;
 	}
+	h2 {
+		font-weight: 100;
+	}
 }
 .slider-interior {
-	margin: 60px 0px;
+	margin: 50px 0px;
 }
 
 
@@ -113,6 +116,7 @@
 		font-family: $font-light;
 		color: $brand-tertiary;
 		line-height: 50px;
+		font-weight: lighter;
 	}
 }
 
@@ -164,6 +168,7 @@
 	.content{
 		h4, a{
 			font-size: 25px !important;
+			font-weight: normal;
 		}
 		p{
 			font-size: 16px !important;
@@ -216,8 +221,11 @@ span.sgnature {
 // 992px
 @media all and (min-width: $screen-landscape) {
 	.box-careers {
-		padding-top: 350px;
-		padding-bottom: 400px;
+		padding-top: 150px;
+		padding-bottom: 250px;
+		.container{
+			min-height: 520px;
+		}
 	}
 	.bkg-pink {
 		background-image: url(images/backer1.png), url(images/backer2.png);
@@ -282,9 +290,6 @@ span.sgnature {
 
 // 1200px
 @media all and (min-width: $screen-desktop) {
-	.slider-interior {
-		margin: 126px 0px;
-	}	
 	.owl-careers {
 		.owl-dots {
 			display: none;

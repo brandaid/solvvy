@@ -31,7 +31,8 @@
 		position: absolute;
 		right: 0;
 		top: 20px;
-		font-size: 14px;
+		font-size: 20px;
+		line-height: 1;
 		i {
 			display: block;
 			font-size: 30px;
@@ -85,8 +86,8 @@
 	.metrics {
 		background: url(images/orbit-metrics.png) no-repeat left center;
 		text-align: left;
-		padding-top: 100px;
-		padding-bottom: 200px;
+		padding-top: 40px;
+		padding-bottom: 90px;
 		.container {
 			display: table;
 			width: 100%;
@@ -120,8 +121,8 @@
 	}
 }
 
-// 1300px
-@media all and (min-width: 1300px) {
+// 1400px
+@media all and (min-width: 1400px) {
 	.metrics {
 		.button {
 			margin-bottom: 20px;
@@ -159,7 +160,7 @@
 	}
 	.box-metric {
 		max-width: 400px;
-		display: inline-block;
+		display: block;
 		small {
 			i {
 				margin-bottom: 12px;

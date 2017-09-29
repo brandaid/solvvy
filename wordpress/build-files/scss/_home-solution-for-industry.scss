@@ -1,11 +1,10 @@
 .solution-for-industry {
 	text-align: center;
-	padding: 50px 0 95px 0;
+	padding: 30px 0 95px 0;
 	h2 {
 		@extend .underlined;
 	}
 }
-
 .panel-solution,
 .panel {
 	display: none;
@@ -32,16 +31,6 @@
 			top: -2px;
 			font-size: 20px;
 		}
-		&:after {
-			content: "\f054";
-			@include fontawesome;
-			font-size: 18px;
-			position: relative;
-			vertical-align: middle;
-			opacity: .5;
-			margin-left: 20px;
-		}
-
 	}
 	p {
 		font-size: 16px;
@@ -67,15 +56,62 @@
 		display: block;
 	}
 }
+
+.solution-for-industry{
+	.panel.for-your-industry{
+		background: white url(images/waves-gray.png) no-repeat bottom;
+		h4 {
+			color: $brand-tertiary;
+		}
+	}
+}
+.solution-for-industry{
+	.panel.for-your-business-type{
+		background: white url(images/waves-blue.png) no-repeat bottom;
+		h4 {
+			color: $brand-secondary;
+		}
+	}
+}
+
 .tab-link {
 	display: none;
 }
 .columns-solutions {
 	margin-top: 80px;
 }
-// 768px
-@media all and (min-width: $screen-portrait) {
 
+.page-template-solutions .columns-solutions {
+	margin-top: 40px;
+}
+// Arrow only for HOME
+.home{
+	.panel-solution,
+	.panel {
+		h4 {
+			&:after {
+				content: "\f054";
+				@include fontawesome;
+				font-size: 18px;
+				position: relative;
+				vertical-align: middle;
+				opacity: .5;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+// 991px
+@media all and (max-width: 991px) {
+	.panel-solution {
+		h4 {
+			padding-left: 15px;
+			i {
+				left: -22px;
+			}
+		}
+	}
 }
 
 // 992px
@@ -98,7 +134,7 @@
 			color: $brand-primary;
 			i {
 				position: absolute;
-				left: -50px;
+				left: -60px;
 				top: -8px;
 				font-size: 30px;
 			}
@@ -109,7 +145,7 @@
 		&.active {
 			@include linear-gradient(to right, #f9fbfd, transparent);
 		}
-		&.tab-business {
+		&.tab-business, {
 			h4 {
 				color: $brand-secondary;
 			}
@@ -180,7 +216,6 @@
 				position: absolute;
 				left: 50px;
 				top: 0;
-				height: 100%;
 			}
 		}
 	}

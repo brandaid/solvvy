@@ -31,6 +31,14 @@
 // 992px
 @media all and (min-width: $screen-landscape) {
 	.header {
+		position: fixed;
+		width: 100%;
+		z-index: 9000;
+		background: #fff;
+		&.shadow-fixed-menu{
+			@include box-shadow(0, 0, 20px, rgba(0,0,0,0.1));
+		}
+		
 		.header-top{
 			display: block;
 			background-color: #f0f3f6;

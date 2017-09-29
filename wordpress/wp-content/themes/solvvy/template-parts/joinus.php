@@ -23,7 +23,7 @@
 				<div class="info">
 					<h2><?php echo $joinUs['join_us_title'] ?></h2>
 					<p><?php echo $joinUs['join_us_description'] ?></p>
-					<a href="<?php echo $joinUs['join_us_button_destination'] ?>" class="button-tn"><?php echo $joinUs['join_us_button_text'] ?></a>
+					<a href="<?php if($joinUs['join_us_link_type'] == 'url'){ ?><?php echo $joinUs['join_us_button_destination']; ?><?php } else if($joinUs['join_us_link_type'] == 'pdf'){?><?php echo $joinUs['join_us_link_pdf']; ?><?php } ?>" class="button-tn" target="<?php echo $joinUs['open_link_in_a_new_tab'][0]; ?>"><?php echo $joinUs['join_us_button_text']; ?></a>
 				</div>
 			</div>
 		</div>

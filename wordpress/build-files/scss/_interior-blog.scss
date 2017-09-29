@@ -9,7 +9,7 @@
 	}
 }
 .blog-content {
-	padding: 80px 0;
+	padding: 80px 0 0;
 	.container {
 		max-width: 1060px;
 	}
@@ -113,10 +113,10 @@
 	}
 }
 .fixed-form {
-	position: fixed; 
-	top: 0; 
+	position: initial; 
+	top: 125px; 
 	left: 0;
-	z-index: 9999;
+	z-index: 999;
 	width: 100%;
 	box-shadow: 0 0 40px 0 rgba(0,0,0,0.1);
 }
@@ -184,12 +184,15 @@
 
 
 .blog-img {
-	margin-bottom: 120px;
+	margin-bottom: 100px;
 }
 // 768px
 @media all and (min-width: $screen-portrait) {
 	.popup-author {
 		left: 15%;
+	}
+	.fixed-form {
+		position: fixed; 
 	}
 }
 

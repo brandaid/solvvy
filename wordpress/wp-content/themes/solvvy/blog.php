@@ -39,9 +39,9 @@
 					<li>
 						<?php $socialMedia = get_field('social_media', 'option'); ?>
 
-						<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
-						<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
-						<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>						
+						<?php if($socialMedia['twitter']){ ?><a href="<?php echo $socialMedia['twitter']; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><?php } ?>
+						<?php if($socialMedia['linkedin']){ ?><a href="<?php echo $socialMedia['linkedin']; ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a><?php } ?>
+						<?php if($socialMedia['facebook']){ ?><a href="<?php echo $socialMedia['facebook']; ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><?php } ?>						
 					</li>
 				</ul>
 			</div>
@@ -144,7 +144,7 @@
 				<div class="info">
 					<h2><?php the_sub_field('title'); ?></h2>
 					<p><?php the_sub_field('copy'); ?></p>
-					<a class="button-tn" href="<?php the_sub_field('link_button'); ?>" target="_blank"><?php the_sub_field('text_button'); ?></a>
+					<a href="<?php if(get_sub_field('type_link') == 'url'){ ?><?php the_sub_field('link_button'); ?><?php } else if(get_sub_field('type_link') == 'pdf'){?><?php the_sub_field('link_pdf'); ?><?php } ?>" class="button-tn" target="<?php the_sub_field('open_link_in_a_new_tab'); ?>"><?php the_sub_field('text_button'); ?></a>
 				</div>
 			</div>
 		</div>

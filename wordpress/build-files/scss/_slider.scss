@@ -87,6 +87,7 @@
 	// 1200px
 	@media all and (min-width: $screen-desktop) {
 		top: 30%;
+		display: block;
 	}
 	//1400px
 	@media all and (min-width: $screen-desktop-big)  {

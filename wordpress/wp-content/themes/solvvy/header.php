@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/sm-clean.css">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/cytoscape.js"></script>
+	<script src="//app-ab24.marketo.com/js/forms2/js/forms2.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -52,6 +53,7 @@
 	</script>
 
 	<?php wp_head(); ?>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 </head>
 <body <?php body_class(); ?>>
 		<!-- Google Tag Manager (noscript) -->
@@ -67,6 +69,9 @@
 			<div class="animation"><div class="circle five"></div></div>
 		</div>
 	</div>
+
+	<div id="search_modal" style="display: none;"></div>
+	
 		<header class="header">
 
 			<section class="header-top">
@@ -95,7 +100,7 @@
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/images/brand.png" alt=""></a>
 						</div>
 
-						<?php
+						<?php/*
 						$args = array(
 							'posts_per_page' => 1,
 							'cat' => 'solvvy'
@@ -125,7 +130,32 @@
 								}
 							wp_reset_postdata();
 						}
-						?>
+						*/?>
+
+
+						<?php $latest_report = get_field('latest_report', 'option'); ?>
+						<div style="display: none;">
+							<div id="get-post">
+								<h4>LATEST WHITEPAPER</h4>
+								<?php if( $latest_report['latest_title'] ) { ?>
+								<p>
+									<a href="<?php echo $latest_report['latest_read_more']; ?>" title="<?php the_title_attribute(); ?>" target="<?php echo $latest_report['latest_target']; ?>">
+									 	<?php echo $latest_report['latest_title']; ?>
+									</a>
+								</p>		
+								<?php } ?>						
+								<?php if( $latest_report['latest_image'] ){ ?>
+									<a href="<?php echo $latest_report['latest_read_more']; ?>" target="<?php echo $latest_report['latest_target']; ?>">
+										<img src="<?php echo $latest_report['latest_image'] ?>"/>
+									</a>
+								<?php } ?>
+								<div>
+									<a class="button" href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>">
+										Read Now
+									</a>
+								</div>
+							</div>
+						</div>
 
 						<!-- Sample menu definition -->
 						<?php wp_nav_menu(
@@ -142,4 +172,5 @@
 			</section>
 
 	</header>
+
 	<main>

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" : true,
+  "repository": true,
   "author": "Bytery <hi@bytery.com>",
   "license": "UNLICENSED",
   "devDependencies": {

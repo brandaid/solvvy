@@ -27,50 +27,78 @@
 			<div class="container">
 				
 				<div class="columns-solutions">
-					<?php 
-						$selectedterm = get_field('solutions_cards')->slug;
-						$termslug =  $term->slug;
-							$args = array(
-								'posts_per_page'	=> -1,
-								'post_type'			=> 'solutions_cards',
-								'solutions-types'	=> $selectedterm,
-							);
-
-							$the_query = new WP_Query( $args ); ?>
-							<?php if( $the_query->have_posts() ): ?>
+					<?php $rows = get_field('solutions_cards');
+							if($rows){ ?>
 							
 					<div class="col-left">
-								<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-									<?php $card_info = get_field('card_info'); ?>
-									<?php if($card_info){ ?>
-									<div class="tab-link" rel="panel-<?php the_ID() ?>">
-										<h4><?php if($card_info['icon']){ ?><i class="<?php echo $card_info['icon'] ?>"><?php } ?></i><?php the_title(); ?></h4>
-										<p><?php echo $card_info['intro_paragraph']; ?></p>
-									</div>		
-									<?php } ?>
-								<?php endwhile; ?>
+						<select class="solutions <?php if (get_the_ID() == 920): ?> for-your-role <?php elseif (get_the_ID() == 909):?>for-your-business-type <?php elseif (get_the_ID() == 923):?>for-your-industry<?php endif ?>" id="subpages">
+    					<?php foreach($rows as $row){ ?>
+    					<?php // set up post object
+					        $post_object = $row['postobject'];
+					        if( $post_object ) {
+					        $post = $post_object;
+					        setup_postdata($post);
+					        ?>
+							<option rel="panel-<?php the_ID() ?>" value="panel-<?php the_ID() ?>"><?php the_title(); ?></option>
+							    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+   								 <?php }; ?>				
+						<?php }; ?>
+						</select>
+
+   						<?php foreach($rows as $row){ ?>
+   						 <?php // set up post object
+					        $post_object = $row['postobject'];
+					        if( $post_object ) {
+					        $post = $post_object;
+					        setup_postdata($post);
+					        ?>
+
+							<?php $card_info = get_field('card_info'); ?>
+							<?php if($card_info){ ?>
+							<div class="tab-link" rel="panel-<?php the_ID() ?>">
+								<h4><?php if($card_info['icon']){ ?><i class="<?php echo $card_info['icon'] ?>"><?php } ?></i><?php the_title(); ?></h4>
+								<p><?php echo $card_info['intro_paragraph']; ?></p>
+							</div>		
+							<?php } ?>
+							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+    						<?php }; ?>
+						<?php }; ?>
 
       				</div>
 
 					<div class="col-right">
 						<?php 
 						$i=0;
-						while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						foreach($rows as $row){ ?>
+
+					    <?php // set up post object
+					        $post_object = $row['postobject'];
+					        if( $post_object ) {
+					        $post = $post_object;
+					        setup_postdata($post);
+					        ?>
+					        <?php global $post;
+							$direct_parent = $post->post_parent; ?>
 							<?php $card_info = get_field('card_info'); 
 							$link = $card_info['card_button'];?>
 							<?php if($card_info){ ?>
-							<div class="panel <?php echo ($i==0)?'active':''; ?>" id="panel-<?php the_ID() ?>">
+							<div class="panel <?php echo ($i==0)?'active':''; ?> <?php if ($direct_parent == 920): ?> for-your-role <?php elseif ($direct_parent == 909):?>for-your-business-type <?php elseif ($direct_parent == 923):?>for-your-industry<?php endif ?>" id="panel-<?php the_ID() ?>">
 								<h4 class="panel-business"><?php echo $card_info['card_title']; ?></h4>
 								<p><?php echo $card_info['card_copy']; ?></p>
-								<?php if($link){ ?><a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button-tn"><?php echo $link['title']; ?></a>	<?php } ?>
+								<a href="<?php the_permalink(); ?>" class="button-tn">View More</a>	
 							</div>
 							<?php }  $i++; ?>
-						<?php endwhile; ?>	
+						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+
+					    <?php }; ?>
+
+					    <?php }; ?>
 						
 				    </div>
-				 	<?php endif; ?>
-
-					<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>	
+				 	<!-- End Repeater -->
+					<?php }; ?>
 				</div>
 
 			</div>
@@ -128,72 +156,54 @@
 
 		<!-- SECTION METRICS -->
 		
-		<?php while(has_sub_field('section_5', 5)): ?>
+		<?php $metrics_post = get_field('section_5'); ?>
+		<?php if($metrics_post){ ?>
 			<section class="metrics">
 				<div class="container">
-				<div class="col-left">					
-						<?php if(get_sub_field('sec5_text')): ?><h3 class="text-underlined"><?php the_sub_field('sec5_text'); ?></h3><?php endif; ?>
-						<?php if(get_sub_field('sec5_button')): ?>
-								<?php 
-								$link = get_sub_field('sec5_button');
-								if( $link ): ?>
-									<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="button"><?php echo $link['title']; ?></a>
-								<?php endif; ?>
+					<div class="col-left">			
+						<?php if($metrics_post['sec5_text']){ ?>
+						<h3 class="text-underlined"><?php echo $metrics_post['sec5_text'] ?></h3>
+						<?php } ?>
+
+						<?php if($metrics_post['sec5_button']): ?>
+						<a href="<?php echo $metrics_post['sec5_button']['url']; ?>" target="<?php echo $metrics_post['sec5_button']['target']; ?>" class="button"><?php echo $metrics_post['sec5_button']['title']; ?></a>
 						<?php endif; ?>
-						 
-					<?php endwhile; ?>
-				</div>
-				<div class="col-right">
-					<ul>
+							 
+					</div>
+					<div class="col-right">
+						<ul>
+							<?php if($metrics_post['box_metrics']){ ?>
+							<?php forEach($metrics_post['box_metrics'] as $single_metric) {?>
+						    <li>
+								<div class="box-metric <?php echo $single_metric['color_class'] ?>">
+									<small>
+										<i class="<?php echo $single_metric['icon_field'] ?>"></i>
+									<?php echo $single_metric['icon_text'] ?>
+									</small>
+									<h3>
+										<?php echo $single_metric['number'] ?>
+									</h3>
+									<p><?php echo $single_metric['copy'] ?></p>
+								</div>
+							</li>
+							<?php } ?>
+							<?php } ?>	
 
-			<?php while(has_sub_field('section_5', 5)): ?>
-								
-			<?php if(get_sub_field('box_metrics')): ?>
-				<?php 
-					    
-					if( have_rows('box_metrics') ):
-
-					 while( have_rows('box_metrics') ) : the_row(); 
-					        
-					  ?>
-
-					    <li>
-							<div class="box-metric <?php the_sub_field('color_class'); ?>">
-								<small>
-									<i class="icon-monitor"></i>
-								<?php the_sub_field('icon_text'); ?>
-								</small>
-								<h3>
-									<?php the_sub_field('number'); ?>
-								</h3>
-								<p><?php the_sub_field('copy'); ?></p>
-							</div>
-						</li>
-							<?php
-								
-					    endwhile;
-
-					endif;
-
-					?>
-
-
-					</ul>
-				</div>
+						</ul>
+					</div>
 			</div>
 		</section>
-		<?php endif; ?>
-							 
-		<?php endwhile; ?>
+
+		<?php } ?>
+	
 
 		<!-- BOX BLUE FPO -->
 
 		<?php $assetSection = get_field('section_asset'); ?>
 			<?php if($assetSection){ ?>
-			<section class="box-gray">
-				<div class="container">
-					<div class="blue-box">
-						
+					<div class="line-height"><img src="<?php bloginfo('template_url'); ?>/images/waves-box-top.png" alt="" class="responsive"></div>
+					<div class="blue-box-waves">
+						<div class="container">
 						<div class="image">
 						<?php if($assetSection['asset_left_image']){ ?>
 						<?php
@@ -210,11 +220,11 @@
 						<div class="info">
 							<h2><?php echo $assetSection['asset_title'] ?></h2>
 							<p><?php echo $assetSection['asset_description'] ?></p>
-							<a href="<?php echo $assetSection['asset_button_destination'] ?>" class="button-tn" target="_blank"><?php echo $assetSection['asset_button_text'] ?></a>
+							<a href="<?php if( $assetSection['asset_button_link_type'] == 'url' ):?><?php echo $assetSection['asset_button_destination'] ?><?php elseif( $assetSection['asset_button_link_type'] == 'pdf' ): ?><?php echo $assetSection['asset_button_link_pdf'] ?><?php endif; ?>" class="button-tn" target="<?php echo $assetSection['open_link_in_a_new_tab'][0]; ?>"><?php echo $assetSection['asset_button_text']; ?></a>
+						</div>
 						</div>
 					</div>
-				</div>
-			</section>
+					<img src="<?php bloginfo('template_url'); ?>/images/waves-box-bottom.png" alt="" class="responsive">
 		<?php } ?>
 
 <?php get_footer(); ?>

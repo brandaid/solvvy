@@ -24,7 +24,9 @@
 }
 .content-button {
 	text-align: center;
-	padding: 50px 20px 0 20px;
+	padding: 20px 20px 0 20px;
+	position: relative;
+	z-index: 15;
 }
 .open-div {
 	color: $brand-primary;
@@ -165,7 +167,7 @@
 
 .section-assets-cards {
 	background: #fefeff;
-	padding: 75px 30px;
+	padding: 75px 30px 40px;
 	li {
 		opacity: 0;
 	}
@@ -217,6 +219,7 @@
 	.fpo-resources {
 		h3 {
 			font-size: 20px;
+			min-height: 80px;
 		}
 		p {
 			font-size: 15px;
@@ -291,8 +294,13 @@
 // 1200px
 @media all and (min-width: $screen-desktop) {
 	.fpo-resources {
+		img{
+			max-height: 160px;
+			width: auto;
+		}
 		h3 {
 			font-size: 26px;
+			min-height: 100px;
 		}
 		p {
 			font-size: 18px;

@@ -16,15 +16,15 @@ var Bubble = function(opts){
 
 	this._DOM = false;
 	this.bkbubb = opts.bk;
-	this.bkimg = opts.bkimg;
+	this.bkimg = (opts.bkimg)? '<img src="'+ opts.bkimg+'">' : '' ;
 	this.percent = opts.percent;
 	this.interest = opts.inerest;
 	this.linkedin = opts.linkedin;
 	this.twitter = opts.twitter;
 	this.title = opts.title;
-	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'"><i class="icon-twitter"></i></a>' : '';
-	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'"><i class="icon-linkedin"></i></a>' : '';
-	self.interest = (self.interest)? '<span class="position">'+self.interest+'</span>' : '';
+	this.twitter =(this.twitter)?  '<a href="'+this.twitter+'" target="_blank"><i class="icon-twitter"></i></a>' : '';
+	this.linkedin = (this.linkedin)? '<a href="'+this.linkedin+'" target="_blank"><i class="icon-linkedin"></i></a>' : '';
+	this.interest = (this.interest)? '<span class="position">'+this.interest+'</span>' : '';
 	this.bubbleType = (opts.inerest) ? 'people' : 'metric';
 	this.position = {
 		x: opts.position.x,
@@ -49,11 +49,10 @@ var Bubble = function(opts){
 		self._DOM.css('left',self.position.x + "px");
 		self._DOM.css('width',self.size + "px");
 		self._DOM.css('height',self.size + "px");
-		self._DOM.html('<div class="'+self.bubbleType+'" style="background: '+
+		self._DOM.html('<div class="'+self.bubbleType+'"><div style="background: '+
 			self.bkbubb+
-			';background-image: url('+
-			self.bkimg+
-			');background-size: cover;"><div><div><div><span class="percent">'+
+			';"><div><div>'+
+			'<span class="percent">'+
 			self.percent+
 			'</span>'+
 			self.interest+
@@ -63,7 +62,10 @@ var Bubble = function(opts){
 			'<span>'+
 			self.twitter+
 			self.linkedin+
-			'</span></div></div></div></div>');
+			'</span>'+
+			self.bkimg+'</div></div></div></div>');
+
+
 	}
 
 }
@@ -141,8 +143,8 @@ var Nodeline = function(opts){
 var BubbleScene = function(opts){
 
 	var self = this;
-	var sizes = [280, 220];
-	this.min_distance = 20;
+	var sizes = [280, 210];
+	this.min_distance = 60;
 	this.connectorsAll = [];
 	this._container = $(opts.container);
 	this.bubbles = opts.elements || [];
@@ -154,7 +156,7 @@ var BubbleScene = function(opts){
 	this.calculateSceneHeight = function(){
 		let cols = Math.floor(this._width / this.segment_size);
 		let rows = Math.ceil(this.bubbles.length / cols);
-		return this.segment_size * rows + 50;
+		return this.segment_size * rows + 150;
 	}
 
 	this.update = function(){
@@ -165,20 +167,56 @@ var BubbleScene = function(opts){
 	}
 
 	this.calculateBackground = function(){
-		var colors = ['#725AB0', '#D5CEFA', '#F6639A', '#5F108F', '#F92D6D'];
+		var colors = ['#9753A9', '#725AB0', '#D5CEFA', '#FF3378', '#5F108F', '#F92D6D', '#FF639F'];
+		var counter = 0;
+
 		self.bubbles.forEach(function(item){
-			item.bkbubb = colors[Math.round(Math.random()*4)];
+			if(item.bubbleType == 'metric'){
+				if(counter == 0 || counter == 2 || counter == 8){
+					item.bkbubb = colors[0];
+				}else if(counter == 6){
+					item.bkbubb = colors[1];
+				}else if(counter == 4){
+					item.bkbubb = colors[2];
+				}else if(counter == 5){
+					item.bkbubb = colors[6];
+				}else if(counter == 7){
+					item.bkbubb = colors[3];
+				}else if(counter == 1){
+					item.bkbubb = colors[4];
+				}else{
+					item.bkbubb = colors[Math.floor(Math.random()*6+1)];
+				}
+			}else{
+				item.bkbubb = colors[Math.floor(Math.random()*6+1)];
+			}
+
+			//item.bkbubb = colors[Math.round(Math.random()*3)];
+			counter++;
 		});
 	};
 
 	this.calculateSizes = function(){
+		var counter = 0;
 		self.bubbles.forEach(function(item){
 			if(item.bubbleType != 'people'){
-				var sizeOpt = (item.percent.length > 8)? 0 : 1;
-				item.size = sizes[sizeOpt];
+				if(counter == 0 || counter == 2 || counter == 3 || counter == 5 || counter == 7 || counter == 9){
+					item.size = sizes[1];
+				}else if(counter == 0 + 10 || counter == 2 + 10 || counter == 3 + 10 || counter == 5 + 10 || counter == 7 + 10 || counter == 9 + 10){
+					item.size = sizes[1];
+				}else{
+					item.size = sizes[0];
+				}
 			}else{
-				item.size = sizes[Math.round(Math.random()*1)];
+				if(counter == 1 || counter == 4 || counter == 6 || counter == 9 || counter == 13 || counter == 16 || counter == 18 || counter == 21 || counter == 25|| counter == 28|| counter == 30|| counter == 33){
+					item.size = sizes[0];
+				}else if((counter == 1 + 35) ||( counter == 4 + 35) ||( counter == 6 + 35) ||( counter == 9 + 35) || (counter == 13 + 35) || (counter == 16 + 35) || (counter == 18 + 35) || (counter == 21 + 35) || (counter == 25 + 35)|| (counter == 28 + 35)|| (counter == 30 + 35)|| (counter == 33 + 35)){
+					item.size = sizes[0];
+				}else{
+					item.size = sizes[1];
+				}
 			}
+			counter++;
 		});
 	};
 
@@ -194,8 +232,8 @@ var BubbleScene = function(opts){
 			h : Math.floor(height / rows)
 		};
 
-		for(var c = 0; c < cols ; c++){
-			for(var r = 0; r < rows ; r++){
+		for(var r = 0; r < rows ; r++){
+			for(var c = 0; c < cols ; c++){
 				var segment = new Segment({ c : c, r : r, segment_size : segment_size });
 				segments.push(segment);
 			}
@@ -210,8 +248,8 @@ var BubbleScene = function(opts){
 	}
 
 	this.calculatePositions = function(){
-		var elements_count = this.bubbles.length;
 		var counter = 0;
+		var elements_count = this.bubbles.length;
 		var max_for_row = this._width/(sizes[0]+this.min_distance);
 
 		var max_offset = {
@@ -221,20 +259,12 @@ var BubbleScene = function(opts){
 
 		this._calculateSegments(self.segment_size,this._width,this._height);
 
-		this.segments.segments.sort(function(a,b){
-			var
-			aScore = Math.abs(self.segments.rows/2 - a.r),
-			bScore = Math.abs(self.segments.rows/2 - b.r);
-
-			aScore = Math.abs(aScore - Math.abs(self.segments.cols/2 - a.c));
-			bScore = Math.abs(bScore - Math.abs(self.segments.cols/2 - b.c));
-
-			return aScore - bScore;
-		});
 		this.bubbles.forEach(function(bubble){
+			
 			var useSegment = self.segments.segments.find(function(segment){
 				return segment.element === false;
 			});
+
 			if(useSegment){
 				var maxPosX = useSegment.x + useSegment.width - bubble.size;
 				var minPosX = useSegment.x;
@@ -243,9 +273,164 @@ var BubbleScene = function(opts){
 
 				useSegment.element = true;
 				useSegment.bubble = bubble;
-				bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
-				bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
+
+				if(self._container[0].clientWidth > 1200){
+					if(bubble.bubbleType == 'metric'){
+						if(counter == 0){
+							bubble.position.x = 0;
+							bubble.position.y = 190;
+						}else if(counter == 1){
+							bubble.position.x = minPosX + 70;
+							bubble.position.y = 20;
+						}else if(counter == 2){
+							bubble.position.x = minPosX + 105;
+							bubble.position.y = 125;
+						}else if(counter == 3){
+							bubble.position.x = 1063;
+							bubble.position.y = 54;
+						}else if(counter == 4){
+							bubble.position.x = 31;
+							bubble.position.y = 484;
+						}else if(counter == 5){
+							bubble.position.x = 308;
+							bubble.position.y = 314;
+						}else if(counter == 6){
+							bubble.position.x = 669;
+							bubble.position.y = 392;
+						}else if(counter == 7){
+							bubble.position.x = 1035;
+							bubble.position.y = 467;
+						}else if(counter == 8){
+							bubble.position.x = 380;
+							bubble.position.y = 608;
+						}else if(counter == 9){
+							bubble.position.x = 776;
+							bubble.position.y = 719;
+						}else {
+							bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
+							bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
+						}
+					}else{
+						if(counter == 0){
+							bubble.position.x = 0;
+							bubble.position.y = 177;
+						}else if(counter == 1){
+							bubble.position.x = 357;
+							bubble.position.y = 12;
+						}else if(counter == 2){
+							bubble.position.x = 703;
+							bubble.position.y = 0;
+						}else if(counter == 3){
+							bubble.position.x = 1036;
+							bubble.position.y = 80;
+						}else if(counter == 4){
+							bubble.position.x = 50;
+							bubble.position.y = 445;
+						}else if(counter == 5){
+							bubble.position.x = 406;
+							bubble.position.y = 354;
+						}else if(counter == 6){
+							bubble.position.x = 708;
+							bubble.position.y = 291;
+						}else if(counter == 7){
+							bubble.position.x = 1031;
+							bubble.position.y = 481;
+						}else if(counter == 8){
+							bubble.position.x = 0;
+							bubble.position.y = 833;
+						}else if(counter == 9){
+							bubble.position.x = 405;
+							bubble.position.y = 664;
+						}else if(counter == 10){
+							bubble.position.x = 772;
+							bubble.position.y = 680;
+						}else if(counter == 11){
+							bubble.position.x = 1062;
+							bubble.position.y = 789;
+						}else if(counter == 12){
+							bubble.position.x = 0;
+							bubble.position.y = 177 + 960;
+						}else if(counter == 13){
+							bubble.position.x = 357;
+							bubble.position.y = 12 + 960;
+						}else if(counter == 14){
+							bubble.position.x = 703;
+							bubble.position.y = 0 + 960;
+						}else if(counter == 15){
+							bubble.position.x = 1036;
+							bubble.position.y = 80 + 960;
+						}else if(counter == 16){
+							bubble.position.x = 50;
+							bubble.position.y = 445 + 960;
+						}else if(counter == 17){
+							bubble.position.x = 406;
+							bubble.position.y = 354 + 960;
+						}else if(counter == 18){
+							bubble.position.x = 708;
+							bubble.position.y = 291 + 960;
+						}else if(counter == 19){
+							bubble.position.x = 1031;
+							bubble.position.y = 481 + 960;
+						}else if(counter == 20){
+							bubble.position.x = 0;
+							bubble.position.y = 833 + 960;
+						}else if(counter == 21){
+							bubble.position.x = 405;
+							bubble.position.y = 664 + 960;
+						}else if(counter == 22){
+							bubble.position.x = 772;
+							bubble.position.y = 680 + 960;
+						}else if(counter == 23){
+							bubble.position.x = 1062;
+							bubble.position.y = 789 + 960;
+						}else if(counter == 24){
+							bubble.position.x = 0;
+							bubble.position.y = 177 + 960 + 960;
+						}else if(counter == 25){
+							bubble.position.x = 357;
+							bubble.position.y = 12 + 960 + 960;
+						}else if(counter == 26){
+							bubble.position.x = 703;
+							bubble.position.y = 0 + 960 + 960;
+						}else if(counter == 27){
+							bubble.position.x = 708;
+							bubble.position.y = 291 + 960 + 960;
+						}else if(counter == 28){
+							bubble.position.x = 50;
+							bubble.position.y = 445 + 960 + 960;
+						}else if(counter == 29){
+							bubble.position.x = 406;
+							bubble.position.y = 354 + 960 + 960;
+						}else if(counter == 30){
+							bubble.position.x = 1036;
+							bubble.position.y = 80 + 960 + 960;
+						}else if(counter == 31){
+							bubble.position.x = 1031;
+							bubble.position.y = 481 + 960 + 960;
+						}else if(counter == 32){
+							bubble.position.x = 0;
+							bubble.position.y = 833 + 960 + 960;
+						}else if(counter == 33){
+							bubble.position.x = 405;
+							bubble.position.y = 664 + 960 + 960;
+						}else if(counter == 34){
+							bubble.position.x = 772;
+							bubble.position.y = 680 + 960 + 960;
+						}else if(counter == 35){
+							bubble.position.x = 1062;
+							bubble.position.y = 789 + 960 + 960;
+						}else {
+							bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
+							bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;;
+						}
+					}
+				}else{
+					bubble.position.x = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
+					bubble.position.y = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;
+				}
+
 			}
+			counter++;
 		});
 
 	}
@@ -259,33 +444,241 @@ var BubbleScene = function(opts){
 			item.remove();
 		});
 		self.connectorsAll = [];
-
+		var counter = 0;
 		this.segments.segments.forEach(function(current_segment){
+
+			var other_counter = 0;
 			//current_segment.render(self._container);
+			console.log(self._container[0].clientWidth);
 			if(current_segment.element === true){
-				self.segments.segments.forEach(function(other_segment){
-					if(other_segment.element == true){
-						if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c || other_segment.c == current_segment.c +1){
-							if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
-								var connector = new Nodeline({
-									start : current_segment.bubble.center(),
-									end : other_segment.bubble.center(),
-									width : 2
-								});
-								var valid = true;
-								self.connectorsAll.forEach(function(other_connector){
-									if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
-											valid = false;
+				if(self._container[0].clientWidth > 1200){
+					if(current_segment.bubble.bubbleType == 'metric'){
+						
+							self.segments.segments.forEach(function(other_segment){
+								var create_con = false;
+								
+								if(counter == 0){
+									if(other_counter == 1 || other_counter == 5){
+										create_con = true;
 									}
-								});
-								if(valid){self.connectorsAll.push(connector);};
-							}
+								}else if(counter == 1){
+									if(other_counter == 2 || other_counter == 5){
+										create_con = true;
+									}
+								}else if(counter == 2){
+									if(other_counter == 3 || other_counter == 7 || other_counter == 5){
+										create_con = true;
+									}
+								}else if(counter == 3){
+									if(other_counter == 7){
+										create_con = true;
+									}
+								}else if(counter == 4){
+									if(other_counter == 0 || other_counter == 5){
+										create_con = true;
+									}
+								}else if(counter == 5){
+									if(other_counter == 6 || other_counter == 8){
+										create_con = true;
+									}
+								}else if(counter == 6){
+									if(other_counter == 2 || other_counter == 7 || other_counter == 9){
+										create_con = true;
+									}
+								}else if(counter == 7){
+									if(other_counter == 9){
+										create_con = true;
+									}
+								}else if(counter == 8){
+									if(other_counter == 4 || other_counter == 6 || other_counter == 9){
+										create_con = true;
+									}
+								}else if(counter == 9){
+										
+								} 
+
+								if(create_con){
+									var connector = new Nodeline({
+										start : current_segment.bubble.center(),
+										end : other_segment.bubble.center(),
+										width : 2
+									});
+									self.connectorsAll.push(connector);
+								}
+								other_counter ++;
+							});
+							
+					}else{
+						if(current_segment.element === true){
+							
+							self.segments.segments.forEach(function(other_segment){
+								var create_con = false;
+								
+								if(other_segment.element === true){
+									if(counter == 0){
+										if(other_counter == 1 || other_counter == 5){
+											create_con = true;
+										}
+									}else if(counter == 1){
+										if(other_counter == 2 || other_counter == 5 || other_counter == 6){
+											create_con = true;
+										}
+									}else if(counter == 2){
+										if(other_counter == 3 ){
+											create_con = true;
+										}
+									}else if(counter == 3){
+										if(other_counter == 7 || other_counter == 6){
+											create_con = true;
+										}
+									}else if(counter == 4){
+										if(other_counter == 0 || other_counter == 5){
+											create_con = true;
+										}
+									}else if(counter == 5){
+										if(other_counter == 6 || other_counter == 9){
+											create_con = true;
+										}
+									}else if(counter == 6){
+										if(other_counter == 2 || other_counter == 7 || other_counter == 9){
+											create_con = true;
+										}
+									}else if(counter == 7){
+										if(other_counter == 10 || other_counter == 11){
+											create_con = true;
+										}
+									}else if(counter == 8){
+										if(other_counter == 4 || other_counter == 12 || other_counter == 9){
+											create_con = true;
+										}
+									}else if(counter == 9){
+										if(other_counter == 4 || other_counter == 13){
+											create_con = true;
+										}
+									}else if(counter == 10){
+										if(other_counter == 9 || other_counter == 6 || other_counter == 11 || other_counter ==14){
+											create_con = true;
+										}
+									}else if(counter == 11){
+										if(other_counter == 15){
+											create_con = true;
+										}
+									}else if(counter == 12){
+										if(other_counter == 13 || other_counter == 16 || other_counter == 17){
+											create_con = true;
+										}
+									}else if(counter == 13){
+										if(other_counter == 14 || other_counter == 17 || other_counter == 18){
+											create_con = true;
+										}
+									}else if(counter == 14){
+										if(other_counter == 15 ){
+											create_con = true;
+										}
+									}else if(counter == 15){
+										if(other_counter == 19 || other_counter == 18){
+											create_con = true;
+										}
+									}else if(counter == 16){
+										if( other_counter == 17){
+											create_con = true;
+										}
+									}else if(counter == 17){
+										if(other_counter == 18 || other_counter == 21){
+											create_con = true;
+										}
+									}else if(counter == 18){
+										if(other_counter == 14 || other_counter == 19 || other_counter == 21){
+											create_con = true;
+										}
+									}else if(counter == 19){
+										if(other_counter == 22 || other_counter == 23){
+											create_con = true;
+										}
+									}else if(counter == 20){
+										if(other_counter == 16 || other_counter == 24 || other_counter == 21){
+											create_con = true;
+										}
+									}else if(counter == 21){
+										if(other_counter == 16 || other_counter == 25){
+											create_con = true;
+										}
+									}else if(counter == 22){
+										if(other_counter == 21 || other_counter == 18 || other_counter == 23 || other_counter == 26){
+											create_con = true;
+										}
+									}else if(counter == 23){
+										if(other_counter == 27){
+											create_con = true;
+										}
+									}else if(counter == 24){
+										if(other_counter == 25 || other_counter == 28){
+											create_con = true;
+										}
+									}else if(counter == 25){
+										if(other_counter == 26 || other_counter == 28 || other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter == 26){
+										if(other_counter == 27 || other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter == 27){
+										if( other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter == 28){
+										if( other_counter == 29){
+											create_con = true;
+										}
+									}else if(counter > 30){
+										if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c ){
+											if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r){
+												create_con = true;
+											}
+										}
+									}
+									if(create_con){
+										var connector = new Nodeline({
+											start : current_segment.bubble.center(),
+											end : other_segment.bubble.center(),
+											width : 2
+										});
+										self.connectorsAll.push(connector);
+									}
+								}
+
+
+								other_counter ++;
+							});
+
 						}
 					}
+				}else{
+					self.segments.segments.forEach(function(other_segment){
+						if(other_segment.element == true){
+							if(other_segment.c == current_segment.c -1 || other_segment.c == current_segment.c ){
+								if(other_segment.r == current_segment.r -1 || other_segment.r == current_segment.r || other_segment.r == current_segment.r +1){
+									var connector = new Nodeline({
+										start : current_segment.bubble.center(),
+										end : other_segment.bubble.center(),
+										width : 2
+									});
+									var valid = true;
+									self.connectorsAll.forEach(function(other_connector){
+										if(connector.start.x == other_connector.end.x && connector.start.y == other_connector.end.y){
+											valid = false;
+										};
+									});
+									if(valid){self.connectorsAll.push(connector);};
+								}
+							}
+						}
 
-				});
-
+					});
+				}
 			}
+			counter ++;
 		});
 
 		this.connectorsAll.forEach(function(item){
