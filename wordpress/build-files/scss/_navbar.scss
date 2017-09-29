@@ -651,12 +651,41 @@
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-   #main-menu.sm-clean ul {
+	#menu-item-932 > .sub-menu {
+		width: 860px!important;
 		max-width: none!important;
+	}
+	#menu-item-338 > .sub-menu {
 		width: 670px!important;
-}
+		max-width: none!important;
+	}
+	.hero-banner-interior h1 {
+    margin-top: 110px!important;
+	}
 }
 
+@supports (-ms-ime-align:auto) and (-webkit-text-stroke:initial) { 
+	#menu-item-932 > .sub-menu {
+		width: 860px!important;
+		max-width: none!important;
+	}
+	#menu-item-338 > .sub-menu {
+		width: 670px!important;
+		max-width: none!important;
+	}
+}
+
+
+@supports (-ms-ime-align:auto) and (not (-ms-accelerator:true)) and (not (-webkit-text-stroke:initial)) { 
+	#menu-item-932 > .sub-menu {
+		width: 860px!important;
+		max-width: none!important;
+	}
+	#menu-item-338 > .sub-menu {
+		width: 670px!important;
+		max-width: none!important;
+	}
+}
 
 
 // 1024px
