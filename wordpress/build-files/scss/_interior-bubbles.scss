@@ -153,6 +153,21 @@
     margin: 0px;
     width: 100% !important;
 }
+
+@media (min-height: 520px) and (max-width: 801px){
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show {
+        max-height: 420px !important;
+    }
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image, 
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show .wph-modal--message{
+        max-height: 500px !important;
+    }
+    div#wph-modal-popup--1.wph-modal.wph-modal--popup.fadein.wph-modal-show figure.wph-modal--image img{
+        max-height: 502px !important;
+        height: 502px;
+    }
+}
+
 @media (max-width: 770px){
     /*new staging test*/
     .wph-modal.wph-modal--minimal .wph-modal--content.wph-modal--noheader.wph-modal--nofooter section.wph-modal--image_right .wph-modal--image, 
@@ -160,3 +175,4 @@
         display: none;
     }
 }
+
