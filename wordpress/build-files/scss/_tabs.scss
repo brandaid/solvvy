@@ -38,6 +38,16 @@
 			margin: 0;
 		}
 	}
+
+	//TABS
+	.page-template-software{
+		#tab1, #tab2, #tab3{
+			text-align: right;
+		}
+		#tab1 img{ max-width: 921px; }
+		#tab2 img{ max-width: 946px; }
+		#tab3 img{ max-width: 946px; }
+	}
 }
 
 // 1200px
