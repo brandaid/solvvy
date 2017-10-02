@@ -31,7 +31,9 @@
 		position: absolute;
 		right: 0;
 		top: 20px;
-		font-size: 14px;
+		font-size: 20px;
+		line-height: 1;
+		text-transform: uppercase!important;
 		i {
 			display: block;
 			font-size: 30px;
@@ -120,8 +122,8 @@
 	}
 }
 
-// 1300px
-@media all and (min-width: 1300px) {
+// 1400px
+@media all and (min-width: 1400px) {
 	.metrics {
 		.button {
 			margin-bottom: 20px;

@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php if ( is_home() || is_front_page()) { ?><?php bloginfo('title' ); ?> <?php } else { ?> <?php wp_title(); ?> | <?php bloginfo('title' ); ?><?php } ?></title>
+	<title><?php if ( is_home() || is_front_page()) { ?><?php bloginfo('title' ); ?> <?php } else { ?> <?php wp_title(''); ?> | <?php bloginfo('title' ); ?><?php } ?></title>
 
 	<meta name="revisit-after" content="30 days">
 	<meta name="robots" content="index,follow">
@@ -69,6 +69,9 @@
 			<div class="animation"><div class="circle five"></div></div>
 		</div>
 	</div>
+
+	<div id="search_modal" style="display: none;"></div>
+	
 		<header class="header">
 
 			<section class="header-top">
@@ -133,11 +136,11 @@
 						<?php $latest_report = get_field('latest_report', 'option'); ?>
 						<div style="display: none;">
 							<div id="get-post">
-								<h4>LATEST WHITEPAPER</h4>
 								<?php if( $latest_report['latest_title'] ) { ?>
+								<h4><?php echo $latest_report['latest_title']; ?></h4>
 								<p>
 									<a href="<?php echo $latest_report['latest_read_more']; ?>" title="<?php the_title_attribute(); ?>" target="<?php echo $latest_report['latest_target']; ?>">
-									 	<?php echo $latest_report['latest_title']; ?>
+									 	<?php echo $latest_report['latest_copy']; ?>
 									</a>
 								</p>		
 								<?php } ?>						
@@ -147,8 +150,7 @@
 									</a>
 								<?php } ?>
 								<div>
-									<a class="button" href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>">
-										Read Now
+									<a class="button" href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>"><?php echo $latest_report['latest_link']; ?>
 									</a>
 								</div>
 							</div>

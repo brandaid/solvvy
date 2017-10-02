@@ -1,4 +1,4 @@
-<?php 
+<?php
 include(TEMPLATEPATH . '/functions/basic.php');
 include(TEMPLATEPATH . '/functions/custom.php');
 include(TEMPLATEPATH . '/functions/login.php');
@@ -9,5 +9,4 @@ include(TEMPLATEPATH . '/functions/options.php');
 include(TEMPLATEPATH . '/functions/pagination.php');
 include(TEMPLATEPATH . '/functions/widgets.php');
 include(TEMPLATEPATH . '/functions/custom_posts.php');
-
 ?>
