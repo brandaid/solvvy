@@ -136,11 +136,11 @@
 						<?php $latest_report = get_field('latest_report', 'option'); ?>
 						<div style="display: none;">
 							<div id="get-post">
-								<h4>LATEST WHITEPAPER</h4>
 								<?php if( $latest_report['latest_title'] ) { ?>
+								<h4><?php echo $latest_report['latest_title']; ?></h4>
 								<p>
 									<a href="<?php echo $latest_report['latest_read_more']; ?>" title="<?php the_title_attribute(); ?>" target="<?php echo $latest_report['latest_target']; ?>">
-									 	<?php echo $latest_report['latest_title']; ?>
+									 	<?php echo $latest_report['latest_copy']; ?>
 									</a>
 								</p>		
 								<?php } ?>						
