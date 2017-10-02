@@ -1,0 +1,75 @@
+.box-gray {
+	background: $gray_lighter;
+	padding: 38px 0px;
+	border-top: 1px solid #e9edf1;
+	border-bottom: 1px solid #e9edf1;
+	text-align: center;
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		padding: 25px 0;
+	}
+}
+.industry-news {
+	h3 {
+		color: $brand-tertiary;
+		font-family: $font-bold;
+		font-size: 18px;
+	}
+	hr {
+		border: 0;
+		height: 2px;
+		background: lighten($brand-tertiary, 20%);
+		width: 34px;
+		margin: 17px auto;
+	}
+	img {
+		max-width: 128px;
+		width: 100%;
+		height: auto;
+		margin-bottom: 20px;
+	}
+	a {
+		color: $brand-primary;
+		text-decoration: underline;
+		&:hover {
+			color: $brand-secondary;
+		}
+	}
+	// 992px
+	@media all and (min-width: $screen-landscape) {
+		
+		h3, hr, p, a {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+		}
+		p {
+			white-space: nowrap;
+			overflow: hidden;
+			margin-left: 20px;
+			text-overflow: ellipsis;
+			max-width: 40%;
+			// 1200px
+			@media all and (min-width: $screen-desktop) {
+				max-width: 50%;
+			}
+		}
+		hr {
+			transform: rotate(90deg);
+			margin: 10px 0px;
+		}
+
+		img {
+			margin: 0;
+			position: relative;
+			top: 2px;
+		}
+
+	}
+}
+
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+
+}

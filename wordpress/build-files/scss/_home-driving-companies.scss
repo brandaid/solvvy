@@ -1,0 +1,50 @@
+.driving-companies {
+	padding: 60px 0px;
+	text-align: center;
+	&.driving-interior {
+		padding: 30px 0 20px 0;
+		h3 {
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+	}
+	// 768px
+	@media all and (min-width: $screen-portrait) {
+		padding: 90px 0 85px 0;
+	}
+	h3 {
+		text-transform: uppercase;
+		font-size: 18px;
+		font-family: $font-light;
+		margin-bottom: 30px;
+		color: $brand-tertiary;
+	}
+	ul {
+		@include formated-list;
+		font-size: 0;
+		li {
+			width: 50%;
+			display: inline-block;
+			vertical-align: middle;
+			padding: 10px;
+			@include border-box;
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 200px;
+			}
+			// 768px
+			@media all and (min-width: $screen-portrait) {
+				width: 25%;
+				img {
+					max-width: 90%;
+					max-height: 90%;
+				}
+			}
+			// 1200px
+			@media all and (min-width: $screen-desktop) {
+				width: 12.5%;
+			}
+		}
+	}
+}

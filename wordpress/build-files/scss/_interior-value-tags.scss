@@ -1,0 +1,137 @@
+.value-tags {
+	background: url(images/bigger.png) no-repeat center center;
+	background-size: cover;
+	padding: 165px 0;
+	@include border-box;
+	h3 {
+		color: white;
+		@extend .underlined;
+		font-size: 36px;
+		&:after {
+			margin-left: 0;
+		}
+	}
+	p {
+		color: #bdb2f2;
+		margin-bottom: 55px;
+		line-height: 1.5em;
+	}
+}
+.insights-animation {
+	position: relative;
+	height: 300px;
+	overflow: hidden;
+	padding: 0 0px;
+}
+.insights-animation .cards.slide-in {
+	animation: insights-cards-slide-in 800ms;
+	animation-fill-mode: forwards;
+}
+.insights-animation .card {
+	width: 100%;
+	height: 95px;
+	border-radius: 7px;
+	background: #fff;
+	transition: 800ms all;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	color: #000;
+	position: relative;
+	border-radius: 7px;
+	font-family: $font-semibold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.insights-animation .card h4 {
+	margin: 0;
+	color: $brand-secondary;
+	font-weight: 600;
+	font-size: 26px;
+	text-align: center;
+	padding: 0 10px;
+}
+.insights-animation .card:not(.active) {
+	transform: scale(0.8);
+	opacity: 0.5;
+}
+.insights-animation .card:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+@-moz-keyframes insights-cards-slide-in {
+	from {
+		transform: translate3d(0, -95px, 0);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+@-webkit-keyframes insights-cards-slide-in {
+	from {
+		transform: translate3d(0, -95px, 0);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+@-o-keyframes insights-cards-slide-in {
+	from {
+		transform: translate3d(0, -95px, 0);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes insights-cards-slide-in {
+	from {
+		transform: translate3d(0, -95px, 0);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+.value-tags {
+	.container {
+		.col-slider {
+			padding: 50px 0;
+		}
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.value-tags {
+		.container {
+			display: table;
+			width: 100%;
+			.col-info,
+			.col-slider {
+				display: table-cell;
+				vertical-align: middle;
+				width: 60%;
+				p {
+					max-width: 90%;
+				}
+			}
+			.col-slider {
+				width: 40%;
+			}
+		}
+	}
+}
+
+// 1400px
+@media all and (min-width: $screen-desktop-big) {
+	.value-tags {
+		background-size: contain;
+		padding: 220px 0;
+	}
+}
+
+// 1600px
+@media all and (min-width: 1600px) {
+
+}

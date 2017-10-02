@@ -1,0 +1,25 @@
+.box-events {
+	@extend .box;
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+	h3.truncated{
+		height: 96px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.box-events {
+		.content {
+			padding: 40px;
+		}
+	}
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

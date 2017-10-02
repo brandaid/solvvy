@@ -1,0 +1,56 @@
+.blue-box {
+	background: $brand-marine url(images/waves-box-blue.png) no-repeat bottom center;
+	padding: 40px 40px 80px 40px;
+	margin: 50px 0;
+	div.image {
+		img.responsive {
+			max-width: 166px;
+			margin-bottom: 40px;
+		}
+	}
+	div.info {
+		h2 {
+			color: white;
+			font-size: 26px;
+		}
+		p {
+			color: #bdb2f2;
+			line-height: 1.6em;
+			font-size: 18px;
+			font-family: $font-light;
+			margin-bottom: 37px;
+		}
+	}
+}
+
+// 768px
+@media all and (min-width: $screen-portrait) {
+
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.blue-box {
+		background: $brand-marine url(images/waves-box-blue.png) no-repeat bottom center;
+		padding: 50px 75px 85px 75px;
+		display: table;
+		div.image,
+		div.info {
+			display: table-cell;
+			vertical-align: top;
+			width: 80%;
+			text-align: left;
+		}
+		div.image {
+			width: 20%;
+			img.responsive {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+}

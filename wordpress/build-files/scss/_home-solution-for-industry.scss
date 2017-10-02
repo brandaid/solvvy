@@ -1,0 +1,280 @@
+.solution-for-industry {
+	text-align: center;
+	padding: 30px 0 95px 0;
+	h2 {
+		@extend .underlined;
+	}
+}
+.panel-solution,
+.panel {
+	display: none;
+	background: white url(images/waves-pink.png) no-repeat bottom;
+	margin-top: 34px;
+	padding: 50px 26px 130px 26px;
+	@include box-shadow(0px, 0px, 10px, rgba(0,0,0,.2));
+	text-align: left;
+	max-width: 350px;
+	@include center;
+	@include border-box;
+	ul {
+		@include formated-list;
+	}
+	h4 {
+		color: $brand-primary;
+		font-size: 16px;
+		font-family: $font-semibold;
+		position: relative;
+		text-transform: uppercase;
+		i {
+			position: absolute;
+			left: -40px;
+			top: -2px;
+			font-size: 20px;
+		}
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.5em;
+		font-family: $font-light;
+	}
+	&.panel-role {
+		display: block;
+	}
+	&.panel-business {
+		background: white url(images/waves-blue.png) no-repeat bottom;
+		h4 {
+			color: $brand-secondary;
+		}
+	}
+	&.panel-industry {
+		background: white url(images/waves-gray.png) no-repeat bottom;
+		h4 {
+			color: $brand-tertiary;
+		}
+	}
+	&.active {
+		display: block;
+	}
+}
+
+.solution-for-industry{
+	.panel.for-your-industry{
+		background: white url(images/waves-gray.png) no-repeat bottom;
+		h4 {
+			color: $brand-tertiary;
+		}
+	}
+}
+.solution-for-industry{
+	.panel.for-your-business-type{
+		background: white url(images/waves-blue.png) no-repeat bottom;
+		h4 {
+			color: $brand-secondary;
+		}
+	}
+}
+
+.tab-link {
+	display: none;
+}
+.columns-solutions {
+	margin-top: 80px;
+}
+
+.page-template-solutions .columns-solutions {
+	margin-top: 40px;
+}
+// Arrow only for HOME
+.home{
+	.panel-solution,
+	.panel {
+		h4 {
+			&:after {
+				content: "\f054";
+				@include fontawesome;
+				font-size: 18px;
+				position: relative;
+				vertical-align: middle;
+				opacity: .5;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+// 991px
+@media all and (max-width: 991px) {
+	.panel-solution {
+		h4 {
+			padding-left: 15px;
+			i {
+				left: -22px;
+			}
+		}
+	}
+}
+
+// 992px
+@media all and (min-width: $screen-landscape) {
+	.solutions {
+		display: none;
+	}
+	.tab-link {
+		display: block;
+		text-align: left;
+		@include border-box;
+		padding: 30px 40px 10px 68px;
+		cursor: pointer;
+		@include transition;
+		h4 {
+			text-transform: uppercase;
+			font-family: $font-semibold;
+			font-size: 18px;
+			position: relative;
+			color: $brand-primary;
+			i {
+				position: absolute;
+				left: -60px;
+				top: -8px;
+				font-size: 30px;
+			}
+		}
+		&:hover {
+			@include linear-gradient(to right, #f9fbfd, transparent);
+		}
+		&.active {
+			@include linear-gradient(to right, #f9fbfd, transparent);
+		}
+		&.tab-business, {
+			h4 {
+				color: $brand-secondary;
+			}
+		}
+		&.tab-industry {
+			h4 {
+				color: $brand-tertiary;
+			}
+		}
+	}
+	.columns-solutions {
+		display: table;
+		width: 100%;
+		.col-left,
+		.col-right {
+			display: table-cell;
+			width: 50%;
+			vertical-align: top;
+		}
+	}
+	.panel-solution,
+	.panel {
+		max-width: 512px;
+		padding: 70px 70px 140px 97px;
+		margin-top: 0;
+		position: relative;
+		h4 {
+			i {
+				left: -60px;
+				top: -5px;
+				font-size: 30px;
+			}
+		}
+		&:before {
+			content: "\f0d9";
+			@include fontawesome;
+			color: white;
+			font-size: 30px;
+			// color: red;
+			text-shadow: -4px 0px 5px rgba(0,0,0,.1);
+			display: block;
+			left: -10px;
+			top: 11%;
+			position: absolute;
+
+		}
+		&.panel-business {
+			&:before {
+				top: 41%;
+			}
+		}
+		&.panel-industry {
+			&:before {
+				top: 50%;
+			}
+		}
+	}
+	.solution-for-industry {
+		background-image: url(images/backer1.png), url(images/backer2.png);
+	    background-position: right 90%, left 10%;
+	    background-repeat: no-repeat, no-repeat;
+	}
+
+	.tab-panels {
+		.col-right {
+			position: relative;
+			.panel {
+				position: absolute;
+				left: 50px;
+				top: 0;
+			}
+		}
+	}
+	#panel2 {
+		top: 15%;
+	}
+	#panel3 {
+		top: 30%;
+	}
+	#panel4 {
+		top: auto;
+		bottom: 5%;
+	}
+	#panel5,
+	#panel6 {
+		top: auto;
+		bottom: 0;
+		&:before {
+			top: 40%;
+		}
+	}
+	#panel6 {
+		&:before {
+			top: 80%;
+		}
+	}
+
+	//PAGE: FOR YOUR INDUSTRY
+	body.page-id-923{
+		.tab-link h4{
+			color: $brand-tertiary;
+		}
+		.panel h4{
+			color: $brand-tertiary;
+		}
+		.panel{
+	    	background-image: url(images/waves-gray.png);
+		}
+	}
+
+	//PAGE: FOR YOUR BUSINESS TYPE
+	body.page-id-909{
+		.tab-link h4{
+			color: $brand-secondary;
+		}
+		.panel h4{
+			color: $brand-secondary;
+		}
+		.panel{
+	    	background-image: url(images/waves-blue.png);
+		}
+	}
+
+
+}
+
+// 1200px
+@media all and (min-width: $screen-desktop) {
+	.tab-link {
+		padding: 48px 57px 28px 118px;
+	}
+}
