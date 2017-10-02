@@ -75,7 +75,7 @@
 		<header class="header">
 
 			<section class="header-top">
-				<div class="container">
+				<div class="<!--  -->ontainer">
 					<?php wp_nav_menu( 
 						array( 
 							'theme_location' => 'header-menu' ) 
@@ -150,8 +150,7 @@
 									</a>
 								<?php } ?>
 								<div>
-									<a class="button" href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>">
-										Read Now
+									<a class="button" href="<?php echo $latest_report['latest_read_more'];  ?>" target="<?php echo $latest_report['latest_target']; ?>"><?php echo $latest_report['latest_link']; ?>
 									</a>
 								</div>
 							</div>
