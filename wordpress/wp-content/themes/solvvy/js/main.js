@@ -1,7 +1,9 @@
 
+
 //SLIDER SOLUTIONS SUBPAGE
 
 (function() {
+
   var $, card;
   $ = jQuery;
   (card = $.fn).redraw || (card.redraw = function() {
@@ -57,6 +59,26 @@ $(function(){
     }
   });
 });
+//Load more btn newsletter
+
+$(function(){
+
+$(".the-post").slice(0, 7).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $(".the-post:hidden").slice(0, 3).slideDown();
+        if ($(".the-post:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('body,html').animate({
+            scrollTop: $(this).offset().top -300
+        }, 1500);
+    });
+});
+
+
+
+
 function setEqualHeight() {
 	if ($(window).width() > 768) {
     var tallestcolumn = 0;
@@ -550,4 +572,3 @@ $(document).ready(function() {
 		}
 	});
 });
-

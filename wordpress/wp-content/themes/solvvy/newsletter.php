@@ -68,13 +68,10 @@ endif; ?>
 
 
 		</section>
-		
+
 		<div class="content-button">
-			<a href="#" id="more_posts" class="button-white">Load More</a>
+			<a href="#" id="loadMore" class="button-white">Load More</a>
 		</div>
-
-
-
 		
 		<div class="cool-sep"></div>
 		
