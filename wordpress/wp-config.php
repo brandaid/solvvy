@@ -21,16 +21,16 @@
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
 if (($_SERVER['HTTP_HOST'] != 'localhost:8888')&&($_SERVER['HTTP_HOST'] != 'localhost:3000')) {
-	define( 'DB_NAME', 's1' );
+	define( 'DB_NAME', '339636_snapsolvvy' );
 
 	/** MySQL database username */
-	define( 'DB_USER', 's1' );
+	define( 'DB_USER', '339636_searchme' );
 
 	/** MySQL database password */
-	define( 'DB_PASSWORD', 'mvIiReGwraoR4wTG3nRYIsbfAiFVhQ4O2dCWu' );
+	define( 'DB_PASSWORD', 'Protego$300' );
 
 	/** MySQL hostname */
-	define( 'DB_HOST', 'localhost:/var/run/mysqld/mysqld.sock' );
+	define( 'DB_HOST', 'mariadb-116.wc1.lan3.stabletransit.com:3306' );
 }else{
 	define( 'DB_NAME', 'solvvy' );
 
@@ -76,6 +76,9 @@ define('NONCE_SALT',       '&!=k).v$M>0wEEM|%+zhU)A)| 5;>9^83Y,ih5Jh0%IS1KT_4Txw
  */
 $table_prefix  = 'D8eZ9xYwa_';
 
+define ( 'WP_DEBUG_LOG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_CACHE', true);
 
 include 'lw-wp-config.php';
 
