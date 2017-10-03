@@ -23,7 +23,7 @@
 			<div class="container">
 
 				<ul class="list-boxes-three align-left">
-					<?php $loop = new WP_Query( array( 'post_type' => 'newsletter', 'order' => 'ASC' ) ); ?>
+					<?php $loop = new WP_Query( array( 'post_type' => 'newsletter', 'order' => 'DESC' ) ); ?>
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<li>
 						<div class="the-post">
