@@ -35,15 +35,43 @@
 							</div>
 						</div>
 					</li>
-					<?php endwhile; wp_reset_query(); ?>
-				</ul>
+				<?php $postID = get_the_ID(); ?>
+<?php
+$afterPost = get_field('post_pe', 23);
+if( $afterPost ): 
+	// override $post
+	$post = $afterPost;
+	setup_postdata( $post );
+	$afterPostID = get_the_ID();
+	if( $postID == $afterPostID ): ?> 
+    <div class="news">
+					<form id="newsletterForm">
+					<h3 class="underlined">Be informed</h3>
+					<p>See what drives us and the community foward with curated content in your inbox</p>
+					<div class="labels">
+					<div class="first"><label for="name">First Name</label><br>
+					<input id="name" type="text" name="name"><br>
+					<label for="lname">Last Name</label><br>
+					<input id="lname" type="text" name="lastname"><br></div>
+					<div class="sec"><label for="email">Email Address</label><br>
+					<input id="email" type="text" name="email"><br>
+					<input type="submit" value="Subscribe" id="submit" class="button"></div>
+					</div>
+					</form>
+    </div>
+<?php endif; 
+endif; ?>
 
+					<?php endwhile; wp_reset_query(); ?>
+				</ul>	
 			</div>
+
+
 		</section>
-		
-		<!-- <div class="content-button">
-			<a href="javascript:void(0);" class="button-white">Load More</a>
-		</div> -->
+
+		<div class="content-button">
+			<a href="#" id="loadMore" class="button-white">Load More</a>
+		</div>
 		
 		<div class="cool-sep"></div>
 		

@@ -1,3 +1,7 @@
+.the-post {
+    display:none;
+}
+
 form.marketo-updates {
 	display: table;
 	width: 100%!important;
@@ -79,15 +83,99 @@ form.marketo-updates {
 	}
 }
 
+.content-button {
+	margin-bottom: 80px;
+}
+
+#newsletterForm {
+		h3 {
+			font-size: 28px;
+			text-align: center;
+		}
+		p {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		.labels {
+			text-align: left;
+		}		
+		label {
+			color: #6b7d92;
+			font-size: 15px;
+			font-weight: bold;
+			&:before {
+				content: "*";
+				padding-right: 2px;
+				color: $brand-primary;
+				}
+			}
+		input {
+			margin-bottom: 30px;
+			margin-top: 10px;
+			width: 260px;
+			height: 37px;
+			font-size: 16px;
+			color: #6b7d92;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			padding-left: 10px;
+		}
+		#submit {
+			height: auto;
+			width: 272px;
+			padding: 8px;
+			color: #fff;
+			border: none;
+			font-size: 18px;
+			&:hover {
+				color: $brand-primary;
+				border: 1px solid $brand-primary;
+				border-radius: 3px;
+			}
+		}
+}
+
+
+
 // 768px
 @media all and (min-width: $screen-portrait) {
-	
+	.news {
+		width:66%;
+		display: inline-block;
+		padding-top: 50px;
+	}	
+	#newsletterForm {
+		width: 71%;
+		margin: 0 auto;
+		.labels {
+			padding-bottom: 250px!important;
+			width: 97%;
+		#submit {
+			margin-top: 16px!important;
+		}	
+		}
+	}
 }
 
 // 992px
 @media all and (min-width: $screen-landscape) {
 	form.marketo-updates{
 		margin-bottom: 0;
+	}
+	.news {
+		padding-top: 0;
+	}
+	#newsletterForm {
+		width: 93%;
+		.labels {
+			width: 100%;
+		}
+		.first {
+			float: left;
+			}
+		.sec {
+			float: right;
+			}
 	}
 }
 
@@ -101,4 +189,12 @@ form.marketo-updates {
 			width: 32%!important;
 		}
 	}
+	#newsletterForm {
+		width: 75%;
+	}
+}
+
+
+@media all and (min-width: 1250px) {
+
 }
