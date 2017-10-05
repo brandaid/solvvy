@@ -75,7 +75,7 @@
 		<header class="header">
 
 			<section class="header-top">
-				<div class="<!--  -->ontainer">
+				<div class="container">
 					<?php wp_nav_menu( 
 						array( 
 							'theme_location' => 'header-menu' ) 
